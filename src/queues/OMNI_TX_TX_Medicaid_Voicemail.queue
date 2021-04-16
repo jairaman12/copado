@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>fakeemail@bcbsil.com</email>
+    <name>OMNI_TX_TX Medicaid Voicemail</name>
+    <queueMembers>
+        <users>
+            <user>amy_d_mizell@bcbstx.com.provider</user>
+            <user>barbie_dunston@bcbstx.com.provider</user>
+            <user>brian_e_rickman@bcbstx.com.provider</user>
+            <user>misty_best_stevens@bcbstx.com.provider</user>
+            <user>sharon_bolton@bcbstx.com.provider</user>
+            <user>vicki_charlot@bcbstx.com.provider</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>Priority_5</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>OMNI_Queue__c</sobjectType>
+    </queueSobject>
+</Queue>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Welcome letter to all new Intake users</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>WelcomeUsers</name>
+    <style>none</style>
+    <subject>Welcome to Provider Intake and Salesforce.com</subject>
+    <textOnly>Welcome to the new Provider Intake Web-form!  We are now live and providers will start using the new form to submit changes on Monday, March 20.
+
+During the week of March 13 you should have participated in a training session getting you ready to receive Provider Demographic Updates via Salesforce.
+
+As you know:
+•	Managers will monitor the Plan Queue and assign work to CSR/Data Entry Employees
+
+•	In OK and NM, Contracting will review provider updates and forward to Plan Queue
+
+Your access to Salesforce has been activated. Please use this link to access the log-in screen and use your LAN ID and password to log in:
+https://hcscprovider.my.salesforce.com
+We suggest you make this a favorite in your internet browser for future and easy access.  When you save the favorite please Edit the bookmark URL to reflect the above.
+If you experience a problem with your Salesforce log-in on March 20th please contact the go live webex for immediate assistance 8am CST until 5pm CST https://hcsc.webex.com/hcsc/j.php?MTID=m9a0ce66211c29d7f02caf915a543d7cb
+JOIN BY PHONE Toll-Free: 1-877-249-5777 Cisco Unified MeetingPlace meeting ID: 620 107 614
+After 3/20/17 please contact the ITG Help desk.
+Your trainers are available to help answer Plan specific questions.  Below is a list of trainers by Plan.
+Illinois; Nikita Lewis
+New Mexico: Tricia MacLaughlin, Melinda Waggoner, Althea James
+Montana: Tanya Killham, Breeann Rieder, Candace Pertersen
+Oklahoma: Selena Woods, Renae Applegate, Melissa Mceachern-Wilkins, Rod Johns
+Texas: Holly Mandina, Anna Pennington, Ashley Christopher
+
+You play an important role in implementing this new capability and helping HCSC achieve productivity and quality improvements.  For questions relative to the overall Intake initiative, please contact William Eaton, Business Lead or Katie Gordon, Business Lead.
+Thank You, Renay.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

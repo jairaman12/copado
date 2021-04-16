@@ -1,0 +1,35 @@
+.THIS.c-container {
+    border: 1px solid #d8dde6;
+    margin: 10px 0 20px 0;
+}
+.THIS .header-column {
+    padding: 0 2rem;
+} 
+    /*
+ * Below CSS is to wrap the text and 
+ * display in multiple lines
+ */
+.THIS .slds-truncate 
+{
+    text-overflow: inherit;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word; 
+}
+
+/*
+ * Below CSS is to remove the dropdown 
+ * arros in datatable header
+ */
+.THIS .slds-button_icon-bare
+{
+	display: none;
+}
+
+/*
+ * Below CSS is to remove the additional padding on headers 
+ */
+.THIS span.slds-th__action 
+{
+    padding-right: 0.00rem !important;
+}

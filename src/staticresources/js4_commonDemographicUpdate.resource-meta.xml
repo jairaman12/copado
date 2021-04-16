@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StaticResource xmlns="http://soap.sforce.com/2006/04/metadata">
+    <cacheControl>Public</cacheControl>
+    <contentType>application/javascript</contentType>
+    <description>JS to handle behaviors common across all states....required field validation, formatting of dates and telephone numbers, attachment of calendar controls, etc....note: JS is dependent on underlying HTML, changes to HTML can break the JS.</description>
+</StaticResource>

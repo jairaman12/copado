@@ -1,0 +1,119 @@
+<apex:page standardController="Account" extensions="EmbeddedHospitalAffiliations_Ext">
+     
+    <apex:includeScript value="{!$Resource.jqueryMin}"/>
+    <link class="user" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>   
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>  
+    <apex:includeScript value="{!$Resource.js4_paginationPage}"/>
+    <apex:stylesheet value="{!$Resource.css4_paginationPage}"/>     
+    <apex:stylesheet value="{!$Resource.css4_embeddedHospitalAffiliations}"/>
+    <script>
+        
+     /*
+        Initialize the number of records to show in pagination.
+     */
+    var numberOfRecordsToShow = 5;        
+        
+        
+    function confirmDelete(){
+        return confirm("Are you sure?");           
+     }   
+    
+    
+    </script>
+
+     
+    <body>
+        <apex:form id="accountsForm" html-novalidate="novalidate">                                      
+            <div id="affiliationsDisplayContainer">                
+                <div id="headerWrapper">
+        
+                    <span id="haImage">
+                        <h3>
+                            Affiliations
+                        </h3>
+                    </span>
+                    
+                    <apex:outputPanel rendered="{!$Profile.Name=='System Administrator'}" >
+                       <div>  
+                           <apex:outputText value="{!Account.Name}" rendered="false" />
+                            <apex:outputText value="{!Account.CM_Corporate_Entity_Code__c}" rendered="false" />
+                          <!-- 
+                            *************************************************
+                            The new Rolodex Affiliation button to be displayed if there is a  requirement to create rolodex affiliations from entity and Physicians provided Rolodex affiliation is the primary record type in the profile
+                            Change the Id's if required to auto populate the Plan Id and the relationship fields, change the conditional rendering on the output panel
+                            ***************************************************
+                            <apex:commandLink action="{!URLFOR($Action.Affiliations__c.New, null ,[CF00N4D000000cwsR=Account.Name,CF00N4D000000cwsR_lkid=Account.Id,CF00N4D000000ck3l=Account.CM_Corporate_Entity_Code__c,retURL=Account.id])}" target="_new" value="New Rolodex Affiliation" " /> 
+                            --> 
+                           <apex:commandLink action="{!URLFOR($Action.Affiliations__c.New, null ,[retURL=Account.id])}" target="_new" value="New Affiliation" rendered="{!$Profile.Name=='System Administrator'}" />  
+                    </div>                               
+                    </apex:outputPanel>                    
+                </div>
+                Type : 
+                <apex:selectList value="{!type}" multiselect="false" size="1" onChange="{!selectedTypeList}">
+                    <apex:actionSupport event="onchange" action="{!selectedTypeList}" />
+                    <apex:selectOptions value="{!items}"/>
+                </apex:selectList>
+                <apex:outputPanel id="AffiliationList">
+                    <apex:outputPanel >
+                        <div  id="{!Account.Affiliations__r}{!Account.Affiliations2__r}">                    
+                            <div id="tableWrapper">                                             
+                                <table class="list">
+                                    <thead>
+                                        <tr>
+                                             <apex:outputPanel >
+                                                    <td>
+                                                        Action 
+                                                    </td>       
+                                             </apex:outputPanel>                
+                                            
+                                            <td>
+                                               Affiliation Info   
+                                            </td> 
+                                            <td>
+                                                Provider Name
+                                            </td>                             
+                                            <td>
+                                                Affiliated Provider Name
+                                            </td>
+                                              <td>
+                                                Role
+                                            </td>
+                                            <td>
+                                                Affiliation Effective Date  
+                                            </td>                       
+                                            <td>
+                                                Affiliation End Date    
+                                            </td> 
+                                             <td>
+                                                Affiliated to Service PFIN  
+                                            </td>
+                                            <td>
+                                                Type
+                                            </td> 
+                                            <td>
+                                                Affiliated Description Code 
+                                            </td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <apex:outputPanel rendered="{!!isOnchange}">
+                                            <c:affiliationsRepeater relation="{!Account.Affiliations__r}" account="{!Account}" />                           
+                                            <c:affiliationsRepeater relation="{!Account.Affiliations2__r}" account="{!Account}" /> 
+                                        </apex:outputPanel>
+                                        <apex:outputPanel rendered="{!isOnchange}"> 
+                                            <c:affiliationsRepeater relation="{!affiliationList}" account="{!Account}" />
+                                        </apex:outputPanel> 
+                                    </tbody>  
+                                </table>  
+                            </div>
+                        </div>                
+                    </apex:outputPanel> 
+                    <apex:pageMessages />                  
+                </apex:outputPanel>
+                <!-- <div class="hideOrShowMessage" id="{!Account.Affiliations__r}{!Account.Affiliations2__r}">                       
+                    No records to display
+                </div>  -->                
+            </div>   
+        </apex:form>
+    </body>    
+</apex:page>

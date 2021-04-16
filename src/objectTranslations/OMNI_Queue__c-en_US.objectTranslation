@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>OMNI Queue</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>OMNI Queue</value>
+    </caseValues>
+    <fields>
+        <label><!-- CaseType Name / Origin --></label>
+        <name>Case_Type_Name_Origin__c</name>
+        <picklistValues>
+            <masterLabel>Ancillary Networks</masterLabel>
+            <translation><!-- Ancillary Networks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Balance Billing</masterLabel>
+            <translation><!-- Balance Billing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CRM</masterLabel>
+            <translation><!-- CRM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delegated Credentialing</masterLabel>
+            <translation><!-- Delegated Credentialing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Demographics</masterLabel>
+            <translation><!-- Demographics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fee Schedule Requests</masterLabel>
+            <translation><!-- Fee Schedule Requests --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gov Netops Provider Update</masterLabel>
+            <translation><!-- Gov Netops Provider Update --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gov Providers</masterLabel>
+            <translation><!-- Gov Providers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Govt Cases</masterLabel>
+            <translation><!-- Govt Cases --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HCS-X6100</masterLabel>
+            <translation><!-- HCS-X6100 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HMO Networks</masterLabel>
+            <translation><!-- HMO Networks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ILBCBSAinquiries@bcbsil.com</masterLabel>
+            <translation><!-- ILBCBSAinquiries@bcbsil.com --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ILHCMProductionSupport@bcbsil.com</masterLabel>
+            <translation><!-- ILHCMProductionSupport@bcbsil.com --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ILProviderRosterRequests@bcbsil.com</masterLabel>
+            <translation><!-- ILProviderRosterRequests@bcbsil.com --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal PNC Inquiries</masterLabel>
+            <translation><!-- Internal PNC Inquiries --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MTBCBSAinquiries@bcbsmt.com</masterLabel>
+            <translation><!-- MTBCBSAinquiries@bcbsmt.com --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NMBCBSAinquiries@bcbsnm.com</masterLabel>
+            <translation><!-- NMBCBSAinquiries@bcbsnm.com --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Netops Provider Update</masterLabel>
+            <translation><!-- Netops Provider Update --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Network Change</masterLabel>
+            <translation><!-- Network Change --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Network Roster Submission</masterLabel>
+            <translation><!-- Network Roster Submission --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OK Network Management</masterLabel>
+            <translation><!-- OK Network Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OKBCBSAinquiries@bcbsok.com</masterLabel>
+            <translation><!-- OKBCBSAinquiries@bcbsok.com --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OKNetworkVM</masterLabel>
+            <translation><!-- OKNetworkVM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Provider Updates</masterLabel>
+            <translation><!-- Other Provider Updates --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PNC NetOps Inquiries</masterLabel>
+            <translation><!-- PNC NetOps Inquiries --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PPN CorpusChristi</masterLabel>
+            <translation><!-- PPN CorpusChristi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PPN EIPaso</masterLabel>
+            <translation><!-- PPN EIPaso --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PPN Lubbock-Amerillo</masterLabel>
+            <translation><!-- PPN Lubbock-Amerillo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional Provider Network Dept</masterLabel>
+            <translation><!-- Professional Provider Network Dept --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provider Inquiry</masterLabel>
+            <translation><!-- Provider Inquiry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provider Relation DFW</masterLabel>
+            <translation><!-- Provider Relation DFW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provider Relations Houston</masterLabel>
+            <translation><!-- Provider Relations Houston --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provider Relations IL</masterLabel>
+            <translation><!-- Provider Relations IL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provider Relations Midland</masterLabel>
+            <translation><!-- Provider Relations Midland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provider Relations South Texas</masterLabel>
+            <translation><!-- Provider Relations South Texas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX Medicaid Network Dept</masterLabel>
+            <translation><!-- TX Medicaid Network Dept --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TXBCBSAinquiries@bcbstx.com</masterLabel>
+            <translation><!-- TXBCBSAinquiries@bcbstx.com --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tx_Network_Central_Voicemail</masterLabel>
+            <translation><!-- Tx_Network_Central_Voicemail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Validation Review</masterLabel>
+            <translation><!-- Validation Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Voicemail</masterLabel>
+            <translation><!-- Voicemail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web Desk</masterLabel>
+            <translation><!-- Web Desk --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web On-boarding - Contracting</masterLabel>
+            <translation><!-- Web On-boarding - Contracting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web On-boarding - Data Entry</masterLabel>
+            <translation><!-- Web On-boarding - Data Entry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>maencounter@bcbsil.com</masterLabel>
+            <translation><!-- maencounter@bcbsil.com --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Case Type --></label>
+        <name>Case_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner --></label>
+        <name>Owner__c</name>
+        <relationshipLabel><!-- OMNI Queue --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Plan Id --></label>
+        <name>Plan_Id__c</name>
+        <picklistValues>
+            <masterLabel>IL1</masterLabel>
+            <translation><!-- IL1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MT1</masterLabel>
+            <translation><!-- MT1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NM1</masterLabel>
+            <translation><!-- NM1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OK1</masterLabel>
+            <translation><!-- OK1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX1</masterLabel>
+            <translation><!-- TX1 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Priority --></label>
+        <name>Queue_Priority__c</name>
+        <picklistValues>
+            <masterLabel>10</masterLabel>
+            <translation><!-- 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11</masterLabel>
+            <translation><!-- 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12</masterLabel>
+            <translation><!-- 12 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>13</masterLabel>
+            <translation><!-- 13 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>14</masterLabel>
+            <translation><!-- 14 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15</masterLabel>
+            <translation><!-- 15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6</masterLabel>
+            <translation><!-- 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7</masterLabel>
+            <translation><!-- 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8</masterLabel>
+            <translation><!-- 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9</masterLabel>
+            <translation><!-- 9 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Request Type(s) --></label>
+        <name>Request_Type_s__c</name>
+        <picklistValues>
+            <masterLabel>Administrative Change</masterLabel>
+            <translation><!-- Administrative Change --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Billing Address Change</masterLabel>
+            <translation><!-- Billing Address Change --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Credentialing Change</masterLabel>
+            <translation><!-- Credentialing Change --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NPI Tax Id Change</masterLabel>
+            <translation><!-- NPI Tax Id Change --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Name Change Request</masterLabel>
+            <translation><!-- Name Change Request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Provider Updates</masterLabel>
+            <translation><!-- Other Provider Updates --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Physical Address Change</masterLabel>
+            <translation><!-- Physical Address Change --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Remove Provider from Group/Location</masterLabel>
+            <translation><!-- Remove Provider from Group/Location --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>nm_network_scripting@bcbsnm.com</masterLabel>
+            <translation><!-- nm_network_scripting@bcbsnm.com --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reserved Queue Users --></label>
+        <name>Reserved_Queue_Users__c</name>
+        <picklistValues>
+            <masterLabel>Test1</masterLabel>
+            <translation><!-- Test1 --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

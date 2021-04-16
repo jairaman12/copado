@@ -1,0 +1,170 @@
+<apex:page standardController="Account" extensions="ManualOnboardingCreation" lightningStylesheets="true" >
+  <style>
+
+      
+    body .detailList .dataCol input[type="date"]{
+    
+    min-width: 1rem;
+    max-width: 4rem;
+    }
+        
+    body .bPageBlock .dataCol .multiSelectPicklistRow select[multiple], .slds-vf-scope .bPageBlock .dataCol .multiSelectPicklistRow select[multiple] {
+        min-width: 13.5rem;
+        max-width: 13.5rem;
+    }
+        
+        body .detailList .dataCol .label-custom  {
+        min-width: 2rem !important;
+        max-width: 7.5rem !important;
+    }
+          
+    slds-vf-scope .detailList .dataCol .label-custom {
+        min-width: 2rem !important;
+        max-width: 7rem !important;
+    }
+    
+      body .detailList .dataCol .label-custom1  {
+        min-width: 2rem !important;
+        max-width: 8rem !important;
+    }
+          
+   
+  </style>
+<div class="slds-scope">
+    <apex:form id="Form" >
+    <apex:actionFunction name="populateProvider" action="{!populateProvider}" reRender="providersection,SectionDetail"/>
+    <apex:pagemessages ></apex:pagemessages>
+        <apex:pageBlock title="Manual Onboarding Case Creation" rendered="{!NOT(isEdit)}">
+            <apex:pageblockSection >
+                <apex:pageblockSectionItem >
+                    <apex:outputLabel >
+                    RecordType Selection
+                    </apex:outputLabel>
+                    <apex:selectlist value="{!selectedType}" size="1">
+                        <apex:selectoptions value="{!listOfRecordTypes}"/>
+                    </apex:selectlist>
+                </apex:pageblockSectionItem>
+                
+                <apex:pageblocksectionItem >
+                <apex:commandButton value="Go" action="{!proceed}" rerender="Form" />
+                </apex:pageblocksectionItem>
+            </apex:pageblockSection>
+        </apex:pageBlock>
+        <apex:sectionHeader title="Case Edit" subtitle="New Case" rendered="{!isEdit}"/>
+        <apex:pageBlock title="Case Edit" rendered="{!isEdit}">  
+        <apex:pageblockButtons >
+            <apex:commandButton value="Save" action="{!saveRecord}"/>
+            <apex:commandButton value="Save & New" action="{!saveAndNew}"/>    
+            <apex:commandButton value="Cancel" action="{!cancel}" immediate="true"/>    
+        </apex:pageblockButtons>  
+        <apex:repeat value="{!listOfSectionNames}" var="section">
+            <apex:pageblockSection title="{!section}" rendered="{!NOT(section=='Provider Information')}">
+                <apex:repeat value="{!mapOfSectionNameAndItsFieldSets[section]}" var="a">
+                     <apex:inputfield value="{!newCase[a.fieldPath]}" 
+                                      required="{!OR(a.required, a.dbrequired,AND(a.Label=='Account ID',newCase.Completing_the_form_for__c=='Individual',selectedType != 'Provider On-boarding Data Entry'),AND(a.Label=='Case Entity',newCase.Completing_the_form_for__c=='Group',selectedType != 'Provider Group On-boarding Data Entry'))}" 
+                                      rendered="{!AND(a.Label!='Govt. Programs',a.Label!='Plan ID',a.Label!= 'CAQH Number',a.Label!= 'Corporate Received Date')}" 
+                                      onchange="populateProvider()"/>
+                     <apex:inputfield value="{!newCase[a.fieldPath]}" 
+                                      required="true"
+                                      Style="border-left: 3px solid red;padding-left: 4px;"
+                                      rendered="{!a.Label= 'Corporate Received Date'}"/>
+                     <!--<apex:inputfield value="{!newCase[a.fieldPath]}" required="{!OR(a.required, a.dbrequired,AND(a.Label=='Account ID',newCase.Completing_the_form_for__c=='Individual',selectedType != 'Provider On-boarding Data Entry'),AND(a.Label=='Case Entity',newCase.Completing_the_form_for__c=='Group',selectedType != 'Provider Group On-boarding Data Entry'))}" rendered="{!AND(a.Label!='Govt. Programs',a.Label!='Plan ID',a.Label!= 'CAQH Number')}" onchange="populateProvider()"/>
+                    <apex:inputfield value="{!newCase[a.fieldPath]}" required="{!OR(a.required, a.dbrequired)}" rendered="{!AND(a.Label!='Govt. Programs',a.Label!='Plan ID')}" onchange="populateProvider()"/>-->
+                     <apex:inputfield value="{!newCase.OnboardingGovtProgram__c}" rendered="{!a.Label=='Govt. Programs'}" onchange="populateProvider()"/>
+                     <!--apex:inputfield value="{!newCase.Plan_ID__c}" rendered="{!a.Label=='Plan ID'}" required="true" onchange="enableAddProvider()"--> 
+                     <!--<apex:inputfield value="{!newCase.Plan_ID__c}" rendered="{!a.Label=='Plan ID'}" required="true"  > 
+                        <apex:actionSupport event="onchange" rerender="SectionDetail" action="{!assignPlanId}" />
+                     </apex:inputfield>-->
+                     <apex:OutputText value="{!accPlanId}" rendered="{!a.Label=='Plan ID'}"  Label="Plan ID" /> 
+                     <apex:inputfield value="{!newCase.CAQH_Number__c}" rendered="{!AND(a.Label== 'CAQH Number', newCase.Completing_the_form_for__c!='Group')}" />
+                     <!--<apex:inputField value="{!newCase.Extension1__c}" rendered="{!AND(a.Label== 'Extension',newCase.Completing_the_form_for__c != 'Facility',newCase.Completing_the_form_for__c != 'Ancillary')}"/>-->
+   
+
+                </apex:repeat>
+                  <!--  <apex:inputField value="{!newCase.Out_of_Network__c}" rendered="{!If(AND(OR( selectedType == 'Provider Group On-boarding Data Entry', selectedType ='Provider On-boarding Contracting', selectedType == 'Provider On-boarding Data Entry' ),section=='Case Information') ,true,false) }"/>    -->
+                  <!-- Sujatha  PPN-29277
+                  <apex:inputField value="{!newCase.Out_of_Network__c}" rendered="{!If(AND(OR( selectedType == 'Provider Group On-boarding Contracting'),section=='Case Information') ,true,false) }"/>  -->
+            </apex:pageblockSection>  
+            <apex:outputPanel id="providersection">
+           <apex:pageBlockSection title="{!section}" rendered="{!section=='Provider Information'}">
+                <apex:repeat value="{!mapOfSectionNameAndItsFieldSets[section]}" var="a">
+                <apex:inputfield value="{!newCase[a.fieldPath]}" required="{!OR(a.required, a.dbrequired,AND(a.Label=='Account ID',newCase.Completing_the_form_for__c=='Individual'),AND(a.Label=='Case Entity',newCase.Completing_the_form_for__c=='Group'))}" rendered="{!AND(a.Label!='Govt. Programs',a.Label!='Plan ID',a.Label!='Billing NPI Number(s)',a.Label!='Tax ID Number(s)')}" onchange="populateProvider()"/>            
+                <apex:OutputField value="{!newCase.Billing_NPI_Number_long__c}" rendered="{!a.Label=='Billing NPI Number(s)'}"  Label="Billing NPI Number(s)" />
+                <apex:OutputField value="{!newCase.Tax_ID_Number_long__c}" rendered="{!a.Label=='Tax ID Number(s)'}"  Label="Tax ID Number(s)" />
+                </apex:repeat>
+
+            </apex:pageBlockSection> 
+            </apex:outputPanel>         
+        </apex:repeat>
+        <!--apex:actionFunction name="enableAddProvider"  reRender="SectionDetail"  /-->
+        
+        <apex:pageblockSection title="Provider Details" id="SectionDetail">
+               <!--<apex:variable value="{!0}" var="rowNumber"/>-->
+                <apex:outputPanel layout="block" style="display: inline-block;">
+                    <apex:commandButton value="Update ProvId" action="{!UpdateProvId}" reRender="SectionDetail"  disabled="{!IF(newCase.Completing_the_form_for__c != 'Group',false, true)}"/>
+                     <apex:commandButton value=" Add Provider Details"
+                                        action="{!addRow}"
+                                        reRender="SectionDetail"
+                                        id="addRow" />
+                </apex:outputPanel>
+                <br/>
+                    <apex:pageBlockTable value="{!providerwrapperList}" var="wrap" id="table" > 
+                    <apex:column headerValue="PROV ID">
+                        <!-- <div style="width:100px;">-->
+                            <apex:inputField value="{!wrap.curCase.Prov_ID__c}" rendered="{!OR(wrap.counterWrap == 1, isFromGroup)}" styleClass="label-custom" />                       
+                        <apex:outputField value="{!wrap.curCase.Prov_ID__c}" rendered="{!AND(wrap.counterWrap > 1, !isFromGroup)}" styleClass ="label-custom"/>  
+                        <!--</div> -->
+                       
+                    </apex:column>
+                    <apex:column headerValue="PFIN">
+                        <apex:inputField value="{!wrap.curCase.MC_PFIN__c}" styleClass="label-custom1"/>
+                    </apex:column>
+                     <apex:column headerValue="PlanId"   rendered="{!(fromIndvPfin == false)}" headerClass="hidden" style="display:none" styleClass="label-custom">
+                         <apex:inputField value="{!wrap.curCase.Plan_ID__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Network Name" rendered="{!(fromIndvPfin == false)}">                    
+                        <apex:inputField value="{!wrap.curCase.Network_Name_Copy__c}" />                    
+                    </apex:column> 
+                    
+                    <apex:column headerValue="Network Eff. Date" rendered="{!(fromIndvPfin == false)}">                    
+                        <apex:inputField value="{!wrap.curCase.Network_Effective_Date__c}" />                    
+                    </apex:column>
+                    <apex:column headerValue="Role Code" rendered="{!(fromIndvPfin == false)}">                    
+                        <apex:inputField value="{!wrap.curCase.Role_Code__c}" styleClass="label-custom"/>                    
+                    </apex:column>
+                   <!-- <apex:column headerValue="Comp Grid Code" rendered="{!(fromIndvPfin == false)}">                    
+                        <apex:inputField value="{!wrap.curCase.Comp_Grid_Code_new__c}" styleClass="label-custom"/>                    
+                    </apex:column>-->
+                   <!-- <apex:column headerValue="Panel Code" rendered="{!(fromIndvPfin == false)}">                    
+                        <apex:inputField value="{!wrap.curCase.Panel_code__c}" styleClass="label-custom"/>                    
+                    </apex:column>
+                    <apex:column headerValue="Desig. Code" rendered="{!(fromIndvPfin == false)}">                    
+                        <apex:inputField value="{!wrap.curCase.Designation_Code__c}" styleClass="label-custom"/> 
+                    <!-- Sujatha PPN-30261 -->                   
+                   <!-- </apex:column> -->  
+                    <!-- Suman PPN-39574 -->                  
+                    <!--<apex:column headerValue="Cred Status" rendered="{!(showCredStatus == true)}"> 
+               
+                    <apex:inputfield value="{!wrap.curCase.Cred_Status__c}" styleClass="label-custom"/>
+                    </apex:column>-->
+
+                    <apex:column headerValue="Action" >
+                        <apex:commandLink action="{!removingRow}" reRender="SectionDetail"  >
+                            <apex:image value="{!$Resource.TrashCanIcon}" width="20" height="20" style="margin-left:15px;"/>
+                            <apex:param name="index" value="{!wrap.counterWrap}"/>
+                        </apex:commandLink>
+                        
+                    </apex:column>
+                </apex:pageBlockTable>
+                <apex:pageBlockSectionItem >
+                     
+                   <!--  <apex:commandButton value="Update ProvId" action="{!UpdateProvId}" reRender="SectionDetail"  />-->
+                                              
+                    </apex:pageBlockSectionItem>
+        </apex:pageblockSection>         
+
+              
+        </apex:pageBlock>
+    </apex:form>
+    </div>
+</apex:page>

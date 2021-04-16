@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>CLM_Illinois</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>CLM Illinois</label>
+        <sharedTo>
+            <group>CLM_HCSC_Illinois_Group</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Plan__c</field>
+            <operation>equals</operation>
+            <value>Illinois</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>CLM_Montana</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>CLM Montana</label>
+        <sharedTo>
+            <group>CLM_HCSC_Montana_Group</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Plan__c</field>
+            <operation>equals</operation>
+            <value>Montana</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>CLM_New_Mexico</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>CLM New Mexico</label>
+        <sharedTo>
+            <group>CLM_HCSC_New_Mexico_Group</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Plan__c</field>
+            <operation>equals</operation>
+            <value>New Mexico</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>CLM_Oklahoma</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>CLM Oklahoma</label>
+        <sharedTo>
+            <group>CLM_HCSC_Oklahoma_Group</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Plan__c</field>
+            <operation>equals</operation>
+            <value>Oklahoma</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>CLM_Texas</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>CLM Texas</label>
+        <sharedTo>
+            <group>CLM_HCSC_Texas_Group</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Plan__c</field>
+            <operation>equals</operation>
+            <value>Texas</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

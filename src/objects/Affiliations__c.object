@@ -1,0 +1,2046 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Provider Name (Entity / Individual)</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>Affiliations</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Affiliated_Class_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(CM_Affiliated_Provider_Name__r.Class__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Affiliated Class Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Affiliated_Provider_Tax_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Affiliated Provider Tax Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Affiliated_to_Provider_Id__c</fullName>
+        <externalId>false</externalId>
+        <formula>CM_Affiliated_Provider_Name__r.Prov_ID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Prov Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Affiliated_to_Service_PFIN__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Look up relationship with Service and Payee location. Introduced as part of PPN-16597</description>
+        <externalId>false</externalId>
+        <label>Affiliated to PFIN</label>
+        <referenceTo>CM_SPL_Addr__c</referenceTo>
+        <relationshipLabel>Affiliations</relationshipLabel>
+        <relationshipName>Affiliations</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Affiliation_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Affiliation Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>HCSYSP</fullName>
+                    <default>false</default>
+                    <label>HCSYSP</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Billing_Address_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Billing Address 1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Billing_Address_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Billing Address 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Billing_City__c</fullName>
+        <externalId>false</externalId>
+        <label>Billing City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Billing_County__c</fullName>
+        <externalId>false</externalId>
+        <label>Billing County</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Billing_State__c</fullName>
+        <externalId>false</externalId>
+        <label>Billing State</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Billing_Zip__c</fullName>
+        <externalId>false</externalId>
+        <label>Billing Zip</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CM_Affiliated_Provider_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Affiliated Provider Name</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Affiliations</relationshipLabel>
+        <relationshipName>Affiliations2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CM_Affiliated_to_Billing_PFIN__c</fullName>
+        <externalId>false</externalId>
+        <label>Affiliated to Billing PFIN</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CM_Affiliated_to_Group_ID__c</fullName>
+        <description>PPN:19298 Created to support dataload</description>
+        <externalId>false</externalId>
+        <label>Affiliated to Group ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CM_Affiliated_to_Network_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Affiliated to Network Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CM_Affiliated_to_Service_PFIN_Url__c</fullName>
+        <description>This field is used to link the Service PFIN record on Affiliation .</description>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/&quot;+Affiliated_to_Service_PFIN__r.Id,Affiliated_to_Service_PFIN__r.CM_SPL_PFIN_No__c)</formula>
+        <label>Affiliated to PFIN</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CM_Affiliated_to_Service_PFIN__c</fullName>
+        <externalId>false</externalId>
+        <label>Affiliated to Service PFIN</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CM_Affiliation_Code_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Affiliation Code Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CM_Billing_PFIN__c</fullName>
+        <externalId>false</externalId>
+        <label>Billing PFIN</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CM_Corporate_Entity_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Corporate Entity Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Class_Code__c</fullName>
+        <description>This field created to copy Class code from Account and to display on Service and Payee related list. 
+US story ref: PPN-16617</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Account__r.Class__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Class Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EFF_DT__c</fullName>
+        <externalId>false</externalId>
+        <label>EFF DT</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>End_DT__c</fullName>
+        <externalId>false</externalId>
+        <label>End DT</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Affiliation End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Entity_Prov_Id__c</fullName>
+        <description>This field introduced part of PPN-16597. Business ask is to display account Prov Id on affiliation related list displayed on Service and Payee location.</description>
+        <externalId>false</externalId>
+        <formula>Account__r.Prov_ID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Affiliated to Provider Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fax__c</fullName>
+        <externalId>false</externalId>
+        <label>Fax</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Master_Entity_Prov_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>CM_Affiliated_Provider_Name__r.Prov_ID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Master Entity Prov ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mobile_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Mobile Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Name</label>
+        <length>120</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PFIN__c</fullName>
+        <externalId>false</externalId>
+        <label>Service PFIN</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Role__c</fullName>
+        <description>Converted to multi-select picklist as part of PPN-18792</description>
+        <externalId>false</externalId>
+        <label>Role(s)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Admin Assistant</fullName>
+                    <default>false</default>
+                    <label>Admin Assistant</label>
+                </value>
+                <value>
+                    <fullName>Administrator</fullName>
+                    <default>false</default>
+                    <label>Administrator</label>
+                </value>
+                <value>
+                    <fullName>Assistant</fullName>
+                    <default>false</default>
+                    <label>Assistant</label>
+                </value>
+                <value>
+                    <fullName>Associate General Counsel</fullName>
+                    <default>false</default>
+                    <label>Associate General Counsel</label>
+                </value>
+                <value>
+                    <fullName>Biller</fullName>
+                    <default>false</default>
+                    <label>Biller</label>
+                </value>
+                <value>
+                    <fullName>Billing</fullName>
+                    <default>false</default>
+                    <label>Billing</label>
+                </value>
+                <value>
+                    <fullName>Billing Clerk</fullName>
+                    <default>false</default>
+                    <label>Billing Clerk</label>
+                </value>
+                <value>
+                    <fullName>Billing Manager</fullName>
+                    <default>false</default>
+                    <label>Billing Manager</label>
+                </value>
+                <value>
+                    <fullName>Billing Practice Manager</fullName>
+                    <default>false</default>
+                    <label>Billing Practice Manager</label>
+                </value>
+                <value>
+                    <fullName>Billings Clinic</fullName>
+                    <default>false</default>
+                    <label>Billings Clinic</label>
+                </value>
+                <value>
+                    <fullName>Business Manager</fullName>
+                    <default>false</default>
+                    <label>Business Manager</label>
+                </value>
+                <value>
+                    <fullName>Business Office Manager</fullName>
+                    <default>false</default>
+                    <label>Business Office Manager</label>
+                </value>
+                <value>
+                    <fullName>CAO</fullName>
+                    <default>false</default>
+                    <label>CAO</label>
+                </value>
+                <value>
+                    <fullName>Case Management</fullName>
+                    <default>false</default>
+                    <label>Case Management</label>
+                </value>
+                <value>
+                    <fullName>Case Manager</fullName>
+                    <default>false</default>
+                    <label>Case Manager</label>
+                </value>
+                <value>
+                    <fullName>CEO</fullName>
+                    <default>false</default>
+                    <label>CEO</label>
+                </value>
+                <value>
+                    <fullName>CEO interim</fullName>
+                    <default>false</default>
+                    <label>CEO interim</label>
+                </value>
+                <value>
+                    <fullName>Chief Dev Officer</fullName>
+                    <default>false</default>
+                    <label>Chief Dev Officer</label>
+                </value>
+                <value>
+                    <fullName>Chief Financial Officer</fullName>
+                    <default>false</default>
+                    <label>Chief Financial Officer</label>
+                </value>
+                <value>
+                    <fullName>Chief Medical Officer</fullName>
+                    <default>false</default>
+                    <label>Chief Medical Officer</label>
+                </value>
+                <value>
+                    <fullName>Chief Operating Officer</fullName>
+                    <default>false</default>
+                    <label>Chief Operating Officer</label>
+                </value>
+                <value>
+                    <fullName>Clinic Biller</fullName>
+                    <default>false</default>
+                    <label>Clinic Biller</label>
+                </value>
+                <value>
+                    <fullName>Contracts</fullName>
+                    <default>false</default>
+                    <label>Contracts</label>
+                </value>
+                <value>
+                    <fullName>Controller</fullName>
+                    <default>false</default>
+                    <label>Controller</label>
+                </value>
+                <value>
+                    <fullName>Credentialing</fullName>
+                    <default>false</default>
+                    <label>Credentialing</label>
+                </value>
+                <value>
+                    <fullName>Credentialing Coordinator</fullName>
+                    <default>false</default>
+                    <label>Credentialing Coordinator</label>
+                </value>
+                <value>
+                    <fullName>Dir. Payer Relations</fullName>
+                    <default>false</default>
+                    <label>Dir. Payer Relations</label>
+                </value>
+                <value>
+                    <fullName>Director of Care Coordination</fullName>
+                    <default>false</default>
+                    <label>Director of Care Coordination</label>
+                </value>
+                <value>
+                    <fullName>Director of Finance</fullName>
+                    <default>false</default>
+                    <label>Director of Finance</label>
+                </value>
+                <value>
+                    <fullName>Director of Patient Accounting</fullName>
+                    <default>false</default>
+                    <label>Director of Patient Accounting</label>
+                </value>
+                <value>
+                    <fullName>Director of Patient Services</fullName>
+                    <default>false</default>
+                    <label>Director of Patient Services</label>
+                </value>
+                <value>
+                    <fullName>Director of PFS</fullName>
+                    <default>false</default>
+                    <label>Director of PFS</label>
+                </value>
+                <value>
+                    <fullName>Director of Revenue Cycle</fullName>
+                    <default>false</default>
+                    <label>Director of Revenue Cycle</label>
+                </value>
+                <value>
+                    <fullName>Director Physician and APEX Billing</fullName>
+                    <default>false</default>
+                    <label>Director Physician and APEX Billing</label>
+                </value>
+                <value>
+                    <fullName>EMR Access</fullName>
+                    <default>false</default>
+                    <label>EMR Access</label>
+                </value>
+                <value>
+                    <fullName>EMR Functionality</fullName>
+                    <default>false</default>
+                    <label>EMR Functionality</label>
+                </value>
+                <value>
+                    <fullName>Executive Assistance</fullName>
+                    <default>false</default>
+                    <label>Executive Assistance</label>
+                </value>
+                <value>
+                    <fullName>Executive Assistant</fullName>
+                    <default>false</default>
+                    <label>Executive Assistant</label>
+                </value>
+                <value>
+                    <fullName>Executive Director - Revenue Management</fullName>
+                    <default>false</default>
+                    <label>Executive Director - Revenue Management</label>
+                </value>
+                <value>
+                    <fullName>Financial Manager</fullName>
+                    <default>false</default>
+                    <label>Financial Manager</label>
+                </value>
+                <value>
+                    <fullName>General Counsel</fullName>
+                    <default>false</default>
+                    <label>General Counsel</label>
+                </value>
+                <value>
+                    <fullName>Hospital Biller</fullName>
+                    <default>false</default>
+                    <label>Hospital Biller</label>
+                </value>
+                <value>
+                    <fullName>Hospital Billing Supervisor</fullName>
+                    <default>false</default>
+                    <label>Hospital Billing Supervisor</label>
+                </value>
+                <value>
+                    <fullName>Manager, Case Management</fullName>
+                    <default>false</default>
+                    <label>Manager, Case Management</label>
+                </value>
+                <value>
+                    <fullName>Manager of Revenue Cycle</fullName>
+                    <default>false</default>
+                    <label>Manager of Revenue Cycle</label>
+                </value>
+                <value>
+                    <fullName>Manager Patient Business Services</fullName>
+                    <default>false</default>
+                    <label>Manager Patient Business Services</label>
+                </value>
+                <value>
+                    <fullName>Medical Group Billing Supervisor</fullName>
+                    <default>false</default>
+                    <label>Medical Group Billing Supervisor</label>
+                </value>
+                <value>
+                    <fullName>Mgr Rev Integrity &amp; Payer Contracting</fullName>
+                    <default>false</default>
+                    <label>Mgr Rev Integrity &amp; Payer Contracting</label>
+                </value>
+                <value>
+                    <fullName>Office Manager</fullName>
+                    <default>false</default>
+                    <label>Office Manager</label>
+                </value>
+                <value>
+                    <fullName>Patient Account Rep</fullName>
+                    <default>false</default>
+                    <label>Patient Account Rep</label>
+                </value>
+                <value>
+                    <fullName>Patient and Insurancer Access</fullName>
+                    <default>false</default>
+                    <label>Patient and Insurancer Access</label>
+                </value>
+                <value>
+                    <fullName>Patient Business Services</fullName>
+                    <default>false</default>
+                    <label>Patient Business Services</label>
+                </value>
+                <value>
+                    <fullName>Patient Business Services Director</fullName>
+                    <default>false</default>
+                    <label>Patient Business Services Director</label>
+                </value>
+                <value>
+                    <fullName>Payer Relations</fullName>
+                    <default>false</default>
+                    <label>Payer Relations</label>
+                </value>
+                <value>
+                    <fullName>Payment and Client Billing Supervisor</fullName>
+                    <default>false</default>
+                    <label>Payment and Client Billing Supervisor</label>
+                </value>
+                <value>
+                    <fullName>Phy Billing &amp; Collections Supervisor</fullName>
+                    <default>false</default>
+                    <label>Phy Billing &amp; Collections Supervisor</label>
+                </value>
+                <value>
+                    <fullName>Physician</fullName>
+                    <default>false</default>
+                    <label>Physician</label>
+                </value>
+                <value>
+                    <fullName>President, Medical Group</fullName>
+                    <default>false</default>
+                    <label>President, Medical Group</label>
+                </value>
+                <value>
+                    <fullName>President and CEO</fullName>
+                    <default>false</default>
+                    <label>President and CEO</label>
+                </value>
+                <value>
+                    <fullName>Provider Enrollment</fullName>
+                    <default>false</default>
+                    <label>Provider Enrollment</label>
+                </value>
+                <value>
+                    <fullName>Quality Manager, Clinical Operations</fullName>
+                    <default>false</default>
+                    <label>Quality Manager, Clinical Operations</label>
+                </value>
+                <value>
+                    <fullName>System Director Revenue Cycle Operations</fullName>
+                    <default>false</default>
+                    <label>System Director Revenue Cycle Operations</label>
+                </value>
+                <value>
+                    <fullName>UM Mgr</fullName>
+                    <default>false</default>
+                    <label>UM Mgr</label>
+                </value>
+                <value>
+                    <fullName>Vice President Medical Group</fullName>
+                    <default>false</default>
+                    <label>Vice President Medical Group</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Roll_Down__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field is created part of PPN-17862 to check weather the user has been selected roll down  option or not.</description>
+        <externalId>false</externalId>
+        <label>Roll Down</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Shipping_City__c</fullName>
+        <externalId>false</externalId>
+        <label>Physical City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Shipping_County__c</fullName>
+        <externalId>false</externalId>
+        <label>Physical Country</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Shipping_Location_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Physical Location 1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Shipping_Location_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Physical Location 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Shipping_State__c</fullName>
+        <externalId>false</externalId>
+        <label>Physical State</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Shipping_Zip__c</fullName>
+        <externalId>false</externalId>
+        <label>Physical Zip</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Affiliation Effective Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>false</default>
+                    <label>Active</label>
+                </value>
+                <value>
+                    <fullName>Inactive</fullName>
+                    <default>false</default>
+                    <label>Inactive</label>
+                </value>
+                <value>
+                    <fullName>Pending</fullName>
+                    <default>false</default>
+                    <label>Pending</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(NOT(CM_Affiliated_Provider_Name__r.IsPersonAccount), &apos;Entity&apos;, 
+IF(AND(CM_Affiliated_Provider_Name__r.IsPersonAccount, ISPICKVAL(CM_Affiliated_Provider_Name__r.Class__c,&apos;P&apos;)),&apos;Physician&apos;, 
+IF(AND(CM_Affiliated_Provider_Name__r.IsPersonAccount, CM_Affiliated_Provider_Name__r.RecordType.DeveloperName=&apos;Rolodex&apos;), 
+&apos;Rolodex&apos;,&apos;&apos; 
+) 
+) 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fAccount_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fAffiliated_to_Provider_Id__c</fullName>
+        <externalId>false</externalId>
+        <formula>CM_Affiliated_Provider_Name__r.Prov_ID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Affiliated to Provider Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fNetwork_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>CM_Affiliated_to_Network_Code__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Network Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fTax_id__c</fullName>
+        <externalId>false</externalId>
+        <formula>Affiliated_to_Service_PFIN__r.CM_SPA_Tax_ID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Tax Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>tMaster_Entity_Id__c</fullName>
+        <externalId>false</externalId>
+        <formula>CM_Affiliated_Provider_Name__r.MSTR_ENTITY_ID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Master Entity Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Affiliations</label>
+    <nameField>
+        <displayFormat>A{0}</displayFormat>
+        <label>Affiliation Info</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Affiliations</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Affiliation</fullName>
+        <active>true</active>
+        <label>Affiliation for PPW</label>
+        <picklistValues>
+            <picklist>Affiliation_Type__c</picklist>
+            <values>
+                <fullName>HCSYSP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Role__c</picklist>
+            <values>
+                <fullName>Admin Assistant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Administrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assistant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Associate General Counsel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Biller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billing Clerk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billing Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billing Practice Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billings Clinic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Office Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CEO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CEO interim</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Case Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Case Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chief Dev Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chief Financial Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chief Medical Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chief Operating Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clinic Biller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contracts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Controller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credentialing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credentialing Coordinator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dir%2E Payer Relations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Director Physician and APEX Billing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Director of Care Coordination</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Director of Finance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Director of PFS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Director of Patient Accounting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Director of Patient Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Director of Revenue Cycle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMR Access</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMR Functionality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executive Assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executive Assistant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executive Director - Revenue Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Counsel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hospital Biller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hospital Billing Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manager Patient Business Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manager of Revenue Cycle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manager%2C Case Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Group Billing Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mgr Rev Integrity %26 Payer Contracting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Account Rep</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Business Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Business Services Director</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient and Insurancer Access</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payer Relations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment and Client Billing Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Physician</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>President and CEO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>President%2C Medical Group</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Provider Enrollment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality Manager%2C Clinical Operations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Director Revenue Cycle Operations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UM Mgr</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vice President Medical Group</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Master_Entity</fullName>
+        <active>true</active>
+        <label>Master Entity Affiliation</label>
+        <picklistValues>
+            <picklist>Affiliation_Type__c</picklist>
+            <values>
+                <fullName>HCSYSP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Role__c</picklist>
+            <values>
+                <fullName>Admin Assistant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Administrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assistant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Associate General Counsel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Biller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billing Clerk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billing Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billing Practice Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billings Clinic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Office Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CEO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CEO interim</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Case Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Case Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chief Dev Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chief Financial Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chief Medical Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chief Operating Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clinic Biller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contracts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Controller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credentialing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credentialing Coordinator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dir%2E Payer Relations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Director Physician and APEX Billing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Director of Care Coordination</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Director of Finance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Director of PFS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Director of Patient Accounting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Director of Patient Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Director of Revenue Cycle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMR Access</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMR Functionality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executive Assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executive Assistant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executive Director - Revenue Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Counsel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hospital Biller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hospital Billing Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manager Patient Business Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manager of Revenue Cycle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manager%2C Case Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Group Billing Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mgr Rev Integrity %26 Payer Contracting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Account Rep</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Business Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Business Services Director</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient and Insurancer Access</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payer Relations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment and Client Billing Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phy Billing %26 Collections Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Physician</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>President and CEO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>President%2C Medical Group</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Provider Enrollment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality Manager%2C Clinical Operations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Director Revenue Cycle Operations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UM Mgr</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vice President Medical Group</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Rolodex_Affiliation</fullName>
+        <active>true</active>
+        <label>Rolodex Affiliation</label>
+        <picklistValues>
+            <picklist>Affiliation_Type__c</picklist>
+            <values>
+                <fullName>HCSYSP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Role__c</picklist>
+            <values>
+                <fullName>Admin Assistant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Administrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assistant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Associate General Counsel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Biller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billing Clerk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billing Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billing Practice Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billings Clinic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Office Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CEO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CEO interim</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Case Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Case Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chief Dev Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chief Financial Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chief Medical Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chief Operating Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clinic Biller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contracts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Controller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credentialing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credentialing Coordinator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dir%2E Payer Relations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Director Physician and APEX Billing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Director of Care Coordination</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Director of Finance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Director of PFS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Director of Patient Accounting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Director of Patient Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Director of Revenue Cycle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMR Access</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMR Functionality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executive Assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executive Assistant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executive Director - Revenue Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Counsel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hospital Biller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hospital Billing Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manager Patient Business Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manager of Revenue Cycle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manager%2C Case Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Group Billing Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mgr Rev Integrity %26 Payer Contracting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Account Rep</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Business Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Business Services Director</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient and Insurancer Access</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payer Relations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment and Client Billing Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phy Billing %26 Collections Supervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Physician</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>President and CEO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>President%2C Medical Group</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Provider Enrollment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality Manager%2C Clinical Operations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Director Revenue Cycle Operations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UM Mgr</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vice President Medical Group</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Start_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>End_Date__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Start_Date__c</searchFilterFields>
+        <searchFilterFields>End_Date__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>Corporate_Entity_Code_Validation</fullName>
+        <active>true</active>
+        <description>Validation rule for not changing the Plan ID.</description>
+        <errorConditionFormula>OR( 
+AND( 
+$Profile.Name &lt;&gt; &apos;System Administrator&apos;, 
+OR( 
+NOT(CM_Corporate_Entity_Code__c =&quot;TX1&quot;), 
+ISCHANGED(CM_Corporate_Entity_Code__c) 
+), 
+OR( 
+$User.UserRoleId = &quot;00E410000015OiZ&quot;, 
+$User.UserRoleId = &quot;00E41000000bXW1&quot;, 
+$User.UserRoleId = &quot;00E41000000bXW0&quot; 
+) 
+), 
+AND( 
+$Profile.Name &lt;&gt; &apos;System Administrator&apos;, 
+OR( 
+NOT(CM_Corporate_Entity_Code__c =&quot;IL1&quot;), 
+ISCHANGED(CM_Corporate_Entity_Code__c) 
+), 
+OR( 
+$User.UserRoleId = &quot;00E410000015OiV&quot;, 
+$User.UserRoleId = &quot;00E41000000bXVs&quot;, 
+$User.UserRoleId = &quot;00E41000000bXVw&quot; 
+) 
+), 
+AND( 
+$Profile.Name &lt;&gt; &apos;System Administrator&apos;, 
+OR( 
+NOT(CM_Corporate_Entity_Code__c =&quot;MT1&quot;), 
+ISCHANGED(CM_Corporate_Entity_Code__c) 
+), 
+OR( 
+$User.UserRoleId = &quot;00E41000000bXVt&quot;, 
+$User.UserRoleId = &quot;00E41000000bXVx&quot;  
+) 
+), 
+AND( 
+$Profile.Name &lt;&gt; &apos;System Administrator&apos;, 
+OR( 
+NOT(CM_Corporate_Entity_Code__c =&quot;OK1&quot;), 
+ISCHANGED(CM_Corporate_Entity_Code__c) 
+), 
+OR( 
+$User.UserRoleId = &quot;00E410000015OiY&quot;, 
+$User.UserRoleId = &quot;00E41000000bXVv&quot;, 
+$User.UserRoleId = &quot;00E41000000bXVz&quot; 
+) 
+), 
+AND( 
+$Profile.Name &lt;&gt; &apos;System Administrator&apos;, 
+OR( 
+NOT(CM_Corporate_Entity_Code__c =&quot;NM1&quot;), 
+ISCHANGED(CM_Corporate_Entity_Code__c) 
+), 
+OR( 
+$User.UserRoleId = &quot;00E410000015OiX&quot;, 
+$User.UserRoleId = &quot;00E41000000bXVu&quot;, 
+$User.UserRoleId = &quot;00E41000000bXVy&quot;  
+) 
+) 
+)</errorConditionFormula>
+        <errorMessage>Corporate Entity Code is ReadOnly and not allowed to change</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Edit</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Edit</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/42.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&apos;/support/console/42.0/integration.js&apos;)} 
+
+
+if (typeof(srcUp) == &apos;function&apos; &amp;&amp; sforce.console.isInConsole()) 
+{ 
+srcUp(&apos;/apex/RolodexAffiliationPage?isdtp=vw&amp;id={!Affiliations__c.Id}&amp;planId={!Affiliations__c.CM_Corporate_Entity_Code__c}&amp;from=Affiliation&amp;isEditPage=true&apos; ); 
+} 
+else 
+{ 
+window.open(&apos;/apex/RolodexAffiliationPage?id={!Affiliations__c.Id}&amp;planId={!Affiliations__c.CM_Corporate_Entity_Code__c}&amp;from=Affiliation&amp;isEditPage=true&apos;,&apos;_self&apos;); 
+
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Rolodex_Affiliation</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Rolodex Affiliation</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/42.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&apos;/support/console/42.0/integration.js&apos;)} 
+
+
+if (typeof(srcUp) == &apos;function&apos; &amp;&amp; sforce.console.isInConsole()) 
+{ 
+srcUp(&apos;/apex/RolodexAffiliationPage?isdtp=vw&amp;id={!Account.Id}&amp;planId={!Account.CM_Corporate_Entity_Code__c}&amp;from=Account&amp;isEditPage=false&apos; ); 
+} 
+else 
+{ 
+window.open(&apos;/apex/RolodexAffiliationPage?id={!Account.Id}&amp;planId={!Account.CM_Corporate_Entity_Code__c}&amp;from=Account&amp;isEditPage=false&apos;,&apos;_self&apos;); 
+
+}</url>
+    </webLinks>
+</CustomObject>

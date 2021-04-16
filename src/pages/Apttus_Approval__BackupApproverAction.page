@@ -1,0 +1,41 @@
+<!-- 
+    Apttus Approvals Management
+    BackupApproverAction
+     
+    @2011-2019 Apttus Inc. All rights reserved.
+
+-->
+<apex:page standardController="Apttus_Approval__Backup_Approver__c"
+            extensions="Apttus_Approval.BackupApproverActionController"
+            lightningStylesheets="{!$User.UIThemeDisplayed == 'Theme4d' ||
+                                    $User.UIThemeDisplayed == 'Theme4u' ||
+                                    $User.UIThemeDisplayed == 'Theme4t'}">
+
+    <apex:form id="idBackupApproverActionForm">
+    
+		<apex:pageBlock title="{!$Label.apttus_approval__backupdelegateapprover}" rendered="{!NOT(isInitialized) && NOT(hasErrors)}">
+			<apex:pageMessages />
+			<apex:pageBlockButtons location="bottom">
+				<apex:commandButton value="{!$Label.apttus_approval__activate}" action="{!doProcessAction}" rendered="{!isActivateMode}" />
+				<apex:commandButton value="{!$Label.apttus_approval__deactivate}" action="{!doProcessAction}" rendered="{!isDeactivateMode}"  />
+				<apex:commandButton value="{!$Label.apttus_approval__cancel}" action="{!doCancel}" immediate="true" />
+			</apex:pageBlockButtons>
+		    <apex:pageBlockSection title="{!$Label.apttus_approval__backupapproverdetail}" columns="2" collapsible="false">
+                <apex:outputField value="{!backupApproverSO.Apttus_Approval__IsDelegate__c}" />
+				<apex:outputField value="{!backupApproverSO.Name}"/>
+                <apex:outputField value="{!backupApproverSO.Apttus_Approval__Current_User__c}" />
+                <apex:outputField value="{!backupApproverSO.Apttus_Approval__Backup_User__c}" />
+                <apex:outputField value="{!backupApproverSO.Apttus_Approval__Transfer_in_flight__c}" />
+                <apex:outputField value="{!backupApproverSO.Apttus_Approval__DelegateUserIds__c}" />
+                <apex:outputField value="{!backupApproverSO.Apttus_Approval__Effective_Date__c}"/>
+                <apex:outputField value="{!backupApproverSO.Apttus_Approval__IsActive__c}"/>
+                <apex:outputField value="{!backupApproverSO.Apttus_Approval__Expiration_Date__c}"/>
+                <apex:outputField value="{!backupApproverSO.Apttus_Approval__InEffect__c}"/>
+                <apex:outputField value="{!backupApproverSO.Apttus_Approval__Cancellation_Date__c}"/>
+                <apex:outputField value="{!backupApproverSO.Apttus_Approval__SuppressDelegateNotification__c}" />
+                <apex:outputField value="{!backupApproverSO.Apttus_Approval__Comment__c}" />
+		    </apex:pageBlockSection>
+		</apex:pageBlock>   
+
+    </apex:form>
+</apex:page>

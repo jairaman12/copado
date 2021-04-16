@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email to Provider for case creation acknowledgement for demographic change request</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>BCBS New Mexico</name>
+    <style>none</style>
+    <subject>BCBS of New Mexico Demographic Change Request Form Received</subject>
+    <textOnly>{!Case.Name_Submitter__c},
+
+Thank you for contacting Blue Cross and Blue Shield of New Mexico.
+
+This email is confirmation we have received your request, case number {!Case.CaseNumber}, for {!Case.Name_of_Provider_Group__c}.
+
+Your request may take up to 30 days to complete. Once completed, a notification will be sent to the email address submitted with the Demographic Change Request Form.
+
+To check the status of your case, please click on status checker ({!$Setup.UtilitySettings_Hierarchy__c.CaseStatusUrl__c}) or for any questions, contact 1-800-567-8540 or contact your Network Representative.
+
+
+Sincerely,
+Blue Cross and Blue Shield of New Mexico
+
+
+Powered by: SalesforceTM
+
+
+
+Blue Cross and Blue Shield of New Mexico, a Division of Health Care Service Corporation, a Mutual Legal Reserve Company, an Independent Licensee of the Blue Cross and Blue Shield Association.
+
+
+
+© 2017 Health Care Service Corporation. All rights reserved.
+
+(NOTE: Please do not remove the Ref id) Ref id {!Case.Thread_Id}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

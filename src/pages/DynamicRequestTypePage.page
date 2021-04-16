@@ -1,0 +1,877 @@
+<!-- 
+/*****************************************************************
+@Author:    Provider Intake Salesforce team 
+@Date:   09/30/2017
+@Description: This Visual page is created for Manual case creation
+******************************************************************
+-->
+<apex:page controller="ManualCaseCreationController" tabStyle="Case" docType="html-5.0" lightningStylesheets="true" title="" action="{!autoRun}">
+    
+    <apex:includeScript value="{!$Resource.jqueryMin}"/>
+    <apex:includeScript value="{!$Resource.js4_commonDemographicUpdate}"/>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+    var gHiddenJSON = '{!hiddenJSON}';
+    var gChangeMode = '{!caseMode}';
+    </script>
+    <apex:slds />  
+    
+    <link href="jqueryUI/ui-lightness/query-ui-1.8.19.custom.css" rel="stylesheet" type="text/css"/>
+   
+    <apex:stylesheet value="{!$Resource.css4_DragAndDrop}"/>
+    <apex:includeScript value="{!$Resource.js4_NetworkReady}"/>
+    <apex:includeScript value="{!$Resource.js4_AddNetworkSpecificBehaviors}"/>
+    <apex:includeScript value="{!$Resource.js4_DeleteNetworkSpecificBehaviors}"/>        
+    <apex:includeScript value="{!$Resource.js4_ChangeNetworkSpecificBehaviors}"/>   
+    <apex:includeScript value="{!$Resource.js4_NetworkSelectedBehaviors}"/>
+    
+    <apex:includeScript value="{!$Resource.js4_AddNetworkObjectData}"/>
+    <apex:includeScript value="{!$Resource.js4_DeleteNetworkObjectData}" />
+    <apex:includeScript value="{!$Resource.js4_ChangeNetworkObjectData}" />
+    
+    <apex:includeScript value="{!$Resource.js4_AddNetworkRoleAndPanelCodeData}"/>
+    <apex:includeScript value="{!$Resource.js4_AddNetworkDesignationCodeData}"/>
+    <apex:includeScript value="{!$Resource.js4_AddNetworkCompGridCodeData}"/>
+
+    
+    <apex:includeScript value="{!$Resource.js4_NetworkCommon}"/>
+    <apex:includeScript value="{!$Resource.js4_NetworkGeneric}"/>
+    
+    <style type="text/css">
+        textarea[id*='terminateProviderOtherReasonComments'], label[for*='terminateProviderOtherReasonComments']
+        {
+        display: none;
+        
+        }    
+        
+        .message ul,.messageText
+        {
+        //color:red;
+        }
+        
+        select[multiple='multiple']
+        {
+        height: 40px;
+        }
+        curfield{
+        resize: none;
+        background-color :  #E0E0E0;
+        }
+        
+    .lex_background {
+        background-color: rgb(175, 197, 222);
+        height: -webkit-fill-available;
+        background-image: url(/_slds/images/themes/oneSalesforce/banner-brand-default.png?cache=210.2);
+        background-repeat: repeat-x;
+        background-position: top left;
+    }
+        buttonDiv {
+    padding-left: 115px; /*attempts to indent the button to better align within the standard page layout*/
+}
+    
+
+    .test input {width:10px}
+
+</style>
+   
+    <script>
+    $().ready(  
+        function()
+        {
+            /* PPN-31087 Code Begin */
+            if($("select[id*='terminateProviderReasonList']").val() == "Other"){
+                $("label[for*='terminateProviderOtherReasonComments']").show();
+                $("textarea[id*='terminateProviderOtherReasonComments']").show();
+            }
+            /* PPN-31087 Code End */
+            
+            $("select[id*='terminateProviderReasonList']")
+            .change
+            (
+                function(){
+                    
+                    if($(this).val() == "Other"){   
+                        $("label[for*='terminateProviderOtherReasonComments']").show();
+                        $("textarea[id*='terminateProviderOtherReasonComments']").show();
+                    }
+                    else{
+                        $("label[for*='terminateProviderOtherReasonComments']").hide();    
+                        $("textarea[id*='terminateProviderOtherReasonComments']").hide();
+                        $("textarea[id*='terminateProviderOtherReasonComments']").val('');
+                    }                    
+                }                    
+            );
+            
+            $(".dateOnlyInput input")
+            .click
+            (
+                function(){
+                   
+                    
+                    /*  
+                        When the date field is clicked, set up the year list
+                    */
+                    var curYearValue =  (new Date).getFullYear();
+                    var runValue = (curYearValue + 4);
+                    var backYears = '';
+                    
+                    /*
+                        Remove the Salesforce list of years
+                    */
+                    $("#calYearPicker").empty();
+                    
+                    /*
+                        Create list of select options to go back 100 years from current year value, 
+                        starting with the runValue which is 4 years ahead of the current year value.                        
+                    */
+                    for (var i = 0; i < 105; ++i) {                        
+                        backYears += "<option value=" + (runValue - i) + ">" + (runValue - i) + "</option>";
+                    }                                                                      
+                    
+                    $("#calYearPicker").append(backYears);     
+                    
+                    /*
+                        hack to remove duplicate default values
+                    */
+                    setTimeout(removeDefault, 5);
+                    
+                }
+                
+            );                  
+        }
+         
+        
+    );
+    
+    function removeDefault()
+    {                  
+        var curDefaultValue = parseInt($("#calYearPicker").val());
+        
+        /*  
+            Removes all instances of the current default year value
+            in the year list
+        */
+        $("#calYearPicker")
+        .find("option[value=" + curDefaultValue + "]")
+        .remove();
+        
+        /*  
+            Puts back a single instance of the current default year
+            value in the year list
+        */                            
+        $("#calYearPicker")
+        .find("option[value=" + (curDefaultValue - 1) + "]")
+        .before("<option value=" + (curDefaultValue) + ">" + (curDefaultValue) + "</option>");                            
+        
+        /*  
+            Sets current default value back
+        */                                    
+        $("#calYearPicker").val(curDefaultValue);                                           
+    }   
+    
+    function clickBody()
+    {
+        $("body").click();
+    }    
+    
+    (function () {
+        setTimeout(clickBody, 750);
+        
+    }());     
+    
+    function doneSubmitting() {
+        $("#saveButton").prop('disabled', false);
+        $("#backButton").prop('disabled', false);
+        $("#addNetworkButton").prop('disabled', false);
+        $("[id*='savingGifPanel']").css("display","none"); 
+        
+        return false;
+    }
+    
+    
+    </script> 
+    <apex:includeScript value="/support/console/39.0/integration.js"/>
+    <apex:form id="manualCase" html-novalidate="novalidate" styleClass="lex_background">
+        <apex:actionStatus id="pageStatus">
+            <apex:facet name="start">
+                <apex:outputPanel >
+                    <img src="/img/loading32.gif" width="25" height="25" />
+                    <apex:outputLabel value="Loading..."/>
+                </apex:outputPanel>            
+            </apex:facet>
+        </apex:actionStatus>
+        <apex:sectionHeader subtitle="Manual Case Creation" title="Case Edit"/>
+       <div class="slds-card__header-title slds-truncate" >
+        <apex:pageBlock title="" mode="edit" id="manualCasepageBlk">
+            <apex:pageMessages id="showmsg"/>
+            <apex:pageBlockSection title="Case Information" collapsible="true" >
+                <apex:outputText label="Account Name" value="{!accountName}" />                  
+                <apex:outputText label="Case Owner" value="{!$User.FirstName} {!$User.LastName}"/> 
+                <apex:outputField value="{!caseInfo.Priority}" html-readonly="true"/>
+                <apex:outputText label="Parent Case" value="{!parentCaseId}"  rendered="{!emailToCase}"/>
+                <apex:outputText label="Case Origin" value="{!caseOrigin}"  rendered="{!emailToCase}"/>
+                <apex:selectList label="Case Origin" value="{!accOrigin}" size="1" rendered="{!accountToCase}">
+                    <apex:selectOption itemValue="Phone" itemLabel="Phone"/>
+                    <apex:selectOption itemValue="Email" itemLabel="Email" />
+                    <apex:selectOption itemValue="Voicemail " itemLabel="Voicemail"/>
+                    <apex:selectOption itemValue="Mail" itemLabel="Mail"/>
+                    <apex:selectOption itemValue="In Person " itemLabel="In Person"/>
+                    <apex:selectOption itemValue="Fax" itemLabel="Fax"/>
+                    <apex:selectOption itemValue="Copado" itemLabel="Copado"/>
+                </apex:selectList> 
+                <apex:outputField value="{!caseInfo.Plan_ID__c}" html-readonly="true"/> 
+                <apex:outputField value="{!caseInfo.Status}" html-readonly="true"/> 
+                <apex:outputText label="Selected Case Mode:" value="{!caseMode}" />
+                <apex:outputField value="{!caseInfo.Govt_Programs__c}" html-readonly="true"/> 
+                
+                <apex:pageBlockSectionItem rendered="{!emailToCase == false}" >
+                    <apex:outputLabel value="Corporate Received Date" />
+                    <apex:outputPanel styleClass="requiredInput" layout="block" >
+                        <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                            <apex:inputField value="{!caseInfo.Corporate_Received_Date_Time__c}" />
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                <!-- PPN-39400, Corporate Received Date is read-only when created from Email-to-Case -->
+                <apex:pageBlockSectionItem rendered="{!emailToCase}" >
+                    <apex:outputLabel value="Corporate Received Date" />
+                    <apex:outputField value="{!caseInfo.Corporate_Received_Date_Time__c}" />
+                </apex:pageBlockSectionItem>
+                
+                 <apex:outputPanel id="mypanel_selectAll" style="font-size:12px;position:relative;Left:100px;"  ><br/>
+                 
+                        <apex:pageblockTable value="{!listOfAllPfinsToDisplay}" var="nonbillpfin" style="width:400px;height:90px;">
+                            <apex:column value="{!nonbillpfin}" headerValue="PFIN Numbers"/>
+                        </apex:pageblockTable>
+                        <apex:commandButton value="<" action="{!previousMcc}" rendered="{!mccpageNumber>0}" rerender="mypanel_selectAll"/>
+                        <apex:commandButton value=">" action="{!nextMcc}" rendered="{!listOfAllPfinsToDisplay.size>((mccPageNumber+1)*10)}" rerender="mypanel_selectAll" />
+                        Page Number {!mccpageNumber+1} of {!totalMccPageNumber }
+                  
+              </apex:outputPanel>
+              
+            </apex:pageBlockSection>  
+
+            <apex:pageBlockSection title="Submitter Information" collapsible="true">
+                <apex:inputField value="{!caseInfo.Name_Submitter__c}" Styleclass="slds-form-element__label"/>
+                <apex:inputField value="{!caseInfo.Title_Submitter__c}" Styleclass="slds-form-element__label"/>
+                <apex:inputField value="{!caseInfo.Telephone_Number_Submitter__c}" html-maxlength="14"/>
+                 <apex:inputField value="{!caseInfo.Submitter_Phone_Ext__c}" html-maxlength="5" style="width:10%"/>
+             
+                
+                <apex:inputField value="{!caseInfo.Email_Address_Submitter__c}" rendered="{!accountToCase}" Styleclass="slds-form-element__label"/>
+                <apex:outputField value="{!caseInfo.Email_Address_Submitter__c}"  rendered="{!emailToCase}" Styleclass="slds-form-element__label"/> 
+            </apex:pageBlockSection> 
+            
+            <apex:pageBlockSection title="Provider Information" collapsible="true">
+                <apex:outputField value="{!caseInfo.Name_of_Provider_Group__c}"/>
+                <apex:outputField value="{!caseInfo.Tax_ID_Number__c}"/>
+                <apex:selectList label="Rendering NPI Number" value="{!renderNPI}" size="1" rendered="{!showPersonAcct}">
+                    <apex:selectOptions value="{!npiOptions}"/>
+                </apex:selectList>
+                <apex:selectList label="Billing NPI Number" value="{!billNPI}" size="1" rendered="{!showEntityAcct}">
+                    <apex:selectOptions value="{!npiOptions}"/>
+                </apex:selectList>
+                <apex:selectList label="Billing NPI Type" value="{!billNpiType}" size="1" >
+                    <apex:selectOptions value="{!billTypOption}"/>
+                </apex:selectList>
+            </apex:pageBlockSection>        
+            <apex:pageBlockSection title="Name" rendered="{!IF(CaseMode = 'Change' && nameChgFlg ,true,false)}" collapsible="true">                  
+                <apex:outputField value="{!nameChg.Last_Name_Current__c}" rendered="{!showPersonAcct}"/>
+                <apex:inputField value="{!nameChg.Last_Name_New__c}" rendered="{!showPersonAcct}"/>
+                <apex:outputField value="{!nameChg.Middle_Initial_Current__c}" rendered="{!showPersonAcct}"/>
+                <apex:inputField value="{!nameChg.Middle_Initial_New__c}" html-maxlength="2" rendered="{!showPersonAcct}"/>  
+                <apex:outputField value="{!nameChg.First_Name_Current__c}" rendered="{!showPersonAcct}"/>
+                <apex:inputField value="{!nameChg.First_Name_New__c}" rendered="{!showPersonAcct}"/>
+                <apex:outputField value="{!nameChg.Title_Current__c}" rendered="{!showPersonAcct}"/>
+                <apex:inputField value="{!nameChg.Title_New__c}" rendered="{!showPersonAcct}"/> 
+                <apex:outputField value="{!nameChg.Suffix_Current__c}" rendered="{!showPersonAcct}"/> 
+                <apex:selectList label="Suffix New" value="{!suffixNew}" size="1" rendered="{!showPersonAcct}">
+                    <apex:selectOptions value="{!suffixOption}"/>
+                </apex:selectList>
+                <apex:inputField value="{!nameChg.Current_Practice_Name__c}" rendered="{!showPersonAcct}"/>
+                <apex:inputField value="{!nameChg.New_Practice_Name__c}" rendered="{!showPersonAcct}"/> 
+                <apex:outputField value="{!nameChg.MC_Current_Group_Name__c}" rendered="{!showEntityAcct}"/>
+                <apex:inputField value="{!nameChg.MC_New_Group_Name__c}" rendered="{!showEntityAcct}"/> 
+                <apex:inputField value="{!nameChg.Effective_Date_of_Change_Name__c}"/>
+                <apex:inputField value="{!nameChg.Comments_Name_Change__c}"/>
+            </apex:pageBlockSection>  
+            <apex:pageBlockSection title="NPI/Tax" rendered="{!IF(CaseMode = 'Change' && npiChgFlg ,true,false)}" collapsible="true">
+                <apex:outputField value="{!npiChg.Tax_ID_Num_Current__c}"/>  
+                <apex:inputField value="{!npiChg.New_Tax_ID_Number__c}"/>   
+                <apex:selectList label="Current Billing NPI Number" value="{!billNPI}" size="1">
+                    <apex:selectOptions value="{!npiOptions}"/>
+                </apex:selectList>
+                <apex:inputField value="{!npiChg.New_Billing_NPI_Number__c}" html-maxlength="10"/>
+                <apex:inputField value="{!npiChg.Comments_NPI_Tax__c}"/>
+                <apex:inputField value="{!npiChg.Effective_Date_of_Change_NPI_Tax__c}"/>                                 
+            </apex:pageBlockSection>  
+            <apex:pageBlockSection title="Service Location" rendered="{!IF(CaseMode = 'Add' && phyChgFlg ,true,false)}" columns="2">
+                <apex:inputField value="{!phyAddrChg.Street_Address_Suite_No_Physical_New__c}"/>
+                <apex:inputField value="{!phyAddrChg.Addr_Line_2_Phy_New__c}"/>
+                <apex:inputField value="{!phyAddrChg.City_Physical_New__c}"/>  
+                <apex:inputField value="{!phyAddrChg.State_Physical_New__c}"/>
+                <apex:inputField value="{!phyAddrChg.Zip_Physical_New__c}"/>
+                <apex:inputField value="{!phyAddrChg.Email_Physical_New__c}"/>
+                
+                <!--<apex:inputField value="{!phyAddrChg.Telephone_Physical_New__c}" html-maxlength="14"/>-->
+                <apex:inputField value="{!phyAddrChg.Telephone_Physical_New__c}" html-maxlength="14"/>
+                
+                <apex:inputField value="{!phyAddrChg.Physical_Address_New_Phone_Ext__c}" html-maxlength="5"/>
+                <apex:inputField value="{!phyAddrChg.Primary_Location_Physical__c}"/>  
+                <apex:inputField value="{!phyAddrChg.Fax_Physical_New__c}" html-maxlength="14"/> 
+                              
+                <apex:selectList label="Accepting New Patients" value="{!phyNewPat}" size="1">
+                    <apex:selectOptions value="{!phyActOption}"/>
+                </apex:selectList>
+                <apex:inputField value="{!phyAddrChg.Supervising_Physician__c}"/> 
+                <apex:inputField value="{!phyAddrChg.Open_24__c}"/>
+                <apex:outputLabel />
+                <apex:outputLabel />
+                <apex:inputField value="{!phyAddrChg.Mon_Open__c}"/>
+                <apex:inputField value="{!phyAddrChg.Mon_Close__c}"/>
+                
+                <apex:inputField value="{!phyAddrChg.Tue_Open__c}"/>     
+                <apex:inputField value="{!phyAddrChg.Tue_Close__c}"/> 
+                
+                <apex:inputField value="{!phyAddrChg.Wed_Open__c}"/>
+                <apex:inputField value="{!phyAddrChg.Wed_Close__c}"/>
+                
+                <apex:inputField value="{!phyAddrChg.Thu_Open__c}"/> 
+                <apex:inputField value="{!phyAddrChg.Thu_Close__c}"/> 
+                
+                <apex:inputField value="{!phyAddrChg.Fri_Open__c}"/>
+                <apex:inputField value="{!phyAddrChg.Fri_Close__c}"/>
+                
+                <apex:inputField value="{!phyAddrChg.Sat_Open__c}"/> 
+                <apex:inputField value="{!phyAddrChg.Sat_Close__c}"/> 
+                
+                <apex:inputField value="{!phyAddrChg.Sun_Open__c}"/>   
+                <apex:inputField value="{!phyAddrChg.Sun_Close__c}"/> 
+                
+                
+                <apex:inputField value="{!phyAddrChg.Effective_Date_of_Change_Physical__c}"/> 
+                <apex:inputField value="{!phyAddrChg.Comm_Phy__c}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Service Location" rendered="{!IF(CaseMode = 'Change' && phyChgFlg ,true,false)}" columns="2">
+                <apex:OutputField value="{!phyAddrChg.Street_Address_Suite_No_Physical_current__c}"/>
+                <apex:inputField value="{!phyAddrChg.Street_Address_Suite_No_Physical_New__c}"/>
+                <apex:OutputField value="{!phyAddrChg.Addr_Line_2_Phy_Curr__c}"/>
+                <apex:inputField value="{!phyAddrChg.Addr_Line_2_Phy_New__c}"/>
+                <apex:OutputField value="{!phyAddrChg.City_Physical_Current__c}"/> 
+                <apex:inputField value="{!phyAddrChg.City_Physical_New__c}"/>  
+                <apex:OutputField value="{!phyAddrChg.State_Physical_Current__c}"/>
+                <apex:inputField value="{!phyAddrChg.State_Physical_New__c}"/>
+                <apex:OutputField value="{!phyAddrChg.Zip_Physical_Current__c}"/> 
+                <apex:inputField value="{!phyAddrChg.Zip_Physical_New__c}"/>
+                <apex:OutputField value="{!phyAddrChg.Telephone_Physical_Current__c}"/>
+                <apex:inputField value="{!phyAddrChg.Email_Physical_New__c}"/>
+                <apex:OutputField value="{!phyAddrChg.Email_Physical_Current__c}"/>
+             
+                <!--<apex:inputField value="{!phyAddrChg.Telephone_Physical_New__c}" html-maxlength="14"/>-->
+                
+                <apex:inputField value="{!phyAddrChg.Telephone_Physical_New__c}" html-maxlength="14"/>
+                <apex:OutputField value="{!phyAddrChg.Fax_Physical_Current__c}"/> 
+                <apex:inputField value="{!phyAddrChg.Physical_Address_New_Phone_Ext__c}" html-maxlength="5"/>
+                <apex:inputField value="{!phyAddrChg.Primary_Location_Physical__c}"/>
+                <apex:inputField value="{!phyAddrChg.Fax_Physical_New__c}" html-maxlength="14"/> 
+               
+                <apex:selectList label="Accepting New Patients" value="{!phyNewPat}" size="1">
+                    <apex:selectOptions value="{!phyActOption}"/>
+                </apex:selectList>
+                <apex:inputField value="{!phyAddrChg.Open_24_7_Curr__c}"/> 
+                <apex:inputField value="{!phyAddrChg.Supervising_Physician__c}"/> 
+                <apex:outputLabel />
+                <apex:inputField value="{!phyAddrChg.Open_24__c}"/>
+                <apex:inputTextarea value="{!phyAddrChg.HoursOfOperation__c}" rows="14" cols="58" readonly="true" styleClass="curfield"/> 
+                <apex:outputLabel />
+                <apex:inputField value="{!phyAddrChg.Mon_Open__c}"/>
+                <apex:inputField value="{!phyAddrChg.Mon_Close__c}"/>
+                
+                <apex:inputField value="{!phyAddrChg.Tue_Open__c}"/>                  
+                <apex:inputField value="{!phyAddrChg.Tue_Close__c}"/> 
+                
+                <apex:inputField value="{!phyAddrChg.Wed_Open__c}"/>
+                <apex:inputField value="{!phyAddrChg.Wed_Close__c}"/>
+                
+                <apex:inputField value="{!phyAddrChg.Thu_Open__c}"/> 
+                <apex:inputField value="{!phyAddrChg.Thu_Close__c}"/> 
+                
+                <apex:inputField value="{!phyAddrChg.Fri_Open__c}"/>
+                <apex:inputField value="{!phyAddrChg.Fri_Close__c}"/>
+                
+                <apex:inputField value="{!phyAddrChg.Sat_Open__c}"/> 
+                <apex:inputField value="{!phyAddrChg.Sat_Close__c}"/> 
+                
+                <apex:inputField value="{!phyAddrChg.Sun_Open__c}"/>         
+                <apex:inputField value="{!phyAddrChg.Sun_Close__c}"/> 
+                <apex:inputField value="{!phyAddrChg.Effective_Date_of_Change_Physical__c}"/> 
+                <apex:inputField value="{!phyAddrChg.Comm_Phy__c}"/>
+            </apex:pageBlockSection> 
+            <apex:pageBlockSection title="Service Location" rendered="{!IF(CaseMode = 'Delete' && phyChgFlg ,true,false)}" columns="2">
+                <apex:OutputField value="{!phyAddrChg.Street_Address_Suite_No_Physical_current__c}"/>
+                <apex:OutputField value="{!phyAddrChg.Addr_Line_2_Phy_Curr__c}"/>
+                <apex:OutputField value="{!phyAddrChg.City_Physical_Current__c}"/>
+                <apex:OutputField value="{!phyAddrChg.State_Physical_Current__c}"/>
+                <apex:OutputField value="{!phyAddrChg.Zip_Physical_Current__c}"/>
+                <apex:OutputField value="{!phyAddrChg.Telephone_Physical_Current__c}"/>
+                <apex:OutputField value="{!phyAddrChg.Email_Physical_Current__c}"/>
+                <apex:OutputField value="{!phyAddrChg.Fax_Physical_Current__c}"/>
+                <apex:selectList label="Accepting New Patients" value="{!phyNewPat}" size="1">
+                    <apex:selectOptions value="{!phyActOption}"/>
+                </apex:selectList>
+                <apex:OutputField value="{!phyAddrChg.Supervising_Physician__c}"/> 
+                <apex:inputField value="{!phyAddrChg.Open_24_7_Curr__c}"/>
+                <apex:inputTextarea value="{!phyAddrChg.HoursOfOperation__c}" rows="14" cols="58" readonly="true" styleClass="curfield"/> 
+                <apex:inputField value="{!phyAddrChg.Comm_Phy__c}"/>
+                <apex:inputField value="{!phyAddrChg.Effective_Date_of_Change_Physical__c}"/> 
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Billing Address" columns="2" rendered="{!IF(CaseMode = 'Add' && billChgFlg ,true,false)}" collapsible="true">
+                <apex:inputField value="{!billAddrChg.Street_Address_Suite_No_Billing_new__c}"/>
+                <apex:inputField value="{!billAddrChg.Addr_Line_2_Bill_New__c}"/>
+                <apex:inputField value="{!billAddrChg.City_Billing_New__c}"/>
+                <apex:inputField value="{!billAddrChg.State_Billing_New__c}"/>
+                <apex:inputField value="{!billAddrChg.Zip_Billing_New__c}"/>
+                <apex:inputField value="{!billAddrChg.Email_Billing_New__c}"/>
+                
+                <!--<apex:inputField value="{!billAddrChg.Telephone_Billing_New__c}" html-maxlength="14"/>-->
+
+                <apex:inputField value="{!billAddrChg.Telephone_Billing_New__c}" html-maxlength="14"/>
+                
+                <apex:inputField value="{!billAddrChg.Billing_Address_New_Phone_Ext__c}" html-maxlength="5"/>
+
+             
+                <apex:inputField value="{!billAddrChg.Fax_Billing_New__c}" html-maxlength="14"/> 
+                <apex:inputField value="{!billAddrChg.Effective_Date_of_Change_Billing__c}"/>
+                <apex:inputField value="{!billAddrChg.Comments_Billing__c}"/>
+            </apex:pageBlockSection>            
+            <apex:pageBlockSection title="Billing Address" columns="2" rendered="{!IF(CaseMode = 'Change' && billChgFlg ,true,false)}" collapsible="true">
+                <apex:outputField value="{!billAddrChg.Street_Address_Suite_No_Billing_Current__c}"/>
+                <apex:inputField value="{!billAddrChg.Street_Address_Suite_No_Billing_new__c}"/>
+                <apex:outputField value="{!billAddrChg.Addr_Line_2_Bill_Curr__c}"/>
+                <apex:inputField value="{!billAddrChg.Addr_Line_2_Bill_New__c}"/>
+                <apex:outputField value="{!billAddrChg.City_Billing_Current__c}"/> 
+                <apex:inputField value="{!billAddrChg.City_Billing_New__c}"/>
+                <apex:outputField value="{!billAddrChg.State_Billing_Current__c}"/>
+                <apex:inputField value="{!billAddrChg.State_Billing_New__c}"/>
+                <apex:outputField value="{!billAddrChg.Zip_Billing_Current__c}"/> 
+                <apex:inputField value="{!billAddrChg.Zip_Billing_New__c}"/>
+                <apex:outputField value="{!billAddrChg.Telephone_Billing_Current__c}"/>
+                <apex:inputField value="{!billAddrChg.Email_Billing_New__c}"/> 
+                <apex:outputField value="{!billAddrChg.Email_Billing_Current__c}"/> 
+                
+                <!--<apex:inputField value="{!billAddrChg.Telephone_Billing_New__c}" html-maxlength="14"/>-->
+                
+                <apex:inputField value="{!billAddrChg.Telephone_Billing_New__c}" html-maxlength="14"/>
+                 <apex:outputField value="{!billAddrChg.Fax_Billing_Current__c}"/> 
+                <apex:inputField value="{!billAddrChg.Billing_Address_New_Phone_Ext__c}" html-maxlength="5"/>
+
+                <apex:inputField value="{!billAddrChg.Effective_Date_of_Change_Billing__c}"/>
+                <apex:inputField value="{!billAddrChg.Fax_Billing_New__c}" html-maxlength="14"/> 
+                <apex:inputField value="{!billAddrChg.Comments_Billing__c}"/>
+            </apex:pageBlockSection> 
+            <apex:pageBlockSection title="Billing Address" columns="2" rendered="{!IF(CaseMode = 'Delete' && billChgFlg ,true,false)}" collapsible="true">
+                <apex:outputField value="{!billAddrChg.Street_Address_Suite_No_Billing_Current__c}"/>
+                <apex:outputField value="{!billAddrChg.Addr_Line_2_Bill_Curr__c}"/>
+                <apex:outputField value="{!billAddrChg.City_Billing_Current__c}"/> 
+                <apex:outputField value="{!billAddrChg.State_Billing_Current__c}"/>
+                <apex:outputField value="{!billAddrChg.Zip_Billing_Current__c}"/> 
+                <apex:outputField value="{!billAddrChg.Telephone_Billing_Current__c}"/>
+                <apex:outputField value="{!billAddrChg.Email_Billing_Current__c}"/> 
+                <apex:outputField value="{!billAddrChg.Fax_Billing_Current__c}"/> 
+                <apex:inputField value="{!billAddrChg.Comments_Billing__c}"/>
+                <apex:inputField value="{!billAddrChg.Effective_Date_of_Change_Billing__c}"/>
+                
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Administrative Address" columns="2" rendered="{!IF(CaseMode = 'Add' && admChgFlg ,true,false)}" collapsible="true">
+                <apex:inputField value="{!admAddrChg.Street_Address_Administrative_New__c}"/> 
+                <apex:inputField value="{!admAddrChg.Addr_Line_2_Admin_New__c}"/>
+                <apex:inputField value="{!admAddrChg.City_Administrative_New__c}"/>  
+                <apex:inputField value="{!admAddrChg.State_Administrative_New__c}"/>
+                <apex:inputField value="{!admAddrChg.Zip_Administrative_New__c}"/>
+                <apex:inputField value="{!admAddrChg.Email_Administrative_New__c}"/>
+                <!--<apex:inputField value="{!admAddrChg.Telephone_Administrative_New__c}" html-maxlength="14"/>-->
+                
+                <apex:inputField value="{!admAddrChg.Telephone_Administrative_New__c}" html-maxlength="14"/>
+                
+                <apex:inputField value="{!admAddrChg.Administrative_Change_New_Phone_Ext__c}" html-maxlength="5"/>
+
+                <apex:inputField value="{!admAddrChg.Fax_Administrative_New__c}" html-maxlength="14"/> 
+                <apex:inputField value="{!admAddrChg.Admin_Cont_Name__c}"/> 
+                <apex:inputField value="{!admAddrChg.Effective_Date_of_Change_Administrative__c}"/>
+                <apex:inputField value="{!admAddrChg.Comments_Administrative__c}"/>
+            </apex:pageBlockSection>       
+            
+            <apex:pageBlockSection title="Administrative Address" columns="2" rendered="{!IF(CaseMode = 'Change' && admChgFlg ,true,false)}" collapsible="true">
+                <apex:outputField value="{!admAddrChg.Street_Address_Administrative_Current__c}"/>
+                <apex:inputField value="{!admAddrChg.Street_Address_Administrative_New__c}"/> 
+                <apex:outputField value="{!admAddrChg.Addr_Line_2_Admin_Curr__c}"/>
+                <apex:inputField value="{!admAddrChg.Addr_Line_2_Admin_New__c}"/>
+                <apex:outputField value="{!admAddrChg.City_Administrative_Current__c}"/>
+                <apex:inputField value="{!admAddrChg.City_Administrative_New__c}"/>  
+                <apex:outputField value="{!admAddrChg.State_Administrative_Current__c}"/>
+                <apex:inputField value="{!admAddrChg.State_Administrative_New__c}"/>
+                <apex:outputField value="{!admAddrChg.Zip_Administrative_Current__c}"/>
+                <apex:inputField value="{!admAddrChg.Zip_Administrative_New__c}"/>
+                <apex:outputField value="{!admAddrChg.Telephone_Administrative_Current__c}"/>
+                <apex:inputField value="{!admAddrChg.Email_Administrative_New__c}"/>
+                <apex:outputField value="{!admAddrChg.Email_Administrative_Current__c}"/>
+                
+                <!--<apex:inputField value="{!admAddrChg.Telephone_Administrative_New__c}" html-maxlength="14"/> -->
+
+                <apex:inputField value="{!admAddrChg.Telephone_Administrative_New__c}" html-maxlength="14"/>
+                <apex:outputField value="{!admAddrChg.Fax_Administrative_Current__c}"/> 
+                <apex:inputField value="{!admAddrChg.Administrative_Change_New_Phone_Ext__c}" html-maxlength="5"/>
+                
+                <apex:inputField value="{!admAddrChg.Admin_Cont_Name__c}"/> 
+                <apex:inputField value="{!admAddrChg.Fax_Administrative_New__c}" html-maxlength="14"/> 
+                
+                <apex:inputField value="{!admAddrChg.Effective_Date_of_Change_Administrative__c}"/>
+                <apex:inputField value="{!admAddrChg.Comments_Administrative__c}"/>
+            </apex:pageBlockSection> 
+            <apex:pageBlockSection title="Administrative Address" columns="2" rendered="{!IF(CaseMode = 'Delete' && admChgFlg ,true,false)}" collapsible="true">
+                <apex:outputField value="{!admAddrChg.Street_Address_Administrative_Current__c}"/>
+                <apex:outputField value="{!admAddrChg.Addr_Line_2_Admin_Curr__c}"/>
+                <apex:outputField value="{!admAddrChg.City_Administrative_Current__c}"/>
+                <apex:outputField value="{!admAddrChg.State_Administrative_Current__c}"/>
+                <apex:outputField value="{!admAddrChg.Zip_Administrative_Current__c}"/>
+                <apex:outputField value="{!admAddrChg.Telephone_Administrative_Current__c}"/>
+                <apex:outputField value="{!admAddrChg.Email_Administrative_Current__c}"/>
+                <apex:outputField value="{!admAddrChg.Fax_Administrative_Current__c}"/> 
+                <apex:outputField value="{!admAddrChg.Admin_Cont_Name__c}"/>                 
+                <apex:inputField value="{!admAddrChg.Effective_Date_of_Change_Administrative__c}"/>
+                <apex:inputField value="{!admAddrChg.Comments_Administrative__c}"/>
+            </apex:pageBlockSection> 
+            
+            <apex:pageBlockSection title="Credentialing Address" columns="2" rendered="{!IF(CaseMode = 'Add' && crdChgFlg ,true,false)}" collapsible="true">
+                <apex:inputField value="{!crdAddrChg.Street_Address_Suite_Credential_New__c}"/> 
+                <apex:inputField value="{!crdAddrChg.Addr_Line_2_Cred_New__c}"/>
+                <apex:inputField value="{!crdAddrChg.City_Credential_New__c}"/> 
+                <apex:inputField value="{!crdAddrChg.State_Credential_New__c}"/> 
+                <apex:inputField value="{!crdAddrChg.Zip_Credential_New__c}"/> 
+                <apex:inputField value="{!crdAddrChg.Email_Credential_New__c}"/> 
+                <!--<apex:inputField value="{!crdAddrChg.Telephone_Credential_New__c}" html-maxlength="14"/>-->
+                
+                <apex:inputField value="{!crdAddrChg.Telephone_Credential_New__c}" html-maxlength="14"/>
+                
+                <apex:inputField value="{!crdAddrChg.Credentialing_Change_New_Phone_Ext__c}" html-maxlength="5"/>
+
+                <apex:inputField value="{!crdAddrChg.Fax_Credential_New__c}" html-maxlength="14"/> 
+                <apex:inputField value="{!crdAddrChg.Cred_Cont_Name__c}"/> 
+                <apex:inputField value="{!crdAddrChg.Effective_Date_of_Change_Credential__c}"/>
+                <apex:inputField value="{!crdAddrChg.Comments_Credential__c}"/>
+            </apex:pageBlockSection> 
+            
+            <apex:pageBlockSection title="Credentialing Address" columns="2" rendered="{!IF(CaseMode = 'Change' && crdChgFlg ,true,false)}" collapsible="true">
+                <apex:outputField value="{!crdAddrChg.Street_Address_Suite_Credential_Current__c}"/>
+                <apex:inputField value="{!crdAddrChg.Street_Address_Suite_Credential_New__c}"/> 
+                <apex:outputField value="{!crdAddrChg.Addr_Line_2_Cred_Curr__c}"/>
+                <apex:inputField value="{!crdAddrChg.Addr_Line_2_Cred_New__c}"/>
+                <apex:outputField value="{!crdAddrChg.City_Credential_Current__c}"/>
+                <apex:inputField value="{!crdAddrChg.City_Credential_New__c}"/> 
+                <apex:outputField value="{!crdAddrChg.State_Credential_Current__c}"/>
+                <apex:inputField value="{!crdAddrChg.State_Credential_New__c}"/> 
+                <apex:outputField value="{!crdAddrChg.Zip_Credential_Current__c}"/>
+                <apex:inputField value="{!crdAddrChg.Zip_Credential_New__c}"/> 
+                <apex:outputField value="{!crdAddrChg.Telephone_Credential_Current__c}"/>
+                <apex:outputField value="{!crdAddrChg.Email_Credential_Current__c}"/>
+                <apex:inputField value="{!crdAddrChg.Email_Credential_New__c}"/> 
+                <!--<apex:inputField value="{!crdAddrChg.Telephone_Credential_New__c}" html-maxlength="14"/>-->
+
+                <apex:inputField value="{!crdAddrChg.Telephone_Credential_New__c}" html-maxlength="14"/>
+                
+                <apex:inputField value="{!crdAddrChg.Credentialing_Change_New_Phone_Ext__c}" html-maxlength="5"/>
+                
+                <apex:outputField value="{!crdAddrChg.Fax_Credential_Current__c}" /> 
+                <apex:inputField value="{!crdAddrChg.Fax_Credential_New__c}" html-maxlength="14"/> 
+                <apex:inputField value="{!crdAddrChg.Cred_Cont_Name__c}"/> 
+                <apex:inputField value="{!crdAddrChg.Effective_Date_of_Change_Credential__c}"/>
+                <apex:inputField value="{!crdAddrChg.Comments_Credential__c}"/>
+            </apex:pageBlockSection> 
+            
+            <apex:pageBlockSection title="Credentialing Address" columns="2" rendered="{!IF(CaseMode = 'Delete' && crdChgFlg ,true,false)}" collapsible="true">
+                <apex:outputField value="{!crdAddrChg.Street_Address_Suite_Credential_Current__c}" />
+                <apex:outputField value="{!crdAddrChg.Addr_Line_2_Cred_Curr__c}"/>
+                <apex:outputField value="{!crdAddrChg.City_Credential_Current__c}"/>
+                <apex:outputField value="{!crdAddrChg.State_Credential_Current__c}"/>
+                <apex:outputField value="{!crdAddrChg.Zip_Credential_Current__c}"/>
+                <apex:outputField value="{!crdAddrChg.Telephone_Credential_Current__c}"/>
+                <apex:outputField value="{!crdAddrChg.Email_Credential_Current__c}"/>
+                <apex:outputField value="{!crdAddrChg.Fax_Credential_Current__c}" /> 
+                <apex:outputField value="{!crdAddrChg.Cred_Cont_Name__c}"/>                
+                <apex:inputField value="{!crdAddrChg.Effective_Date_of_Change_Credential__c}"/>
+                <apex:inputField value="{!crdAddrChg.Comments_Credential__c}"/>
+            </apex:pageBlockSection> 
+            
+            <apex:pageBlockSection title="Remove Provider from Group/Location" columns="2" rendered="{!IF(CaseMode = 'Delete' && removeProvFlg ,true,false)}" collapsible="true">
+                <apex:inputField value="{!removeProv.Individual_Provider_Name__c}"/> 
+                <apex:inputField value="{!removeProv.Remove_From_All_Locations__c}"/>
+                <apex:inputField value="{!removeProv.Individual_s_Type_1_NPI__c}"/>
+                <apex:selectList label="Reason For Leaving Group Location" value="{!reasonLvlGrp}" size="1">
+                    <apex:selectOptions value="{!reasonOption}"/>
+                </apex:selectList>
+                <apex:inputField value="{!removeProv.Other_ID_Eg_Medicaid_API_LTSS_TPI__c}"/> 
+                <apex:inputField value="{!removeProv.Effective_Date_Of_Termination__c}"/>
+                <apex:outputLabel />
+                <apex:inputField value="{!removeProv.Add_Another_Location_For_Removal__c}"/>    
+                <apex:inputField value="{!removeProv.Addr_Line_1_Remove_Provider__c}"/>
+                <apex:inputField value="{!removeProv.X2nd_Addr_Line_1_Remove_Provider__c}"/> 
+                <apex:inputField value="{!removeProv.Addr_Line_2_Remove_Provider__c}"/>      
+                <apex:inputField value="{!removeProv.X2nd_Addr_Line_2_Remove_Provider__c}"/>
+                <apex:inputField value="{!removeProv.City_Remove_Provider__c}"/>
+                <apex:inputField value="{!removeProv.X2nd_City_Remove_Provider__c}"/>
+                <apex:inputField value="{!removeProv.State_Remove_Provider__c}"/>
+                <apex:inputField value="{!removeProv.X2nd_State_Remove_Provider__c}"/>
+                <apex:inputField value="{!removeProv.Zip_Remove_Provider__c}"/>  
+                <apex:inputField value="{!removeProv.X2nd_Zip_Remove_Provider__c}"/>
+                <apex:selectList label="Reason For Leaving Group Location 1" value="{!reasonLvlGrp1}" size="1">
+                    <apex:selectOptions value="{!reasonOption}"/>
+                </apex:selectList>
+                <apex:selectList label="Reason For Leaving Group Location 2" value="{!reasonLvlGrp2}" size="1">
+                    <apex:selectOptions value="{!reasonOption}"/>
+                </apex:selectList>
+                <apex:inputField value="{!removeProv.Effective_Date_Of_Termination_1__c}"/> 
+                <apex:inputField value="{!removeProv.Effective_Date_Of_Termination_2__c}"/>
+                <apex:inputField value="{!removeProv.Attestation__c}"/>
+                <apex:inputField value="{!removeProv.Comments_Remove_Provider__c}"/> 
+            </apex:pageBlockSection> 
+            <apex:pageBlockSection title="Add Provider To Group/Location" columns="2" rendered="{!IF(CaseMode = 'Add' && addProvFlg ,true,false)}" collapsible="true">
+                <apex:inputField value="{!addProv.Group_Name__c}"/>
+                <apex:inputField value="{!addProv.Group_Tax_ID__c}"/>
+                <apex:inputField value="{!addProv.Group_Provider_Type_Specialty__c}"/>
+                <apex:inputField value="{!addProv.License_Number__c}"/>
+                <apex:selectList label="Gender" value="{!gender}" size="1">
+                    <apex:selectOptions value="{!genderOption}"/>
+                </apex:selectList>
+                <apex:inputField value="{!addProv.CAQH_Number__c}"/>
+                <apex:inputField value="{!addProv.Other_Provider_Number__c}"/>
+                <apex:inputField value="{!addProv.Add_Provider_Supervising_Physician__c}"/>
+                <apex:inputField value="{!addProv.Networks__c}"/>
+                <apex:inputField value="{!addProv.Add_Provider_Accepting_New_Patients__c}"/>
+                <apex:inputField value="{!addProv.Provider_s_Name__c}"/>
+                <apex:inputField value="{!addProv.Group_NPI__c}"/>
+                <apex:inputField value="{!addProv.Group_PFIN__c}"/>
+                <apex:inputField value="{!addProv.Individual_NPI__c}"/>
+                <apex:inputField value="{!addProv.Add_Provider_Date_Of_Birth__c}"/>
+                <apex:inputField value="{!addProv.Indivudual_Type_Speciality__c}"/>
+                <apex:inputField value="{!addProv.Comp_Grid_Code_If_applicable__c}"/>
+                <apex:inputField value="{!addProv.Designation_Code_If_applicable__c}"/>
+                <apex:inputField value="{!addProv.Supervising_Physician_License__c}"/>
+                <apex:inputField value="{!addProv.Effective_Date__c}"/>
+                <apex:inputField value="{!addProv.Hospital_Affilitation__c}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="ADA Requirement" columns="2" rendered="{!IF(CaseMode = 'Add' && addProvFlg ,true,false)}" collapsible="true">
+                <apex:inputField value="{!addProv.Site_Acce__c}"/>
+                <apex:inputField value="{!addProv.Office_Reception_Area__c}"/>
+                <apex:inputField value="{!addProv.Exam_Room__c}"/>
+                <apex:inputField value="{!addProv.Exterior__c}"/>
+                <apex:inputField value="{!addProv.Scale__c}"/>
+                <apex:inputField value="{!addProv.Interior_Building__c}"/>
+                <apex:inputField value="{!addProv.Parking_Accessbility__c}"/>
+                <apex:inputField value="{!addProv.Restroom__c}"/>
+                <apex:inputField value="{!addProv.Exam_Table__c}"/>
+                <apex:inputField value="{!addProv.Close_Proximity_to_Public_Transportation__c}"/>
+            </apex:pageBlockSection> 
+            <apex:pageBlockSection title="Service Location/Telephone/Fax/Email/Hours of Operation" columns="2" rendered="{!IF(CaseMode = 'Add' && addProvFlg ,true,false)}" collapsible="true">
+                <apex:inputField value="{!addProv.New_Addr_Line_1_add_prov_Phy__c}"/>
+                <apex:inputField value="{!addProv.New_Addr_Line_2_add_prov_Phy__c}"/>
+                <apex:inputField value="{!addProv.New_City_add_prov_Phy__c}"/>
+                <apex:inputField value="{!addProv.New_State_add_prov_Phy__c}"/>
+                <apex:inputField value="{!addProv.New_Zip_add_prov_Phy__c}"/>
+                <apex:inputField value="{!addProv.New_Email_add_prov_Phy__c}"/>
+                <!--<apex:inputField value="{!addProv.New_Phone_add_prov_Phy__c}"/>-->
+                
+                <apex:inputField value="{!addProv.New_Phone_add_prov_Phy__c}" html-maxlength="14"/>
+                
+                <apex:inputField value="{!addProv.Physical_Address_Current_Phone_Ext__c}" html-maxlength="5"/>
+
+                <apex:inputField value="{!addProv.New_Fax_add_prov_Phy__c}"/>
+                <apex:inputField value="{!addProv.Accepting_New_Patients_add_prov_Phy__c}"/>               
+                <apex:inputField value="{!addProv.Primary_Location_add_prov_Phy__c}"/>
+                <apex:inputField value="{!addProv.Open_24__c}"/>
+                <apex:outputLabel />
+                <apex:inputField value="{!addProv.Efft_Date_Physical_add_prov_Phy__c}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Billing Address/Telephone/Fax/Email" columns="2" rendered="{!IF(CaseMode = 'Add' && addProvFlg ,true,false)}" collapsible="true">
+                <apex:inputField value="{!addProv.New_Addr_Line_1_add_prov_Bill__c}"/>
+                <apex:inputField value="{!addProv.New_Addr_Line_2_add_prov_Bill__c}"/>
+                <apex:inputField value="{!addProv.New_City_add_prov_Bill__c}"/>
+                <apex:inputField value="{!addProv.New_State_add_prov_Bill__c}"/>
+                <apex:inputField value="{!addProv.New_Zip_add_prov_Bill__c}"/>
+                <apex:inputField value="{!addProv.New_Email_add_prov_Bill__c}"/>
+                <!--<apex:inputField value="{!addProv.New_Phone_add_prov_Bill__c}"/>-->
+
+                <apex:inputField value="{!addProv.New_Phone_add_prov_Bill__c}" html-maxlength="14"/>
+                
+                <apex:inputField value="{!addProv.Billing_Address_Current_Phone_Ext__c}" html-maxlength="5"/>
+                               
+                <apex:inputField value="{!addProv.New_Fax_add_prov_Bill__c}"/>
+                <apex:inputField value="{!addProv.Efft_Date_add_prov_Bill__c}"/>
+                <apex:inputField value="{!addProv.Comments_add_prov_Bill__c}"/>
+            </apex:pageBlockSection>  
+            <apex:pageBlockSection title="Specialty Updates" columns="2" rendered="{!IF(CaseMode == 'Add' && specialtyFlg ,true,false)}" collapsible="true">
+                <apex:inputField value="{!otherProv.Specialty_OP_New__c}"/>
+                <apex:inputField value="{!otherProv.Sub_Specialty_OP_New__c}"/>
+                <apex:inputField value="{!otherProv.Specialty_E_Date_OP_New__c}"/>
+                <apex:inputField value="{!otherProv.Specialty_Cert_Date_OP_New__c}"/>
+                <apex:inputField value="{!otherProv.Other_Supervising_Physician__c}"/>
+                <!--<apex:inputField value="{!otherProv.Specialty_End_Date__c}"/> -->          
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Specialty Updates" columns="2" rendered="{!IF(CaseMode == 'Change' && specialtyFlg ,true,false)}" collapsible="true">
+                <apex:inputField value="{!otherProv.Specialty__c}"/>
+                <apex:inputField value="{!otherProv.Specialty_OP_New__c}"/>
+                <apex:inputField value="{!otherProv.Sub_Speciality__c}"/>
+                <apex:inputField value="{!otherProv.Sub_Specialty_OP_New__c}"/>
+                <apex:inputField value="{!otherProv.Specialty_Effective_Date__c}"/>
+                <apex:inputField value="{!otherProv.Specialty_E_Date_OP_New__c}"/>
+                <apex:inputField value="{!otherProv.Specialty_Certification_Date__c}"/> 
+                <apex:inputField value="{!otherProv.Specialty_Cert_Date_OP_New__c}"/>
+                <apex:inputField value="{!otherProv.Provider_Type_Specialty__c}"/>       
+                <apex:inputField value="{!otherProv.Supervising_Physician__c }"/>               
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Privileges Updates" columns="2" rendered="{!IF(CaseMode == 'Change' && privilegesFlg ,true,false)}" collapsible="true">
+                <apex:inputField value="{!otherProv.Ambulatory_Surgery_Center_Privileges_li__c }"/>
+                <apex:inputField label="Ambulatory Surgery Center Privileges (New)" value="{!otherProv.Ambulatory_Surg_Cnt_OP_New__c }"/> 
+                <apex:inputField value="{!otherProv.Hospital_Privileges_list_all__c }"/>
+                <apex:inputField value="{!otherProv.Hospital_Privileges_OP_New__c }"/> 
+                <apex:inputField value="{!otherProv.Room_Rate_Type__c }"/>
+                <apex:inputField value="{!otherProv.Room_Rate_Amount__c }"/> 
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Provider ID's Updates" columns="2" rendered="{!IF(CaseMode = 'Change' && providerIDsFlg ,true,false)}" collapsible="true">
+                <apex:inputField value="{!otherProv.DEA__c}"/>
+                <apex:inputField value="{!otherProv.DEA_Expiration_Date__c}"/>
+                <apex:inputField value="{!otherProv.License_OP_Current__c}"/> 
+                <apex:inputField value="{!otherProv.License_OP_New__c}"/>
+                <apex:inputField value="{!otherProv.Medicaid_Number__c}"/> 
+                <apex:inputField value="{!otherProv.Medicare_Number__c}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Other Updates" columns="2" rendered="{!IF(CaseMode = 'Change' && othersFlg ,true,false)}" collapsible="true">
+                <apex:inputField value="{!otherProv.Board_Certified__c}"/>
+                <apex:inputField value="{!otherProv.Board_Certified_OP_New__c}"/> 
+                <apex:inputField value="{!otherProv.Board_Certification_Expiration_Year__c}"/>
+                <apex:inputField value="{!otherProv.Languages_Spoken_or_Written__c}"/> 
+                <apex:inputField value="{!otherProv.Date_of_Birth__c}"/>
+                <apex:inputField value="{!otherProv.Ethnicity__c}"/> 
+                <apex:inputField value="{!otherProv.Year_of_Graduation__c}"/> 
+                <apex:inputField value="{!otherProv.Residency_Hospital_Name__c}"/>
+                <apex:inputField value="{!otherProv.From__c}"/>       
+                <apex:inputField value="{!otherProv.To__c}"/>
+                <apex:inputField value="{!otherProv.BackUp__c}"/>       
+                <apex:inputField value="{!otherProv.Medical_School_Name__c}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="2" rendered="{!IF(othersFlg || specialtyFlg || privilegesFlg || providerIDsFlg,true,false)}" collapsible="true">
+                <apex:inputField value="{!otherProv.Comments_Other_Provider__c}"/>       
+                <apex:inputField value="{!otherProv.Effective_Date_of_Change_OP__c}"/>
+            </apex:pageBlockSection> 
+            <apex:outputPanel id="addNetworkPanel" layout="block" rendered="{!IF(CaseMode = 'Add' && addNwkChgFlg ,true,false)}">
+                <c:NetworkFeatureContainer headerLabel="Add Network" networkLabel="Available Networks" buttonLabel="Add Network" networkList="{!AllExceptNetworksByPFINList}" id="addN"/>           
+            </apex:outputPanel>
+                     
+            <apex:outputPanel id="changeNetworkPanel" layout="block" rendered="{!IF(CaseMode = 'Change' && reinPrvChgFlg ,true,false)}">
+                <c:NetworkFeatureContainer headerLabel="Reinstate PFIN" networkLabel="Available Networks" buttonLabel="Add Network" networkList="{!AllExceptNetworksByPFINList}" id="cp"/>      
+            </apex:outputPanel>          
+          
+            <apex:outputPanel id="deleteNetworkPanel" layout="block" rendered="{!IF(CaseMode = 'Delete' && rmNwrkChgFlg ,true,false)}">
+                <c:NetworkFeatureContainer headerLabel="Remove Network" networkLabel="Active Networks" buttonLabel="Add" networkList="{!AllExceptNetworksByPFINList}" id="an"/>      
+            </apex:outputPanel>              
+            
+            
+            
+            <apex:pageBlockSection title="Terminate PFIN" columns="2" rendered="{!IF(CaseMode = 'Delete' && termPrvChgFlg ,true,false)}" collapsible="true">   
+                <apex:inputField value="{!networkChg.Term_PFIN_Num__c}"/> 
+                <apex:selectList label="Term Reason" size="1" id="terminateProviderReasonList" value="{!termReason}">
+                    <apex:selectOptions value="{!TermProviderReasonsOptions}"/>
+                </apex:selectList>   
+                <apex:inputField value="{!networkChg.Termin_Nwk_Eff_Date__c}"/>   
+                <apex:inputField value="{!networkChg.Terminate_Prov_Reason_Com__c}" id="terminateProviderOtherReasonComments"/> 
+                
+            </apex:pageBlockSection> 
+            
+            <apex:pageBlockSection title="Benefits" columns="2" rendered="{!IF(CaseMode = 'Change' && benfChgFlg ,true,false)}" collapsible="true">
+                <apex:inputField value="{!statusCheck.CS_Benefits__c}" />
+                <apex:inputField value="{!statusCheck.CS_Benefits_Comments__c}" id="benfitId"/> 
+                <br/><apex:message for="benfitId"/>
+            </apex:pageBlockSection>     
+            <apex:pageBlockSection title="Case Status" columns="2" rendered="{!IF(CaseMode = 'Change' && caseCheckChgFlg ,true,false)}" collapsible="true">  
+                <apex:inputField value="{!statusCheck.CS_Case_Status_Check__c}"  /> 
+                <apex:inputField value="{!statusCheck.CS_Case_Status_Check_Comments__c}"/>  
+            </apex:pageBlockSection>      
+            <apex:pageBlockSection title="Claims" columns="2" rendered="{!claimCheckChgFlg}" collapsible="true">    
+                <apex:inputField value="{!statusCheck.CS_Claims__c}"  /> 
+                <apex:inputField value="{!statusCheck.CS_Claims_Comments__c}"/>
+            </apex:pageBlockSection>       
+            <apex:pageBlockSection title="Contracting" columns="2" rendered="{!IF(CaseMode = 'Change' && contractCheckFlg ,true,false)}" collapsible="true">    
+                <apex:inputField value="{!statusCheck.CS_Contracting__c}"/>
+                <apex:inputField value="{!statusCheck.CS_Contracting_Comments__c}"/>
+            </apex:pageBlockSection>        
+            <apex:pageBlockSection title="Credentialing" columns="2" rendered="{!IF(CaseMode = 'Change' && credCheckChgFlg ,true,false)}" collapsible="true">    
+                <apex:inputField value="{!statusCheck.CS_Credentialing_Status_Check__c}"/>               
+                <apex:inputField value="{!statusCheck.CS_Credentialing_Status_Check_Comments__c}"/>
+            </apex:pageBlockSection>       
+            <apex:pageBlockSection title="Complaints" columns="2" rendered="{!IF(CaseMode = 'Change' && compCheckFlg ,true,false)}" collapsible="true">    
+                <apex:inputField value="{!statusCheck.CS_Complaints__c}"/>
+                <apex:inputField value="{!statusCheck.CS_Complaints_Comments__c}"/>  
+            </apex:pageBlockSection>       
+            <apex:pageBlockSection title="Ecommerce" columns="2" rendered="{!IF(CaseMode = 'Change' && statusCheckFlg ,true,false)}" collapsible="true">    
+                <apex:inputField value="{!statusCheck.CS_Ecommerce__c}"/> 
+                <apex:inputField value="{!statusCheck.CS_Ecommerce_Comments__c}"/>
+            </apex:pageBlockSection>  
+            <apex:pageBlockSection title="EFT" columns="2" rendered="{!IF(CaseMode = 'Change' && eftCheckFlg ,true,false)}" collapsible="true">    
+                <apex:inputField value="{!statusCheck.CS_EFT__c}"/> 
+                <apex:inputField value="{!statusCheck.CS_EFT_Comments__c}"/>
+            </apex:pageBlockSection>              
+            <apex:pageBlockSection title="Network Status" columns="2" rendered="{!IF(CaseMode = 'Change' && netwrkCheckFlg ,true,false)}" collapsible="true">   
+                <apex:inputField value="{!statusCheck.CS_Network_Status_Check__c}"/>
+                <apex:inputField value="{!statusCheck.CS_Network_Status_Check_Comments__c}"/>
+            </apex:pageBlockSection>        
+            <apex:pageBlockSection title="Paper Payment" columns="2" rendered="{!IF(CaseMode = 'Change' && paperCheckFlg ,true,false)}" collapsible="true">    
+                <apex:inputField value="{!statusCheck.CS_Paper_Payment_Status_Check__c}"/>    
+                <apex:inputField value="{!statusCheck.CS_Paper_Payment_Status_Check_Comments__c}"/>  
+            </apex:pageBlockSection>      
+            <apex:pageBlockSection title="Pre-Authorization" columns="2" rendered="{!IF(CaseMode = 'Change' && preAuthCheckFlg ,true,false)}" collapsible="true">   
+                <apex:inputField value="{!statusCheck.CS_Pre_authorization_Check__c}" />    
+                <apex:inputField value="{!statusCheck.CS_Pre_authorization_Check_Comments__c}"/> 
+            </apex:pageBlockSection>        
+            <apex:pageBlockSection title="Pre-Determination" columns="2" rendered="{!IF(CaseMode = 'Change' && preDeterCheckFlg ,true,false)}" collapsible="true">     
+                <apex:inputField value="{!statusCheck.CS_Pre_determination_Check__c}"/>    
+                <apex:inputField value="{!statusCheck.CS_Pre_determination_Check_Comments__c}"/> 
+            </apex:pageBlockSection>        
+            <apex:pageBlockSection title="Retroactive Claim" columns="2" rendered="{!IF(CaseMode = 'Change' && retroCheckFlg ,true,false)}" collapsible="true">   
+                <apex:inputField value="{!statusCheck.CS_Retroactive_Claim_Check__c}"/>    
+                <apex:inputField value="{!statusCheck.CS_Retroactive_Claim_Check_Comments__c}"/> 
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Fee Schedule" columns="2" rendered="{!IF(CaseMode = 'Change' && feeScheduleFlg ,true,false)}" collapsible="true">   
+                <apex:inputField value="{!statusCheck.CS_Fee_Schedule__c}"/>    
+                <apex:inputField value="{!statusCheck.CS_Fee_Schedule_Comments__c}"/> 
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Claims Project" columns="2" rendered="{!IF(CaseMode = 'Change' && ClaimsProjectFlg ,true,false)}" collapsible="true">   
+                <apex:inputField value="{!statusCheck.CS_Claims_Project__c}"/>    
+                <apex:inputField value="{!statusCheck.CS_Claims_Project_Comments__c}"/> 
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Provider Roster/Report" columns="2" rendered="{!IF(CaseMode = 'Change' && rosterCheckFlg ,true,false)}" collapsible="true">   
+                <apex:inputField value="{!statusCheck.CS_Provider_Roster_Report__c}"/>    
+                <apex:inputField value="{!statusCheck.CS_Provider_Roster_Report_Comments__c}"/> 
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Retro Requests" columns="2" rendered="{!IF(CaseMode = 'Change' && retroReqCheckFlg ,true,false)}" collapsible="true">   
+                <apex:inputField value="{!statusCheck.CS_Retro_Requests__c}"/>    
+                <apex:inputField value="{!statusCheck.CS_Retro_Requests_Comments__c}"/> 
+                
+            </apex:pageBlockSection>
+            
+                 <apex:pageBlockButtons location="bottom">
+                     <input id="backButton" type="button" value="Back" class="slds-button slds-button_neutral" /> <!-- PPN-30828, DO NOT EDIT BACK BUTTON -->
+                     <input id="saveButton" type="button" value="Save" class="slds-button slds-button_brand" /> <!-- Travis, 2.8.19 -->
+                     <apex:outputPanel id="savingGifPanel" style="display:none" >
+                        <img id="loadingGif" src="/img/loading.gif" title="Saving..."/>
+                        <apex:outputText value="Saving..." />
+                     </apex:outputPanel>
+                 </apex:pageBlockButtons>
+                 
+                 <apex:inputHidden id="hiddenJSON" value="{!hiddenJSON}"/> <!-- JSON built from the Network ADC Section -->
+                 <apex:actionFunction action="{!requestUrl}" name="saveTempJson" /> <!-- Called from .js file, depending on case made selection -->
+                 <apex:actionFunction action="{!SaveInfo}" name="SaveInfo"  status="pageStatus" /> <!-- Called from .js file, depending on case made selection -->
+        </apex:pageBlock>
+        </div>
+    </apex:form>
+</apex:page>

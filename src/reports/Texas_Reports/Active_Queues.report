@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_55922095</developerName>
+        <masterLabel>Queue List</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>STATUS</sourceColumnName>
+        <useOther>false</useOther>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>RowCount</column>
+        </chartSummaries>
+        <chartType>HorizontalBarGrouped</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>STATUS</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_TOP</location>
+        <secondaryGroupingColumn>CASE_OWNER</secondaryGroupingColumn>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Large</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <description>Count TX Queues by Status</description>
+    <filter>
+        <criteriaItems>
+            <column>CASE_OWNER</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>OMNI_TX_TX NM Central - Austin Email,OMNI_TX_TX_NM_WEST VOICEMAIL,TX_Ancillary_Outreach,TX_CC-SA_Outreach,TX_North_Outreach,TX_South East_Outreach,TX_Texas_Outreach,TX_West_Outreach,Tx Contracting Queue,TX Data Entry Queue,TX Reserved Highest Priority Queue 1,TX Reserved Highest Priority Queue 2,TX Reserved Highest Priority Queue 3,OMNI_TX_Central-Austin_Outreach,OMNI_TX_Demographics,OMNI_TX_Medicare Advantage Email,OMNI_TX_Onboarding – Credentialing,OMNI_TX_SCT - Outreach,OMNI_TX_Setup,OMNI_TX_Standard Contracting Email,OMNI_TX_SW Provider-SA Email,OMNI_TX_TriWest VA,OMNI_TX Ancillary Contracting,OMNI_TX_TX Medicaid Email,OMNI_TX_TX Medicaid Voicemail,OMNI_TX_TX NM Amarillo-Lubbock Email,OMNI_TX_TX NM Central / Austin Email,OMNI_TX_TX NM Central-Austin Voicemail,OMNI_TX_TX NM North Email,OMNI_TX_TX NM North Voicemail,OMNI_TX_TX NM South CC-SA Email,OMNI_TX_TX NM South CC-SA Voicemail,OMNI_TX_TX NM SouthEast Email,OMNI_TX_TX NM SouthEast Voicemail,OMNI_TX_TX NM West Email</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>STATUS</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>,New,In Progress,Waiting for External Response,Waiting for Internal Response,On Hold,Escalated,Received System Issue,Routed to Contracting Area,Prod Verification,Pending,Needs Credentialing,No Credentialing needed,Master Entity Needed,Provisionally Approved,In Decision Process,In Verification Process,Application Incomplete,Application in Review,Application Returned,Application Outstanding,Credentialing Not Required,Terminated,Delegated,Leave of Absence,Shell,Sent To CVO</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>STATUS</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CASE_OWNER</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Active Queues</name>
+    <params>
+        <name>units</name>
+        <value>d</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CaseAuditHistory</reportType>
+    <scope>queue</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CASE_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

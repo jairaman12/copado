@@ -1,0 +1,34 @@
+<messaging:emailTemplate subject="Welcome Email" recipientType="User" relatedToType="Case">
+<messaging:htmlEmailBody >
+<body style="margin: 0; padding: 0;">
+   <style type="text/css">.tabelle {width: 578px; border-collapse: collapse;}.zelle{padding: 3px;background-color: #B7CEEC;font-family: "Times New Roman", Times, serif; font-size: 15px;text-align: left;color: Black;}th {background-color: SteelBlue;padding: 3px;color: White;font-size: 15px;font-family: "Times New Roman", Times, serif;}</style><div style="border: thin solid #2C82BA; width:100%">
+<img src="http://hcscproviderintake.force.com/resource/1489799226000/bcbsTXlogo"/>
+            <hr width="100%" size="20" color="#2C82BA"/>
+<br/><br/><br/>
+Dear ProviderName:
+<br/><br/>
+Your request to become a participating provider has been processed.  Sign up for EFT/ERA you must be a registered Availity® Provider Portal user – there is no cost to register at <a href="http://www.availity.com/">availity.com</a> 
+<br/><br/>
+NetworkNameNetworkEffectiveDate
+<br/><br/>
+Please verify that all your information is correct on our  <a href="https://public.hcsc.net/providerfinder/search.do?corpEntCd=TX1">Provider Finder</a>. If there are any discrepancies, please fill out Blue Cross Blue Shield of TX demographic update form at <a href="https://hcscproviderintake.secure.force.com/TXDemographUpdate">Texas Demographic Update Form</a>. 
+<br/><br/> 
+To view your Provider Manual, request FEE Schedule, or for general information, please visit our website at www.bcbstx.com/provider. 
+<br/><br/>
+Need help getting started with Blue Cross Blue Shield of TX over the phone or in person, please contact your Network Management Team, <a href="https://www.bcbstx.com/provider/contact_us.html%23localnetwork">Network Management Contact Information</a>. If you have questions or inquiries, please contact us at 877-229-0719.
+<br/><br/>
+We look forward to serving you. 
+<br/><br/>
+Sincerely,
+<br/><br/>
+BCBSTX Provider Data Strategy and Consulting
+<br/><br/>
+
+            <hr width="100%" size="20" color="#2C82BA"/>
+            <center><b>Powered by: Salesforce<sup>TM</sup></b></center>
+            <hr width="25%"/><br/><center>Blue Cross and Blue Shield of Texas, a Division of Health Care Service Corporation,</center><center>a Mutual Legal Reserve Company, an Independent Licensee of the Blue Cross and Blue Shield Association.</center><br/><center>&copy; 2017 Health Care Service Corporation. All rights reserved.</center><hr width="50%"/><br/><hr width="100%" size="20" color="#2C82BA"/> 
+(NOTE: Please do not remove the Ref id) Ref id refid</div>
+</body>
+
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

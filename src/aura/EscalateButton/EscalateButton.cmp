@@ -1,0 +1,14 @@
+<!--
+   
+   Created By   : i364191
+   User Story   : PPN-30084
+   Description  : This componenet created part of PPN-30084. 
+-->
+<aura:component 
+      implements="force:lightningQuickActionWithoutHeader,force:hasRecordId"
+      access="global"       
+      controller="EscalateButtonController">
+    <lightning:workspaceAPI aura:id="workspace" />	<!-- Identifies where the lightning component was launched -->
+    <aura:attribute name="recordId" type="Id" />
+  	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>		
+</aura:component>

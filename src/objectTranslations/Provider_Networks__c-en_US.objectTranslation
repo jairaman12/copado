@@ -1,0 +1,1111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Provider Details</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Provider Details</value>
+    </caseValues>
+    <fields>
+        <label><!-- Case Account ProvID --></label>
+        <name>Case_Account_ProvID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Network Case --></label>
+        <name>Case_Number__c</name>
+        <relationshipLabel><!-- Provider Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Case Record Type --></label>
+        <name>Case_Record_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Status --></label>
+        <name>Case_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comment --></label>
+        <name>Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comp Grid Code --></label>
+        <name>Comp_Grid_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comp Grid Effective Date --></label>
+        <name>Comp_Grid_Effective_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comp Grid End Date --></label>
+        <name>Comp_Grid_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contracting Case --></label>
+        <name>Contracting_Case__c</name>
+        <relationshipLabel><!-- Provider Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CounterSign --></label>
+        <name>CounterSign__c</name>
+        <relationshipLabel><!-- Provider Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cred Status --></label>
+        <name>Cred_Status__c</name>
+        <picklistValues>
+            <masterLabel>Needs Credentialing</masterLabel>
+            <translation><!-- Needs Credentialing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Credentialing Needed</masterLabel>
+            <translation><!-- No Credentialing Needed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Credentialing Case --></label>
+        <name>Credentialing_Case__c</name>
+        <relationshipLabel><!-- Provider Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Desgnation Effective Date --></label>
+        <name>Desgnation_Effective_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Designation Code --></label>
+        <name>Designation_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Designation End Date --></label>
+        <name>Designation_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Master Entity Case --></label>
+        <name>Master_Entity_Case__c</name>
+        <relationshipLabel><!-- Provider Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Name --></label>
+        <name>Name__c</name>
+        <picklistValues>
+            <masterLabel>Blue Advantage HMO</masterLabel>
+            <translation><!-- Blue Advantage HMO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blue Advantage PPO</masterLabel>
+            <translation><!-- Blue Advantage PPO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blue Care Direct</masterLabel>
+            <translation><!-- Blue Care Direct --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blue Choice Options</masterLabel>
+            <translation><!-- Blue Choice Options --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blue Choice PPO</masterLabel>
+            <translation><!-- Blue Choice PPO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blue Choice PPO Preferred</masterLabel>
+            <translation><!-- Blue Choice PPO Preferred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blue Choice PPO Preferred Ancillary</masterLabel>
+            <translation><!-- Blue Choice PPO Preferred Ancillary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blue Community HMO Dallas</masterLabel>
+            <translation><!-- Blue Community HMO Dallas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blue Community HMO Network</masterLabel>
+            <translation><!-- Blue Community HMO Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blue Cross Community Family Health Plan</masterLabel>
+            <translation><!-- Blue Cross Community Family Health Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blue Essentials</masterLabel>
+            <translation><!-- Blue Essentials --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blue Focus Care</masterLabel>
+            <translation><!-- Blue Focus Care --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blue Focus POS</masterLabel>
+            <translation><!-- Blue Focus POS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blue Options</masterLabel>
+            <translation><!-- Blue Options --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blue Precision HMO</masterLabel>
+            <translation><!-- Blue Precision HMO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blue Preferred</masterLabel>
+            <translation><!-- Blue Preferred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blue Premier HMO</masterLabel>
+            <translation><!-- Blue Premier HMO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blue Select PPO</masterLabel>
+            <translation><!-- Blue Select PPO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blue Traditional</masterLabel>
+            <translation><!-- Blue Traditional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BlueChoice PPO</masterLabel>
+            <translation><!-- BlueChoice PPO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BlueChoice PPO (BH)</masterLabel>
+            <translation><!-- BlueChoice PPO (BH) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BlueLincs HMO</masterLabel>
+            <translation><!-- BlueLincs HMO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHIP (Medicaid)</masterLabel>
+            <translation><!-- CHIP (Medicaid) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Caring Program</masterLabel>
+            <translation><!-- Caring Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DNOA</masterLabel>
+            <translation><!-- DNOA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dual Eligible MMAI</masterLabel>
+            <translation><!-- Dual Eligible MMAI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dual Eligible Special Needs Plan</masterLabel>
+            <translation><!-- Dual Eligible Special Needs Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exclusive Provider Network</masterLabel>
+            <translation><!-- Exclusive Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Facility - Blue Choice Designated PPO</masterLabel>
+            <translation><!-- Facility - Blue Choice Designated PPO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Facility - Blue Choice PPO</masterLabel>
+            <translation><!-- Facility - Blue Choice PPO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Facility Blue Choice Designated PPO Preferred</masterLabel>
+            <translation><!-- Facility Blue Choice Designated PPO Preferred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Federal Employee Program</masterLabel>
+            <translation><!-- Federal Employee Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Federal Employee Program Mental Health</masterLabel>
+            <translation><!-- Federal Employee Program Mental Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HMO</masterLabel>
+            <translation><!-- HMO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HMO Medicare Advantage</masterLabel>
+            <translation><!-- HMO Medicare Advantage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health Maintenance Organization</masterLabel>
+            <translation><!-- Health Maintenance Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health Select</masterLabel>
+            <translation><!-- Health Select --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Healthy Montana Kids</masterLabel>
+            <translation><!-- Healthy Montana Kids --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lovelace</masterLabel>
+            <translation><!-- Lovelace --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Managed Care</masterLabel>
+            <translation><!-- Managed Care --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medicaid HELP</masterLabel>
+            <translation><!-- Medicaid HELP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medicaid Network-Centennial</masterLabel>
+            <translation><!-- Medicaid Network-Centennial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medicare Advantage HMO</masterLabel>
+            <translation><!-- Medicare Advantage HMO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medicare Advantage Network</masterLabel>
+            <translation><!-- Medicare Advantage Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medicare Advantage PPO</masterLabel>
+            <translation><!-- Medicare Advantage PPO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medicare Advantage PPO (BH)</masterLabel>
+            <translation><!-- Medicare Advantage PPO (BH) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medicare Advantage PPO/Individual</masterLabel>
+            <translation><!-- Medicare Advantage PPO/Individual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medicare Part D HMO</masterLabel>
+            <translation><!-- Medicare Part D HMO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medicare Part D PPO</masterLabel>
+            <translation><!-- Medicare Part D PPO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medicare Select</masterLabel>
+            <translation><!-- Medicare Select --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medicare-Medicaid Plan (MMP)</masterLabel>
+            <translation><!-- Medicare-Medicaid Plan (MMP) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PAR Plan</masterLabel>
+            <translation><!-- PAR Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PPO</masterLabel>
+            <translation><!-- PPO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PPO Medicare Advantage</masterLabel>
+            <translation><!-- PPO Medicare Advantage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Participating</masterLabel>
+            <translation><!-- Participating --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Plan 65 Select</masterLabel>
+            <translation><!-- Plan 65 Select --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Point of Service</masterLabel>
+            <translation><!-- Point of Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Preferred Provider Organization</masterLabel>
+            <translation><!-- Preferred Provider Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional Blue Choice PPO</masterLabel>
+            <translation><!-- Professional Blue Choice PPO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional Designated Blue Choice PPO</masterLabel>
+            <translation><!-- Professional Designated Blue Choice PPO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional Designated Blue Choice PPO Preferred</masterLabel>
+            <translation><!-- Professional Designated Blue Choice PPO Preferred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>STAR (Medicaid)</masterLabel>
+            <translation><!-- STAR (Medicaid) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>STAR Kids (Medicaid)</masterLabel>
+            <translation><!-- STAR Kids (Medicaid) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>STAR Plus (Medicaid)</masterLabel>
+            <translation><!-- STAR Plus (Medicaid) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Traditional</masterLabel>
+            <translation><!-- Traditional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TriWest</masterLabel>
+            <translation><!-- TriWest --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TriWest VA</masterLabel>
+            <translation><!-- TriWest VA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TriWest VA (BH)</masterLabel>
+            <translation><!-- TriWest VA (BH) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Network Code/Name --></label>
+        <name>Network_Code_Name_Detail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Network Code/Name --></label>
+        <name>Network_Code_Name__c</name>
+        <picklistValues>
+            <masterLabel>ADV - Blue Advantage HMO</masterLabel>
+            <translation><!-- ADV - Blue Advantage HMO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BAV - Blue Advantage HMO</masterLabel>
+            <translation><!-- BAV - Blue Advantage HMO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BAV - Blue Precision HMO</masterLabel>
+            <translation><!-- BAV - Blue Precision HMO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BAV – MyBlue</masterLabel>
+            <translation><!-- BAV – MyBlue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BCA - BlueChoice PPO</masterLabel>
+            <translation><!-- BCA - BlueChoice PPO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BCE - Blue Choice PPO Preferred</masterLabel>
+            <translation><!-- BCE - Blue Choice PPO Preferred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BCO - Blue Choice Options</masterLabel>
+            <translation><!-- BCO - Blue Choice Options --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BCP - BlueChoice PPO (BH)</masterLabel>
+            <translation><!-- BCP - BlueChoice PPO (BH) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BCS - Professional Blue Choice PPO</masterLabel>
+            <translation><!-- BCS - Professional Blue Choice PPO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BDF - Blue Choice PPO Preferred Ancillary</masterLabel>
+            <translation><!-- BDF - Blue Choice PPO Preferred Ancillary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BDS - Professional Designated Blue Choice PPO</masterLabel>
+            <translation><!-- BDS - Professional Designated Blue Choice PPO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BFC - Blue Focus Care</masterLabel>
+            <translation><!-- BFC - Blue Focus Care --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BHD - Blue Care Direct</masterLabel>
+            <translation><!-- BHD - Blue Care Direct --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BLC - Blue Focus POS</masterLabel>
+            <translation><!-- BLC - Blue Focus POS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BVP - Blue Advantage PPO</masterLabel>
+            <translation><!-- BVP - Blue Advantage PPO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CAR - Caring Program</masterLabel>
+            <translation><!-- CAR - Caring Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHP - CHIP (Medicaid)</masterLabel>
+            <translation><!-- CHP - CHIP (Medicaid) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CND - Blue Community HMO Dallas</masterLabel>
+            <translation><!-- CND - Blue Community HMO Dallas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CNN - Blue Community HMO Network</masterLabel>
+            <translation><!-- CNN - Blue Community HMO Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCC - Facility - Blue Choice PPO</masterLabel>
+            <translation><!-- DCC - Facility - Blue Choice PPO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDC - Facility - Blue Choice Designated PPO</masterLabel>
+            <translation><!-- DDC - Facility - Blue Choice Designated PPO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DEB - DNOA</masterLabel>
+            <translation><!-- DEB - DNOA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DUE - Dual Eligible MMAI</masterLabel>
+            <translation><!-- DUE - Dual Eligible MMAI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EDF - Facility Blue Choice Designated PPO Preferred</masterLabel>
+            <translation><!-- EDF - Facility Blue Choice Designated PPO Preferred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EDS - Professional Designated Blue Choice PPO Preferred</masterLabel>
+            <translation><!-- EDS - Professional Designated Blue Choice PPO Preferred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EPN - Exclusive Provider Network</masterLabel>
+            <translation><!-- EPN - Exclusive Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EPP - Blue Preferred</masterLabel>
+            <translation><!-- EPP - Blue Preferred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FEA - Federal Employee Program</masterLabel>
+            <translation><!-- FEA - Federal Employee Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FEP  - Federal Employee Program</masterLabel>
+            <translation><!-- FEP  - Federal Employee Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FEP - Federal Employee Program Mental Health</masterLabel>
+            <translation><!-- FEP - Federal Employee Program Mental Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HGT - Blue Options</masterLabel>
+            <translation><!-- HGT - Blue Options --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HME - Health Select</masterLabel>
+            <translation><!-- HME - Health Select --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HMH - Blue Premier HMO</masterLabel>
+            <translation><!-- HMH - Blue Premier HMO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HMK - Healthy Montana Kids</masterLabel>
+            <translation><!-- HMK - Healthy Montana Kids --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HMO - Blue Essentials</masterLabel>
+            <translation><!-- HMO - Blue Essentials --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HMO - BlueLincs HMO</masterLabel>
+            <translation><!-- HMO - BlueLincs HMO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HMO - HMO</masterLabel>
+            <translation><!-- HMO - HMO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HMO - Health Maintenance Organization</masterLabel>
+            <translation><!-- HMO - Health Maintenance Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HMT - Medicare-Medicaid Plan (MMP)</masterLabel>
+            <translation><!-- HMT - Medicare-Medicaid Plan (MMP) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MCA - HMO Medicare Advantage</masterLabel>
+            <translation><!-- MCA - HMO Medicare Advantage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MCA - Medicare Advantage HMO</masterLabel>
+            <translation><!-- MCA - Medicare Advantage HMO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MCA - Medicare Part D HMO</masterLabel>
+            <translation><!-- MCA - Medicare Part D HMO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MCD - Medicaid Network-Centennial</masterLabel>
+            <translation><!-- MCD - Medicaid Network-Centennial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MCH - Lovelace</masterLabel>
+            <translation><!-- MCH - Lovelace --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MCH - Medicare Advantage HMO</masterLabel>
+            <translation><!-- MCH - Medicare Advantage HMO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MCN - Managed Care</masterLabel>
+            <translation><!-- MCN - Managed Care --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MDH - Medicaid HELP</masterLabel>
+            <translation><!-- MDH - Medicaid HELP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NLP - Blue Preferred</masterLabel>
+            <translation><!-- NLP - Blue Preferred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPA - Blue Select PPO</masterLabel>
+            <translation><!-- OPA - Blue Select PPO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PAR - Blue Traditional</masterLabel>
+            <translation><!-- PAR - Blue Traditional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PAR - PAR Plan</masterLabel>
+            <translation><!-- PAR - PAR Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PAR - Participating</masterLabel>
+            <translation><!-- PAR - Participating --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PMA - Medicare Advantage PPO/Individual</masterLabel>
+            <translation><!-- PMA - Medicare Advantage PPO/Individual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PMB - Medicare Advantage PPO (BH)</masterLabel>
+            <translation><!-- PMB - Medicare Advantage PPO (BH) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PMC  - PPO Medicare Advantage</masterLabel>
+            <translation><!-- PMC  - PPO Medicare Advantage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PMC - Medicare Advantage Network</masterLabel>
+            <translation><!-- PMC - Medicare Advantage Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PMC - Medicare Advantage PPO</masterLabel>
+            <translation><!-- PMC - Medicare Advantage PPO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PMC - Medicare Part D PPO</masterLabel>
+            <translation><!-- PMC - Medicare Part D PPO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>POS - Point of Service</masterLabel>
+            <translation><!-- POS - Point of Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PPO - Blue Choice PPO</masterLabel>
+            <translation><!-- PPO - Blue Choice PPO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PPO - PPO</masterLabel>
+            <translation><!-- PPO - PPO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PPO - Preferred Provider Organization</masterLabel>
+            <translation><!-- PPO - Preferred Provider Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PTB - TriWest VA (BH)</masterLabel>
+            <translation><!-- PTB - TriWest VA (BH) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PTW - TriWest</masterLabel>
+            <translation><!-- PTW - TriWest --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PTW - TriWest VA</masterLabel>
+            <translation><!-- PTW - TriWest VA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SNP - Dual Eligible Special Needs Plan</masterLabel>
+            <translation><!-- SNP - Dual Eligible Special Needs Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SPL - STAR Plus (Medicaid)</masterLabel>
+            <translation><!-- SPL - STAR Plus (Medicaid) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SPN - Medicare Select</masterLabel>
+            <translation><!-- SPN - Medicare Select --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SPN - Plan 65 Select</masterLabel>
+            <translation><!-- SPN - Plan 65 Select --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>STK - STAR Kids (Medicaid)</masterLabel>
+            <translation><!-- STK - STAR Kids (Medicaid) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>STR - Medicare Select</masterLabel>
+            <translation><!-- STR - Medicare Select --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>STR - STAR (Medicaid)</masterLabel>
+            <translation><!-- STR - STAR (Medicaid) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TNF - Blue Cross Community Family Health Plan</masterLabel>
+            <translation><!-- TNF - Blue Cross Community Family Health Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TRA  - Traditional</masterLabel>
+            <translation><!-- TRA  - Traditional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WEL - WellMed MA HMO</masterLabel>
+            <translation><!-- WEL - WellMed MA HMO --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Plan Id --></label>
+        <name>Network_Load_Plan_Id__c</name>
+        <picklistValues>
+            <masterLabel>IL1</masterLabel>
+            <translation><!-- IL1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MT1</masterLabel>
+            <translation><!-- MT1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NM1</masterLabel>
+            <translation><!-- NM1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OK1</masterLabel>
+            <translation><!-- OK1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX1</masterLabel>
+            <translation><!-- TX1 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Network Name --></label>
+        <name>Network_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Network --></label>
+        <name>Network__c</name>
+        <picklistValues>
+            <masterLabel>ADV</masterLabel>
+            <translation><!-- ADV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BAV</masterLabel>
+            <translation><!-- BAV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BCA</masterLabel>
+            <translation><!-- BCA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BCE</masterLabel>
+            <translation><!-- BCE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BCO</masterLabel>
+            <translation><!-- BCO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BCP</masterLabel>
+            <translation><!-- BCP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BCS</masterLabel>
+            <translation><!-- BCS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BDF</masterLabel>
+            <translation><!-- BDF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BDS</masterLabel>
+            <translation><!-- BDS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BFC</masterLabel>
+            <translation><!-- BFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BHD</masterLabel>
+            <translation><!-- BHD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BLC</masterLabel>
+            <translation><!-- BLC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BVP</masterLabel>
+            <translation><!-- BVP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CAR</masterLabel>
+            <translation><!-- CAR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHP</masterLabel>
+            <translation><!-- CHP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CND</masterLabel>
+            <translation><!-- CND --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CNN</masterLabel>
+            <translation><!-- CNN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCC</masterLabel>
+            <translation><!-- DCC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDC</masterLabel>
+            <translation><!-- DDC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DEB</masterLabel>
+            <translation><!-- DEB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DUE</masterLabel>
+            <translation><!-- DUE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EDF</masterLabel>
+            <translation><!-- EDF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EDS</masterLabel>
+            <translation><!-- EDS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EPN</masterLabel>
+            <translation><!-- EPN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EPP</masterLabel>
+            <translation><!-- EPP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FEA</masterLabel>
+            <translation><!-- FEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FEP</masterLabel>
+            <translation><!-- FEP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HGT</masterLabel>
+            <translation><!-- HGT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HME</masterLabel>
+            <translation><!-- HME --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HMH</masterLabel>
+            <translation><!-- HMH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HMK</masterLabel>
+            <translation><!-- HMK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HMO</masterLabel>
+            <translation><!-- HMO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HMT</masterLabel>
+            <translation><!-- HMT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MCA</masterLabel>
+            <translation><!-- MCA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MCD</masterLabel>
+            <translation><!-- MCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MCH</masterLabel>
+            <translation><!-- MCH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MCN</masterLabel>
+            <translation><!-- MCN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MDH</masterLabel>
+            <translation><!-- MDH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NLP</masterLabel>
+            <translation><!-- NLP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPA</masterLabel>
+            <translation><!-- OPA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PAR</masterLabel>
+            <translation><!-- PAR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PMA</masterLabel>
+            <translation><!-- PMA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PMB</masterLabel>
+            <translation><!-- PMB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PMC</masterLabel>
+            <translation><!-- PMC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>POS</masterLabel>
+            <translation><!-- POS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PPO</masterLabel>
+            <translation><!-- PPO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PTB</masterLabel>
+            <translation><!-- PTB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PTW</masterLabel>
+            <translation><!-- PTW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SNP</masterLabel>
+            <translation><!-- SNP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SPL</masterLabel>
+            <translation><!-- SPL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SPN</masterLabel>
+            <translation><!-- SPN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>STK</masterLabel>
+            <translation><!-- STK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>STR</masterLabel>
+            <translation><!-- STR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TNF</masterLabel>
+            <translation><!-- TNF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TRA</masterLabel>
+            <translation><!-- TRA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Network Effective Date --></label>
+        <name>Networks_Effective_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- PFIN Case --></label>
+        <name>PFIN_Case__c</name>
+        <relationshipLabel><!-- Provider Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- PFIN --></label>
+        <name>PFIN__c</name>
+    </fields>
+    <fields>
+        <label><!-- PFIN --></label>
+        <name>PFIN_onBoarding__c</name>
+    </fields>
+    <fields>
+        <label><!-- Panel code --></label>
+        <name>Panel_code__c</name>
+        <picklistValues>
+            <masterLabel>Accepting</masterLabel>
+            <translation><!-- Accepting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Existing &amp; Family only</masterLabel>
+            <translation><!-- Existing &amp; Family only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Existing Patients Only</masterLabel>
+            <translation><!-- Existing Patients Only --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Paper Cred Indicator --></label>
+        <name>Paper_Cred_Indicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plan Id --></label>
+        <name>Plan_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prior Provider Id --></label>
+        <name>Prior_Provider_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prov ID --></label>
+        <name>Prov_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider Name --></label>
+        <name>ProviderName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Remove Network Reason --></label>
+        <name>Remove_Network_Reson__c</name>
+    </fields>
+    <fields>
+        <label><!-- Role Code --></label>
+        <name>Roles_Code__c</name>
+        <picklistValues>
+            <masterLabel>PCP</masterLabel>
+            <translation><!-- PCP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PCP/PSP</masterLabel>
+            <translation><!-- PCP/PSP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PSP</masterLabel>
+            <translation><!-- PSP --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Seleted Network --></label>
+        <name>Seleted_Network__c</name>
+    </fields>
+    <fields>
+        <label><!-- SkipValidation --></label>
+        <name>SkipValidation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Cred Approved</masterLabel>
+            <translation><!-- Cred Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cred Denied</masterLabel>
+            <translation><!-- Cred Denied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provisionally Approved</masterLabel>
+            <translation><!-- Provisionally Approved --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- countersignGroupManual --></label>
+        <name>countersignGroupManual__c</name>
+    </fields>
+    <fields>
+        <label><!-- isFirstProvider --></label>
+        <name>isFirstProvider__c</name>
+    </fields>
+    <fields>
+        <label><!-- isFromIndividual --></label>
+        <name>isFromIndividual__c</name>
+    </fields>
+    <recordTypes>
+        <description><!-- ADC --></description>
+        <label><!-- ADC --></label>
+        <name>ADC</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Contracting Onboarding --></description>
+        <label><!-- Contracting Onboarding --></label>
+        <name>Contracting_Onboarding</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- CounterSign --></description>
+        <label><!-- CounterSign --></label>
+        <name>CounterSign</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Credentialing --></label>
+        <name>Credentialing</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Master Entity --></label>
+        <name>Master_Entity</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Network --></label>
+        <name>Network</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Onboarding --></description>
+        <label><!-- Onboarding --></label>
+        <name>Onboarding</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- PFIN Onboarding --></description>
+        <label><!-- PFIN Onboarding --></label>
+        <name>PFIN_Onboarding</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Cannot insert/update networks for closed Network case --></errorMessage>
+        <name>Cannot_update_child_when_parent_is_close</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Invalid Prov ID, Kindly update the right account name for right Prov ID to get auto populate --></errorMessage>
+        <name>Validate_ProvId_aganist_Case</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Edit --></label>
+        <name>Edit</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- NetworkLoadEditButton --></label>
+        <name>NetworkLoadEditButton</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Network --></label>
+        <name>New_Network</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Provider_CounterSign --></label>
+        <name>New_Provider_CounterSign</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Provider_Credentialing --></label>
+        <name>New_Provider_Credentialing</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Provider_Detail_Contracting --></label>
+        <name>New_Provider_Detail_Contracting</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Provider_Detail_PFIN --></label>
+        <name>New_Provider_Detail_PFIN</name>
+    </webLinks>
+</CustomObjectTranslation>

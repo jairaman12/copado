@@ -1,0 +1,145 @@
+<apex:page controller="TaxIdReport" tabstyle="Tax_Id_Reporting__tab" readOnly="true"
+        id="pdfpageid" showHeader="False" applyBodyTag="false" renderas="pdf" action="{!getAccounts}">
+    <apex:variable var="styleFontColor"                         value="#000000" />
+    <apex:variable var="styleHeaderBGColor"                     value="#001933" />
+    <apex:variable var="styleHeaderFontColor"                   value="#ffffff" />
+    <apex:variable var="styleLineColor"                         value="#3B5E91" />
+    <head>
+        <style type="text/css">
+            body,td,th {
+                font-family:Verdana, Arial, Helvetica, sans-serif;
+                font-size:7.5pt;
+                color:{!styleFontColor};
+            }
+            
+            .email table{
+                width:100%;
+                margin-bottom:10px;
+                padding:0px;
+                border-spacing: 0px;
+            }
+            
+            .email caption{
+                font-size:12px;
+                text-align:left;
+                margin-bottom:10px;
+                font-weight:bold;
+            }
+            
+            .email table.tableSummary{
+                width:250px;
+            }
+            
+            .email table.tableDescription{
+                width:68%;
+                margin-top:10px;
+                margin-bottom:5px;
+            }
+                
+            .email table.noBottomMargin{
+                margin-bottom:0px;
+            }
+                
+            .email table.tableTaxSummary, .email table.tableAdditional {
+                margin-top:10px;
+                margin-bottom:0px;
+            }
+            
+            .email table h1{
+                font-size:30px;
+                font-weight:700;
+                text-align:right;
+                margin:0;
+            }
+            
+            .email table td,.email table th{
+                padding:5px;
+            }
+            .email table th{
+                background-color:{!styleHeaderBGColor};
+                color:{!styleHeaderFontColor};
+                border-collapse:collapse;
+            }
+            
+            .email table th.nobg{
+                background-color:transparent;
+                color:{!styleFontColor};
+            }
+            
+            .email table td.noPadding{
+                padding:0px;
+            }
+            .email table td.noPaddingLeft{
+                padding-left:0px;
+            }
+            
+            .email table td.alignTop{
+                vertical-align:top;
+            }
+            
+            table { page-break-inside:avoid }
+            tr    { page-break-inside:avoid; page-break-after:auto }                        
+            
+            @page {
+                width: 21cm;
+                height: 29.7cm;
+                @bottom-right {
+                    content:"Page " counter(page) " of " counter(pages);
+                    font-family:Verdana, Arial, Helvetica, sans-serif;
+                    font-size:7.5pt;
+                    font-weight:bold;
+                    padding-bottom;25px;
+
+                }
+            }
+        </style>
+    </head>
+    <body class="email">
+	<apex:sectionheader title="Accounts and Cases by Tax ID Report" />
+        <apex:outputLabel style="font-weight:900;" value="Report for Tax ID"/>
+    &nbsp;&nbsp;:&nbsp;&nbsp; <apex:outputtext value="{!taxId}" style="font-weight:900;"/>
+		<apex:pageblock title="Cases" id="caseTable" >
+		<apex:repeat value="{!accounts}" var="a" >
+         <b><apex:outputField value="{!a.Name}"  /></b>
+        
+      	<apex:pageBlockTable value="{!a.Cases__r}" var="cr"  columns="7" columnsWidth="50px,50px,50px,100px,40px,40px,100px" >
+
+       <apex:column headerValue="Case Number" rendered="{!((a.Cases__r.size>0))}">
+            <apex:outputLink value="/{!cr.Id}">{!cr.CaseNumber} </apex:outputLink>
+		</apex:column>
+      	<apex:column value="{!cr.Origin}" rendered="{!((a.Cases__r.size>0))}"/>
+      	<apex:column value="{!cr.Reason}" rendered="{!((a.Cases__r.size>0))}"/>
+      	 <apex:column value="{!cr.Description}" rendered="{!((a.Cases__r.size>0))}"/>
+       	<apex:column value="{!cr.Subject}" rendered="{!((a.Cases__r.size>0))}"/>
+      	 <apex:column value="{!cr.Case_Entity__c}" rendered="{!((a.Cases__r.size>0))}"/>
+                                    
+             		  <apex:outputText rendered="{!a.Cases__r.size==0}">
+          <table width="100%">
+              <tr><td colspan="2" style="text-align:center;">No Records</td></tr>
+          </table>
+      </apex:outputText>
+   
+    </apex:pageBlockTable>
+
+    	<apex:pageBlockTable value="{!a.Cases}" var="c" columns="7" columnsWidth="50px,50px,50px,100px,40px,40px,100px">
+  
+      	  <apex:column headerValue="Case Number" rendered="{!((a.Cases.size>0))}">
+            <apex:outputLink value="/{!c.Id}">{!c.CaseNumber}</apex:outputLink>
+		</apex:column>
+      	<apex:column value="{!c.Origin}" rendered="{!((a.Cases.size>0))}"/>
+      	<apex:column value="{!c.Reason}" rendered="{!((a.Cases.size>0))}"/>
+        <apex:column value="{!c.Description}" rendered="{!((a.Cases.size>0))}"/>
+        <apex:column value="{!c.Subject}" rendered="{!((a.Cases.size>0))}"/>
+        <apex:column value="{!c.Case_Entity__c}" rendered="{!((a.Cases.size>0))}" />
+                        
+      <apex:outputText rendered="{!a.Cases.size==0}">
+          <table width="100%">
+              <tr><td colspan="2" style="text-align:center;">No Records</td></tr>
+          </table>
+      </apex:outputText>
+    </apex:pageBlockTable>
+
+</apex:repeat>
+	</apex:pageblock>
+ </body>
+</apex:page>

@@ -1,0 +1,35 @@
+<div style="border: thin solid #2C82BA;width:100%">
+<img src="https://hcscproviderintake.secure.force.com/resource/1489799226000/bcbsOKlogo"/>
+        <hr width="100%" size="20" color="#2C82BA"/>
+<br/>
+
+Thank you for contacting Blue Cross and Blue Shield of Oklahoma. <br><br>
+This email is confirmation we have received your request, case number  {!Case.CaseNumber}. <br/>
+<br>Please see below for approximate processing times for the different request/inquiry types. Once completed, a notification will be sent to the email address submitted. </br>
+<br>PROVIDER NOTIFICATION - DEMOGRAPHIC ADD/CHANGE/TERM
+<br>Please allow minimum 30-45 days for the request to be processed. </br>
+<br>SOLO PROVIDER/GROUP CONTRACTING PACKET
+<br>Please allow minimum 60-90 days for the request to be processed.</br>
+<br>ALL OTHER INQUIRIES
+<br>Please allow minimum 30-45 days for your request to be processed.</br>
+<br>STATUS FOLLOW-UP
+<br>It is recommended that status updates be requested no earlier than:
+<br>30 days for Provider Notification Forms and all other inquiries
+<br>45 days for Solo Provider Contracting Packets<br/>
+
+<br>To check the status of your case, please click on <a href="{!$Setup.UtilitySettings_Hierarchy__c.CaseStatusUrl__c}" target="_blank">status checker</a> or for any questions, contact 1-800-722-3730 or email oknetworkmanagement@bcbsok.com.</br>
+<br/><br/>
+Sincerely, <br/>
+Blue Cross and Blue Shield of Oklahoma<br/>
+
+<!-- <br>For Internal Purpose only. (NOTE: Please do not remove the Ref id) Ref id
+{!Case.Thread_Id} -->
+
+    <hr width="100%" size="20" color="#2C82BA"/>
+            <p><center><b>Powered by: Salesforce<sup>TM</sup></b></center></p> <hr width="25%"/><br>      
+            <p><center>Blue Cross and Blue Shield of Oklahoma, a Division of Health Care Service Corporation,</center>
+            <center>a Mutual Legal Reserve Company, an Independent Licensee of the Blue Cross and Blue Shield Association.</center></p><br>
+            <p><center>&copy; 2017 Health Care Service Corporation. All rights reserved.</center></p><hr width="50%"/>
+            <hr width="100%" size="20" color="#2C82BA"/>
+(NOTE: Please do not remove the Ref id) Ref id {!Case.Thread_Id}
+</div>

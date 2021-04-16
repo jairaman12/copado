@@ -1,0 +1,77 @@
+<messaging:emailTemplate subject="Approval Request for Agreement '{!relatedTo.Apttus_Approval__Related_Agreement__r.Name}' has been submitted for your approval" 
+                         recipientType="User" 
+                         relatedToType="Apttus_Approval__Approval_Request__c"
+                         replyTo="{!$Label.apttus_approval__apttusemailserviceaddress}"
+                         language="{!recipient.LanguageLocaleKey}">
+    <messaging:htmlEmailBody >
+        <html>
+            <body>
+
+                <!--  required fields -->
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Object_Type__c}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Object_Id__c}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Approval_Status__c}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Date__c}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Assigned_To_Name__c}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__PrevAssignedToName__c}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Request_Comments__c}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Approver_Comments__c}" rendered="false" />     
+                <apex:outputText value="{!relatedTo.Apttus_Approval__DelegateApprover__c}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Related_Agreement__r.Name}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Related_Agreement__r.Apttus__Account__c}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Related_Agreement__r.Apttus__Account__r.Name}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Related_Agreement__r.Owner.Name}" rendered="false" />       
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Related_Agreement__r.Apttus__Description__c}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Related_Agreement__r.Apttus__FF_Agreement_Number__c}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Related_Agreement__r.Apttus__Status_Category__c}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Related_Agreement__r.Apttus__Status__c}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Related_Agreement__r.Apttus__Contract_Start_Date__c}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Related_Agreement__r.Apttus__Contract_End_Date__c}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Related_Agreement__r.Apttus__Total_Contract_Value__c}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Related_Agreement__r.Apttus__Request_Date__c}" rendered="false"/>
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Related_Agreement__r.RecordType.Name}" rendered="false"/>
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Related_Agreement__r.Apttus__Description__c}" rendered="false"/>
+
+                                               
+                Dear {!recipient.Name}:
+                <br/><br/>
+                Contract Request <apex:outputText value=" {!relatedTo.Apttus_Approval__Related_Agreement__r.Name}" rendered="true" /> requires your Approval Response.
+                <br/><br/>
+                
+                Provider Name: <apex:outputText value=" {!relatedTo.Apttus_Approval__Related_Agreement__r.Apttus__Account__r.Name}" rendered="true"/>
+                <br/>
+                Record Type: <apex:outputText value=" {!relatedTo.Apttus_Approval__Related_Agreement__r.RecordType.Name}" rendered="true"/>
+                <br/>
+                Owner: <apex:outputText value=" {!relatedTo.Apttus_Approval__Related_Agreement__r.Owner.Name}" rendered="true" />
+                <br/>
+                Description: <apex:outputText value=" {!relatedTo.Apttus_Approval__Related_Agreement__r.Apttus__Description__c}" rendered="true"/>
+                <br/><br/>
+                
+                Please Provide Approval Response as follows: 
+                <br/><br/>
+                1) Click REPLY
+                <br/>
+                2) Type either APPROVE or REJECT in the first line of the E-Mail Response
+                <br/>
+                3) If you should like to make a comment, please type your comments in 2nd line of the E-Mail Response
+                <br/>
+                4) Click SEND
+                <br/><br/>
+                Contract URL: <apex:outputlink value="{!LEFT($Api.Partner_Server_URL_140,FIND('.com',$Api.Partner_Server_URL_140)+4)+relatedTo.Apttus_Approval__Related_Agreement__r.ID}">{!relatedTo.Name}</apex:outputlink> 
+                <br/><br/>
+
+                ++++++++++++++ Additional Information+++++++++++++++++
+
+          
+<br/><br/>
+                <Apttus_Approval:AgreementApprovalEmail ApprovalRequestSO="{!relatedTo}" ApprovalRecipientSO="{!recipient}"/>
+
+                
+                <br/>
+
+            </body>
+        </html>
+    </messaging:htmlEmailBody>
+    
+    
+</messaging:emailTemplate>

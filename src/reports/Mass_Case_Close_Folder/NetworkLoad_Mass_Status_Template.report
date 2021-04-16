@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>MCC_Data_Object__c.MCC_Case_Id__c</field>
+    </columns>
+    <columns>
+        <field>MCC_Data_Object__c.Case_Status__c</field>
+    </columns>
+    <columns>
+        <field>MCC_Data_Object__c.MCC_File_Type__c</field>
+    </columns>
+    <columns>
+        <field>CUST_LAST_UPDATE</field>
+    </columns>
+    <description>To send the NetworkLoad Mass Status Template as email notification (PPN-27739)</description>
+    <filter>
+        <criteriaItems>
+            <column>MCC_Data_Object__c.MCC_File_Id__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>11/16/201815:06:14.000000B_1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>MCC_Data_Object__c.MCC_Plan_ID__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>IL1</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>MCC_Data_Object__c.MCC_Load_Status__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>NetworkLoad Mass Status Template</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$MCC_Data_Object__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>MCC_Data_Object__c.Case_Status__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

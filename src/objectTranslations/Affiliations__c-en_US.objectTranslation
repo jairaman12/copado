@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Affiliations</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Affiliations</value>
+    </caseValues>
+    <fields>
+        <label><!-- Provider Name (Entity / Individual) --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Affiliations (Provider Name (Entity / Individual)) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Affiliated Class Code --></label>
+        <name>Affiliated_Class_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Affiliated Provider Tax Id --></label>
+        <name>Affiliated_Provider_Tax_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prov Id --></label>
+        <name>Affiliated_to_Provider_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Affiliated to PFIN --></label>
+        <name>Affiliated_to_Service_PFIN__c</name>
+        <relationshipLabel><!-- Affiliations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Affiliation Type --></label>
+        <name>Affiliation_Type__c</name>
+        <picklistValues>
+            <masterLabel>HCSYSP</masterLabel>
+            <translation><!-- HCSYSP --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Billing Address 1 --></label>
+        <name>Billing_Address_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Address 2 --></label>
+        <name>Billing_Address_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing City --></label>
+        <name>Billing_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing County --></label>
+        <name>Billing_County__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing State --></label>
+        <name>Billing_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Zip --></label>
+        <name>Billing_Zip__c</name>
+    </fields>
+    <fields>
+        <label><!-- Affiliated Provider Name --></label>
+        <name>CM_Affiliated_Provider_Name__c</name>
+        <relationshipLabel><!-- Affiliations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Affiliated to Billing PFIN --></label>
+        <name>CM_Affiliated_to_Billing_PFIN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Affiliated to Group ID --></label>
+        <name>CM_Affiliated_to_Group_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Affiliated to Network Code --></label>
+        <name>CM_Affiliated_to_Network_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Affiliated to PFIN --></label>
+        <name>CM_Affiliated_to_Service_PFIN_Url__c</name>
+    </fields>
+    <fields>
+        <label><!-- Affiliated to Service PFIN --></label>
+        <name>CM_Affiliated_to_Service_PFIN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Affiliation Code Description --></label>
+        <name>CM_Affiliation_Code_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing PFIN --></label>
+        <name>CM_Billing_PFIN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Corporate Entity Code --></label>
+        <name>CM_Corporate_Entity_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Class Code --></label>
+        <name>Class_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- EFF DT --></label>
+        <name>EFF_DT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- End DT --></label>
+        <name>End_DT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Affiliation End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <label>Prov Id</label>
+        <name>Entity_Prov_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fax --></label>
+        <name>Fax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Master Entity Prov ID --></label>
+        <name>Master_Entity_Prov_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mobile Phone --></label>
+        <name>Mobile_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name --></label>
+        <name>Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service PFIN --></label>
+        <name>PFIN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Role(s) --></label>
+        <name>Role__c</name>
+        <picklistValues>
+            <masterLabel>Admin Assistant</masterLabel>
+            <translation><!-- Admin Assistant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Administrator</masterLabel>
+            <translation><!-- Administrator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assistant</masterLabel>
+            <translation><!-- Assistant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Associate General Counsel</masterLabel>
+            <translation><!-- Associate General Counsel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Biller</masterLabel>
+            <translation><!-- Biller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Billing</masterLabel>
+            <translation><!-- Billing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Billing Clerk</masterLabel>
+            <translation><!-- Billing Clerk --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Billing Manager</masterLabel>
+            <translation><!-- Billing Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Billing Practice Manager</masterLabel>
+            <translation><!-- Billing Practice Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Billings Clinic</masterLabel>
+            <translation><!-- Billings Clinic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business Manager</masterLabel>
+            <translation><!-- Business Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business Office Manager</masterLabel>
+            <translation><!-- Business Office Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CAO</masterLabel>
+            <translation><!-- CAO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CEO</masterLabel>
+            <translation><!-- CEO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CEO interim</masterLabel>
+            <translation><!-- CEO interim --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Case Management</masterLabel>
+            <translation><!-- Case Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Case Manager</masterLabel>
+            <translation><!-- Case Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chief Dev Officer</masterLabel>
+            <translation><!-- Chief Dev Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chief Financial Officer</masterLabel>
+            <translation><!-- Chief Financial Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chief Medical Officer</masterLabel>
+            <translation><!-- Chief Medical Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chief Operating Officer</masterLabel>
+            <translation><!-- Chief Operating Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clinic Biller</masterLabel>
+            <translation><!-- Clinic Biller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contracts</masterLabel>
+            <translation><!-- Contracts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Controller</masterLabel>
+            <translation><!-- Controller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Credentialing</masterLabel>
+            <translation><!-- Credentialing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Credentialing Coordinator</masterLabel>
+            <translation><!-- Credentialing Coordinator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dir. Payer Relations</masterLabel>
+            <translation><!-- Dir. Payer Relations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Director Physician and APEX Billing</masterLabel>
+            <translation><!-- Director Physician and APEX Billing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Director of Care Coordination</masterLabel>
+            <translation><!-- Director of Care Coordination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Director of Finance</masterLabel>
+            <translation><!-- Director of Finance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Director of PFS</masterLabel>
+            <translation><!-- Director of PFS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Director of Patient Accounting</masterLabel>
+            <translation><!-- Director of Patient Accounting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Director of Patient Services</masterLabel>
+            <translation><!-- Director of Patient Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Director of Revenue Cycle</masterLabel>
+            <translation><!-- Director of Revenue Cycle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMR Access</masterLabel>
+            <translation><!-- EMR Access --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMR Functionality</masterLabel>
+            <translation><!-- EMR Functionality --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Executive Assistance</masterLabel>
+            <translation><!-- Executive Assistance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Executive Assistant</masterLabel>
+            <translation><!-- Executive Assistant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Executive Director - Revenue Management</masterLabel>
+            <translation><!-- Executive Director - Revenue Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial Manager</masterLabel>
+            <translation><!-- Financial Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Counsel</masterLabel>
+            <translation><!-- General Counsel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hospital Biller</masterLabel>
+            <translation><!-- Hospital Biller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hospital Billing Supervisor</masterLabel>
+            <translation><!-- Hospital Billing Supervisor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manager Patient Business Services</masterLabel>
+            <translation><!-- Manager Patient Business Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manager of Revenue Cycle</masterLabel>
+            <translation><!-- Manager of Revenue Cycle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manager, Case Management</masterLabel>
+            <translation><!-- Manager, Case Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medical Group Billing Supervisor</masterLabel>
+            <translation><!-- Medical Group Billing Supervisor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mgr Rev Integrity &amp; Payer Contracting</masterLabel>
+            <translation><!-- Mgr Rev Integrity &amp; Payer Contracting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office Manager</masterLabel>
+            <translation><!-- Office Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient Account Rep</masterLabel>
+            <translation><!-- Patient Account Rep --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient Business Services</masterLabel>
+            <translation><!-- Patient Business Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient Business Services Director</masterLabel>
+            <translation><!-- Patient Business Services Director --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient and Insurancer Access</masterLabel>
+            <translation><!-- Patient and Insurancer Access --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payer Relations</masterLabel>
+            <translation><!-- Payer Relations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payment and Client Billing Supervisor</masterLabel>
+            <translation><!-- Payment and Client Billing Supervisor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phy Billing &amp; Collections Supervisor</masterLabel>
+            <translation><!-- Phy Billing &amp; Collections Supervisor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Physician</masterLabel>
+            <translation><!-- Physician --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>President and CEO</masterLabel>
+            <translation><!-- President and CEO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>President, Medical Group</masterLabel>
+            <translation><!-- President, Medical Group --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provider Enrollment</masterLabel>
+            <translation><!-- Provider Enrollment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quality Manager, Clinical Operations</masterLabel>
+            <translation><!-- Quality Manager, Clinical Operations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>System Director Revenue Cycle Operations</masterLabel>
+            <translation><!-- System Director Revenue Cycle Operations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UM Mgr</masterLabel>
+            <translation><!-- UM Mgr --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vice President Medical Group</masterLabel>
+            <translation><!-- Vice President Medical Group --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Roll Down --></label>
+        <name>Roll_Down__c</name>
+    </fields>
+    <fields>
+        <label><!-- Physical City --></label>
+        <name>Shipping_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Physical Country --></label>
+        <name>Shipping_County__c</name>
+    </fields>
+    <fields>
+        <label><!-- Physical Location 1 --></label>
+        <name>Shipping_Location_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Physical Location 2 --></label>
+        <name>Shipping_Location_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Physical State --></label>
+        <name>Shipping_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Physical Zip --></label>
+        <name>Shipping_Zip__c</name>
+    </fields>
+    <fields>
+        <label><!-- Affiliation Effective Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Name --></label>
+        <name>fAccount_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Affiliated to Provider Id --></label>
+        <name>fAffiliated_to_Provider_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Network Code --></label>
+        <name>fNetwork_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Id --></label>
+        <name>fTax_id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Master Entity Id --></label>
+        <name>tMaster_Entity_Id__c</name>
+    </fields>
+    <recordTypes>
+        <label><!-- Affiliation for PPW --></label>
+        <name>Affiliation</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Master Entity Affiliation --></label>
+        <name>Master_Entity</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Rolodex Affiliation --></label>
+        <name>Rolodex_Affiliation</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Corporate Entity Code is ReadOnly and not allowed to change --></errorMessage>
+        <name>Corporate_Entity_Code_Validation</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Edit --></label>
+        <name>Edit</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Rolodex_Affiliation --></label>
+        <name>New_Rolodex_Affiliation</name>
+    </webLinks>
+</CustomObjectTranslation>

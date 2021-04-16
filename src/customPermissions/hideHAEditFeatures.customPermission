@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This field is added to profiles which are read-only and need to disable Hospital Affiliation features in a visualforce page.</description>
+    <label>hideHAEditFeatures</label>
+</CustomPermission>

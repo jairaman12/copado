@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>New</fullName>
+        <default>true</default>
+        <label>New</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>In Progress</fullName>
+        <default>false</default>
+        <label>In Progress</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Waiting for External Response</fullName>
+        <default>false</default>
+        <label>Waiting for External Response</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Waiting for Internal Response</fullName>
+        <default>false</default>
+        <label>Waiting for Internal Response</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>On Hold</fullName>
+        <default>false</default>
+        <label>On Hold</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Escalated</fullName>
+        <default>false</default>
+        <label>Escalated</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Closed</fullName>
+        <default>false</default>
+        <label>Closed</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Closed Processed</fullName>
+        <default>false</default>
+        <label>Closed Processed</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Closed Rejected</fullName>
+        <default>false</default>
+        <label>Closed Rejected</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Received System Issue</fullName>
+        <default>false</default>
+        <label>Received System Issue</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Routed to Contracting Area</fullName>
+        <default>false</default>
+        <label>Routed to Contracting Area</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Cancelled</fullName>
+        <default>false</default>
+        <label>Cancelled</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Prod Verification</fullName>
+        <default>false</default>
+        <label>Prod Verification</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Pending</fullName>
+        <default>false</default>
+        <label>Pending</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Closed Complete</fullName>
+        <default>false</default>
+        <label>Closed Complete</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Closed No-Action Needed</fullName>
+        <default>false</default>
+        <label>Closed No-Action Needed</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Closed Invalid</fullName>
+        <default>false</default>
+        <label>Closed Invalid</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Cred Approved</fullName>
+        <default>false</default>
+        <label>Cred Approved</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Cred Denied</fullName>
+        <default>false</default>
+        <label>Cred Denied</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Needs Credentialing</fullName>
+        <default>false</default>
+        <label>Needs Credentialing</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>No Credentialing needed</fullName>
+        <default>false</default>
+        <label>No Credentialing needed</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Master Entity Needed</fullName>
+        <default>false</default>
+        <label>Master Entity Needed</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Provisionally Approved</fullName>
+        <default>false</default>
+        <label>Provisionally Approved</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>In Decision Process</fullName>
+        <default>false</default>
+        <label>In Decision Process</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>In Verification Process</fullName>
+        <default>false</default>
+        <label>In Verification Process</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Application Incomplete</fullName>
+        <default>false</default>
+        <label>Application Incomplete</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Application in Review</fullName>
+        <default>false</default>
+        <label>Application in Review</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Application Returned</fullName>
+        <default>false</default>
+        <label>Application Returned</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Application Outstanding</fullName>
+        <default>false</default>
+        <label>Application Outstanding</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Credentialing Not Required</fullName>
+        <default>false</default>
+        <label>Credentialing Not Required</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Terminated</fullName>
+        <default>false</default>
+        <label>Terminated</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Delegated</fullName>
+        <default>false</default>
+        <label>Delegated</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Leave of Absence</fullName>
+        <default>false</default>
+        <label>Leave of Absence</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Shell</fullName>
+        <default>false</default>
+        <label>Shell</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Sent To CVO</fullName>
+        <default>false</default>
+        <label>Sent To CVO</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Admin Denial</fullName>
+        <default>false</default>
+        <label>Admin Denial</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>In Medical Director Review</fullName>
+        <default>false</default>
+        <label>In Medical Director Review</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>In Credentialing Committee Review</fullName>
+        <default>false</default>
+        <label>In Credentialing Committee Review</label>
+        <closed>false</closed>
+    </standardValue>
+</StandardValueSet>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Campaign Activity</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Campaign Activities</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Name --></label>
+        <name>AccountName__c</name>
+        <relationshipLabel><!-- Campaign Activity History --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Activity Description --></label>
+        <name>ActivityDescription__c</name>
+    </fields>
+    <fields>
+        <label><!-- Campaign Activity Level --></label>
+        <name>CampaignActivityLevel__c</name>
+        <picklistValues>
+            <masterLabel>Account</masterLabel>
+            <translation><!-- Account --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Case</masterLabel>
+            <translation><!-- Case --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service &amp; Payee Location Address</masterLabel>
+            <translation><!-- Service &amp; Payee Location Address --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The campaign this activity is a part of. --></help>
+        <label><!-- Campaign Name --></label>
+        <name>CampaignName__c</name>
+        <relationshipLabel><!-- Campaign Activities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Case Number --></label>
+        <name>Case__c</name>
+        <relationshipLabel><!-- Campaign Activity History --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Corporate Entity Code --></label>
+        <name>CorporateEntityCode__c</name>
+        <picklistValues>
+            <masterLabel>IL1</masterLabel>
+            <translation><!-- IL1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MT1</masterLabel>
+            <translation><!-- MT1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NM1</masterLabel>
+            <translation><!-- NM1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OK1</masterLabel>
+            <translation><!-- OK1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX1</masterLabel>
+            <translation><!-- TX1 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Create at Rolodex Acct with Same Email --></label>
+        <name>CreateAtRolodexAcctwithSameEmail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Create at Service Loc with Same Email --></label>
+        <name>CreateAtServiceLocWithSameEmail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created From Marketing Cloud --></label>
+        <name>CreatedFromMarketingCloud__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date --></label>
+        <name>Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of the intended recipient of the communication. --></help>
+        <label><!-- Intended Recipient --></label>
+        <name>IntendedRecipient__c</name>
+    </fields>
+    <fields>
+        <label><!-- PFIN --></label>
+        <name>PFIN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prov Id --></label>
+        <name>ProvId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sent To --></label>
+        <name>SentTo__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service &amp; Payee Location Address --></label>
+        <name>ServiceAndPayeeLocationAddress__c</name>
+        <relationshipLabel><!-- Campaign Activity History --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Tax Id --></label>
+        <name>TaxId__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

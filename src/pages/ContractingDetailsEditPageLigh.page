@@ -1,0 +1,144 @@
+<apex:page standardController="Provider_Networks__c" extensions="ContractingDetailsEditPageLigh" action="{!pageRedirect}" lightningStylesheets="true"> 
+  <apex:form id="contractingProvider">
+      <apex:pageblock title="Provider Detail" mode="edit" >
+         
+          <apex:pageblockButtons >
+              <apex:commandButton action="{!SaveAction}" value="Save" rendered="{!!showerror}"/>
+              <apex:commandButton action="{!SaveAndNewAction}" value="Save & New" rendered="{AND(!!providernetworkload, !!showerror)}"/>
+              <apex:commandButton action="{!backTocase}" value="Cancel" immediate="true"/>
+          </apex:pageblockButtons>
+          
+          <apex:pagemessages />
+
+          <apex:pageBlockSection columns="2" rendered="{!!showerror}">
+              <apex:pageBlockSectionItem rendered="{!OR(!fromIndvPfin, isFirstContract)}">
+                  <apex:outputLabel value="Prov Id"/>
+                  <apex:inputField value="{!providerNetwork.Prov_ID__c}"/>
+              </apex:pageBlockSectionItem> 
+              
+              <apex:pageBlockSectionItem rendered="{!AND(fromIndvPfin, !isFirstContract)}">
+                  <apex:outputLabel value="Prov Id"/>
+                  <apex:outputField value="{!providerNetwork.Prov_ID__c}"/>
+              </apex:pageBlockSectionItem>             
+                            
+              <apex:pageBlockSectionItem rendered="{!fromIndvContract}">
+                  <apex:outputLabel value="PFIN"/>
+                  <apex:inputField value="{!providerNetwork.PFIN_onBoarding__c}"/>
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem rendered="{!!fromIndvContract}">
+                  <apex:outputLabel value="PFIN"/>
+                  <apex:outputField value="{!providerNetwork.PFIN_onBoarding__c}"/>
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem rendered="{!AND(!!showContracting,!masterEntity,!credentialing)}">
+                  <apex:outputLabel value="Provider Name"/>
+                  <apex:outputField value="{!providerNetwork.ProviderName__c}" />
+              </apex:pageBlockSectionItem>
+
+            <apex:pageBlockSectionItem rendered="{!AND(!showContracting,!counterSignCase)}">
+                  <apex:outputLabel value="Provider Name"/>
+                  <apex:outputField value="{!providerNetwork.ProviderName__c}" />
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem rendered="{!credentialing}">
+                  <apex:outputLabel value="Provider Name"/>
+                  <apex:outputField value="{!providerNetwork.ProviderName__c}"/>
+              </apex:pageBlockSectionItem> 
+              
+              
+              <apex:pageBlockSectionItem rendered="{!!showContracting}">
+                  <apex:outputLabel value="PFIN Case"/>
+                  <apex:outputField value="{!providerNetwork.PFIN_Case__c}" />
+              </apex:pageBlockSectionItem> 
+              
+              <apex:pageBlockSectionItem rendered="{!counterSignCase}">
+                  <apex:outputLabel value="CounterSign Case"/>
+                  <apex:outputField value="{!providerNetwork.CounterSign__c}"/>
+              </apex:pageBlockSectionItem>  
+              <apex:pageBlockSectionItem rendered="{!credGroupManual}">
+                  <apex:outputLabel value="Provider Name"/>
+                  <apex:outputField value="{!providerNetwork.ProviderName__c}" />
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem rendered="{!credentialing}">
+                  <apex:outputLabel value="Credentialing Case"/>
+                  <apex:outputField value="{!providerNetwork.Credentialing_Case__c}"/>
+              </apex:pageBlockSectionItem>  
+              
+              <apex:pageBlockSectionItem rendered="{!AND(showContracting,!masterEntity,!credentialing,!counterSignCase,!providernetworkload )}">
+                  <apex:outputLabel value="Contracting Case"/>
+                  <apex:outputField value="{!providerNetwork.Contracting_Case__c}"/>
+              </apex:pageBlockSectionItem>    
+                 
+              <apex:pageBlockSectionItem rendered="{!providernetworkload}">
+                  <apex:outputLabel value="Network Case"/>
+                  <apex:outputField value="{!providerNetwork.Case_Number__c}"/>
+              </apex:pageBlockSectionItem>     
+                          
+              <apex:pageBlockSectionItem rendered="{!showContracting}">
+                  <apex:outputLabel value="Network Name"/>
+                  <apex:inputField value="{!providerNetwork.Network_Code_Name__c}"/>
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem rendered="{!masterEntity}">
+                  <apex:outputLabel value="MasterEntity Case"/>
+                  <apex:outputField value="{!providerNetwork.Master_Entity_Case__c}"/>
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem rendered="{!showContracting}">
+                  <apex:outputLabel value="Plan Id" />
+                  <apex:outputText value="{!casePlanId}"/>
+              </apex:pageBlockSectionItem>
+              
+              
+             <apex:pageBlockSectionItem rendered="{!showContracting}" >
+                  <apex:outputLabel value="Plan Id" style="display:none"/>
+                  <apex:inputField value="{!providerNetwork.Network_Load_Plan_Id__c}" style="display:none"/>
+              </apex:pageBlockSectionItem>           
+                              
+              <apex:pageBlockSectionItem rendered="{!AND(showContracting,!fromIndvPfin,!providernetworkload,!counterSignCase)}" >
+                  <apex:outputLabel value="Cred Status"/>
+                  <apex:inputField value="{!providerNetwork.Cred_Status__c}"/>
+              </apex:pageBlockSectionItem>
+              
+              
+              <apex:pageBlockSectionItem rendered="{!showContracting}">
+                  <apex:outputLabel value="Network Effective Date"/>
+                  <apex:inputField value="{!providerNetwork.Networks_Effective_Date__c}"/>
+              </apex:pageBlockSectionItem>              
+              
+              <apex:pageBlockSectionItem rendered="{!showContracting}">
+                  <apex:outputLabel value="Designation Code"/>
+                  <apex:inputField value="{!providerNetwork.Designation_Code__c}"/>
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem rendered="{!showContracting}">
+                  <apex:outputLabel value="Comp Grid Code"/>
+                  <apex:inputField value="{!providerNetwork.Comp_Grid_Code__c}"/>
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem rendered="{!showContracting}">
+                  <apex:outputLabel value="Panel Code"/>
+                  <apex:inputField value="{!providerNetwork.Panel_code__c}"/>
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem rendered="{!showContracting}">
+                  <apex:outputLabel value="Role Code"/>
+                  <apex:inputField value="{!providerNetwork.Roles_Code__c}"/>
+              </apex:pageBlockSectionItem>
+              
+               <apex:pageBlockSectionItem rendered="{!showPaperCredIndicator}">
+                  <apex:outputLabel value="Paper Cred Indicator"/>
+                  <apex:inputField value="{!providerNetwork.Paper_Cred_Indicator__c}"/>
+              </apex:pageBlockSectionItem>
+              
+                                          
+          </apex:pageBlockSection>
+                   
+      </apex:pageblock>     
+     
+  </apex:form>  
+   
+    <apex:relatedList subject="{!providerNetwork.Id}" list="AttachedContentDocuments" rendered="{!showPaperCredIndicator}"/>    
+      
+</apex:page>

@@ -1,0 +1,435 @@
+<!--************************************************************************************
+CRMCaseCreationPage.vfp
+-----------------------------------------------------------------------------
+* Developer                   Date                   Description
+* ---------------------------------------------------------------------------               
+* Sreekanth Kalluru         05/04/2018                  Sprint 9
+* Andrew Maddox             05/04/2018                  Sprint 9
+* Travis Self               05/04/2018                  Sprint 9 
+* Travis Self               06/11/2018                  Sprint 12
+* SethuRaman                06/19/2018                  Sprint 12
+* Travis Self               06/27/2018                  Sprint 13
+* Travis Self               07/12/2018                  Sprint 14
+* Travis Self               07/30/2018                  Sprint 15
+* Travis Self               08/20/2018                  Sprint 17
+* Travis Self               09/18/2018                  Sprint 19, PPN-24708
+* Travis Self                     2019                  Sprint 2, Lightning Migration
+* Josh McGhee               04/17/2019                  Sprint 8,  PPN-34485
+************************************************************************************** -->
+<apex:page sidebar="false" Standardcontroller="Case" extensions="CRMCaseCreationController1" tabStyle="Case" title="New CRM Case" lightningstylesheets="true"  >
+    <apex:stylesheet value="{!URLFOR($Resource.chosen_multiselect,'/docsupport/prism.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.chosen_multiselect,'chosen.css')}" />
+    <apex:stylesheet value="{!$Resource.CRM_stylesheet}" />
+    <apex:includeScript value="{!URLFOR($Resource.chosen_multiselect,'/docsupport/jquery-3.2.1.min.js')}"  />
+    <apex:includeScript value="{!URLFOR($Resource.chosen_multiselect,'chosen.jquery.js')}"  />
+    <apex:includeScript value="{!URLFOR($Resource.chosen_multiselect,'/docsupport/prism.js')}"  />
+    <apex:includeScript value="{!URLFOR($Resource.chosen_multiselect,'/docsupport/init.js')}"  />
+    <apex:includeScript value="/support/console/43.0/integration.js"/>
+    <apex:includeScript value="{!$Resource.js4_crmCCP}"/>
+    <apex:includeScript value="{!$Resource.CRM_Script}"/>
+    <apex:includeScript value="{!$Resource.js4_CRMValidation}"/>
+    <apex:includeScript value="{!$Resource.js4_closeTab}"/>
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet"/>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <apex:slds /> 
+        
+    <script type="text/javascript">
+    var totalNumberOfOptions = $(":input[id*='pfinCheckbox']").length;
+    var numberOfSelectedPfins = 0;
+    
+    
+    $( document ).ready(function() {
+        $('ul[class="chosen-choices"]').addClass('slds-input');
+        disableInputs();
+        try {
+            searchPfinTable( $(":input[id*='pfinSearchField']"), true ); //PPN-37133
+        } catch(e) {
+            
+        }
+        
+    });
+    
+    function disableInputs() {
+        
+        totalNumberOfOptions = $(":input[id*='pfinCheckbox']").length;
+        
+        setScrollBarHeight();
+        
+        if( totalNumberOfOptions === 0) {
+            $( ".tableWrapper" ).hide();
+            $(":input[id*='pfinSearchField']").prop('disabled', true);
+            $(":input[id*='selectAllPfinsCheckbox']").prop('disabled', true);
+        } else {
+            $( ".tableWrapper" ).show();    
+        }
+        
+    }
+    
+    </script>
+    
+    <apex:form id="crmForm" styleClass="lex_background">
+        <apex:sectionHeader title="CRM Case Edit" subtitle="New CRM Case"/>
+        <apex:pageBlock id="casePageBlock" mode="edit" title="CRM Case Edit" tabStyle="Account"> 
+             <apex:pagemessages id="pageMessage"/>
+            <!-- ERROR MESSAGE SECTION -->
+            <div id="topErrorMessage" class="pbError" style="display:none" >
+                Error: Invalid Data. <br /> Review all error messages below to correct your data.
+            </div >
+            
+            <!-- PAGE BLOCK BUTTONS -->
+            <apex:pageBlockButtons location="top" >
+                <apex:actionStatus id="caseCreationStatus">     <!--    Buttons disabled when one of the save buttons are clicked, to prevent errors    -->
+                    <apex:facet name="stop">
+                        <apex:outputPanel >
+                            <apex:commandButton value="Save" onclick="return commonValidation('Save', true); return false;" status="caseCreationStatus" style="background-color: rgba(27, 82, 151, 1);color:white;" oncomplete="window.top.location.reload()" reRender="pageMessage" />
+                            <apex:commandButton value="Save & New" onclick="return commonValidation('Save & New', true); return false;" status="caseCreationStatus" style="background-color: rgba(27, 82, 151, 1);color:white;" />
+                            <apex:commandButton value="Save & Clone" onclick="return commonValidation('Save & Clone', false); return false;" style="background-color: rgba(27, 82, 151, 1);color:white;" /> 
+                            <apex:commandButton value="Cancel" onclick="closeTab();return false" rendered="{!inConsole}" styleClass="slds-button slds-button_neutral" />
+                            <apex:commandButton value="Cancel" action="{!cancelAction}" rendered="{!NOT(inConsole)}" immediate="true" styleClass="slds-button slds-button_neutral" />
+                        </apex:outputPanel>
+                    </apex:facet>
+                    <apex:facet name="start">
+                        <apex:outputPanel >
+                            <apex:commandButton value="Save" disabled="true" styleClass="slds-button slds-button_brand" style="cursor:not-allowed;" />
+                            <apex:commandButton value="Save & New" disabled="true" styleClass="slds-button slds-button_brand" style="cursor:not-allowed;" />
+                            <apex:commandButton value="Save & Clone" disabled="true" styleClass="slds-button slds-button_brand" style="cursor:not-allowed;" /> 
+                            <apex:commandButton value="Cancel" disabled="true" styleClass="slds-button slds-button_brand" style="cursor:not-allowed;" />
+                            <img id="loadingGif" src="/img/loading.gif" title="Saving..."/>
+                            <apex:outputText value="Saving..." />
+                        </apex:outputPanel>
+                    </apex:facet>
+                </apex:actionStatus>
+            </apex:pageBlockButtons>
+            
+            <!-- START OF CASE INFORMATION BLOCK --->
+            <apex:pageBlockSection id="accountAndCaseInfo" columns="2" showHeader="true" title="Case Information">
+                
+                <!-- CASE ENTITY INPUT ONLY AVAILABLE AFTER SAVE & CLONE -->
+                <apex:pageBlockSectionItem rendered="{!IF(saveAndCloneClicked, true, false )}" >    
+                    <apex:outputLabel value="Account Name" for="accountId" />
+                    <apex:outputPanel id="accountPanel" >
+                        <apex:actionRegion >
+                            <apex:inputField id="accountId" styleClass="AccountInput" value="{!caseRec.AccountId}" onchange="onChangeValidation(this, 'Account Name');" html-oncontextmenu="return false;" html-onpaste="return false;" html-placeholder="Click icon to search" onkeydown="return validateKey(this, event);" html-title="Click the lookup icon to choose an account"  >
+                                <div id="accErrorMsg" class="errorMsg" style="display:none" >
+                                    <Strong>Error:</Strong> You must enter a value for Account Name or Case Entity
+                                </div>  
+                            </apex:inputField>
+                        </apex:actionRegion>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem rendered="{!IF( (!contains(parentObjectRecordType, 'Entity') || parentObjectRecordType=='Case') && !saveAndCloneClicked && caseRec.AccountId != null , true, false )}" >
+                    <apex:outputLabel value="Account Name" />
+                    <apex:outputField value="{!caseRec.AccountId}" />
+                </apex:pageBlockSectionItem>
+                
+                <!-- ACCOUNT NAME INPUT ONLY AVAILABLE AFTER SAVE & CLONE -->
+                <apex:pageBlockSectionItem rendered="{!IF(saveAndCloneClicked, true, false )}" >
+                    <apex:outputLabel value="Case Entity" for="entId" />
+                    <apex:outputPanel id="entityPanel" >
+                        <apex:actionRegion >    
+                            <apex:inputField id="entId" styleClass="EntityInput" value="{!caseRec.Case_Entity__c}" onchange="onChangeValidation(this, 'Case Entity');" html-oncontextmenu="return false;" html-onpaste="return false;" html-placeholder="Click icon to search" onkeydown="return validateKey(this, event);" html-title="Click the lookup icon to choose a case entity"  >
+                                <div id="entityErrorMsg" class="errorMsg" style="display:none" >
+                                    <Strong>Error:</Strong> You must enter a value for Account Name or Case Entity
+                                </div>
+                            </apex:inputField>  
+                        </apex:actionRegion>    
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem rendered="{!IF( (contains(parentObjectRecordType, 'Entity') || parentObjectRecordType=='Case') && !saveAndCloneClicked && caseRec.Case_Entity__c != null, true, false)}"  >
+                    <apex:outputLabel value="Case Entity"  />
+                    <apex:outputField value="{!caseRec.Case_Entity__c}" />
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Contact Name" />
+                    <apex:inputField styleClass="ContactInput" value="{!caseRec.ContactId}" html-oncontextmenu="return false;" html-onpaste="return false;" html-placeholder="Click icon to search" onkeydown="return validateKey(this, event);" html-title="Click the lookup icon to choose a contact" />
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Email" />
+                    <apex:inputField id="email" styleClass="EmailInput" value="{!caseRec.Email_Address_Submitter__c}" onchange="onChangeValidation(this, 'Email Address');" html-placeholder="you@example.com"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Parent Case" />    
+                    <apex:inputField value="{!caseRec.CRM_Parent_Case_Lookup__c}" html-oncontextmenu="return false;" html-onpaste="return false;" html-placeholder="Click icon to search" onkeydown="return validateKey(this, event);" html-title="Click the lookup icon to choose a parent case" />
+                </apex:pageBlockSectionItem> 
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Origin" />
+                    <apex:outputPanel styleClass="requiredInput" layout="block" >
+                        <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                        <apex:inputField styleClass="OriginInput" value="{!caseRec.Origin}" onchange="onChangeValidation(this, 'Case Origin');" />
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                <apex:outputText value="{!caseRec.Plan_ID__c}" />
+                
+                <apex:pageBlockSectionItem rendered="{!NOT(fromCase)}" >
+                    <apex:outputLabel value="Corporate Received Date" />
+                    <apex:outputPanel id="CorpRecvdDatePanel" styleClass="requiredInput" layout="block" >
+                        <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                        <apex:inputField styleClass="CorpRecvdDateInput" value="{!caseRec.Corporate_Received_Date_Time__c}" onchange="onChangeValidation(this, 'Corporate Received Date');" />
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                <!-- PPN-39400 Corporate Received Date was prep-populated from parent case -->
+                <apex:pageBlockSectionItem rendered="{!fromCase}" >
+                        <apex:outputLabel value="Corporate Received Date" />
+                        <apex:outputField value="{!caseRec.Corporate_Received_Date_Time__c}" />
+                </apex:pageBlockSectionItem>
+                
+                <!-- TEMPORARY MANUAL PFIN FIELD -->
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Manual Pfin Number" for="manualPfinField" />
+                    <apex:outputPanel id="manualPfinField" >               
+                        <apex:inputText value="{!addPFINS}" /> 
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+            </apex:pageBlockSection>
+            
+            <!-- CRM TYPE SELECTION FIELD -->
+            <apex:pageBlockSection columns="2" >
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="CRM Case Type" for="crmtype"/>
+                    <apex:outputPanel >
+                        <apex:outputPanel styleClass="requiredInput" layout="block" >
+                            <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                            <apex:selectList id="crmtype" styleClass="crmReqType" html-multiple="multiple" required="true" onchange="onChangeValidation(this, 'CRM Case Type');" >
+                                <apex:selectOptions value="{!crmRequestTypes}"/>
+                            </apex:selectList>
+                            <div id="crmSelectorErrorMsg" class="errorMsg" style="display:none" >
+                                <Strong>Error:</Strong> You must enter a value
+                            </div>
+                        </apex:outputPanel>
+                    </apex:outputPanel>  
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem />
+            </apex:pageBlockSection>
+            
+            <!-- PFIN FILTER FIELD & SELECT ALL CHECKBOX-->
+            <apex:outputPanel id="pfinSearchPanel" >
+                <apex:outputLabel value="PFIN Number" for="pfinSearchField" />
+                <apex:inputText id="pfinSearchField" onkeyup="searchPfinTable(this);" value="{!pfinSearchValue}" html-placeholder="{!If(allPfins.size==0, 'No PFIN Options', '')}" disabled="{!If(allPfins.size==0, true, false)}" />
+                <apex:inputCheckbox id="selectAllPfinsCheckbox" value="{!selectAllPfinsCheckbox}" onchange="selectAll(this)" disabled="{!If(allPfins.size==0, true, false)}" styleClass="selectAllPfinsCheckbox" title="Select All" />
+                <apex:outputLabel value="Select All" for="selectAllPfinsCheckbox" />
+            </apex:outputPanel>
+            
+            <!-- PFIN NUMBER TABLE -->
+            <apex:pageBlockSection columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputPanel id="pfinTablePanel" >
+                        <div class="tableWrapper" >
+                            <apex:pageBlockTable id="pfinTable" styleClass="pfinTable slds-table slds-table_cell-buffer slds-table_bordered" value="{!allPfins}" var="p"  rendered="{!IF(caseRec.AccountId==null && caseRec.Case_Entity__c==null, false, true )}" > 
+                                
+                                <apex:column styleClass="{!IF(p.selected, 'selectedRow', '')}" title="Add/Remove PFIN" headerClass="checkboxColumn" >
+                                    <!--    <apex:facet name="header">
+<apex:inputCheckbox id="selectAllPfinsCheckbox" value="{!selectAllPfinsCheckbox}" onchange="selectAll(this)" disabled="{!If(allPfins.size==0, true, false)}" styleClass="selectAllPfinsCheckbox" title="Select All" />
+<apex:outputLabel value="Select All" for="selectAllPfinsCheckbox" />    
+</apex:facet>   -->
+                                    <apex:inputCheckbox id="pfinCheckbox" styleClass="{!p.pfinNum.CM_SPL_PFIN_No__c} pfinCheckbox" value="{!p.selected}" onclick="makeSelect(this)" />
+                                </apex:column>
+                                <apex:column styleClass="{!IF(p.selected, 'selectedRow', '')}" value="{!p.pfinNum.CM_SPL_PFIN_No__c}" />
+                                <apex:column styleClass="{!IF(p.selected, 'selectedRow', '')}" value="{!p.pfinNum.CM_SPA_Tax_ID__c}" />
+                                <apex:column styleClass="{!IF(p.selected, 'selectedRow', '')}" value="{!p.pfinNum.CM_County__c}" />
+                                <apex:column styleClass="{!IF(p.selected, 'selectedRow', '')}" value="{!p.pfinNum.Bill_PFIN__c}" />
+                                <apex:column styleClass="{!IF(p.selected, 'selectedRow', '')}" value="{!p.pfinNum.CM_SPL_Prov__r.Prov_ID__c}" />
+                                <apex:column styleClass="{!IF(p.selected, 'selectedRow', '')}" value="{!p.pfinNum.CM_SPL_Prov__c}" />
+                            </apex:pageBlockTable>
+                        </div>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            
+            <!-- End of Case Information Block --->   
+            <!--- Start of Selected CRM Request Types block -->
+            
+            <apex:pageBlockSection title="Selected CRM Case Types" columns="1" collapsible="true"> 
+                <apex:outputPanel id="crmTypesPgBlock" styleClass="childCaseBlock" >
+                    <apex:outputPanel rendered="{!IF(caseWrapList.size==0,true,false)}"  >
+                        <br/><br/>
+                        <div style="text-align:center">
+                            <apex:outputText value="CRM Selections" style="color:#DCDCDC" />
+                        </div>
+                        <br/><br/><br/>
+                    </apex:outputPanel>
+                    <apex:repeat value="{!caseWrapList}" var="warpRec">
+                        <apex:pageBlock tabStyle="Account" >
+                            <apex:pageBlockSection id="crmTypeBlk" title="{!warpRec.reqTypeName}" columns="2" collapsible="true" >
+                                <apex:outputText label="CRM Case Type" value="{!warpRec.reqTypeName}"></apex:outputText>
+                                
+                                <!-- PPN-24048: Case Owner Selection -->
+                                <apex:pageBlockSectionItem dataStyleClass="caseOwnerSection" >
+                                    <apex:outputLabel value="Case Owner" />
+                                    <apex:outputPanel styleClass="requiredInput" layout="block" >
+                                        <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                                        <apex:panelGroup >
+                                            <apex:selectList id="picklistSelector" styleClass="{!warpRec.reqTypeName}_caseOwnerType" value="{!warpRec.caseOwnerType}" onchange="toggleCaseOwnerPicklist(this);" multiselect="false" size="1"> 
+                                                <apex:selectOption itemValue="User" />
+                                                <apex:selectOption itemValue="Queue" />
+                                                <apex:actionSupport event="onchange" 
+                                                                    action="{!updateSelectedCrmTypes}" 
+                                                                    rerender="picklistSelector">
+                                                    <apex:param assignTo="{!lookupValue}" value="{!warpRec.reqTypeName}"/>
+                                                    <apex:param assignTo="{!fieldName}" value="picklistSelector"/>
+                                                </apex:actionSupport>
+                                            </apex:selectList>
+                                            <apex:selectList id="userDropdown" styleClass="{!IF(warpRec.caseOwnerType=='User',warpRec.reqTypeName + '_userPicklist', warpRec.reqTypeName + '_userPicklist hidden')}" value="{!warpRec.selectedUser}" multiselect="false" size="1" >
+                                                <apex:selectOptions value="{!possibleCaseOwnersByUser}"/>
+                                                <apex:actionSupport event="onchange" 
+                                                                    action="{!updateSelectedCrmTypes}" 
+                                                                    rerender="userDropdown">
+                                                    <apex:param assignTo="{!lookupValue}" value="{!warpRec.reqTypeName}"/>
+                                                    <apex:param assignTo="{!fieldName}" value="userSelector"/>
+                                                </apex:actionSupport>
+                                            </apex:selectList>
+                                            <apex:selectList id="queueDropdown" styleClass="{!IF(warpRec.caseOwnerType=='Queue',warpRec.reqTypeName + '_queuePicklist', warpRec.reqTypeName + '_queuePicklist hidden')}" value="{!warpRec.selectedQueue}" multiselect="false" size="1" >
+                                                <apex:selectOptions value="{!possibleCaseOwnersByQueue}"/>
+                                                <apex:actionSupport event="onchange" 
+                                                                    action="{!updateSelectedCrmTypes}" 
+                                                                    rerender="queueDropdown"
+                                                                    oncomplete="onChangeValidation(this, 'Case Owner');">
+                                                    <apex:param assignTo="{!lookupValue}" value="{!warpRec.reqTypeName}"/>
+                                                    <apex:param assignTo="{!fieldName}" value="queueSelector"/>
+                                                </apex:actionSupport>
+                                            </apex:selectList>
+                                        </apex:panelGroup>
+                                    </apex:outputPanel>
+                                </apex:pageBlockSectionItem>
+                                <!-- End Case Owner Selection -->
+                                
+                                <apex:pageBlockSectionItem >
+                                    <apex:outputLabel value="Priority" />
+                                    <apex:outputPanel styleClass="requiredInput" layout="block" >
+                                        <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                                        <apex:inputField value="{!warpRec.caserec.Priority}" id="priority" onchange="onChangeValidation(this, 'Priority');" />
+                                        <apex:actionSupport event="onchange" 
+                                                            action="{!updateSelectedCrmTypes}" 
+                                                            rerender="priority">
+                                            <apex:param assignTo="{!lookupValue}" value="{!warpRec.reqTypeName}"/>
+                                            <apex:param assignTo="{!fieldName}" value="priority"/>
+                                            <apex:param assignTo="{!fieldValue}" value="{!warpRec.caserec.Priority}"/>
+                                        </apex:actionSupport>
+                                    </apex:outputPanel>
+                                </apex:pageBlockSectionItem>
+                                
+                                <apex:pageBlockSectionItem >
+                                    <apex:outputLabel value="Comments" />
+                                    <apex:outputPanel styleClass="requiredInput" layout="block" >
+                                        <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                                        <apex:inputField id="comments" value="{!warpRec.caserec.CRM_Comments__c}" onchange="onChangeValidation(this, 'Comments');"  />
+                                        <apex:actionSupport event="onchange" 
+                                                            action="{!updateSelectedCrmTypes}" 
+                                                            rerender="comments">
+                                            <apex:param assignTo="{!lookupValue}" value="{!warpRec.reqTypeName}"/>
+                                            <apex:param assignTo="{!fieldName}" value="comment"/>
+                                            <apex:param assignTo="{!fieldValue}" value="{!warpRec.caserec.CRM_Comments__c}"/>
+                                        </apex:actionSupport>    
+                                    </apex:outputPanel>
+                                </apex:pageBlockSectionItem>
+                                
+                                
+                               <apex:pageBlockSectionItem rendered="{!If(OR(warpRec.reqTypeName == 'Specialty Change' , warpRec.reqTypeName == 'Cred Rush Request' , warpRec.reqTypeName == 'Transition of Participation',
+                                                                    warpRec.reqTypeName == 'Reciprocal' , warpRec.reqTypeName =='Status Change' , warpRec.reqTypeName =='Reinstatement' ,
+                                                                    warpRec.reqTypeName == 'Credentialing Application' , warpRec.reqTypeName =='Credentialing Docs' , warpRec.reqTypeName =='Stop Credentialing' ,
+                                                                    warpRec.reqTypeName == 'Term-Preclusion' , warpRec.reqTypeName =='Term-Debarment' , warpRec.reqTypeName =='Term-Committee Denial' ,
+                                                                    warpRec.reqTypeName == 'Term-Inactive License' , warpRec.reqTypeName =='Term-Recred Final Term Request' , warpRec.reqTypeName =='Term-Admin Denial',
+                                                                    warpRec.reqTypeName == 'Term-Non Compliant' , warpRec.reqTypeName =='Provider Update') ,true,false) }">
+                                    <apex:outputLabel value="Credentialing Case Number" for="CredentialingNumberId" />
+                                    <apex:outputPanel >
+                                        <apex:inputField id="CredentialingNumberId" value="{!warpRec.caserec.Credentialing_Case_Number__c}"  rendered="{!!isFromCredentialing}" html-oncontextmenu="return false;" html-onpaste="return false;" html-placeholder="Click icon to search" onkeydown="return validateKey(this, event);" html-title="Click the lookup icon to choose a Credentialing Case Number" />
+                                        <apex:outputField id="CredNumberId" value="{!warpRec.caserec.Credentialing_Case_Number__c}" rendered="{!isFromCredentialing}"/>
+                                    </apex:outputPanel>
+                                </apex:pageBlockSectionItem>
+
+                                <apex:pageBlockSectionItem >
+                                    <apex:outputLabel value="Status" />
+                                    <apex:outputPanel styleClass="requiredInput" layout="block" >
+                                        <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                                        <apex:selectList id="selList" size="1" value="{!warpRec.caserec.status}"  rendered="{!IF(warpRec.caseStatus.size>0,true,false)}" >
+                                            <apex:selectOptions id="selOptions" value="{!warpRec.caseStatus}"></apex:selectOptions>
+                                        </apex:selectList>
+                                        <apex:actionSupport event="onchange" 
+                                                            action="{!updateSelectedCrmTypes}" 
+                                                            rerender="selList">
+                                            <apex:param assignTo="{!lookupValue}" value="{!warpRec.reqTypeName}"/>
+                                            <apex:param assignTo="{!fieldName}" value="status"/>
+                                            <apex:param assignTo="{!fieldValue}" value="{!warpRec.caserec.status}"/>
+                                        </apex:actionSupport> 
+                                    </apex:outputPanel>
+                                </apex:pageBlockSectionItem>
+                                
+                                <apex:pageBlockSectionItem rendered="{!IF(warpRec.reqTypeName=='Others',false,true)}" >
+                                    <apex:outputLabel value="Outcome" for="outcomeField" />
+                                    <apex:outputPanel >
+                                        <apex:inputField id="outcomeField" value="{!warpRec.caseRec.Outcome__c}"  />
+                                        <apex:actionSupport event="onchange" 
+                                                            action="{!updateSelectedCrmTypes}" 
+                                                            rerender="outcomeField">
+                                            <apex:param assignTo="{!lookupValue}" value="{!warpRec.reqTypeName}"/>
+                                            <apex:param assignTo="{!fieldName}" value="Outcome__c" />
+                                            <apex:param assignTo="{!fieldValue}" value="{!warpRec.caserec.Outcome__c}"/>
+                                        </apex:actionSupport>
+                                    </apex:outputPanel>
+                                </apex:pageBlockSectionItem>    
+                                
+                                <apex:pageblocksectionitem rendered="{!IF(warpRec.reqTypeName=='Others',true,false)}">
+                                    <apex:outputLabel value="Other Description" />
+                                    <apex:outputPanel styleClass="requiredInput" layout="block" >
+                                        <apex:outputPanel styleClass="requiredBlock" layout="block" /> 
+                                        <apex:inputField id="otherDescription" value="{!warpRec.caserec.Other_Reason_Description__c}" onchange="onChangeValidation(this, 'Other Description');"/>
+                                        <apex:actionSupport event="onchange" 
+                                                            action="{!updateSelectedCrmTypes}" 
+                                                            rerender="otherDescription">
+                                            <apex:param assignTo="{!lookupValue}" value="{!warpRec.reqTypeName}"/>
+                                            <apex:param assignTo="{!fieldName}" value="Other_Reason_Description__c"/>
+                                            <apex:param assignTo="{!fieldValue}" value="{!warpRec.caserec.Other_Reason_Description__c}"/>
+                                        </apex:actionSupport>
+                                    </apex:outputPanel>
+                                </apex:pageblocksectionitem>
+                                
+                                <apex:pageBlockSectionItem rendered="{!IF(warpRec.reqTypeName=='Appeals and Grievances',true,false)}">
+                                    <apex:outputLabel for="grievanceField" style="top:15px; position:relative">Grievance Description 
+                                        <apex:outputText value="*" style="color:rgb(194, 57, 52);
+                                                                          left:13px; height:5px; width:5px; float:right;
+                                                                          overflow:visible;
+                                                                          font-size:10.5pt;
+                                                                          font-weight: normal;
+                                                                          position:relative;"/>
+                                    </apex:outputLabel> 
+                                    <apex:outputPanel layout="none" id="grievanceSection">
+                                        <apex:inputField value="{!warpRec.caserec.Grievance_Description__c}" id="grievanceField" styleClass="grievanceClass"
+                                                         onchange="onChangeValidation(this, 'Grievance Description - Chosen');">
+                                        </apex:inputField>                                    
+                                    </apex:outputPanel>
+                                </apex:pageBlockSectionItem>
+                                
+                                <!--    Controlling field for dependent picklist Outcome__c, hidden on page     -->
+                                <apex:inputField label="" value="{!warpRec.caseRec.CRM_Types__c}" style="display:none" />
+                                
+                            </apex:pageBlockSection>                         
+                        </apex:pageBlock>
+                    </apex:repeat>
+                </apex:outputPanel>
+            </apex:pageBlockSection> 
+        </apex:pageBlock>
+        <!--- End of CRM Request Types block --> 
+        <!-- Ajax functions used with in the page -->
+        <apex:actionFunction name="popPfins" action="{!populatePfins}" reRender="pfinTablePanel, pfinSearchPanel" oncomplete="disableInputs();" />
+        
+        <apex:actionFunction name="saveActionFunction" action="{!saveAction}" rerender="caseCreationStatus" status="caseCreationStatus" oncomplete="closeTab();return false"/>
+        <apex:actionFunction name="saveAndNewActionFunction" action="{!saveAndNewAction}" rerender="caseCreationStatus" status="caseCreationStatus"/>
+        <apex:actionFunction name="cloneActionFunction" rerender="accountAndCaseInfo, CorpRecvdDatePanel, caseCreationStatus, pfinSearchPanel, pfinTablePanel" action="{!saveAndCloneAction}" status="caseCreationStatus" oncomplete="openCreatedParentCase('{!parentId}', '{!parentCaseNumber}');return false" />
+        
+        <apex:actionRegion >
+            <apex:actionFunction name="selectedCrmTypesToController" action="{!selectedCrmTypesToController}" oncomplete="hideDisabledElements();" reRender="crmTypesPgBlock, pbsId"> 
+                <apex:param assignTo="{!selectedCrmTypes}" name="selectedCrmTypes" value=""/> 
+            </apex:actionFunction>
+        </apex:actionRegion>
+        
+        <!--End of  Ajax functions used with in the page -->    
+    </apex:form>
+</apex:page>

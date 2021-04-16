@@ -1,0 +1,2247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Case_Type_Name_Origin__c</fullName>
+        <externalId>false</externalId>
+        <label>CaseType Name / Origin</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Demographics</fullName>
+                    <default>false</default>
+                    <label>Demographics</label>
+                </value>
+                <value>
+                    <fullName>CRM</fullName>
+                    <default>false</default>
+                    <label>CRM</label>
+                </value>
+                <value>
+                    <fullName>Govt Cases</fullName>
+                    <default>false</default>
+                    <label>Govt Cases</label>
+                </value>
+                <value>
+                    <fullName>Network Change</fullName>
+                    <default>false</default>
+                    <label>Network Change</label>
+                </value>
+                <value>
+                    <fullName>Other Provider Updates</fullName>
+                    <default>false</default>
+                    <label>Other Provider Updates</label>
+                </value>
+                <value>
+                    <fullName>Web On-boarding - Contracting</fullName>
+                    <default>false</default>
+                    <label>Web On-boarding - Contracting</label>
+                </value>
+                <value>
+                    <fullName>Web On-boarding - Data Entry</fullName>
+                    <default>false</default>
+                    <label>Web On-boarding - Data Entry</label>
+                </value>
+                <value>
+                    <fullName>Ancillary Networks</fullName>
+                    <default>false</default>
+                    <label>Ancillary Networks</label>
+                </value>
+                <value>
+                    <fullName>Balance Billing</fullName>
+                    <default>false</default>
+                    <label>Balance Billing</label>
+                </value>
+                <value>
+                    <fullName>Delegated Credentialing</fullName>
+                    <default>false</default>
+                    <label>Delegated Credentialing</label>
+                </value>
+                <value>
+                    <fullName>Fee Schedule Requests</fullName>
+                    <default>false</default>
+                    <label>Fee Schedule Requests</label>
+                </value>
+                <value>
+                    <fullName>Gov Netops Provider Update</fullName>
+                    <default>false</default>
+                    <label>Gov Netops Provider Update</label>
+                </value>
+                <value>
+                    <fullName>Gov Providers</fullName>
+                    <default>false</default>
+                    <label>Gov Providers</label>
+                </value>
+                <value>
+                    <fullName>HCS-X6100</fullName>
+                    <default>false</default>
+                    <label>HCS-X6100</label>
+                </value>
+                <value>
+                    <fullName>HMO Networks</fullName>
+                    <default>false</default>
+                    <label>HMO Networks</label>
+                </value>
+                <value>
+                    <fullName>Internal PNC Inquiries</fullName>
+                    <default>false</default>
+                    <label>Internal PNC Inquiries</label>
+                </value>
+                <value>
+                    <fullName>Netops Provider Update</fullName>
+                    <default>false</default>
+                    <label>Netops Provider Update</label>
+                </value>
+                <value>
+                    <fullName>Network Roster Submission</fullName>
+                    <default>false</default>
+                    <label>Network Roster Submission</label>
+                </value>
+                <value>
+                    <fullName>OK Network Management</fullName>
+                    <default>false</default>
+                    <label>OK Network Management</label>
+                </value>
+                <value>
+                    <fullName>PNC NetOps Inquiries</fullName>
+                    <default>false</default>
+                    <label>PNC NetOps Inquiries</label>
+                </value>
+                <value>
+                    <fullName>PPN CorpusChristi</fullName>
+                    <default>false</default>
+                    <label>PPN CorpusChristi</label>
+                </value>
+                <value>
+                    <fullName>PPN EIPaso</fullName>
+                    <default>false</default>
+                    <label>PPN EIPaso</label>
+                </value>
+                <value>
+                    <fullName>PPN Lubbock-Amerillo</fullName>
+                    <default>false</default>
+                    <label>PPN Lubbock-Amerillo</label>
+                </value>
+                <value>
+                    <fullName>Professional Provider Network Dept</fullName>
+                    <default>false</default>
+                    <label>Professional Provider Network Dept</label>
+                </value>
+                <value>
+                    <fullName>Provider Inquiry</fullName>
+                    <default>false</default>
+                    <label>Provider Inquiry</label>
+                </value>
+                <value>
+                    <fullName>Provider Relation DFW</fullName>
+                    <default>false</default>
+                    <label>Provider Relation DFW</label>
+                </value>
+                <value>
+                    <fullName>Provider Relations Houston</fullName>
+                    <default>false</default>
+                    <label>Provider Relations Houston</label>
+                </value>
+                <value>
+                    <fullName>Provider Relations Midland</fullName>
+                    <default>false</default>
+                    <label>Provider Relations Midland</label>
+                </value>
+                <value>
+                    <fullName>Provider Relations South Texas</fullName>
+                    <default>false</default>
+                    <label>Provider Relations South Texas</label>
+                </value>
+                <value>
+                    <fullName>Provider Relations IL</fullName>
+                    <default>false</default>
+                    <label>Provider Relations IL</label>
+                </value>
+                <value>
+                    <fullName>Validation Review</fullName>
+                    <default>false</default>
+                    <label>Validation Review</label>
+                </value>
+                <value>
+                    <fullName>Web Desk</fullName>
+                    <default>false</default>
+                    <label>Web Desk</label>
+                </value>
+                <value>
+                    <fullName>Voicemail</fullName>
+                    <default>false</default>
+                    <label>Voicemail</label>
+                </value>
+                <value>
+                    <fullName>ILBCBSAinquiries@bcbsil.com</fullName>
+                    <default>false</default>
+                    <label>ILBCBSAinquiries@bcbsil.com</label>
+                </value>
+                <value>
+                    <fullName>MTBCBSAinquiries@bcbsmt.com</fullName>
+                    <default>false</default>
+                    <label>MTBCBSAinquiries@bcbsmt.com</label>
+                </value>
+                <value>
+                    <fullName>NMBCBSAinquiries@bcbsnm.com</fullName>
+                    <default>false</default>
+                    <label>NMBCBSAinquiries@bcbsnm.com</label>
+                </value>
+                <value>
+                    <fullName>OKBCBSAinquiries@bcbsok.com</fullName>
+                    <default>false</default>
+                    <label>OKBCBSAinquiries@bcbsok.com</label>
+                </value>
+                <value>
+                    <fullName>TXBCBSAinquiries@bcbstx.com</fullName>
+                    <default>false</default>
+                    <label>TXBCBSAinquiries@bcbstx.com</label>
+                </value>
+                <value>
+                    <fullName>OKNetworkVM</fullName>
+                    <default>false</default>
+                    <label>OKNetworkVM</label>
+                </value>
+                <value>
+                    <fullName>Tx_Network_Central_Voicemail</fullName>
+                    <default>false</default>
+                    <label>Tx_Network_Central_Voicemail</label>
+                </value>
+                <value>
+                    <fullName>TX Medicaid Network Dept</fullName>
+                    <default>false</default>
+                    <label>TX Medicaid Network Dept</label>
+                </value>
+                <value>
+                    <fullName>maencounter@bcbsil.com</fullName>
+                    <default>false</default>
+                    <label>maencounter@bcbsil.com</label>
+                </value>
+                <value>
+                    <fullName>ILHCMProductionSupport@bcbsil.com</fullName>
+                    <default>false</default>
+                    <label>ILHCMProductionSupport@bcbsil.com</label>
+                </value>
+                <value>
+                    <fullName>ILProviderRosterRequests@bcbsil.com</fullName>
+                    <default>false</default>
+                    <label>ILProviderRosterRequests@bcbsil.com</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Case_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Case Type</label>
+        <length>120</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>OMNI_Queue</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Plan_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Plan Id</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>IL1</fullName>
+                    <default>false</default>
+                    <label>IL1</label>
+                </value>
+                <value>
+                    <fullName>OK1</fullName>
+                    <default>false</default>
+                    <label>OK1</label>
+                </value>
+                <value>
+                    <fullName>MT1</fullName>
+                    <default>false</default>
+                    <label>MT1</label>
+                </value>
+                <value>
+                    <fullName>NM1</fullName>
+                    <default>false</default>
+                    <label>NM1</label>
+                </value>
+                <value>
+                    <fullName>TX1</fullName>
+                    <default>false</default>
+                    <label>TX1</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Queue_Priority__c</fullName>
+        <externalId>false</externalId>
+        <label>Priority</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                    <label>4</label>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                    <label>5</label>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                    <label>6</label>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                    <label>7</label>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                    <label>8</label>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                    <label>9</label>
+                </value>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                    <label>10</label>
+                </value>
+                <value>
+                    <fullName>11</fullName>
+                    <default>false</default>
+                    <label>11</label>
+                </value>
+                <value>
+                    <fullName>12</fullName>
+                    <default>false</default>
+                    <label>12</label>
+                </value>
+                <value>
+                    <fullName>13</fullName>
+                    <default>false</default>
+                    <label>13</label>
+                </value>
+                <value>
+                    <fullName>14</fullName>
+                    <default>false</default>
+                    <label>14</label>
+                </value>
+                <value>
+                    <fullName>15</fullName>
+                    <default>false</default>
+                    <label>15</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Request_Type_s__c</fullName>
+        <externalId>false</externalId>
+        <label>Request Type(s)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Administrative Change</fullName>
+                    <default>false</default>
+                    <label>Administrative Change</label>
+                </value>
+                <value>
+                    <fullName>Billing Address Change</fullName>
+                    <default>false</default>
+                    <label>Billing Address Change</label>
+                </value>
+                <value>
+                    <fullName>Credentialing Change</fullName>
+                    <default>false</default>
+                    <label>Credentialing Change</label>
+                </value>
+                <value>
+                    <fullName>NPI Tax Id Change</fullName>
+                    <default>false</default>
+                    <label>NPI Tax Id Change</label>
+                </value>
+                <value>
+                    <fullName>Name Change Request</fullName>
+                    <default>false</default>
+                    <label>Name Change Request</label>
+                </value>
+                <value>
+                    <fullName>Other Provider Updates</fullName>
+                    <default>false</default>
+                    <label>Other Provider Updates</label>
+                </value>
+                <value>
+                    <fullName>Physical Address Change</fullName>
+                    <default>false</default>
+                    <label>Physical Address Change</label>
+                </value>
+                <value>
+                    <fullName>Remove Provider from Group/Location</fullName>
+                    <default>false</default>
+                    <label>Remove Provider from Group/Location</label>
+                </value>
+                <value>
+                    <fullName>nm_network_scripting@bcbsnm.com</fullName>
+                    <default>false</default>
+                    <label>nm_network_scripting@bcbsnm.com</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Reserved_Queue_Users__c</fullName>
+        <externalId>false</externalId>
+        <label>Reserved Queue Users</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Test1</fullName>
+                    <default>false</default>
+                    <label>Test1</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <label>OMNI Queue</label>
+    <listViews>
+        <fullName>OMNI_ILMedicaidIDRequest_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>IL Medicaid ID Request</label>
+        <queue>OMNI_ILMedicaidIDRequest</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_ILUniversalRoster_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>IL Universal Roster</label>
+        <queue>OMNI_ILUniversalRoster</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_Ancillary_Networks_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_Ancillary Networks</label>
+        <queue>OMNI_IL_Ancillary_Networks</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_Balance_Billing_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_Balance Billing</label>
+        <queue>OMNI_IL_Balance_Billing</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_Central_IL_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_Central IL</label>
+        <queue>OMNI_IL_Central_IL</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_Chicago_Metro_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_Chicago Metro</label>
+        <queue>OMNI_IL_Chicago_Metro</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_Commercial_Encounters_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_Commercial Encounters</label>
+        <queue>OMNI_IL_Commercial_Encounters</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_Consumer_Provider_Data_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_Consumer Provider Data</label>
+        <queue>OMNI_IL_Consumer_Provider_Data</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_Facility_Contract_Notices_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_Facility Contract Notices</label>
+        <queue>OMNI_IL_Facility_Contract_Notices</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_Facility_Demographic_Changes_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_Facility Demographic Changes</label>
+        <queue>OMNI_IL_Facility_Demographic_Changes</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_HFS_OIGInquiries_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_HFS_OIGInquiries</label>
+        <queue>OMNI_IL_HFS_OIGInquiries</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_ILCONTRACTS_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_ILCONTRACTS</label>
+        <queue>OMNI_IL_ILCONTRACTS</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_IL_Ancillary_Contracting_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_IL Ancillary Contracting</label>
+        <queue>OMNI_IL_IL_Ancillary_Contracting</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_IL_BCBSAinquiries_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_IL BCBSAinquiries</label>
+        <queue>OMNI_IL_IL_BCBSAinquiries</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_IL_Comm_Professional_Contract_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_IL Comm Professional Contract</label>
+        <queue>OMNI_IL_IL_Comm_Professional_Contract</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_IL_Delegated_Credentialing_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_IL Delegated Credentialing</label>
+        <queue>OMNI_IL_IL_Delegated_Credentialing</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_IL_Dental_Maintenance_Request_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_IL Dental Maintenance Request</label>
+        <queue>OMNI_IL_IL_Dental_Maintenance_Request</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_IL_Gov_Professional_Contract_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_IL Gov Professional Contract</label>
+        <queue>OMNI_IL_IL_Gov_Professional_Contract</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_IL_HCM_IPA_Requests_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_IL HCM IPA Requests</label>
+        <queue>OMNI_IL_IL_HCM_IPA_Requests</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_IL_HCM_Production_Support_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_IL HCM Production Support</label>
+        <queue>OMNI_IL_IL_HCM_Production_Support</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_IL_HCM_training_and_quality_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_IL HCM training and quality</label>
+        <queue>OMNI_IL_IL_HCM_training_and_quality</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_IL_HMO_NETWORK_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_IL HMO NETWORK</label>
+        <queue>OMNI_IL_IL_HMO_NETWORK</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_IL_Netops_Communication_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_IL Netops Communication</label>
+        <queue>OMNI_IL_IL_Netops_Communication</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_IL_Netops_Custom_Networks_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_IL Netops Custom Networks</label>
+        <queue>OMNI_IL_IL_Netops_Custom_Networks</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_IL_Netops_Facility_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_IL Netops Facility</label>
+        <queue>OMNI_IL_IL_Netops_Facility</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_IL_Netops_Gov_HMO_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_IL Netops Gov/HMO</label>
+        <queue>OMNI_IL_IL_Netops_Gov_HMO</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_IL_Network_Reporting_Analytics_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_IL Network Reporting Analytics</label>
+        <queue>OMNI_IL_IL_Network_Reporting_Analytics</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_IL_No_Claim_Campaign_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_IL_No_Claim_Campaign</label>
+        <queue>OMNI_IL_IL_No_Claim_Campaign</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_IL_PDM_Availity_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_IL PDM Availity</label>
+        <queue>OMNI_IL_IL_PDM_Availity</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_IL_PNC_Queue_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_IL PNC Queue</label>
+        <queue>OMNI_IL_IL_PNC_Queue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_IL_Provider_Data_Comm_Adds_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_IL Provider Data Comm Adds</label>
+        <queue>OMNI_IL_IL_Provider_Data_Comm_Adds</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_IL_Provider_Data_Demographics_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_IL Provider Data Demographics</label>
+        <queue>OMNI_IL_IL_Provider_Data_Demographics</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_IL_Provider_Data_Gov_Adds_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_IL Provider Data Gov Adds</label>
+        <queue>OMNI_IL_IL_Provider_Data_Gov_Adds</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_IL_Provider_Demo_Net_Change_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_IL Provider Demo Net Change</label>
+        <queue>OMNI_IL_IL_Provider_Demo_Net_Change</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_IL_Provider_Inquiry_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_IL Provider Inquiry</label>
+        <queue>OMNI_IL_IL_Provider_Inquiry</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_IL_Provider_Roster_Requests_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_IL Provider Roster Requests</label>
+        <queue>OMNI_IL_IL_Provider_Roster_Requests</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_IL_Roster_Processing_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_IL Roster Processing</label>
+        <queue>OMNI_IL_IL_Roster_Processing</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_IL_Script_Processing_Adds_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_IL Script Processing - Adds</label>
+        <queue>OMNI_IL_IL_Script_Processing_Adds</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_IL_Script_Processing_Changes_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_IL Script Processing - Changes</label>
+        <queue>OMNI_IL_IL_Script_Processing_Changes</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_IL_Script_Processing_Terms_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_IL Script Processing - Terms</label>
+        <queue>OMNI_IL_IL_Script_Processing_Terms</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_Internal_PNC_Inquiries_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_Internal PNC Inquiries</label>
+        <queue>OMNI_IL_Internal_PNC_Inquiries</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_MA_Encounters_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_MA Encounters</label>
+        <queue>OMNI_IL_MA_Encounters</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_Metro_South_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_Metro South</label>
+        <queue>OMNI_IL_Metro_South</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_NetOps_QualityAudit_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_NetOps QualityAudit</label>
+        <queue>OMNI_IL_NetOps_QualityAudit</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_NetOpsvoicemailbox_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_NetOpsvoicemailbox</label>
+        <queue>OMNI_IL_NetOpsvoicemailbox</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_North_IL_Providers_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_North IL Providers</label>
+        <queue>OMNI_IL_North_IL_Providers</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_Onboarding_Contracting_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_Onboarding Contracting</label>
+        <queue>OMNI_IL_Onboarding_Contracting</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_Onboarding_Data_Entry_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_Onboarding Data Entry</label>
+        <queue>OMNI_IL_Onboarding_Data_Entry</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_PNC_TMG_Inquiries_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_PNC TMG Inquiries</label>
+        <queue>OMNI_IL_PNC_TMG_Inquiries</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_PROD_VRF_R3_QUEUE_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_PROD VRF R3 QUEUE</label>
+        <queue>OMNI_IL_PROD_VRF_R3_QUEUE</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_Prof_Govt_Contracting_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_Prof Govt Contracting</label>
+        <queue>OMNI_IL_Prof_Govt_Contracting</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_Provider_Finder_Audit_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_Provider Finder Audit</label>
+        <queue>OMNI_IL_Provider_Finder_Audit</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_Provider_Relations_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_Provider Relations</label>
+        <queue>OMNI_IL_Provider_Relations</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_Provider_Relations_Voicemail_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_Provider Relations Voicemail</label>
+        <queue>OMNI_IL_Provider_Relations_Voicemail</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_Southern_IL_Providers_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_Southern IL Providers</label>
+        <queue>OMNI_IL_Southern_IL_Providers</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_IL_West_IL_Providers_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_IL_West IL Providers</label>
+        <queue>OMNI_IL_West_IL_Providers</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_MT_HCS_6100_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_MT_HCS 6100</label>
+        <queue>OMNI_MT_HCS_6100</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_MT_HCS_Specialists_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_MT_HCS Specialists</label>
+        <queue>OMNI_MT_HCS_Specialists</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_MT_MT_DemographicQueue_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_MT_MT_DemographicQueue</label>
+        <queue>OMNI_MT_MT_DemographicQueue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_MT_MT_Web_Desk_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_MT_MT Web Desk</label>
+        <queue>OMNI_MT_MT_Web_Desk</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_MT_On_boarding_queue_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_MT_On-boarding queue</label>
+        <queue>OMNI_MT_On_boarding_queue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_MT_TestQueue_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_MT_TestQueue</label>
+        <queue>OMNI_MT_TestQueue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_NM_Claims_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_NM_Claims</label>
+        <queue>OMNI_NM_Claims</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_NM_NMBCBSAinquiries_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_NM_NMBCBSAinquiries</label>
+        <queue>OMNI_NM_NMBCBSAinquiries</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_NM_NM_BH_Roster_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_NM_NM BH Roster</label>
+        <queue>OMNI_NM_NM_BH_Roster</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_NM_NM_C_2_0_Contracting_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_NM_NM C 2.0 Contracting</label>
+        <queue>OMNI_NM_NM_C_2_0_Contracting</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_NM_NM_Cred_Inquiry_to_Network_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_NM_NM Cred Inquiry to Network</label>
+        <queue>OMNI_NM_NM_Cred_Inquiry_to_Network</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_NM_NM_Credentialing_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_NM_NM Credentialing</label>
+        <queue>OMNI_NM_NM_Credentialing</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_NM_NM_Fee_Schedules_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_NM_NM Fee Schedules</label>
+        <queue>OMNI_NM_NM_Fee_Schedules</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_NM_NM_Government_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_NM_NM Government</label>
+        <queue>OMNI_NM_NM_Government</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_NM_NM_NRS_Comp_Grids_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_NM_NM NRS Comp Grids</label>
+        <queue>OMNI_NM_NM_NRS_Comp_Grids</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_NM_NM_NRS_MTM_Audit_Responses_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_NM_NM NRS MTM Audit Responses</label>
+        <queue>OMNI_NM_NM_NRS_MTM_Audit_Responses</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_NM_NM_NSD_Right_Fax_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_NM_NM NSD Right Fax</label>
+        <queue>OMNI_NM_NM_NSD_Right_Fax</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_NM_NM_Network_Contracting_SCAs_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_NM_NM Network Contracting SCAs</label>
+        <queue>OMNI_NM_NM_Network_Contracting_SCAs</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_NM_NM_Network_Priority_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_NM_NM Network Priority</label>
+        <queue>OMNI_NM_NM_Network_Priority</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_NM_NM_Network_Reporting_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_NM_NM Network Reporting</label>
+        <queue>OMNI_NM_NM_Network_Reporting</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_NM_NM_Network_SOU_EOU_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_NM_NM Network SOU EOU</label>
+        <queue>OMNI_NM_NM_Network_SOU_EOU</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_NM_NM_Network_Scripting_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_NM_NM Network Scripting</label>
+        <queue>OMNI_NM_NM_Network_Scripting</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_NM_NM_PDO_Applications_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_NM_NM PDO Applications</label>
+        <queue>OMNI_NM_NM_PDO_Applications</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_NM_NM_PDO_Delegated_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_NM_NM PDO Delegated</label>
+        <queue>OMNI_NM_NM_PDO_Delegated</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_NM_NM_PDO_Disclosures_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_NM_NM PDO Disclosures</label>
+        <queue>OMNI_NM_NM_PDO_Disclosures</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_NM_NM_Provider_Demographic_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_NM_NM Provider Demographic</label>
+        <queue>OMNI_NM_NM_Provider_Demographic</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_NM_NM_Provider_Finder_Inquiries_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_NM_NM Provider Finder Inquiries</label>
+        <queue>OMNI_NM_NM_Provider_Finder_Inquiries</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_NM_NM_Provider_Network_Change_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_NM_NM Provider Network Change</label>
+        <queue>OMNI_NM_NM_Provider_Network_Change</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_NM_NM_Provider_Relations_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_NM_NM Provider Relations</label>
+        <queue>OMNI_NM_NM_Provider_Relations</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_NM_NM_Provider_Terms_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_NM_NM Provider Terms</label>
+        <queue>OMNI_NM_NM_Provider_Terms</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_NM_NM_Provisional_Cred_Rpt_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_NM_NM Provisional Cred Rpt</label>
+        <queue>OMNI_NM_NM_Provisional_Cred_Rpt</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_NM_NM_Web_On_boarding_Add_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_NM_NM Web On boarding Add</label>
+        <queue>OMNI_NM_NM_Web_On_boarding_Add</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_NM_NM_Web_On_boarding_Contracting_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_NM_NM Web On boarding Contracting</label>
+        <queue>OMNI_NM_NM_Web_On_boarding_Contracting</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_NM_NM_Web_On_boarding_Ctr_Sign_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_NM_NM Web On boarding Ctr Sign</label>
+        <queue>OMNI_NM_NM_Web_On_boarding_Ctr_Sign</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_NM_NM_Web_On_boarding_Data_Entry_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_NM_NM Web On boarding Data Entry</label>
+        <queue>OMNI_NM_NM_Web_On_boarding_Data_Entry</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_NM_NM_Web_On_boarding_Net_Load_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_NM_NM Web On boarding Net Load</label>
+        <queue>OMNI_NM_NM_Web_On_boarding_Net_Load</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_NM_NM_Welcome_Letters_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_NM_NM Welcome Letters</label>
+        <queue>OMNI_NM_NM_Welcome_Letters</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_NM_NRS_Custom_Networks_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_NM_NRS Custom Networks</label>
+        <queue>OMNI_NM_NRS_Custom_Networks</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_NM_PROD_VRF_R3_CRM_TESTING_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_NM_PROD VRF R3 CRM TESTING</label>
+        <queue>OMNI_NM_PROD_VRF_R3_CRM_TESTING</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_OK_Cred_Inquiry_to_Network_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_OK_Cred Inquiry to Network</label>
+        <queue>OMNI_OK_Cred_Inquiry_to_Network</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_OK_Database_Work_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_OK_Database Work</label>
+        <queue>OMNI_OK_Database_Work</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_OK_Demographics_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_OK_Demographics</label>
+        <queue>OMNI_OK_Demographics</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_OK_Facility_Ancillary_for_PAS_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_OK_Facility Ancillary for PAS</label>
+        <queue>OMNI_OK_Facility_Ancillary_for_PAS</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_OK_Govt_Demographics_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_OK_Govt Demographics</label>
+        <queue>OMNI_OK_Govt_Demographics</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_OK_Govt_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_OK_Govt</label>
+        <queue>OMNI_OK_Govt</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_OK_INR_BCBAINQ_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_OK_INR BCBAINQ</label>
+        <queue>OMNI_OK_INR_BCBAINQ</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_OK_INR_Pedi_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_OK_INR Pedi</label>
+        <queue>OMNI_OK_INR_Pedi</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_OK_INR_VM_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_OK_INR VM</label>
+        <queue>OMNI_OK_INR_VM</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_OK_INR_Work_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_OK_INR Work</label>
+        <queue>OMNI_OK_INR_Work</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_OK_MCC_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_OK_MCC</label>
+        <queue>OMNI_OK_MCC</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_OK_OK_Pricing_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_OK_OK Pricing</label>
+        <queue>OMNI_OK_OK_Pricing</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_OK_PRR_Work_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_OK_PRR Work</label>
+        <queue>OMNI_OK_PRR_Work</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_OK_RUSH_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_OK_RUSH</label>
+        <queue>OMNI_OK_RUSH</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_OK_Recred_Cases_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_OK_Recred Cases</label>
+        <queue>OMNI_OK_Recred_Cases</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_OK_Special_Projects_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_OK_Special Projects</label>
+        <queue>OMNI_OK_Special_Projects</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_OK_T_Records_Fac_Anc_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_OK_T Records Fac Anc</label>
+        <queue>OMNI_OK_T_Records_Fac_Anc</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_OK_T_Records_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_OK_T Records</label>
+        <queue>OMNI_OK_T_Records</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_OK_testing_for_age_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_OK_testing for age</label>
+        <queue>OMNI_OK_testing_for_age</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_Ancillary_Contracting_N_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_Ancillary Contracting N</label>
+        <queue>OMNI_TX_Ancillary_Contracting_N</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_Ancillary_SE_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_Ancillary_SE</label>
+        <queue>OMNI_TX_Ancillary_SE</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_BCBSTX_Credentialing_CVO_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_BCBSTX Credentialing CVO</label>
+        <queue>OMNI_TX_BCBSTX_Credentialing_CVO</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_CAQH_Communications_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_CAQH Communications</label>
+        <queue>OMNI_TX_CAQH_Communications</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_Credentialing_Committee_Email_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_Credentialing Committee Email</label>
+        <queue>OMNI_TX_Credentialing_Committee_Email</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_Credentialing_Incomplete_Email_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_Credentialing Incomplete Email</label>
+        <queue>OMNI_TX_Credentialing_Incomplete_Email</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_Demographics_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_Demographics</label>
+        <queue>OMNI_TX_Demographics</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_Enterprise_Credentialing_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_Enterprise Credentialing</label>
+        <queue>OMNI_TX_Enterprise_Credentialing</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_Facility_CSRN_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_Facility CSRN</label>
+        <queue>OMNI_TX_Facility_CSRN</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_Facility_Credentialing_Email_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_Facility Credentialing Email</label>
+        <queue>OMNI_TX_Facility_Credentialing_Email</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_Medicaid_Network_VM_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_Medicaid Network VM</label>
+        <queue>OMNI_TX_Medicaid_Network_VM</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_Medicare_Advantage_Email_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_Medicare Advantage Email</label>
+        <queue>OMNI_TX_Medicare_Advantage_Email</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_North_TX_Network_Recruitment_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_North TX Network Recruitment</label>
+        <queue>OMNI_TX_North_TX_Network_Recruitment</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_Onboarding_Credentialling_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_Onboarding - Credentialling</label>
+        <queue>OMNI_TX_Onboarding_Credentialling</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_PDSCSETUPVM_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_PDSCSETUPVM</label>
+        <queue>OMNI_TX_PDSCSETUPVM</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_PDSC_Consumer_Complaints_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_PDSC Consumer Complaints</label>
+        <queue>OMNI_TX_PDSC_Consumer_Complaints</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_Retail_CSRN_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_Retail CSRN</label>
+        <queue>OMNI_TX_Retail_CSRN</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_Retro_Submission_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_Retro Submission</label>
+        <queue>OMNI_TX_Retro_Submission</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_SCT_Outreach_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_SCT - Outreach</label>
+        <queue>OMNI_TX_SCT_Outreach</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_SCT_Special_Project_Queue_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_SCT - Special Project Queue</label>
+        <queue>OMNI_TX_SCT_Special_Project_Queue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_SWHR_Mailbox_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_SWHR Mailbox</label>
+        <queue>OMNI_TX_SWHR_Mailbox</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_SW_Provider_SA_Email_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_SW Provider-SA Email</label>
+        <queue>OMNI_TX_SW_Provider_SA_Email</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_Setup_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_Setup</label>
+        <queue>OMNI_TX_Setup</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_Standard_Contracting_Email_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_Standard Contracting Email</label>
+        <queue>OMNI_TX_Standard_Contracting_Email</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_TXNM_SouthEast_Fee_Inquiries_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_TXNM SouthEast Fee Inquiries</label>
+        <queue>OMNI_TX_TXNM_SouthEast_Fee_Inquiries</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_TXPSCLAIMSSUPPORT_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_TXPSCLAIMSSUPPORT</label>
+        <queue>OMNI_TX_TXPSCLAIMSSUPPORT</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_TX_Ancillary_Contracting_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_TX Ancillary Contracting</label>
+        <queue>OMNI_TX_TX_Ancillary_Contracting</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_TX_Central_Austin_Outreach_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_TX_Central-Austin_Outreach</label>
+        <queue>OMNI_TX_TX_Central_Austin_Outreach</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_TX_Core_Cred_Cust_Svc_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_TX Core Cred Cust Svc</label>
+        <queue>OMNI_TX_TX_Core_Cred_Cust_Svc</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_TX_Custom_Networks_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_TX Custom Networks</label>
+        <queue>OMNI_TX_TX_Custom_Networks</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_TX_Dental_Provider_Maintenance_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_TX Dental Provider Maintenance</label>
+        <queue>OMNI_TX_TX_Dental_Provider_Maintenance</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_TX_FPS_Email_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_TX FPS Email</label>
+        <queue>OMNI_TX_TX_FPS_Email</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_TX_HCD_Internal_Routing_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_TX_HCD Internal Routing</label>
+        <queue>OMNI_TX_TX_HCD_Internal_Routing</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_TX_MA_Voice_Mail_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_TX MA Voice Mail</label>
+        <queue>OMNI_TX_TX_MA_Voice_Mail</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_TX_Medicaid_Email_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_TX Medicaid Email</label>
+        <queue>OMNI_TX_TX_Medicaid_Email</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_TX_Medicaid_Voicemail_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_TX Medicaid Voicemail</label>
+        <queue>OMNI_TX_TX_Medicaid_Voicemail</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_TX_NM_Amarillo_Lubbock_Email_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_TX NM Amarillo-Lubbock Email</label>
+        <queue>OMNI_TX_TX_NM_Amarillo_Lubbock_Email</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_TX_NM_Central_Austin_Email_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_TX NM Central / Austin Email</label>
+        <queue>OMNI_TX_TX_NM_Central_Austin_Email</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_TX_NM_Central_Austin_Voicemail_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_TX NM Central-Austin Voicemail</label>
+        <queue>OMNI_TX_TX_NM_Central_Austin_Voicemail</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_TX_NM_North_Email_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_TX NM North Email</label>
+        <queue>OMNI_TX_TX_NM_North_Email</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_TX_NM_North_Voicemail_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_TX NM North Voicemail</label>
+        <queue>OMNI_TX_TX_NM_North_Voicemail</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_TX_NM_SOUTH_CC_SA_RECRUITMENT_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_TX NM SOUTH CC-SA RECRUITMENT</label>
+        <queue>OMNI_TX_TX_NM_SOUTH_CC_SA_RECRUITMENT</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_TX_NM_SouthEast_Email_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_TX NM SouthEast Email</label>
+        <queue>OMNI_TX_TX_NM_SouthEast_Email</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_TX_NM_SouthEast_Voicemail_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_TX NM SouthEast Voicemail</label>
+        <queue>OMNI_TX_TX_NM_SouthEast_Voicemail</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_TX_NM_South_CC_SA_Email_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_TX NM South CC-SA Email</label>
+        <queue>OMNI_TX_TX_NM_South_CC_SA_Email</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_TX_NM_South_CC_SA_Voicemail_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_TX NM South CC-SA Voicemail</label>
+        <queue>OMNI_TX_TX_NM_South_CC_SA_Voicemail</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_TX_NM_West_Email_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_TX NM West Email</label>
+        <queue>OMNI_TX_TX_NM_West_Email</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_TX_NM_West_Voicemail_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_TX NM West Voicemail</label>
+        <queue>OMNI_TX_TX_NM_West_Voicemail</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_TX_PPN_SOUTHEAST_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_TX_PPN_SOUTHEAST</label>
+        <queue>OMNI_TX_TX_PPN_SOUTHEAST</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_TX_PS_Contract_Copy_Requests_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_TX PS Contract Copy Requests</label>
+        <queue>OMNI_TX_TX_PS_Contract_Copy_Requests</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_TX_Provider_Maintenance_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_TX Provider Maintenance</label>
+        <queue>OMNI_TX_TX_Provider_Maintenance</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_TX_Provider_Record_Setup_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_TX Provider Record Setup</label>
+        <queue>OMNI_TX_TX_Provider_Record_Setup</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_TX_Provider_Update_Submission_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_TX Provider Update Submission</label>
+        <queue>OMNI_TX_TX_Provider_Update_Submission</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_TX_SW_Ancillary_Contracting_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_TX SW Ancillary Contracting</label>
+        <queue>OMNI_TX_TX_SW_Ancillary_Contracting</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_TX_VA_Requests_and_Inquiries_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_TX VA Requests and Inquiries</label>
+        <queue>OMNI_TX_TX_VA_Requests_and_Inquiries</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_TX_Written_Notices_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_TX Written Notices</label>
+        <queue>OMNI_TX_TX_Written_Notices</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_TriCare_Customer_Service_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_TriCare Customer Service</label>
+        <queue>OMNI_TX_TriCare_Customer_Service</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_TriWest_VA_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_TriWest VA</label>
+        <queue>OMNI_TX_TriWest_VA</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_Tx_Onboarding_CounterSign_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_Tx Onboarding - CounterSign</label>
+        <queue>OMNI_TX_Tx_Onboarding_CounterSign</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_Tx_Onboarding_Network_Load_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_Tx Onboarding - Network Load</label>
+        <queue>OMNI_TX_Tx_Onboarding_Network_Load</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OMNI_TX_Vistar_Customer_Service_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OMNI_TX_Vistar Customer Service</label>
+        <queue>OMNI_TX_Vistar_Customer_Service</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>TX_Ancillary_Data_Accuracy_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>TX Ancillary - Data Accuracy</label>
+        <queue>TX_Ancillary_Data_Accuracy</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>TX_Austin_West_Data_Accuracy_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>TX Austin / West - Data Accuracy</label>
+        <queue>TX_Austin_West_Data_Accuracy</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>TX_CC_SA_Data_Accuracy_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>TX CC-SA - Data Accuracy</label>
+        <queue>TX_CC_SA_Data_Accuracy</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>TX_Medicaid_Outreach_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>TX Medicaid Outreach</label>
+        <queue>TX_Medicaid_Outreach</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>TX_Medicare_Outreach_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>TX Medicare Outreach</label>
+        <queue>TX_Medicare_Outreach</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>TX_North_Data_Accuracy_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>TX North - Data Accuracy</label>
+        <queue>TX_North_Data_Accuracy</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>TX_South_East_Data_Accuracy_OMNI_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>TX South East - Data Accuracy</label>
+        <queue>TX_South_East_Data_Accuracy</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <label>Queue Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>OMNI Queue</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

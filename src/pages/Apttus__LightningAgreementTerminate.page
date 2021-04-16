@@ -1,0 +1,38 @@
+<!-- 
+    Apttus Contract Management
+    LightningAgreementTerminate
+     
+    @2017-2018 Apttus Inc. All rights reserved.
+
+ -->
+<apex:page standardController="Apttus__APTS_Agreement__c" 
+           extensions="Apttus.AgreementTerminateController" docType="html-5.0">
+    <apex:includeLightning />
+    <apex:form id="frmId">
+        <style>
+          html{
+               background: white!important;
+          }
+          body{
+               background: RGB(244,246,249)!important;
+          }
+        </style>
+       <div id="terminateAgreementContainer"/>
+        <script>
+            $Lightning.use("{!ComponentNamespace}:AgreementEditApp", function() {
+                $Lightning.createComponent("{!ComponentNamespace}:LightningAggregate",{                 
+                    recordName : '{!Apttus__APTS_Agreement__c.Name}',
+                    sObjectName : '{!$ObjectType.Apttus__APTS_Agreement__c.Name}',
+                    action : '{!$Label.apttus__terminate}',  
+                    recordId : '{!Apttus__APTS_Agreement__c.Id}',
+                    typeofImage : '/images/actions/terminate.png',
+                    editMode : false
+                },
+                "terminateAgreementContainer",
+                function(cmp) {
+                    console.log('Component created');
+                });
+            });
+            </script>
+    </apex:form>
+</apex:page>

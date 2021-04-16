@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>fakeemail@bcbsil.com</email>
+    <name>PDM Availity IL Queue</name>
+    <queueMembers>
+        <users>
+            <user>aleah_bradley@bcbsil.com.provider</user>
+            <user>andrea_catalanol@bcbsil.com.provider</user>
+            <user>danielle_dugain@bcbsil.com.provider</user>
+            <user>jeremy_j_davis@bcbsil.com</user>
+            <user>jinal_patel@bcbsil.com.provider</user>
+            <user>josey_kelderhouse@bcbsil.com.provider</user>
+            <user>katherine_healy@bcbsil.com.provider</user>
+            <user>kimani_jones@bcbsil.com.provider</user>
+            <user>kritika_sharma@bcbsil.com.provider</user>
+            <user>lauren_e_sakoff@bcbsil.com.provider</user>
+            <user>lenesia_dinkins@bcbsil.com.provider</user>
+            <user>mariana_vazquez@bcbsil.com.provider</user>
+            <user>rebecca_elmer@bcbsil.com.provider</user>
+            <user>saira_patel@bcbsil.com.provider</user>
+            <user>ulyana_dmytriv@bcbsil.com.provider</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>Priority_5</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>fakeemail@bcbsil.com</email>
+    <name>OMNI_IL_Balance Billing</name>
+    <queueMembers>
+        <users>
+            <user>amanda_williams@bcbsil.com.provider</user>
+            <user>lisa_fox@bcbsil.com.provider</user>
+            <user>ruth_dela_cruz@bcbsil.com.provider</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>Priority_6</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>OMNI_Queue__c</sobjectType>
+    </queueSobject>
+</Queue>

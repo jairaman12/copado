@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>ManualOnboardingCaseWithFieldSets</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>ManualOnboardingCaseWithFieldSets</value>
+    </caseValues>
+    <fields>
+        <label><!-- FieldSets --></label>
+        <name>FieldSets__c</name>
+    </fields>
+    <fields>
+        <label><!-- RecordType --></label>
+        <name>RecordType__c</name>
+        <picklistValues>
+            <masterLabel>Provider Group On-boarding Contracting</masterLabel>
+            <translation><!-- Provider Group On-boarding Contracting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provider Group On-boarding Counter sign</masterLabel>
+            <translation><!-- Provider Group On-boarding Counter sign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provider Group On-boarding Credentialing</masterLabel>
+            <translation><!-- Provider Group On-boarding Credentialing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provider Group On-boarding Data Entry</masterLabel>
+            <translation><!-- Provider Group On-boarding Data Entry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provider On-boarding Contracting</masterLabel>
+            <translation><!-- Provider On-boarding Contracting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provider On-boarding Counter sign</masterLabel>
+            <translation><!-- Provider On-boarding Counter sign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provider On-boarding Credentialing</masterLabel>
+            <translation><!-- Provider On-boarding Credentialing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provider On-boarding Credentialing - Ancillary</masterLabel>
+            <translation><!-- Provider On-boarding Credentialing - Ancillary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provider On-boarding Credentialing - Facility</masterLabel>
+            <translation><!-- Provider On-boarding Credentialing - Facility --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provider On-boarding Data Entry</masterLabel>
+            <translation><!-- Provider On-boarding Data Entry --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

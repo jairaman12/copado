@@ -1,0 +1,22 @@
+<div style="border: thin solid #2C82BA;width:100%">
+<img src="https://hcscproviderintake.secure.force.com/resource/1489799226000/bcbsMTlogo"/>
+        <hr width="100%" size="20" color="#2C82BA"/>
+<br/>
+
+Thank you for contacting Blue Cross and Blue Shield of Montana. <br><br>
+This email is confirmation we have received your inquiry, case number is {!Case.CaseNumber}. <br> <br>We will respond to your inquiry in the order it was received.
+
+To check the status of your case, please click on <a href="{!$Setup.UtilitySettings_Hierarchy__c.CaseStatusUrl__c}" target="_blank">status checker</a>.
+
+<br/><br/>
+Sincerely, <br/>
+Blue Cross and Blue Shield of Montana
+
+    <hr width="100%" size="20" color="#2C82BA"/>
+            <p><center><b>Powered by: Salesforce<sup>TM</sup></b></center></p> <hr width="25%"/><br>      
+            <p><center>Blue Cross and Blue Shield of Montana, a Division of Health Care Service Corporation,</center>
+            <center>a Mutual Legal Reserve Company, an Independent Licensee of the Blue Cross and Blue Shield Association.</center></p><br>
+            <p><center>&copy; 2017 Health Care Service Corporation. All rights reserved.</center></p><hr width="50%"/>
+            <hr width="100%" size="20" color="#2C82BA"/>
+(NOTE: Please do not remove the Ref id) Ref id {!Case.Thread_Id}
+</div>

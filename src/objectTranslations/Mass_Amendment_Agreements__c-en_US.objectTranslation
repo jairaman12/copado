@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Mass Amendment Agreements</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Mass Amendment Agreements</value>
+    </caseValues>
+    <fields>
+        <label><!-- Selected Agreement Number --></label>
+        <name>Amended_Agreement_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Amended Agreement Queue Owner --></label>
+        <name>Amended_Agreement_Queue_Owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Amended Agreement Status --></label>
+        <name>Amended_Agreement_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Selected Agreement --></label>
+        <name>Amended_Agreement__c</name>
+        <relationshipLabel><!-- Mass Amendment Agreements (Selected Agreement) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- New Amended Agreement Number --></label>
+        <name>New_Amended_Agreement_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Amended Agreement --></label>
+        <name>New_Amended_Agreement__c</name>
+        <relationshipLabel><!-- Mass Amendment Agreements --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Lookup to Mass Amendment Request Record --></help>
+        <label><!-- Mass Amendment Request --></label>
+        <name>Original_Agreement__c</name>
+        <relationshipLabel><!-- Mass Amendment Agreements (Mass Amendment Request) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Selected Agreement Delivery Preference --></label>
+        <name>Selected_Agreement_Delivery_Preference__c</name>
+    </fields>
+    <fields>
+        <label><!-- Signature Type --></label>
+        <name>Signature_Type__c</name>
+        <picklistValues>
+            <masterLabel>Wet</masterLabel>
+            <translation><!-- Wet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>eSign</masterLabel>
+            <translation><!-- eSign --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

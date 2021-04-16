@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email to Provider for Case Creation acknowledgement for email-to-case request</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>BCBS Texas Provider Email to Case</name>
+    <style>none</style>
+    <subject>BCBS of Texas Inquiry Received: {!Case.Subject}</subject>
+    <textOnly>Thank you for contacting Blue Cross and Blue Shield of Texas.
+
+This email is confirmation we have received your inquiry, case number is {!Case.CaseNumber}.
+
+We will respond to your inquiry in the order it was received.To check the status of your case, please click on status checker ({!$Setup.UtilitySettings_Hierarchy__c.CaseStatusUrl__c}).
+
+
+
+Sincerely,
+Blue Cross and Blue Shield of Texas
+
+
+Powered by: SalesforceTM
+
+
+
+Blue Cross and Blue Shield of Texas, a Division of Health Care Service Corporation, a Mutual Legal Reserve Company, an Independent Licensee of the Blue Cross and Blue Shield Association.
+
+
+
+© 2017 Health Care Service Corporation. All rights reserved.
+
+(NOTE: Please do not remove the Ref id) Ref id {!Case.Thread_Id}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

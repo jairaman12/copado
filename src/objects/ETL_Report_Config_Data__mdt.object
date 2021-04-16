@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Used to strore the config data which is used to send the report when ETL Load the data in the MCC Data Object</description>
+    <fields>
+        <fullName>Active_Email__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>when the check box is checked we send out the email to the particular address</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Active Email</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Destination_Org__c</fullName>
+        <description>Used to store the Origination URL</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Destination_Org</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Email_Address__c</fullName>
+        <description>Used to capture the email Address</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Email Address</label>
+        <required>false</required>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>File_Type__c</fullName>
+        <description>Used to store the File Type</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>File Type</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Onboarding Cred Mass Status Update</fullName>
+                    <default>true</default>
+                    <label>Onboarding Cred Mass Status Update</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Plan_Id__c</fullName>
+        <description>Used to store the plan ID</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Plan Id</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>IL1</fullName>
+                    <default>true</default>
+                    <label>IL1</label>
+                </value>
+                <value>
+                    <fullName>TX1</fullName>
+                    <default>false</default>
+                    <label>TX1</label>
+                </value>
+                <value>
+                    <fullName>OK1</fullName>
+                    <default>false</default>
+                    <label>OK1</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Total_Accounts__c</fullName>
+        <description>Number of accounts where provder id is not null and needs to exclude this year, the code in ETLReportingNotification will sum up the values this year values and others</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Total Accounts</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>ETL Report Config Data</label>
+    <pluralLabel>ETL Report Config Datas</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

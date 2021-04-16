@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>fakeemail@bcbsil.com</email>
+    <name>OMNI_IL_IL HMO NETWORK</name>
+    <queueMembers>
+        <users>
+            <user>alan_herrera@bcbsil.com.provider</user>
+            <user>anastacio_esteviz@bcbsil.com.provider</user>
+            <user>granadosc@bcbsil.com.provider</user>
+            <user>courtney_mcintosh@bcbsil.com.provider</user>
+            <user>debra_leonard@bcbsil.com.provider</user>
+            <user>gerold_branch@bcbsil.com.provider</user>
+            <user>jason_merriwether@bcbsil.com.provider</user>
+            <user>mallory_b_bartes@bcbsil.com.provider</user>
+            <user>marissa_mestas@bcbsil.com.provider</user>
+            <user>michael_calderon@bcbsil.com.provider</user>
+            <user>rita_gonzales@bcbsil.com.provider</user>
+            <user>santina_arcidiacono@bcbsil.com.provider</user>
+            <user>shane_pino@bcbsil.com.provider</user>
+            <user>sonia_becerra@bcbsil.com.provider</user>
+            <user>tearussa_outlaw@bcbsil.com.provider</user>
+            <user>vanessa_gonzalez@bcbsil.com.provider</user>
+            <user>yvette_cooper@bcbsil.com.provider</user>
+            <user>zachary_rhoads@bcbsil.com.provider</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>Priority_4</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>OMNI_Queue__c</sobjectType>
+    </queueSobject>
+</Queue>

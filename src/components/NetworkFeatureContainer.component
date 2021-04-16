@@ -1,0 +1,61 @@
+<apex:component layout="none" allowdml="true" id="nfc" >
+    <apex:includeScript value="{!$Resource.jqueryMin}"/>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>  
+    <!-- 
+        Get state value passed in from calling VFP, load it into a variable
+    -->    
+    <apex:attribute name="headerLabel" description="Section header."
+            type="String" required="true"/>
+     <apex:attribute name="networkLabel" description="Label for unselected network list"
+            type="String" required="true"/>   
+        <apex:attribute name="buttonLabel" description="Name of action button for section."
+            type="String" required="true"/>
+         <apex:attribute name="networkList" description="List of networks for the section."
+            type="SelectOption[]" required="true"/>
+    
+            <div class="pbSubheader brandTertiaryBgr tertiaryPalette">
+                	<h3>{!headerLabel}</h3>
+            </div>
+            <div class="workContainer">
+                <div>
+                    <input type="button" id="addNetworkButton" value="{!buttonLabel}" />
+                    
+                    <div id="topOfPageErrorMessage">Error: Invalid Data. Review all error messages below to correct your data.</div>
+                </div>		
+                <div class="column fixedSizeContainer" id="fullNetworkContainer">
+                    <fieldset>
+                        <legend>	
+                            {!networkLabel}
+                        </legend>	
+                        <ul id="fullNetworkList">
+                            <apex:repeat value="{!networkList}" var="network">
+                                <li>
+                                    <apex:outputText value="{!network.value}"/>                                    	
+                                </li>
+                            </apex:repeat>
+                        </ul>
+                    </fieldset>		
+                </div>
+                <div class="column fixedSizeContainer" id="selectedNetworkContainer">
+                    
+                </div>
+                
+                <div class="column fixedSizeContainer">
+                    <fieldset>
+                        <legend>
+                           Trash Can
+                        </legend>
+                        <div class="trashCan">	
+                            
+                        </div>	
+                    </fieldset>
+                </div>
+            </div>
+            <div style="clear:both;"> 
+                
+            </div>        
+    
+    
+</apex:component>

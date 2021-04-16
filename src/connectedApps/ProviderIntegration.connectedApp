@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>ProviderIntakeDev@bcbstx.com</contactEmail>
+    <label>ProviderIntegration</label>
+    <oauthConfig>
+        <callbackUrl>https://www.getpostman.com/oauth2/callback</callbackUrl>
+        <consumerKey>3MVG9eQyYZ1h89HeO90UV6o6amIiY_8R8Vu_HQMWT2sduN8D_jqktbZf9Or_J2l4Qiy3D9Sa6vi.aKwz6Beoe</consumerKey>
+        <isAdminApproved>false</isAdminApproved>
+        <scopes>Full</scopes>
+    </oauthConfig>
+</ConnectedApp>

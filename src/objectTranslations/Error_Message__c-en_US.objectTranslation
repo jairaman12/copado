@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Error Message</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Error Messages</value>
+    </caseValues>
+    <fields>
+        <label><!-- Additional Serialized Object --></label>
+        <name>Additional_Serialized_Object__c</name>
+    </fields>
+    <fields>
+        <label><!-- Class Name --></label>
+        <name>Class_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Error Cause --></label>
+        <name>Error_Cause__c</name>
+    </fields>
+    <fields>
+        <label><!-- Exception Message --></label>
+        <name>Exception_Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Id --></label>
+        <name>External_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Line Number --></label>
+        <name>Line_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Method Name --></label>
+        <name>Method_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- PEDI Application Id --></label>
+        <name>PEDI_Application_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Running user --></label>
+        <name>Running_user__c</name>
+    </fields>
+    <fields>
+        <label><!-- Serialized Class --></label>
+        <name>Serialized_Class__c</name>
+    </fields>
+    <fields>
+        <label><!-- StackTrace --></label>
+        <name>StackTrace__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

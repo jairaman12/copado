@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Enterprise_Cred_User_access</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>This Sharing got introduced part of PPN-55795 and this will allow users to access all plan Cases.</description>
+        <label>Enterprise Cred User access</label>
+        <sharedTo>
+            <group>Enterprise_Cred_User_group</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2 OR 3 OR 4 OR 5</booleanFilter>
+        <criteriaItems>
+            <field>Plan_ID__c</field>
+            <operation>equals</operation>
+            <value>IL1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Plan_ID__c</field>
+            <operation>equals</operation>
+            <value>MT1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Plan_ID__c</field>
+            <operation>equals</operation>
+            <value>OK1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Plan_ID__c</field>
+            <operation>equals</operation>
+            <value>NM1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Plan_ID__c</field>
+            <operation>equals</operation>
+            <value>TX1</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Illinois_Case_Full_Access</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>This Setting will give full access to Illinois Queue.</description>
+        <label>Illinois Case Full Access</label>
+        <sharedTo>
+            <group>HSCS_Illinois_Case_Group</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Plan_ID__c</field>
+            <operation>equals</operation>
+            <value>IL1</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Montana_Case_Full_Access</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>This Setting will give full access to  Montana Queue</description>
+        <label>Montana Case Full Access</label>
+        <sharedTo>
+            <group>HCSC_Montana_Case_Group</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Plan_ID__c</field>
+            <operation>equals</operation>
+            <value>MT1</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>New_Mexico_Case_Full_Access</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>This Setting will give full access to New Mexico Queue.</description>
+        <label>New Mexico Case Full Access</label>
+        <sharedTo>
+            <group>HCSC_NewMexico_case_Group</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Plan_ID__c</field>
+            <operation>equals</operation>
+            <value>NM1</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Oklahoma_Case_Full_Access</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>This Setting will give full access to Oklahoma Queue.</description>
+        <label>Oklahoma Case Full Access</label>
+        <sharedTo>
+            <group>HCSC_Oklahoma_case_Group</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Plan_ID__c</field>
+            <operation>equals</operation>
+            <value>OK1</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Texas_Case_Full_Access</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>This Setting will give full access to Texas Queue.</description>
+        <label>Texas Case Full Access</label>
+        <sharedTo>
+            <group>HCSC_Texas_case_Group</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Plan_ID__c</field>
+            <operation>equals</operation>
+            <value>TX1</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>Case_Motana_Group_Sharing_rules</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Case Motana Group Sharing rules</label>
+        <sharedTo>
+            <group>HCSC_Montana_Case_Group</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>HCSC_Montana_Case_Group</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

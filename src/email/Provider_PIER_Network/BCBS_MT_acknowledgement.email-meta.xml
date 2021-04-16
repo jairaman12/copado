@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BCBS_of_Montana</letterhead>
+    <name>BCBS MT acknowledgement</name>
+    <style>formalLetter</style>
+    <subject>BCBS of Montana Demographic Change Request Form Received</subject>
+    <textOnly>Dear {!Case.Name_Submitter__c} ({!Case.Title_Submitter__c}),
+Thank you for contacting Blue Cross and Blue Shield of Montana. This email is confirmation we have received your request, case number {!Case.CaseNumber}, for {!Case.Name_of_Provider_Group__c}. Your request may take up to 14 days to complete. Once completed, a notification will be sent to the email address submitted with the Demographic Change Request Form.
+
+To check on the status of your request or for any questions, contact Network Management at 800-447-7828 (toll free), Extension 6100, or email &quot;HCS-X6100@bcbsmt.com&quot;.
+Sincerely,
+
+Blue Cross and Blue Shield of Montana</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

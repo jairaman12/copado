@@ -1,0 +1,21 @@
+<div style="border: thin solid #2C82BA;width:100%">
+<img src="https://hcscproviderintake.secure.force.com/resource/1489799226000/bcbsILlogo"/>
+        <hr width="100%" size="20" color=" #2C82BA"/>
+<br/>
+Hi ,  
+<br/>
+<br/>
+Thank you for submission.  <br/><br/>
+We have received your Provider Data correction request and the assigned case number is {!Case.CaseNumber}.<br> <br> 
+You will be notified when your request has been processed.
+<br/><br/>
+Sincerely, <br/>
+Blue Cross and Blue Shield of Illinois
+  <hr width="100%" size="20" color=" #2C82BA"/>
+            <p><center><b>Powered by: Salesforce<sup>TM</sup></b></center></p> <hr width="25%"/><br>      
+            <p><center>Blue Cross and Blue Shield of Illinois, a Division of Health Care Service Corporation,</center>
+            <center>a Mutual Legal Reserve Company, an Independent Licensee of the Blue Cross and Blue Shield Association.</center></p><br>
+            <p><center>&copy; 2017 Health Care Service Corporation. All rights reserved.</center></p><hr width="50%"/>
+            <hr width="100%" size="20" color="#2C82BA"/>
+(NOTE: Please do not remove the Ref id) Ref id {!Case.Thread_Id}
+</div>

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Service &amp; Payee Location Address</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Service &amp; Payee Location Address</value>
+    </caseValues>
+    <fields>
+        <label><!-- Address Effective Date --></label>
+        <name>Address_Effective_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address End Date --></label>
+        <name>Address_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bill PFIN --></label>
+        <name>Bill_PFIN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address --></label>
+        <name>CLM_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Medicaid Provider Number --></label>
+        <name>CLM_Medicaid_Provider_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI Number --></label>
+        <name>CLM_NPI__c</name>
+    </fields>
+    <fields>
+        <label><!-- Medicare Number --></label>
+        <name>CLM_SPL_Medicare_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Corporate Entity Code --></label>
+        <name>CM_Corporate_Entity_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- County --></help>
+        <label><!-- County --></label>
+        <name>CM_County__c</name>
+    </fields>
+    <fields>
+        <label><!-- Directory Exclusion Indicator --></label>
+        <name>CM_Directory_Exclusion_Indicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider Name --></label>
+        <name>CM_Directory_Location_Provider_Name__c</name>
+    </fields>
+    <fields>
+        <label>PFIN End Date</label>
+        <name>CM_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax ID --></label>
+        <name>CM_SPA_Tax_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Address Line 2 --></help>
+        <label><!-- Address Line 2 --></label>
+        <name>CM_SPL_Add_Line_2__c</name>
+    </fields>
+    <fields>
+        <help><!-- Address Line 1 --></help>
+        <label><!-- Address Line 1 --></label>
+        <name>CM_SPL_Addr_Line_1__c</name>
+    </fields>
+    <fields>
+        <help><!-- Provider Address Usage Type --></help>
+        <label><!-- Address Usage Type --></label>
+        <name>CM_SPL_Addr_Type__c</name>
+        <picklistValues>
+            <masterLabel>Administration</masterLabel>
+            <translation><!-- Administration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Billing</masterLabel>
+            <translation><!-- Billing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Capitation</masterLabel>
+            <translation><!-- Capitation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contracting</masterLabel>
+            <translation><!-- Contracting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Credentialing</masterLabel>
+            <translation><!-- Credentialing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Directory</masterLabel>
+            <translation><!-- Directory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eligibility</masterLabel>
+            <translation><!-- Eligibility --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service</masterLabel>
+            <translation><!-- Service --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- City --></help>
+        <label><!-- City --></label>
+        <name>CM_SPL_City__c</name>
+    </fields>
+    <fields>
+        <help><!-- Country --></help>
+        <label><!-- Country --></label>
+        <name>CM_SPL_Country__c</name>
+        <picklistValues>
+            <masterLabel>USA</masterLabel>
+            <translation><!-- USA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Effective Date --></help>
+        <label>PFIN Effective Date</label>
+        <name>CM_SPL_Eff_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Email --></help>
+        <label><!-- Email --></label>
+        <name>CM_SPL_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fax Number --></label>
+        <name>CM_SPL_Fax_No__c</name>
+    </fields>
+    <fields>
+        <help><!-- Phone Number --></help>
+        <label><!-- Phone Number --></label>
+        <name>CM_SPL_Mobile_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- PFIN Number --></label>
+        <name>CM_SPL_PFIN_No__c</name>
+    </fields>
+    <fields>
+        <help><!-- PFIN Status Reason --></help>
+        <label><!-- PFIN Status Reason --></label>
+        <name>CM_SPL_PFIN_Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider Tax Identification --></label>
+        <name>CM_SPL_Prov_Tax_ID__c</name>
+        <relationshipLabel><!-- Service &amp; Payee Location Address --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Provider Name --></label>
+        <name>CM_SPL_Prov__c</name>
+        <relationshipLabel><!-- Service &amp; Payee Location Address --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CM_SPL_Sequence_Num --></label>
+        <name>CM_SPL_Sequence_Num__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service &amp; Payee Location Address --></label>
+        <name>CM_SPL_Serv_Tax_ID__c</name>
+        <relationshipLabel><!-- Service &amp; Payee Location Address (Service &amp; Payee Location Address) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- State --></help>
+        <label><!-- State --></label>
+        <name>CM_SPL_State__c</name>
+        <picklistValues>
+            <masterLabel>IL</masterLabel>
+            <translation><!-- IL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MT</masterLabel>
+            <translation><!-- MT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NM</masterLabel>
+            <translation><!-- NM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OK</masterLabel>
+            <translation><!-- OK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX</masterLabel>
+            <translation><!-- TX --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Zip Code --></help>
+        <label><!-- Zip Code --></label>
+        <name>CM_SPL_Zip_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>CM_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Override Name --></label>
+        <name>Override_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- PFIN Designations --></label>
+        <name>PFIN_Designations__c</name>
+    </fields>
+    <fields>
+        <label><!-- PFIN Type --></label>
+        <name>PFIN_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prov Id --></label>
+        <name>Prov_Id__c</name>
+    </fields>
+    <recordTypes>
+        <label><!-- Directory Location --></label>
+        <name>Directory_Location</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Service and Payee Location --></label>
+        <name>Service_and_Payee_Location</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- New_CRM_Case --></label>
+        <name>New_CRM_Case</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Case --></label>
+        <name>New_Case</name>
+    </webLinks>
+</CustomObjectTranslation>

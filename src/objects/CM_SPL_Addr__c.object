@@ -1,0 +1,882 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Service &amp; Payee Location Address Object based on PFIN Number</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Address_Effective_Date__c</fullName>
+        <description>Added this field part of PPN-28420 to capture address effective date of the corresponding PFIN coming from PPW.</description>
+        <externalId>false</externalId>
+        <label>Address Effective Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Address_End_Date__c</fullName>
+        <description>Added this field part of PPN-28420 to capture address effective end date of the corresponding PFIN coming from PPW.</description>
+        <externalId>false</externalId>
+        <label>Address End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Bill_PFIN__c</fullName>
+        <description>Part of 40kpfin user stories.</description>
+        <externalId>false</externalId>
+        <label>Bill PFIN</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CLM_Address__c</fullName>
+        <externalId>false</externalId>
+        <formula>CM_SPL_Addr_Line_1__c +&apos; &apos;+ CM_SPL_Add_Line_2__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CLM_Medicaid_Provider_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Medicaid Provider Number</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CLM_NPI__c</fullName>
+        <externalId>false</externalId>
+        <label>NPI Number</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CLM_SPL_Medicare_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Medicare Number</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CM_Corporate_Entity_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Corporate Entity Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CM_County__c</fullName>
+        <description>County</description>
+        <externalId>false</externalId>
+        <inlineHelpText>County</inlineHelpText>
+        <label>County</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CM_Directory_Exclusion_Indicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Directory Exclusion Indicator</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CM_Directory_Location_Provider_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Provider Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CM_End_Date__c</fullName>
+        <description>PPN-16594: End Date field on Service and Payee location</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CM_SPA_Tax_ID__c</fullName>
+        <description>Formula field to expose the tax id in the search layouts</description>
+        <externalId>false</externalId>
+        <formula>CM_SPL_Prov_Tax_ID__r.CM_PTI_Tax_Id__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Tax ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CM_SPL_Add_Line_2__c</fullName>
+        <description>Address Line 2</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Address Line 2</inlineHelpText>
+        <label>Address Line 2</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CM_SPL_Addr_Line_1__c</fullName>
+        <description>Address Line 1</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Address Line 1</inlineHelpText>
+        <label>Address Line 1</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CM_SPL_Addr_Type__c</fullName>
+        <description>Provider Address Usage Type</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Provider Address Usage Type</inlineHelpText>
+        <label>Address Usage Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Service</fullName>
+                    <default>false</default>
+                    <label>Service</label>
+                </value>
+                <value>
+                    <fullName>Billing</fullName>
+                    <default>false</default>
+                    <label>Billing</label>
+                </value>
+                <value>
+                    <fullName>Administration</fullName>
+                    <default>false</default>
+                    <label>Administration</label>
+                </value>
+                <value>
+                    <fullName>Capitation</fullName>
+                    <default>false</default>
+                    <label>Capitation</label>
+                </value>
+                <value>
+                    <fullName>Contracting</fullName>
+                    <default>false</default>
+                    <label>Contracting</label>
+                </value>
+                <value>
+                    <fullName>Directory</fullName>
+                    <default>false</default>
+                    <label>Directory</label>
+                </value>
+                <value>
+                    <fullName>Eligibility</fullName>
+                    <default>false</default>
+                    <label>Eligibility</label>
+                </value>
+                <value>
+                    <fullName>Credentialing</fullName>
+                    <default>false</default>
+                    <label>Credentialing</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CM_SPL_City__c</fullName>
+        <description>City</description>
+        <externalId>false</externalId>
+        <inlineHelpText>City</inlineHelpText>
+        <label>City</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CM_SPL_Country__c</fullName>
+        <description>Country</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Country</inlineHelpText>
+        <label>Country</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>USA</fullName>
+                    <default>false</default>
+                    <label>USA</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CM_SPL_Eff_Date__c</fullName>
+        <description>Effective Date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Effective Date</inlineHelpText>
+        <label>Effective Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CM_SPL_Email__c</fullName>
+        <description>Email</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Email</inlineHelpText>
+        <label>Email</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CM_SPL_Fax_No__c</fullName>
+        <externalId>false</externalId>
+        <label>Fax Number</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CM_SPL_Mobile_No__c</fullName>
+        <description>Mobile Phone Number</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Phone Number</inlineHelpText>
+        <label>Phone Number</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CM_SPL_PFIN_No__c</fullName>
+        <externalId>false</externalId>
+        <label>PFIN Number</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CM_SPL_PFIN_Reason__c</fullName>
+        <description>PFIN Status Reason</description>
+        <externalId>false</externalId>
+        <inlineHelpText>PFIN Status Reason</inlineHelpText>
+        <label>PFIN Status Reason</label>
+        <length>200</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CM_SPL_Prov_Tax_ID__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Provider Tax Identification</label>
+        <referenceTo>CM_Provider_Tax_Id__c</referenceTo>
+        <relationshipLabel>Service &amp; Payee Location Address</relationshipLabel>
+        <relationshipName>Service_Payee_Location_Address</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CM_SPL_Prov__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Provider Name</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Service &amp; Payee Location Address</relationshipLabel>
+        <relationshipName>Account_Tax_Addresses_del</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CM_SPL_Sequence_Num__c</fullName>
+        <description>This is added for updating the address based on sequence number which is being currently maintained in PPW</description>
+        <externalId>false</externalId>
+        <label>CM_SPL_Sequence_Num</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CM_SPL_Serv_Tax_ID__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Service &amp; Payee Location Address</label>
+        <referenceTo>CM_SPL_Addr__c</referenceTo>
+        <relationshipLabel>Service &amp; Payee Location Address (Service &amp; Payee Location Address)</relationshipLabel>
+        <relationshipName>Service_Payee_Location_Address</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CM_SPL_State__c</fullName>
+        <description>State</description>
+        <externalId>false</externalId>
+        <inlineHelpText>State</inlineHelpText>
+        <label>State</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>TX</fullName>
+                    <default>false</default>
+                    <label>TX</label>
+                </value>
+                <value>
+                    <fullName>IL</fullName>
+                    <default>false</default>
+                    <label>IL</label>
+                </value>
+                <value>
+                    <fullName>NM</fullName>
+                    <default>false</default>
+                    <label>NM</label>
+                </value>
+                <value>
+                    <fullName>MT</fullName>
+                    <default>false</default>
+                    <label>MT</label>
+                </value>
+                <value>
+                    <fullName>OK</fullName>
+                    <default>false</default>
+                    <label>OK</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CM_SPL_Zip_CD__c</fullName>
+        <description>Zip Code</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Zip Code</inlineHelpText>
+        <label>Zip Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CM_Status__c</fullName>
+        <description>PPN-16594: Status field on Service and Payee location</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Override_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Override Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PFIN_Designations__c</fullName>
+        <externalId>false</externalId>
+        <label>PFIN Designations</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PFIN_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>PFIN Type</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Prov_Id__c</fullName>
+        <externalId>false</externalId>
+        <formula>CM_SPL_Prov__r.Prov_ID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Prov Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Service &amp; Payee Location Address</label>
+    <nameField>
+        <displayFormat>PA-{0}</displayFormat>
+        <label>Address Info</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Service &amp; Payee Location Address</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Directory_Location</fullName>
+        <active>true</active>
+        <label>Directory Location</label>
+        <picklistValues>
+            <picklist>CM_SPL_Addr_Type__c</picklist>
+            <values>
+                <fullName>Administration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Capitation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contracting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credentialing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Directory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eligibility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CM_SPL_Country__c</picklist>
+            <values>
+                <fullName>USA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CM_SPL_State__c</picklist>
+            <values>
+                <fullName>IL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TX</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Service_and_Payee_Location</fullName>
+        <active>true</active>
+        <label>Service and Payee Location</label>
+        <picklistValues>
+            <picklist>CM_SPL_Addr_Type__c</picklist>
+            <values>
+                <fullName>Administration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Capitation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contracting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credentialing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Directory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eligibility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CM_SPL_Country__c</picklist>
+            <values>
+                <fullName>USA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CM_SPL_State__c</picklist>
+            <values>
+                <fullName>IL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TX</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>CM_SPL_Prov__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CM_SPL_PFIN_No__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CM_SPL_Addr_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CM_SPL_Prov_Tax_ID__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CM_SPL_Serv_Tax_ID__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CM_SPL_Addr_Line_1__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CM_SPL_Add_Line_2__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CM_SPL_City__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>CM_SPL_Prov__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CM_SPL_PFIN_No__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CM_SPL_Addr_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CM_SPL_Addr_Line_1__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CM_SPL_Add_Line_2__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CM_County__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CM_SPL_City__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CM_SPL_Prov__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CM_SPL_PFIN_No__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CM_SPL_Addr_Type__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CM_SPL_Prov_Tax_ID__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CM_SPL_Addr_Line_1__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CM_SPL_City__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CM_County__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>CM_SPL_Prov__c</searchFilterFields>
+        <searchFilterFields>CM_SPL_Mobile_No__c</searchFilterFields>
+        <searchFilterFields>CM_SPL_Addr_Type__c</searchFilterFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>CM_SPL_Prov_Tax_ID__c</searchFilterFields>
+        <searchFilterFields>CM_SPL_Serv_Tax_ID__c</searchFilterFields>
+        <searchResultsAdditionalFields>CM_SPL_Addr_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CM_SPA_Tax_ID__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CM_SPL_City__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CM_SPL_State__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CM_SPL_PFIN_Reason__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>New_CRM_Case</fullName>
+        <availability>online</availability>
+        <description>Button to create a new CRM case from S&amp;P detail page</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New CRM Case</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/38.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&apos;/support/console/38.0/integration.js&apos;)}
+
+if (typeof(srcUp) == &apos;function&apos; &amp;&amp; sforce.console.isInConsole()) 
+{ 
+srcUp(&apos;/apex/CRMCaseCreationPage?isdtp=vw&amp;accountId={!CM_SPL_Addr__c.CM_SPL_ProvId__c}&amp;planId={!CM_SPL_Addr__c.CM_Corporate_Entity_Code__c }&amp;pfinNumber={!CM_SPL_Addr__c.CM_SPL_PFIN_No__c}&amp;recordId={!CM_SPL_Addr__c.Id}&amp;from=ServiceAndPayee&amp;inConsole=true&apos; ); 
+} 
+else 
+{ 
+window.open(&apos;/apex/CRMCaseCreationPage?accountId={!CM_SPL_Addr__c.CM_SPL_ProvId__c}&amp;planId={!CM_SPL_Addr__c.CM_Corporate_Entity_Code__c }&amp;pfinNumber={!CM_SPL_Addr__c.CM_SPL_PFIN_No__c}&amp;recordId={!CM_SPL_Addr__c.Id}&amp;from=ServiceAndPayee&amp;inConsole=false&apos;,&apos;_self&apos;); 
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Case</fullName>
+        <availability>online</availability>
+        <description>Detail button to create a case from a PFIN</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Manual ADC</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/38.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&apos;/support/console/38.0/integration.js&apos;)} 
+
+var userrole=&quot;{!$UserRole.DeveloperName}&quot;; 
+if(userrole ==&apos;Texas_Supervisor&apos; || userrole ==&apos;Texas_PNC&apos; ) 
+{ 
+alert(&apos;Insufficient Privilleges for TX users&apos;); 
+}else if ( typeof(srcUp) == &apos;function&apos; &amp;&amp; sforce.console.isInConsole() &amp;&amp; userrole !=&apos;Texas_Supervisor&apos; &amp;&amp; userrole !=&apos;Texas_PNC&apos; ) 
+{ 
+
+srcUp(&apos;/apex/PFINSelection?accountId={!CM_SPL_Addr__c.CM_SPL_ProvId__c}&amp;name={!URLENCODE 
+(CM_SPL_Addr__c.CM_SPL_Prov__c)}&amp;planId={!CM_SPL_Addr__c.CM_Corporate_Entity_Code__c }&amp;from=Account&amp;pfinaddressId={!CM_SPL_Addr__c.Id}&amp;urlPFIN={!CM_SPL_Addr__c.Bill_PFIN__c}&amp;urlNonBillPfin={!IF(CM_SPL_Addr__c.Bill_PFIN__c &lt;&gt; CM_SPL_Addr__c.CM_SPL_PFIN_No__c ,CM_SPL_Addr__c.CM_SPL_PFIN_No__c, NULL)}&apos;); 
+} else if( userrole !=&apos;Texas_Supervisor&apos; &amp;&amp; userrole !=&apos;Texas_PNC&apos; ) 
+{ 
+window.open(&apos;/apex/PFINSelection?accountId={!CM_SPL_Addr__c.CM_SPL_ProvId__c}&amp;name={!URLENCODE 
+(CM_SPL_Addr__c.CM_SPL_Prov__c)}&amp;planId={!CM_SPL_Addr__c.CM_Corporate_Entity_Code__c }&amp;from=Account&amp;pfinaddressId={!CM_SPL_Addr__c.Id}&amp;urlPFIN={!CM_SPL_Addr__c.Bill_PFIN__c}&amp;urlNonBillPfin={!IF(CM_SPL_Addr__c.Bill_PFIN__c &lt;&gt; CM_SPL_Addr__c.CM_SPL_PFIN_No__c ,CM_SPL_Addr__c.CM_SPL_PFIN_No__c, NULL)}&apos;); 
+}</url>
+    </webLinks>
+</CustomObject>

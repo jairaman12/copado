@@ -1,0 +1,32 @@
+<apex:component >  
+                                                   
+    <!-- 
+		Get state value passed in from calling VFP, load it into a variable
+	-->    
+    <apex:attribute name="publicKey" description="Public Key for Captcha feature."
+            type="String" required="true"/>    
+    
+    
+	<!-- 
+		Load Captcha specific CSS
+	-->           
+	<apex:stylesheet value="{!$Resource.css4_WebFormCaptcha}"/>    
+
+    <!-- 
+		Include Google API for Captcha
+	-->               
+	<script src="https://www.google.com/recaptcha/api.js" defer="defer"></script>      
+    
+    <!-- 
+		Call Captcha specific JavaScript
+	-->                   
+	<apex:includeScript value="{!$Resource.js4_WebFormCaptcha}"/> 
+                    
+            <!-- 
+                This is the layover/lightbox and the actual Captcha div
+            -->                                                 
+       <div id="captchaContainer">
+           <span id="closeCaptcha" title="close Captcha">X</span>                    
+            <div class="g-recaptcha" data-callback="completeTransaction" data-sitekey="{!PublicKey}"></div>                
+       </div>           
+</apex:component>

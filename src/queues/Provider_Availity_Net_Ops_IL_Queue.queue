@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>fakeemail@bcbsil.com</email>
+    <name>Provider Availity Net Ops IL Queue</name>
+    <queueMembers>
+        <users>
+            <user>alexandria_brown@bcbsil.com.provider</user>
+            <user>carla_becerra@bcbsil.com.provider</user>
+            <user>colton_justus@bcbsil.com.provider</user>
+            <user>daniel_allegretti@bcbsil.com.provider</user>
+            <user>daniel_murray@bcbsil.com.provider</user>
+            <user>dismukesg@bcbsil.com.provider</user>
+            <user>santina_archidiacono@bcbsil.com.provider</user>
+            <user>jesse_jacquez@bcbsil.com.provider</user>
+            <user>jinal_patel@bcbsil.com.provider</user>
+            <user>josey_kelderhouse@bcbsil.com.provider</user>
+            <user>katherine_healy@bcbsil.com.provider</user>
+            <user>kimani_jones@bcbsil.com.provider</user>
+            <user>kritika_sharma@bcbsil.com.provider</user>
+            <user>kylisha_alsberry@bcbsil.com.provider</user>
+            <user>lupe_estrada@bcbsil.com.provider</user>
+            <user>lozanom1@bcbsil.com.provider</user>
+            <user>marquan_leonard@bcbsil.com.provider</user>
+            <user>nikita_lewis@bcbsil.com.provider</user>
+            <user>nora_keaney@bcbsil.com.prov</user>
+            <user>opeyemi_olusuyi@bcbsil.com.provider</user>
+            <user>shane_pino@bcbsil.com.provider</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>Priority_5</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

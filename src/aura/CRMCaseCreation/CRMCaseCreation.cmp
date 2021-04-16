@@ -1,0 +1,218 @@
+<aura:component controller="LtngCtrlCRMCase"  implements="flexipage:availableForRecordHome,force:hasSObjectName,force:hasRecordId,force:lightningQuickActionWithoutHeader,force:appHostable" access="global" >
+
+    <!-- This hides the mobile version of crm creation popup when viewing from a desktop -->
+    <aura:if isTrue="{!$Browser.formFactor == 'DESKTOP'}" >
+		<aura:html tag="style">
+            .slds-modal__container {
+                display: none;
+             }
+    	</aura:html>
+    </aura:if>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}" />
+    <lightning:workspaceAPI aura:id="workspace" />	<!-- Identifies where the lightning component was launched -->
+    <!-- aura attributes --> 
+    <aura:attribute name="recordId" type="Id" access="public"/>
+    <aura:attribute name="sobjecttype" type="String" default="{!v.sObjectName}"/>
+    <aura:attribute name="caserec" type="Case" access="public" default="{'sobjectType' : 'case'}"/>  
+    <aura:attribute name="contactLookup" type="contact" default="{}"/>
+    <aura:attribute name="caseLookup" type="case" default="{}"/>
+    <aura:attribute name="objInfo" type="case" default="{sobjectType : 'Case'}" />
+    <aura:attribute name="sObjectName" type="String" />
+    <aura:attribute name="Account" type="String" default="false"/>
+    <aura:attribute name="Entity" type="String" default="false"/>
+    <aura:attribute name="planId" type="String" />
+    <aura:attribute name="accountFlag" type="Boolean" />
+    <aura:attribute name="outcomeFlag" type="Boolean" default="false"/>
+    <aura:attribute name="otherDescFlag" type="Boolean" default="false"/>
+    <aura:attribute name="serLoc" type="CM_SPL_Addr__c[]" access="public"/>
+    <aura:attribute name="selectedRows" type="CM_SPL_Addr__c[]" access="public"/>
+    <aura:attribute name="slColumns" type="List" access="public"/>
+    <aura:attribute name="slTableConfig" type="Map" access="public"/>
+    <aura:attribute name="message" type="String" /> 
+    <aura:attribute name="selectedConLookUpRecord" type="sObject" default="{'sobjectType':'Case'}"/>
+    <aura:attribute name="selectedCaseLookUpRecord" type="sObject" default="{'sobjectType':'Case'}"/>
+    <!-- aura attributes for dependant picklist-->  
+    <aura:attribute name="listControllingValues" type="list" default="[]" description="to store controller field values"/>
+    <aura:attribute name="listDependingValues" type="list" default="['--- None ---']" description="to store dependent field values"/>
+    <aura:attribute name="depnedentFieldMap" type="map" description="map to store dependent values with controlling value"/>
+    <aura:attribute name="bDisabledDependentFld" type="boolean" default="true"/> 
+    <aura:attribute name="controllingFieldAPI" type="string" default="CRM_Types__c" description="store field API name of Controller field"/>
+    <aura:attribute name="dependingFieldAPI" type="string" default="Outcome__c" description="store field API name of dependent field"/>
+    
+    
+    <aura:if isTrue="{! !empty(v.message)}">
+        <div class="slds-box slds-theme_alert-texture slds-theme_error">        
+            <span class="slds-text-body–regular">
+                <aura:unescapedHtml value="{!v.message}"/>
+            </span>
+        </div>
+    </aura:if>    
+    
+    <div aria-labelledby="CRMCaseForm">  
+        
+        <lightning:layout verticalAlign="center"  class="slds-theme_default slds-button_neutral">
+            <lightning:layoutItem flexibility="auto">                
+                <div class="slds-float_left">
+                    <lightning:button variant="brand" label="Cancel" onclick="{!c.returnToParentRecord}" class="slds-button_neutral"/>
+                </div>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" > 
+                <legend id="crmcaseform" class="slds-text-heading--small slds-p-vertical--medium">
+                    CRM Case
+                </legend> 
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto">  
+                <div class="slds-float_right">
+                    <lightning:button variant="brand" aura:id="disablebuttonid" label="Save" onclick="{!c.saveResponses}" class="slds-button_neutral"/>
+                </div>   
+            </lightning:layoutItem>
+        </lightning:layout>
+        <lightning:layout horizontalAlign="center" multipleRows="true" class="slds-box slds-theme_default">
+            
+            
+            <aura:if isTrue="{!v.accountFlag}">
+                <lightning:layoutItem size="12" flexibility="auto">
+                    <div class="slds-size--1-of-1 ">
+                        <div class="slds-form-element slds-m-bottom--medium">
+                            <label class="slds-form-element__label" for="select-01">Account</label>
+                            <div class="slds-form-element__control">
+                                <ui:outputText value="{!v.Account}"/>
+                            </div>
+                        </div>
+                    </div>
+                </lightning:layoutItem>
+                <aura:set attribute="else">
+                    <lightning:layoutItem size="12" flexibility="auto">
+                        <div class="slds-size--1-of-1 ">
+                            <div class="slds-form-element slds-m-bottom--medium">
+                                <label class="slds-form-element__label" for="select-01">Case Entity</label>
+                                <div class="slds-form-element__control">
+                                    <ui:outputText value="{!v.Entity}"/>
+                                </div>
+                            </div>
+                        </div>
+                    </lightning:layoutItem>
+                </aura:set>
+            </aura:if>
+            <lightning:layoutItem size="12" flexibility="auto">
+                <c:customLookup objectAPIName="contact" IconName="standard:contact" selectedRecord="{!v.selectedConLookUpRecord}" label="Contact Name"/>	    
+            </lightning:layoutItem>
+            &nbsp;
+            <lightning:layoutItem size="12" flexibility="auto">
+                <div class="slds-size--1-of-1 ">
+                    <div class="slds-form-element slds-m-bottom--medium">
+                        <div class="slds-form-element__control">
+                            <lightning:input aura:id="email" type="email" label="Email Address" value="{!v.caserec.Email_Address_Submitter__c}"  />                      
+                        </div>
+                    </div>
+                </div>
+            </lightning:layoutItem> 
+            <lightning:layoutItem size="12" flexibility="auto">
+                <c:customLookup objectAPIName="case" IconName="standard:case" selectedRecord="{!v.selectedCaseLookUpRecord}" label="Parent Case"/>	
+            </lightning:layoutItem>
+            &nbsp;
+            
+            <lightning:layoutItem size="12" flexibility="auto">
+                <div class="slds-form-element slds-m-bottom--medium" >
+                    <label class="slds-form-element__label" for="select-01">Plan Id</label>
+                    <div class="slds-form-element__Control">
+                        <ui:outputText value="{!v.planId}"/>
+                    </div>
+                </div>   
+            </lightning:layoutItem>
+            <lightning:layoutItem size="12" flexibility="auto">
+                <div class="slds-size--1-of-1 ">
+                    <div class="slds-form-element slds-m-bottom--medium">
+                        <div class="slds-form-element__control slds-datepicker">
+                            <lightning:input aura:id="corRecDate" type="date" label="Corporate received date" value="{!v.caserec.Corporate_received_date__c}" required="true"/>                             
+                        </div>
+                    </div>
+                </div>
+            </lightning:layoutItem>
+            <lightning:layoutItem size="12" flexibility="auto">
+                <div class="slds-size--1-of-1 ">
+                    <div class="slds-form-element slds-m-bottom--medium">
+                        <div class="slds-form-element__control">
+                            <ui:inputSelect aura:id="caseOrigin" label="Case Origin" class="slds-select" value="{!v.caserec.Origin}" required="true"/>                        
+                        </div>
+                    </div>
+                </div>
+            </lightning:layoutItem>
+            <lightning:layoutItem size="12" flexibility="auto">
+                <div class="slds-size--1-of-1 ">
+                    <div class="slds-form-element slds-m-bottom--medium">
+                        <div class="slds-form-element__control">
+                            <ui:inputSelect aura:id="caseStatus" label="Status" class="slds-select" value="{!v.caserec.Status}" required="true"/>                        
+                        </div>
+                    </div>
+                </div>
+            </lightning:layoutItem>
+            <!--Controller Picklist: Case.CRM_Types__c-->
+            <lightning:layoutItem size="12" flexibility="auto">    
+                <lightning:select name="controllerFld"
+                                  value="{!v.caserec.CRM_Types__c}"
+                                  label="CRM Case Type"
+                                  onchange="{!c.onControllerFieldChange}"
+                                  required="true">
+                    <aura:iteration items="{!v.listControllingValues}" var="val">
+                        <option value="{!val}">{!val}</option>
+                    </aura:iteration>
+                </lightning:select>
+            </lightning:layoutItem>
+            
+            <!--Dependent Picklist:Case.outcomeFlag-->
+            <aura:if isTrue="{!v.outcomeFlag}">
+                <lightning:layoutItem size="12" flexibility="auto">
+                    <lightning:select name="dependentFld"
+                                      value="{!v.caserec.Outcome__c}"
+                                      label="Outcome"
+                                      disabled="{!v.bDisabledDependentFld}">
+                        <aura:iteration items="{!v.listDependingValues}" var="val">
+                            <option value="{!val}">{!val}</option>
+                        </aura:iteration>
+                    </lightning:select>
+                </lightning:layoutItem>
+            </aura:if>      
+            &nbsp;
+            <lightning:layoutItem size="12" flexibility="auto">
+                <div class="slds-size--1-of-1 ">
+                    <div class="slds-form-element slds-m-bottom--medium">
+                        <div class="slds-form-element__control">
+                            <ui:inputSelect aura:id="casePriority" label="Priority" class="slds-select" value="{!v.caserec.Priority}" required="true"/>                        
+                        </div>
+                    </div>
+                </div>
+            </lightning:layoutItem>
+            <lightning:layoutItem size="12" flexibility="auto">
+                <div class="slds-size--1-of-1 ">
+                    <div class="slds-form-element slds-m-bottom--medium">
+                        <div class="slds-form-element__control">
+                            <ui:inputTextArea aura:id="caseComments" value="{!v.caserec.CRM_Comments__c}" label="Comments" class="slds-input" required="true"/>                        
+                        </div>
+                    </div>
+                </div>
+            </lightning:layoutItem>
+            <aura:if isTrue="{!v.otherDescFlag}">
+                <lightning:layoutItem size="12" flexibility="auto">
+                    <div class="slds-size--1-of-1 ">
+                        <div class="slds-form-element slds-m-bottom--medium">
+                            <div class="slds-form-element__control">
+                                <ui:inputTextArea aura:id="OtherDescription" value="{!v.caserec.Other_Reason_Description__c}" label="Other Description" class="slds-input" required="true"/>                        
+                            </div>
+                        </div>
+                    </div>
+                </lightning:layoutItem>
+            </aura:if>    
+        </lightning:layout>
+        
+        <!-- Datatable Begin -->
+        <section class="project-task-list slds-p-top--x-small">
+            <div class="task-list slds-p-top--medium">
+                <ldt:datatableDev title="PFIN Selection" aura:id="slTable" dataRows="{!v.serLoc}" header="{!v.slColumns}" config="{!v.slTableConfig}" selectedRows="{!v.selectedRows}" />
+            </div> 
+        </section>
+        <!-- Datatable End -->
+    </div>
+    
+</aura:component>

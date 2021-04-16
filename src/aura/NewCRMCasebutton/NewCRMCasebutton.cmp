@@ -1,0 +1,11 @@
+<aura:component controller="EmbeddedLightningButtonsController" implements="flexipage:availableForAllPageTypes,force:hasSObjectName,force:hasRecordId">
+	
+    <lightning:workspaceAPI aura:id="workspace" />
+    <aura:attribute name="recordId" type="Id" access="public"/>
+    <aura:attribute name="sobjecttype" type="String" default="{!v.sObjectName}"/>
+    
+    <div class="slds-button-group slds-align_absolute-center" role="group">
+        <button class="slds-button slds-button_neutral" title="New CRM Case" onclick="{!c.launchCRM}">New CRM Case</button>
+    </div>
+    
+</aura:component>

@@ -1,0 +1,16 @@
+<!--
+   
+   Created By   : i364191
+   Updated By	: i369192
+   User Story   : PPN-30084, PPN-40788
+   Description  : This component created as part of PPN-30084 and updated as part of PPN-40788
+-->
+<aura:component 
+      implements="force:lightningQuickActionWithoutHeader,force:hasRecordId"
+      access="global"       
+      controller="RouteToContractingController">
+    <lightning:workspaceAPI aura:id="workspace" />	<!-- Identifies where the lightning component was launched -->
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="isLightningButton" type="boolean" default="false"/> <!-- Identifies whether the component was launched via the standard or lightning button-->
+  	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>		
+</aura:component>

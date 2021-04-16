@@ -1,0 +1,16 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<table border="0" cellpadding="0" cellspacing="0" width="284" style="border-collapse:
+ collapse;width:213pt"><tbody><tr height="482" style="mso-height-source:userset;height:361.5pt">
+  <td height="482" class="xl65" width="284" style="height:361.5pt;width:213pt">Hello,<br>
+    &nbsp;<br>
+    This E-mail has been sent to notify you that Agreement
+  {!Apttus__APTS_Agreement__c.Name}&nbsp; has
+  been terminated.<br><br><br><p style="font-size: 12pt;">Agreement Name : {!Apttus__APTS_Agreement__c.Name}</p><p style="font-size: 12pt;">Account : {!Apttus__APTS_Agreement__c.Apttus__Account__c}<br>Agreement Number : {!Apttus__APTS_Agreement__c.Apttus__FF_Agreement_Number__c}<br>Start Date : {!Apttus__APTS_Agreement__c.Apttus__Contract_Start_Date__c}</p><p style="font-size: 12pt;">End Date : {!Apttus__APTS_Agreement__c.Apttus__Contract_End_Date__c}&nbsp;</p><p style=""><span style="font-size: 12pt;">&nbsp;</span></p><p style="font-size: 16px;"><span style="font-size: 12pt;">Please click on the following link to review the details and to take ownership as necessary.&nbsp;</span><span style="color: rgb(33, 33, 33); font-family: Arial, sans-serif, serif, EmojiFont; background-color: rgb(255, 255, 255);">The link below is only for the use of employees of&nbsp;</span><span style="font-family: Arial, sans-serif, serif, EmojiFont; background-color: rgb(255, 255, 255); color: rgb(34, 34, 34);">Health Care Service Corporation.</span>&nbsp;</p><p style="font-size: 12pt;"><br>{!Apttus__APTS_Agreement__c.Link}</p>
+    <br><br>Thank You!<br>
+    <br>
+    <br>
+    </td></tr></tbody></table>]]></td>
+</tr>
+</table>

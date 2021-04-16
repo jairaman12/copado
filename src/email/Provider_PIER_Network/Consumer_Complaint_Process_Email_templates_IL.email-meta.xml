@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Consumer Complaint Process Email templates IL</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Consumer Complaint Process Email templates IL</name>
+    <style>none</style>
+    <subject>BCBS of Illinois Request Received: {!Case.Subject}</subject>
+    <textOnly>Hi , 
+Thank you for submission. 
+We have received your Provider Data correction request and the assigned case number is {!Case.CaseNumber}. 
+You will be notified when your request has been processed.
+
+
+Sincerely, 
+Blue Cross and Blue Shield of Illinois 
+
+
+For Internal Purpose only. (NOTE: Please do not remove the Ref id) Ref id {!Case.Thread_Id}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

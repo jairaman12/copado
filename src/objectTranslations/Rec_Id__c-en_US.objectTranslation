@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Record Ids</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Record Ids</value>
+    </caseValues>
+    <fields>
+        <label><!-- Default Account Id --></label>
+        <name>Def_Acc_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Org Wide Email --></label>
+        <name>Org_Wide_Email__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

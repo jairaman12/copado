@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This Button is to escalate a case by a data rep to Supervisor. This button converted part of user story PPN-PPN-30084</description>
+    <height>250</height>
+    <label>Escalate</label>
+    <lightningComponent>EscalateButton</lightningComponent>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>LightningComponent</type>
+    <width>-100</width>
+</QuickAction>

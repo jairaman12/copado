@@ -1,0 +1,20 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:attribute name="Alias" type="String" default=""/>   
+    <aura:attribute name="Email" type="String" default=""/>   
+    <aura:attribute name="FirstName" type="String" default=""/>
+    <aura:attribute name="LastName" type="String" default=""/>   
+    <aura:attribute name="Nickname" type="String" default=""/>   
+    <aura:attribute name="Profile" type="String" default=""/>
+    <aura:attribute name="Role" type="String" default=""/>   
+    <aura:attribute name="Status" type="String" default=""/>   
+    <aura:attribute name="ViewSecureGroup" type="Boolean" default="false"/>    
+    <aura:attribute name="Federation" type="String" default=""/>
+    
+    <lightning:button variant="base" label="Base" title="Base action" onclick="{! c.handleClick }"/>
+   
+    <lightning:buttonIcon iconName="utility:down"  size="xx-small" alternativeText="View More" />
+    <lightning:buttonIcon iconName="utility:down"  size="x-small" alternativeText="View More" />
+    <lightning:buttonIcon iconName="utility:down"  size="small" alternativeText="View More" />
+    <lightning:buttonIcon iconName="utility:down"  alternativeText="View More" />
+   
+</aura:component>

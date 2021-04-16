@@ -1,0 +1,39 @@
+.THIS.c-container {
+    border: 1px solid #d8dde6;
+    margin: 10px 0 20px 0;
+}
+.THIS .header-column {
+    padding: 0 2rem;
+}
+.THIS .field-title {
+    font-size: .75rem;
+    line-height: 1.25;
+    color: #54698d;
+    margin-bottom: .25rem;
+}
+
+.THIS.slds-spinner_container {  
+  z-index: 10000;
+  position: fixed;   
+}
+
+/*
+ * PPN-41295: Below CSS is to wrap the text and 
+ * display in multiple lines
+ */
+.THIS .slds-truncate 
+{
+    text-overflow: inherit;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word; 
+}
+
+/*
+ * PPN-41295: Below CSS is to remove the dropdown 
+ * arros in datatable header
+ */
+.THIS .slds-button_icon-bare
+{
+	display: none;
+}

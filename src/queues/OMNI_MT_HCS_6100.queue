@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>fakeemail@bcbsil.com</email>
+    <name>OMNI_MT_HCS 6100</name>
+    <queueMembers>
+        <users>
+            <user>grace_zeigler@bcbsmt.com.prov</user>
+            <user>shawn_nelson@bcbsmt.com.provider</user>
+            <user>sheila_levins@bcbsmt.com.provider</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>Priority_4</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>OMNI_Queue__c</sobjectType>
+    </queueSobject>
+</Queue>

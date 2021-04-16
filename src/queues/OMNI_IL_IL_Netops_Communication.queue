@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>fakeemail@bcbsil.com</email>
+    <name>OMNI_IL_IL Netops Communication</name>
+    <queueMembers>
+        <users>
+            <user>alexandria_brown@bcbsil.com.provider</user>
+            <user>alexis_emerson@bcbsil.com.provider</user>
+            <user>bayardo_gomez@bcbsil.com.provider</user>
+            <user>carla_becerra@bcbsil.com.provider</user>
+            <user>colton_justus@bcbsil.com.provider</user>
+            <user>daniel_allegretti@bcbsil.com.provider</user>
+            <user>daniel_murray@bcbsil.com.provider</user>
+            <user>shawej@bcbsil.com.provider</user>
+            <user>guillermina_suarez@bcbsil.com.provider</user>
+            <user>gordonk@bcbsil.com.provider</user>
+            <user>rulek@bcbsil.com.provider</user>
+            <user>marquan_leonard@bcbsil.com.provider</user>
+            <user>nikita_lewis@bcbsil.com.provider</user>
+            <user>nora_keaney@bcbsil.com.prov</user>
+            <user>tonya_easter@bcbsil.com.provider</user>
+            <user>valerie_cruse@bcbsil.com.provider</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>Priority_5</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>OMNI_Queue__c</sobjectType>
+    </queueSobject>
+</Queue>

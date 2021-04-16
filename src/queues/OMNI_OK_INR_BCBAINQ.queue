@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>fakeemail@bcbsil.com</email>
+    <name>OMNI_OK_INR BCBAINQ</name>
+    <queueMembers>
+        <users>
+            <user>brandi_kolarik@bcbsok.com.provider</user>
+            <user>joanne_criner@hcsc.net.provider</user>
+            <user>laronda_allen@bcbsok.com.provider</user>
+            <user>linea_morrell@hcsc.net.provider</user>
+            <user>lynette_vinson@bcbsok.com.provider</user>
+            <user>wynona_gipson@bcbsok.com.provider</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>Priority_7</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>OMNI_Queue__c</sobjectType>
+    </queueSobject>
+</Queue>

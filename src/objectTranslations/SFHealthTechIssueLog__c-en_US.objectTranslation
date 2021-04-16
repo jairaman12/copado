@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>SF Health Tech Issue Log</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SF Health Tech Issue Logs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Impact --></label>
+        <name>Impact__c</name>
+        <picklistValues>
+            <masterLabel>Role</masterLabel>
+            <translation><!-- Role --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Value</masterLabel>
+            <translation><!-- Value --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Impacted Areas --></label>
+        <name>ImpactedAreas__c</name>
+        <picklistValues>
+            <masterLabel>Apttus</masterLabel>
+            <translation><!-- Apttus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Availity PDM</masterLabel>
+            <translation><!-- Availity PDM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email to case</masterLabel>
+            <translation><!-- Email to case --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integration</masterLabel>
+            <translation><!-- Integration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manual ADC/CRM</masterLabel>
+            <translation><!-- Manual ADC/CRM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manual On boarding</masterLabel>
+            <translation><!-- Manual On boarding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mass CRM Case creation</masterLabel>
+            <translation><!-- Mass CRM Case creation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mass Case closure</masterLabel>
+            <translation><!-- Mass Case closure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mass Credentialing update</masterLabel>
+            <translation><!-- Mass Credentialing update --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mass IL Roster</masterLabel>
+            <translation><!-- Mass IL Roster --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provider Account Data</masterLabel>
+            <translation><!-- Provider Account Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reporting</masterLabel>
+            <translation><!-- Reporting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RightFax</masterLabel>
+            <translation><!-- RightFax --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UCR</masterLabel>
+            <translation><!-- UCR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Voicemail</masterLabel>
+            <translation><!-- Voicemail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web Demographic case</masterLabel>
+            <translation><!-- Web Demographic case --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web On boarding</masterLabel>
+            <translation><!-- Web On boarding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>eVips/Vistar</masterLabel>
+            <translation><!-- eVips/Vistar --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Issue Summary --></label>
+        <name>IssueSummary__c</name>
+    </fields>
+    <fields>
+        <label><!-- Issue Type --></label>
+        <name>IssueType__c</name>
+        <picklistValues>
+            <masterLabel>Data Errors</masterLabel>
+            <translation><!-- Data Errors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Defect</masterLabel>
+            <translation><!-- Defect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enhancement</masterLabel>
+            <translation><!-- Enhancement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inquiry</masterLabel>
+            <translation><!-- Inquiry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outage</masterLabel>
+            <translation><!-- Outage --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Jira URL --></label>
+        <name>JiraURL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Priority --></label>
+        <name>Priority__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Highest</masterLabel>
+            <translation><!-- Highest --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reported State --></label>
+        <name>ReportedState__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+    </fields>
+    <recordTypes>
+        <label><!-- SF Health Tech Issue Log --></label>
+        <name>SFHealthTechIssueLog</name>
+    </recordTypes>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

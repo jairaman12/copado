@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Code --></label>
+        <name>Apttus__Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Value --></label>
+        <name>Apttus__Value__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- Password cannot be blank --></errorMessage>
+        <name>Apttus__Document_Password_Validation</name>
+    </validationRules>
+</CustomObjectTranslation>

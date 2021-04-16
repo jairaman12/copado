@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Provider Tax Identification</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Provider Tax Identifications</value>
+    </caseValues>
+    <fields>
+        <label><!-- Corporate Entity Code --></label>
+        <name>CM_Corporate_Entity_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax End Date --></label>
+        <name>CM_PTI_Prov_Id_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Effective Date --></label>
+        <name>CM_PTI_Prov_Id_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider Name --></label>
+        <name>CM_PTI_Prov_Name_From__c</name>
+        <relationshipLabel><!-- Provider Tax Identifications --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Affiliated To --></label>
+        <name>CM_PTI_Prov_Name_To__c</name>
+        <relationshipLabel><!-- Provider Tax Identifications --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Tax Id --></label>
+        <name>CM_PTI_Tax_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Shared Indicator --></label>
+        <name>CM_PTI_Tax_Shared_Ind__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Type --></label>
+        <name>CM_PTI_Tax_Type__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,21 @@
+<div style="border: thin solid #2C82BA;width:100%">
+<img src="https://hcscproviderintake.secure.force.com/resource/1489799226000/bcbsNMlogo"/>
+        <hr width="100%" size="20" color="#2C82BA"/>
+<br/>
+
+Thank you for your recent submission to the Network roster email box. <br><br>
+This email is confirmation we have received your roster, case number is {!Case.CaseNumber}. <br> <br>You will receive confirmation of the status of your roster within 30 business days of this receipt.<br><br>
+
+Please be advised, the Network roster email box is for roster submissions only. For questions or concerns regarding this roster case, please call 1-800-567-8540 or contact your Provider Relations Representative.To check the status of your case, please click on <a href="{!$Setup.UtilitySettings_Hierarchy__c.CaseStatusUrl__c}" target="_blank">status checker</a>.
+<br/><br/><br/>
+Sincerely, <br/>
+Blue Cross and Blue Shield of New Mexico
+
+    <hr width="100%" size="20" color="#2C82BA"/>
+            <p><center><b>Powered by: Salesforce<sup>TM</sup></b></center></p> <hr width="25%"/> <br>     
+            <p><center>Blue Cross and Blue Shield of New Mexico, a Division of Health Care Service Corporation,</center>
+            <center>a Mutual Legal Reserve Company, an Independent Licensee of the Blue Cross and Blue Shield Association.</center></p><br>
+            <p><center>&copy; 2017 Health Care Service Corporation. All rights reserved.</center></p><hr width="50%"/>
+            <hr width="100%" size="20" color="#2C82BA"/>
+(NOTE: Please do not remove the Ref id) Ref id {!Case.Thread_Id}
+</div>

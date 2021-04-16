@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>fakeemail@bcbsil.com</email>
+    <name>OMNI_IL_Provider Finder Audit</name>
+    <queueMembers>
+        <users>
+            <user>aleah_bradley@bcbsil.com.provider</user>
+            <user>arpi_dharia@bcbsil.com.provider</user>
+            <user>danielle_dugain@bcbsil.com.provider</user>
+            <user>dismukesg@bcbsil.com.provider</user>
+            <user>hajra_ghogha@bcbsil.com.provider</user>
+            <user>jeremy_j_davis@bcbsil.com</user>
+            <user>jesse_jacquez@bcbsil.com.provider</user>
+            <user>jinal_patel@bcbsil.com.provider</user>
+            <user>julie_swanson@bcbsil.com.provider</user>
+            <user>katherine_healy@bcbsil.com.provider</user>
+            <user>kritika_sharma@bcbsil.com.provider</user>
+            <user>lozanom1@bcbsil.com.provider</user>
+            <user>mariana_vazquez@bcbsil.com.provider</user>
+            <user>marta_palczak@bcbsil.com.provider</user>
+            <user>saira_patel@bcbsil.com.provider</user>
+            <user>ulyana_dmytriv@bcbsil.com.provider</user>
+            <user>yogin_patel@bcbsil.com.provider</user>
+            <user>yumna_nofal@bcbsil.com.provider</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>Priority_5</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>OMNI_Queue__c</sobjectType>
+    </queueSobject>
+</Queue>

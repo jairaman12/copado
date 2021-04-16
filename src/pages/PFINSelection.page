@@ -1,0 +1,458 @@
+<!-----------------------------------------------------------------------------------------
+@Author      : Provider Intake Salesforce team 
+@Date        : 08/09/2017
+@Description : This Page is created for PFIN Selection and Case Mode Selection in Manual Case Creation Process
+------------------------------------------------------------------------------------------>
+<apex:page controller="ManualCaseCreationController"
+           sidebar="false" docType="html-5.0" tabStyle="Case" 
+           lightningStylesheets="true"
+           standardStylesheets="false">
+   <apex:includeScript value="{!$Resource.jqueryMin}"/>
+  <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+    <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="x-ua-compatible" content="ie=edge" />
+      <title>Manual ADC</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <!-- Import the Design System style sheet -->
+      <apex:slds />
+        <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+            rel = "stylesheet"/>
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <style type="text/css">
+          table[id*='addrTypeOptions'] input[type=checkbox][disabled]
+          {
+            cursor: not-allowed;
+          }
+              
+    
+        .lex_background {
+            background-color: rgb(175, 197, 222);
+            height: -webkit-fill-available;
+            background-image: url(/_slds/images/themes/oneSalesforce/banner-brand-default.png?cache=210.2);
+            background-repeat: repeat-x;
+            background-position: top left;
+        }
+        
+          .circle
+            {
+            border:1px solid #0070d2;
+            width:20px;
+            height:20px;
+            border-radius:100%;
+            position:relative;
+            margin:4px;
+            display:inline-block;
+            vertical-align:middle;
+            background-color: #0070d2;
+        }
+        .circle.plus:before,
+        .circle.plus:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:white;
+        }
+        .circle.plus:before{
+            width: 2px;
+            margin: 2px auto;
+        }
+        .circle.plus:after{
+            margin: auto 2px;
+            height: 2px;
+        }
+        .ui-menu-item-wrapper {
+            background-color: white; 
+          
+         }
+      </style>
+      <script>
+      //PPN-15773 Begin
+    $(document).ready(function(){
+        var nonBillPfin = '{!nonbillpfin}';
+        var billPfin = '{!billpfin}'; 
+        if(nonBillPfin != '' || billPfin != ''){
+            if(nonBillPfin==''){
+                callControllermethod(billPfin);
+            }
+            else{
+                callControllerBillNonBillmethod(billPfin,nonBillPfin); 
+                $( "[id*='nonbillpfin']" ).val('');
+             } 
+        }   
+        else{
+            
+        }
+        $( "[id*='billingpfin']" ).val('{!billpfin}');      // Fill in previously selected Bill PFIN value
+        setAddrTypeOptions();
+        
+        if( $( "[id*='selectAll']" ).is(':checked') ) {
+            selectAllMethod();
+        }
+        selectAddressType();
+        
+        $("[id*=cs]").change(function() {
+            $( "[id*='hiddenJson']" ).val('');  /* PPN-30828, Need to clear the JSON for Network ADC when case mode is changed */
+        });
+        
+    });
+        /* Disable the Non-Bill PFIN Number field until a Bill PFIN Number has been Added. Deactivated per PPN-36946 */
+        function enableOrDisableInput() {
+            if( $( "[id*='billingpfin']" ).val() == '' ) {
+                   $("[id*='nonbillpfin']" ).prop( "disabled", true );
+                   $("[id*='selectAll']" ).prop( "disabled", true );                   
+                   callControllermethod('');
+             } else {
+                 $("[id*='nonbillpfin']" ).prop( "disabled", false );
+                 $("[id*='selectAll']" ).prop( "disabled", false );                 
+             }
+            
+         }
+//PPN-15773 End
+
+//PPN-13772 Starts
+    function selectAllMethod()
+    {
+        var selectedBillPfinValue =  $( "[id*='billingpfin']" ).val();
+        if ( $( "[id*='selectAll']" ).is(':checked')) {
+            if(selectedBillPfinValue != '')
+            {
+                var eleman = $( "[id*='nonbillpfin']" );
+                $( "[id*='nonbillpfin']" ).val('');
+                $(":input[id*='nonbillpfin']" ).prop( "disabled", true );
+                document.getElementById("addButton").disabled=true;
+                callControllerSelectAllmethod(selectedBillPfinValue,true);
+            }
+            else
+            {
+                $( "[id*='selectAll']" ).checked = false;
+            }
+        }  
+        else
+        {   
+            var eleman = $( "[id*='nonbillpfin']" );
+            $("[id*='nonbillpfin']" ).prop( "disabled", false );
+            document.getElementById("addButton").disabled=false;        
+            callControllerSelectAllmethod(selectedBillPfinValue,false);
+        }
+    }
+    
+//PPN-37972 Begin
+    function checkPfin(){
+        if($("[id*='billingpfin']").val() == '')
+        {
+            location.reload();
+        }
+    }
+//PPN-37972 End
+
+    function clikMethod()
+    {
+        var selectedvalue = $( "[id*='nonbillpfin']" ).val();      
+        if(selectedvalue !='')
+        {
+            if ($( "[id*='selectAll']" ).is(':checked'))
+            {
+                $( "[id*='selectAll']" ).checked = false;
+                var selectAllCheckBox = 'False';
+                var selectedBillPfinValue = $( "[id*='billingpfin']" ).val();
+                callControllerSelectAllmethod(selectedBillPfinValue,true );
+                callControllerNonBillmethod(selectedvalue);
+                 $( "[id*='nonbillpfin']" ).val('');
+            }
+            else
+            {
+                callControllerNonBillmethod(selectedvalue);
+                 $( "[id*='nonbillpfin']" ).val('');               
+            }
+        }
+    }
+//PPN-13772 Ends
+    function validate()
+    {
+        if($("[id*='billingpfin']").val() == '')
+        {
+            alert('Please select the PFIN');
+            return false;
+        }
+    }
+    
+    $( function(){
+        $( "[id*='nonbillpfin']" ).autocomplete({
+            source: function(request, response){
+                Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.ManualCaseCreationController.populateNonBillPFIN}',
+                request.term,
+                '{!acctId}',
+                $("[id*='billingpfin']").val(),
+               
+                function(result, event){               
+                    if (event.status){
+                        response(result);
+                    }
+                });
+            },
+            select:function( event, ui ){        
+            }           
+        });
+    });
+
+    $( function() {
+        $( "[id*='billingpfin']" ).autocomplete({
+            source: function(request, response){                
+                Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.ManualCaseCreationController.populatePFIN}',
+                request.term,
+                '{!acctId}',
+                function(result, event){
+                if (event.status)   {
+                response(result);
+                }
+                });
+            },
+            select:function( event, ui ){
+                // Call class method by passing this value using action function  
+                 callControllermethod(ui.item.label);
+                $( "[id*='selectAll']" ).checked = false;
+            }           
+        });
+    });
+    
+       /*
+       * Developer: Travis Self
+       * This method is called when the case mode is changed.
+       */
+        function setAddrTypeOptions() 
+        {
+            var mode = $(":input[id*='cs']").val();
+            
+            $( ".notDeletable" ).each
+            (
+                function(index, item)
+                {
+                    if ( mode == 'Delete' ) {
+                        
+                        $( item ).prop('checked', false);
+                        
+                        if( item.name.includes('billChkBox') ) {
+                            
+                            $( item ).prop('disabled', true);
+                            
+                        }
+                        
+                    } else if( mode != 'Delete' ) {
+                        
+                        if( item.name.includes('billChkBox') ) {
+                            
+                            $( item ).prop('disabled', false);
+                            
+                        }
+                    }
+                }
+            );
+        }
+        
+  </script>
+</head>
+<body>
+<div Id='slds' class="lex_background">
+<apex:sectionHeader subtitle="Manual Case Creation" title="PFIN Selection"/>
+    <apex:form id="pfrmId" styleClass="slds-form--stacked">
+     <apex:inputHidden value="{!acctId}" id="acctId"/>
+     <apex:pagemessages id="pageMessages" escape="false" /> 
+     <apex:pageBlock title=""  id="pageblockid" > 
+         <apex:pageBlockSection rendered="{!hidePFINPage}" > 
+             <apex:pageBlockSectionItem >
+                 <apex:outputLabel for="cs" value="Case Mode Selection:" />
+                <apex:selectList styleClass="slds-form-element__label" label="Case Mode Selection:" 
+                                 value="{!caseMode}"  id="cs" Size="1" style="width:30%;" onchange="setAddrTypeOptions();" >
+                    <apex:selectOption itemValue="Add" itemLabel="Add"/>
+                    <apex:selectOption itemValue="Change" itemLabel="Change"/>
+                    <apex:selectOption itemValue="Delete" itemLabel="Delete"/>
+                    
+                </apex:selectList>
+                 </apex:pageBlockSectionItem>
+<!--PPN-14267 Code Start-->
+
+             <apex:pageBlockSectionItem >
+                 <apex:outputLabel for="billingpfin" value="Bill PFIN Number:" />
+              <apex:inputText id="billingpfin" value="{!billpfin}" onchange="checkPfin();"/> 
+                 </apex:pageBlockSectionItem>
+             <apex:pageBlockSectionItem />
+
+                  <apex:pageBlockSectionItem >
+                      <apex:outputLabel for="nonbillpfin" value="Non-Bill PFIN Number:" />
+                      <apex:panelGroup >
+                        <apex:inputText id="nonbillpfin" html-type="text" value="{!nonbillpfin}"/>
+                        <span id="addButton" class="circle plus" onclick="clikMethod();" title="Add"/>
+                       </apex:panelGroup>
+                           
+                  </apex:pageBlockSectionItem>
+             <apex:pageBlockSectionItem />
+<!-- PPN - 29608 Code Starts -->   
+           <apex:pageBlockSectionItem >
+                <apex:outputLabel for="alertmessage" value="Alert Message" />
+                <apex:outputLabel for="alertmessage" value="Please click on the + sign for the selected Non-Bill PFIN to get added" />
+                </apex:pageBlockSectionItem>
+                 <apex:pageBlockSectionItem >
+                  </apex:pageBlockSectionItem>
+                                   
+<!-- PPN - 29608 Code End --> 
+
+<!-- PPN-15837 Code Starts-->
+             <apex:pageBlockSectionItem >
+                <label >Apply changes to all Non-bill PFINs</label> <apex:inputCheckbox id="selectAll" onclick="selectAllMethod();" value="{!selectAllNonBillPfinsChecked}" /> 
+             </apex:pageBlockSectionItem>
+                  
+<!-- PPN-15837 Code Ends-->
+<!--PPN-14267 Code Ends-->
+  
+              
+              <apex:outputPanel id="mypanel_selectAll" ><br/>
+                  <apex:outputpanel rendered="{!showSelectAllPanel && totalPageNumber>0}" >
+                        <!--<apex:selectList multiselect="true" size="5" style="width:120pt;height:90px;">-->
+                            <apex:pageblockTable value="{!listOfDisplayNonBillPfins}" var="nonbillpfin" style="position:relative;margin-left:65%;width:300px;height:90px;">
+                                <apex:column value="{!nonbillpfin}" headerValue="Non-Bill Pfins"/>
+                            </apex:pageblockTable>
+                            <apex:commandButton value="<" action="{!previous}" rendered="{!pageNumber>0}" rerender="mypanel_selectAll"/>
+                            <apex:commandButton value=">" action="{!next}" rendered="{!listOfAllNonBillPfins.size>((pageNumber+1)*10)}" rerender="mypanel_selectAll"/>
+                            <div style="position:relative;margin-left:90%;width:300px;" class="slds-form-element"> <label class="slds-form-element__label">Page Number {!pageNumber+1} of {!totalPageNumber} </label></div>
+                               <!--<apex:selectOptions value="{!selectAllNonBPFINOption}" ></apex:selectOptions>
+                            </apex:selectList>-->
+                   </apex:outputpanel> 
+              </apex:outputPanel>
+              
+             <apex:outputPanel id="mypanelWrapper" > 
+                  <apex:pageblockSectionItem rendered="{!showAddGrid}">
+                        <apex:pageblocktable value="{!pFINNumberList}" var="pfin" style="position:relative;margin-left:10%;width:300px;">                                                  
+                                    <apex:column >
+                                        <apex:commandButton value="X" action="{!addRow}" reRender="mypanelWrapper,addrInfoPanel" oncomplete="setAddrTypeOptions();" >
+                                            <apex:param name="DelPFIN" value="{!pfin}"  assignTo="{!DelPFIN}"/> 
+                                        </apex:commandButton> 
+                                    </apex:column> 
+                                    <apex:column headerValue="" value="{!pfin}" />
+                                </apex:pageblocktable> 
+                </apex:pageblockSectionItem>
+               </apex:outputPanel>  
+               
+       </apex:pageBlockSection>
+<!--PPN-13772 Starts-->
+        <apex:actionRegion >
+            <apex:actionFunction name="callControllerSelectAllmethod" action="{!fetchAllAddress}" reRender="addrInfoPanel,mypanel_selectAll,mypanelWrapper" oncomplete="setAddrTypeOptions();" >
+                <apex:param name="setPFIN" value=""/>
+                 <apex:param name="selectAllCheckBox" value=""/>
+            </apex:actionFunction>
+        </apex:actionRegion> 
+<!--PPN-13772 Ends-->      
+        <apex:actionRegion >
+            <apex:actionFunction name="callControllermethod" action="{!billPfinSelection}" reRender="addrInfoPanel,mypanel_selectAll,mypanelWrapper" oncomplete="setAddrTypeOptions();">
+                <apex:param name="setPFIN" value=""/>
+            </apex:actionFunction>
+        </apex:actionRegion>
+<!--PPN-14267 Code Start-->        
+        <apex:actionRegion >
+            <apex:actionFunction name="callControllerNonBillmethod" action="{!fetchAddressNonBillPfin}" reRender="addrInfoPanel,mypanelWrapper,mypanel_selectAll" oncomplete="setAddrTypeOptions();">
+                <apex:param name="setPFIN" value=""/>
+            </apex:actionFunction>
+        </apex:actionRegion>
+       
+<!--PPN-14267 Code End-->
+
+<!--PPN-15733 Code Start-->        
+        <apex:actionRegion >
+            <apex:actionFunction name="callControllerBillNonBillmethod" action="{!fetchAddressNonBillPfin}" reRender="addrInfoPanel,mypanelWrapper,mypanel_selectAll" oncomplete="setAddrTypeOptions();">
+                <apex:param name="BillPFIN" value=""/>
+                <apex:param name="setPFIN" value=""/>
+            </apex:actionFunction>
+        </apex:actionRegion>       
+<!--PPN-15733 Code End-->
+<!-- PPN-15837 Code Start-->
+<apex:actionFunction name="selectAddressType" action="{!changeAddressType}" reRender="addrInfoPanel" oncomplete="setAddrTypeOptions();" />
+         <div id="updateAddressSection">
+       <apex:pageblockSection title="Select Address Type to Update" collapsible="false">
+       </apex:pageblockSection>
+       <apex:outputPanel id="addrInfoPanel">
+           <table id="addrTypeOptions" width="100%">
+               <tr>
+                   <td width="20%" >
+                      <label class="slds-checkbox__label" for="serviceLocationCheckBox">
+                            Service Location
+                            <span class="slds-checkbox_faux"></span>
+                            <apex:inputCheckbox id="serviceLocationCheckBox" value="{!isServiceLocation}" label="Service Location" onchange="selectAddressType();"/>
+                       </label>
+                   </td>
+                   <td width="20%">
+                       <label class="slds-checkbox__label" for="billChkBox">
+                           Billing
+                           <span class="slds-checkbox_faux"></span>
+                           <apex:inputCheckbox id="billChkBox" styleClass="notDeletable" value="{!isBilling}" label="Billing" onchange="selectAddressType();"/>
+                       </label>
+                   </td>
+                   <td width="20%">
+                        <label class="slds-checkbox__label" for="administrativeCheckbox">
+                            Administrative
+                            <span class="slds-checkbox_faux"></span>
+                           <apex:inputCheckbox id="administrativeCheckbox" value="{!isAdmin}" label="Administrative" onchange="selectAddressType();"/>
+                       </label>
+                   </td>
+                   <!-- Commented for PPN-17108 -->               
+                   <td width="20%">
+                        <label class="slds-checkbox__label" for="directoryCheckbox">
+                            Directory
+                            <span class="slds-checkbox_faux"></span>
+                            <apex:inputCheckbox id="directoryCheckbox" value="{!isDirectory}" label="Directory" />
+                       </label>
+                   </td>
+               </tr>
+           </table><br/><br/>
+       <apex:outputPanel id="navigation" >
+           <apex:outputpanel rendered="{!listOfDisplayWrapList !=NULL && (listOfDisplayWrapList.size>0)}">
+           <center><apex:commandButton value="Previous" action="{!previousWrap}" rerender="addrInfoPanel" rendered="{!(wrapPageNumber>0)}"/>
+           <apex:commandButton value="Next" action="{!nextWrap}" rerender="addrInfoPanel"  rendered="{!wrapList.size>((wrapPageNumber+1)*50)}"/>
+            Page Number {!wrapPageNumber+1} of {!totalWrapPageNumber}</center>
+        </apex:outputpanel>
+        </apex:outputPanel>
+        <apex:pageBlockSection columns="1"> 
+                             <apex:pageBlockTable value="{!listOfDisplayWrapList}" var="a" id="wrapperid" styleClass="dataTable">
+                                <apex:column width="10%" headerValue="Select" >
+                                    <apex:inputCheckbox value="{!a.selectedAddr}" disabled="true" styleClass="{!IF(contains(addrTypeNotDeletable, a.servicePayeeAddress.CM_SPL_Addr_Type__c), 'notDeletable', '')}" />
+                                </apex:column>
+                                <apex:column width="10%" headerValue="PFIN Number">
+                                    <apex:outputText value="{!a.servicePayeeAddress.CM_SPL_PFIN_No__c}"/>
+                                </apex:column> 
+                                <apex:column width="10%" headerValue="Account Name">
+                                    <apex:outputText value="{!a.servicePayeeAddress.CM_SPL_Prov__r.Name}"/>
+                                </apex:column> 
+                                <apex:column width="10%" headerValue="Address Type">
+                                    <apex:outputText value="{!a.servicePayeeAddress.CM_SPL_Addr_Type__c}"/>
+                                </apex:column>
+                                <apex:column headerValue="Address Line 1">
+                                    <apex:outputText value="{!a.servicePayeeAddress.CM_SPL_Addr_Line_1__c}">
+                                </apex:outputText>
+                                </apex:column>  
+                                 <apex:column headerValue="Address Line 2">
+                                 <apex:outputText value="{!a.servicePayeeAddress.CM_SPL_Add_Line_2__c}">
+                                </apex:outputText>
+                                </apex:column>  
+                                <apex:column headerValue="State">
+                                    <apex:outputText value="{!a.servicePayeeAddress.CM_SPL_State__c}">
+                                </apex:outputText>
+                                </apex:column>
+                            </apex:pageBlockTable>                            
+                    </apex:pageBlockSection> 
+    </apex:outputPanel>
+                    <apex:pageBlockButtons id="buttonBlockId" location="bottom" html-align="right">
+                        <apex:commandButton styleClass="slds-button slds-button_neutral" value="Back" action="{!prevUrl}"/>
+                    <apex:commandButton value="Next" action="{!selectChange}" styleClass="slds-button slds-button_brand" disabled="{!isDisabled}" onClick="return validate();" />
+                    </apex:pageBlockButtons>
+             
+             <apex:inputHidden id="hiddenJson" value="{!hiddenJSON}" />
+         </div>
+     </apex:pageBlock>
+    </apex:form>
+    </div>
+</body>
+</html>
+</apex:page>

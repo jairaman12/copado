@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>ETL Report Config Data</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>ETL Report Config Datas</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active Email --></label>
+        <name>Active_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Destination_Org --></label>
+        <name>Destination_Org__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Address --></label>
+        <name>Email_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- File Type --></label>
+        <name>File_Type__c</name>
+        <picklistValues>
+            <masterLabel>Onboarding Cred Mass Status Update</masterLabel>
+            <translation><!-- Onboarding Cred Mass Status Update --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Plan Id --></label>
+        <name>Plan_Id__c</name>
+        <picklistValues>
+            <masterLabel>IL1</masterLabel>
+            <translation><!-- IL1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OK1</masterLabel>
+            <translation><!-- OK1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX1</masterLabel>
+            <translation><!-- TX1 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Total Accounts --></label>
+        <name>Total_Accounts__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Hours of Operation</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Hours of Operation</value>
+    </caseValues>
+    <fields>
+        <label><!-- Corporate Entity Code --></label>
+        <name>CM_Corporate_Entity_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Friday Closing Hour --></label>
+        <name>CM_HoO_Friday_Closing_Hour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Friday Opening Hour --></label>
+        <name>CM_HoO_Friday_Opening_Hour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Monday Closing Hour --></label>
+        <name>CM_HoO_Monday_Closing_Hour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Monday Opening Hour --></label>
+        <name>CM_HoO_Monday_Opening_Hour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Open 24/7 --></label>
+        <name>CM_HoO_Open_24_7__c</name>
+    </fields>
+    <fields>
+        <label><!-- Part of Day Code --></label>
+        <name>CM_HoO_Part_of_Day_Code__c</name>
+        <picklistValues>
+            <masterLabel>Session 1</masterLabel>
+            <translation><!-- Session 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Session 2</masterLabel>
+            <translation><!-- Session 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Session 3</masterLabel>
+            <translation><!-- Session 3 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Saturday Closing Hour --></label>
+        <name>CM_HoO_Saturday_Closing_Hour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Saturday Opening Hour --></label>
+        <name>CM_HoO_Saturday_Opening_Hour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service &amp; Payee Location Address --></label>
+        <name>CM_HoO_Service_Payee_Location_Address__c</name>
+        <relationshipLabel><!-- Hours of Operation --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sunday Closing Hour --></label>
+        <name>CM_HoO_Sunday_Closing_Hour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sunday Opening Hour --></label>
+        <name>CM_HoO_Sunday_Opening_Hour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Thursday Closing Hour --></label>
+        <name>CM_HoO_Thursday_Closing_Hour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Thursday Opening Hour --></label>
+        <name>CM_HoO_Thursday_Opening_Hour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tuesday Closing Hour --></label>
+        <name>CM_HoO_Tuesday_Closing_Hour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tuesday Opening Hour --></label>
+        <name>CM_HoO_Tuesday_Opening_Hour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wednesday Closing Hour --></label>
+        <name>CM_HoO_Wednesday_Closing_Hour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wednesday Opening Hour --></label>
+        <name>CM_HoO_Wednesday_Opening_Hour__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

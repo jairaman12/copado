@@ -1,0 +1,39 @@
+<messaging:emailTemplate subject="Welcome Email" recipientType="User" relatedToType="Case">
+<messaging:htmlEmailBody >
+<body style="margin: 0; padding: 0;">
+   <style type="text/css">.tabelle {width: 578px; border-collapse: collapse;}.zelle{padding: 3px;background-color: #B7CEEC;font-family: "Times New Roman", Times, serif; font-size: 15px;text-align: left;color: Black;}th {background-color: SteelBlue;padding: 3px;color: White;font-size: 15px;font-family: "Times New Roman", Times, serif;}</style><div style="border: thin solid #2C82BA; width:100%">
+<img src="http://hcscproviderintake.force.com/resource/1490329617000/bcbsNMlogo"/>
+            <hr width="100%" size="20" color="#2C82BA"/>
+<br/><br/><br/>
+Dear ProviderName:
+<br/><br/>
+Thank you for choosing to become a participating provider with Blue Cross and Blue Shield of New Mexico (BCBSNM). Your request to become a participating provider in the following networks has been processed.  
+<br/><br/>
+NetworkNameNetworkEffectiveDate
+<br/><br/>
+Signing up for Electronic Funds Transfer (EFT), Electronic Remittance Advice (ERA) and Electronic Payment Summary (EPS) provide greater efficiency, convenience and security. To sign up for these services you must be a registered Availity® Provider Portal user – there is no cost to register at <a href="http://www.availity.com/">availity.com</a>. Learn more about EFT, ERA and EPS at bcbsnm.com/provider under the <a href="https://www.bcbsnm.com/provider/claims/era.html">Claims and Eligibility tab</a>.
+<br/><br/>
+Please verify that all your information is correct on our  <a href="https://public.hcsc.net/providerfinder/search.do?corpEntCd=nm1">Provider Finder</a>. If there are any discrepancies, please fill out the BCBSNM <a href="https://hcscproviderintake.secure.force.com/nmdemographUpdate">demographic change form</a> online at bcbsnm.com/provider. 
+<br/><br/>
+The BCBSNM provider website, bcbsnm.com/provider, is home to valuable information for your practice including information about <a href="https://www.bcbsnm.com/provider/claims/index.html">Claims and Eligibility</a>, <a href="https://www.bcbsnm.com/provider/education_reference.html">Educational and Reference material</a>, <a href="https://www.bcbsnm.com/provider/clinical/index.html">Clinical Resources</a>, <a href="https://www.bcbsnm.com/provider/pharmacy/index.html">Pharmacy Program information</a>, <a href="https://www.bcbsnm.com/provider/standards/index.html">Standards and Requirements</a>, and much more.
+<br/><br/>
+Stay up to date with BCBSNM by signing up for the <a href="https://www.bcbsnm.com/provider/news/bluereview.html">Blue Review</a> monthly provider newsletter so that you and your staff have the latest news on claims and billing, federal mandates, medical policies, and much more. 
+<br/><br/>
+It is our purpose to stand with our members – and all citizens of New Mexico – in sickness and in health. We are proud to work with community partners who share our mission to lead the people of New Mexico toward better health and productive lives, which is why we invest our time and resources to address the most pressing health and social challenges facing our state.
+<br/><br/>
+For more information about working with BCBSNM, or if you have any questions or inquiries, please contact your <a href="https://www.bcbsnm.com/provider/contact_us.html">Provider Network Representative</a>. 
+<br/><br/>
+Sincerely,
+<br/><br/>
+Blue Cross and Blue Shield of New Mexico
+<br/><br/>
+NM Network Services Department 
+<br/><br/>
+            <hr width="100%" size="20" color="#2C82BA"/>
+            <center><b>Powered by: Salesforce<sup>TM</sup></b></center>
+            <hr width="25%"/><br/><center>Blue Cross and Blue Shield of New Mexico, a Division of Health Care Service Corporation,</center><center>a Mutual Legal Reserve Company, an Independent Licensee of the Blue Cross and Blue Shield Association.</center><br/><center>&copy; 2017 Health Care Service Corporation. All rights reserved.</center><hr width="50%"/><br/><hr width="100%" size="20" color="#2C82BA"/> 
+(NOTE: Please do not remove the Ref id) Ref id refid</div>
+</body>
+
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

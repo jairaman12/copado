@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>15.0</apiVersion>
+    <available>false</available>
+    <description>Approval Request Comments Entered Template</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Approval Request Comments Entered_DEPRECATED</name>
+    <packageVersions>
+        <majorNumber>9</majorNumber>
+        <minorNumber>26</minorNumber>
+        <namespace>Apttus_Approval</namespace>
+    </packageVersions>
+    <style>none</style>
+    <subject>New Comments Entered for Approval Request</subject>
+    <type>visualforce</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

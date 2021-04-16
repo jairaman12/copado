@@ -1,0 +1,1742 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CaseSettings xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAutoProcUser>false</caseAutoProcUser>
+    <caseFeedItemSettings>
+        <characterLimit>400</characterLimit>
+        <collapseThread>true</collapseThread>
+        <displayFormat>Default</displayFormat>
+        <feedItemType>EmailMessageEvent</feedItemType>
+    </caseFeedItemSettings>
+    <caseMergeInLightning>false</caseMergeInLightning>
+    <closeCaseThroughStatusChange>true</closeCaseThroughStatusChange>
+    <defaultCaseFeedLayoutOn>false</defaultCaseFeedLayoutOn>
+    <defaultCaseOwner>renay_readette@bcbsil.com.provider</defaultCaseOwner>
+    <defaultCaseOwnerType>User</defaultCaseOwnerType>
+    <defaultCaseUser>bcbsprovidersystemuser@bcbsmt.com</defaultCaseUser>
+    <emailActionDefaultsHandlerClass>SharedEmailInboxes</emailActionDefaultsHandlerClass>
+    <emailToCase>
+        <enableE2CSourceTracking>true</enableE2CSourceTracking>
+        <enableEmailToCase>true</enableEmailToCase>
+        <enableHtmlEmail>true</enableHtmlEmail>
+        <enableOnDemandEmailToCase>true</enableOnDemandEmailToCase>
+        <enableThreadIDInBody>true</enableThreadIDInBody>
+        <enableThreadIDInSubject>false</enableThreadIDInSubject>
+        <notifyOwnerOnNewCaseEmail>false</notifyOwnerOnNewCaseEmail>
+        <overEmailLimitAction>Bounce</overEmailLimitAction>
+        <preQuoteSignature>true</preQuoteSignature>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Ancillary Contracting SW</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>ancillarycontracting_sw@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Ancillary Contracting SW</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Ancillary Contracting Voicemail</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>ancillary_contracting_voicemail@bcbstx.com</emailAddress>
+            <isVerified>false</isVerified>
+            <routingName>Ancillary Contracting Voicemail</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Ancillary Networks</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>ancillarynetworks@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Ancillary Networks</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Ancillary Contracting North</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>ancillarycontracting_n@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>AncillaryContracting_N</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Ancillary Contracting SE</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>ancillarycontracting_se@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>AncillaryContracting_SE@bcbstx.com</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>BCBSTXCredentialing_CVO</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>bcbstxcredentialing_cvo@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>BCBSTXCredentialing_CVO@bcbstx.com </routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Balance Billing</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>balance_billing@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Balance Billing</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>CAQH Communications</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>caqhcommunications@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>CAQHCommunications@bcbstx.com </routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Central Texas Network Recruitment</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>provider_relations_westandcentraltexas@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Central Texas Network Recruitment</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Central IL</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>centralil@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>CentralIL</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Chicago Metro</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>chicagometro@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>ChicagoMetro</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Commercial_Encounter@bcbsil.com</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>commercial_encounter@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Commercial_Encounter</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>CredentialingCommittee</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>credentialingcommittee@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>CredentialingCommittee</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>CredentialingPSV</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>credentialingpsv@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>CredentialingPSV</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Custom Networks</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>custom_networks@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Custom Networks</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Delegated Credentialing</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>delegatedcredentialing@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Delegated Credentialing</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Enterprise Credentialing</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>enterprisecredentialing@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>EnterpriseCredentialing@bcbstx.com </routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Facility Contract Notices</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>facility_contract_notices@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Facility Contract Notices</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Facility_Demographic_Changes@bcbsil.com</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>facility_demographic_changes@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Facility Demographic Changes</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>FacilityCredentialing_Enterprise</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>facilitycredentialing_enterprise@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>FacilityCredentialing_Enterprise</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Fee Schedule Requests</caseOrigin>
+            <caseOwner>OMNI_NM_Contracting_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>feeschedulerequests@bcbsnm.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Fee Schedule Requests</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Gov Netops Provider Update</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>gov_netops_provider_update@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Gov Netops Provider Update</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Gov Providers</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>govproviders@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Gov Providers</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>HCS-X6100</caseOrigin>
+            <caseOwner>Montana_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>hcs-x6100@bcbsmt.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>HCS-X6100</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>HCSX6100</caseOrigin>
+            <caseOwner>Montana_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>hcsx6100@bcbsmt.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>HCSX6100</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>HFS_OIGINQUIRIES</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>hfs_oiginquiries@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>HFS_OIGINQUIRIES</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>HMO Networks</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>hmo_network@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>HMO Networks</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Hcsspecialist</caseOrigin>
+            <caseOwner>Montana_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>hcsspecialists@bcbsmt.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Hcsspecialists</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Houston Fee Inquiry</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>ppnhoustonfeeinquiry@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Houston Fee Inquiry</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>IHH</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>ihh@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>IHH</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>IL Consumer Provider Data</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>consumer_providerdata@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>IL Consumer Provider Data</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>IL Hospital Charge Increase</caseOrigin>
+            <caseOwner>Facilities_Operations</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>ilhospitalchargeincreasemailbox@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>IL Hospital Charge Increase</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>IL_Network_Reporting_Analytics@bcbsil.com</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>il_network_reporting_analytics@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>IL Network Reporting Analytics</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>IL No Claim Campaign</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>il_no_claim_campaign@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>IL No Claim Campaign</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>ILProviderRosterRequests@bcbsil.com</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>ilproviderrosterrequests@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>IL Provider Roster Requests</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>ILBCBSAinquiries@bcbsil.com</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>ilbcbsainquiries@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>ILBCBSA Inquiries</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>ILContracts</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>ilcontracts@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>ILContracts</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>ILDentalMaintenanceRequest</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>ildentalmaintenancerequest@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>ILDentalMaintenanceRequest@bcbsil.com</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>ILHCMProductionSupport@bcbsil.com</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>ilhcmproductionsupport@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>ILHCM Production Support</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>ILHCMProviderServicesQualityandTraining@bcbsil.com</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>ilhcmproviderservicesqualityandtraining@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>ILHCM Provider Services Quality and Training</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>ILHCM_IPARequests@bcbsil.com</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>ilhcm_iparequests@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>ILHCM_IPA Requests</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>IncompletecredentialingApplication</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>incompletecredentialingapplication@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>IncompletecredentialingApplication</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Internal PNC Inquiries</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>internalpncinquiries@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Internal PNC Inquiries</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>maencounter@bcbsil.com</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>maencounter@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>MAEncounter</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>MTBCBSAinquiries@bcbsmt.com</caseOrigin>
+            <caseOwner>Montana_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>mtbcbsainquiries@bcbsmt.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>MTBCBSA Inquiries</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Email</caseOrigin>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>mtintaketeampiermailbox@bcbsmt.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>MTIntake</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Metro South IL</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>metrosouth@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>MetroSouth</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>NM Commercial</caseOrigin>
+            <caseOwner>New_Mexico_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>nmcommercial@bcbsnm.com</emailAddress>
+            <isVerified>false</isVerified>
+            <routingName>NM Commercial</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>NM Medicare</caseOrigin>
+            <caseOwner>New_Mexico_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>nmmedicare@bcbsnm.com</emailAddress>
+            <isVerified>false</isVerified>
+            <routingName>NM Medicare</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>NMNRSSOUEOU@bcbsnm.com</caseOrigin>
+            <caseOwner>New_Mexico_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>nmnrssoueou@bcbsnm.com</emailAddress>
+            <isVerified>false</isVerified>
+            <routingName>NM NRS SOU EOU</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>NM_Network_Priority@bcbsnm.com</caseOrigin>
+            <caseOwner>New_Mexico_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>nm_network_priority@bcbsnm.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>NM Network Priority</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>NM Network Provider Finder Inquiries</caseOrigin>
+            <caseOwner>New_Mexico_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>nm_network_provider_finder_inquiries@bcbsnm.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>NM Network Provider Finder Inquiries</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>nm_network_scripting@bcbsnm.com</caseOrigin>
+            <caseOwner>New_Mexico_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>nm_network_scripting@bcbsnm.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>NM Network Scripting</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>NM Network Single Case Agreements</caseOrigin>
+            <caseOwner>New_Mexico_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>nmnetworksinglecaseagreements@bcbsnm.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>NM Network Single Case Agreements</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>NMProviderNEtworkRpt_Svcs@bcbsnm.com</caseOrigin>
+            <caseOwner>New_Mexico_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>nmprovidernetworkrpt_svcs@bcbsnm.com</emailAddress>
+            <isVerified>false</isVerified>
+            <routingName>NM Provider Network Rpt</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>NM Provider Network Rpt Svcs</caseOrigin>
+            <caseOwner>New_Mexico_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>nmprovidernetworkrptsvcs@bcbsnm.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>NM Provider Network Rpt Svcs</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>NM Provider Network SOUEOU</caseOrigin>
+            <caseOwner>New_Mexico_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>nmprovidernetworksoueou@bcbsnm.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>NM Provider Network SOUEOU</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>NMBCBSAinquiries@bcbsnm.com</caseOrigin>
+            <caseOwner>New_Mexico_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>nmbcbsainquiries@bcbsnm.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>NMBCBSA Inquiries</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Email</caseOrigin>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>nmintaketeampiermailbox@bcbsnm.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>NMIntake</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>NSD_Custom_Networks@bcbsnm.com</caseOrigin>
+            <caseOwner>New_Mexico_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>nsd_custom_networks@bcbsnm.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>NSD Custom Networks</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>NSD Right Fax</caseOrigin>
+            <caseOwner>OMNI_NM_Contracting_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>nsd_rightfax@bcbsnm.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>NSD Right Fax</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Voicemail</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>netopsvoicemailbox@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>NetOps voice mailbox</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>NetOps_QualityAudit</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>netops_qualityaudit_il@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>NetOps_QualityAudit</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Netops Facility</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>netops_facility@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Netops Facility</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Netops Provider Update</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>netops_provider_update@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Netops Provider Update</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Network AG</caseOrigin>
+            <caseOwner>New_Mexico_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>networkag@bcbsnm.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Network AG</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Network Contracting</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>networkcontracting@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Network Contracting</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Network Contracts Incoming</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>network_contracts-incoming_only@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Network Contracts Incoming</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Network Roster Submission</caseOrigin>
+            <caseOwner>OMNI_NM_Contracting_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>networkrostersubmission@bcbsnm.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Network Roster Submission</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>North IL</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>northil@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>North IL</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>North Texas Network Recruitment</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>north_tx_network_recruitment@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>North Texas Network Recruitment</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>OK Network Management</caseOrigin>
+            <caseOwner>Oklahoma_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>oknetworkmanagement@bcbsok.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>OK Network Management</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>OK Pricing</caseOrigin>
+            <caseOwner>Oklahoma_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>okpricing@bcbsok.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>OK Pricing</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>OKBCBSAinquiries@bcbsok.com</caseOrigin>
+            <caseOwner>Oklahoma_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>okbcbsainquiries@bcbsok.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>OKBCBSA Inquiries</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Email</caseOrigin>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>okintaketeampiermailbox@bcbsok.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>OKIntake</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>OKNetworkVM</caseOrigin>
+            <caseOwner>Oklahoma_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>oknetworkvm@bcbsok.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>OKNetworkVM</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>PDO Delegated Rosters</caseOrigin>
+            <caseOwner>OMNI_NM_Contracting_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>pdodelegatedrosters@bcbsnm.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>PDO Delegated Rosters</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>PDSC_Setup_VM</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>pdscsetupvm@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>PDSC_Setup_VM</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Email-IL</caseOrigin>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>intaketeampiermailbox@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>PIERIntake</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>PNC NetOps Inquiries</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>pncnetopsinquiries@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>PNC NetOps Inquiries</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>PNC TMG Inquiries</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>pnc_tmg_inquiries@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>PNC TMG Inquiries</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Professional Govt Contracting</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>professional_government_contracting@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Professional Govt Contracting</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Provider Inquiry</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>provider_inquiry@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Provider Inquiry</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Provider Relations IL</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>providerrelations@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Provider Relations IL</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Provider Relations Voicemail</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>providerrelations_voicemail@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Provider Relations Voicemail</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Retro Submission</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>retrosubmission@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>RetroSubmission@bcbstx.com </routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>SW Region Provider Relations</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>swregionproviderrelations_sa@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>SW Provider Relations</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>SWHR_Email</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>swhr_mailbox@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>SWHR_Email</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>South Texas Network Recruitment</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>stxnetworkrecruitment@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>South Texas Network Recruitment</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>SouthEast Texas Network Recruitment</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>ppnsoutheasttexas@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>SouthEast Texas Network Recruitment</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Southern IL</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>southernil@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Southern IL</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>TX Ancillary Contracting</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>ancillarycontracting@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>TX Ancillary Contracting</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>TX Medicaid Expansion</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>medicaidexpansion@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>TX Medicaid Expansion</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>TX Medicaid Network Dept</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>texasmedicaidnetworkdepartment@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>TX Medicaid Network Dept</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>TX NM Austin</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>provider_relations_austin@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>TX NM Austin</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>TX NM Austin 1</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>ppnaustin@bcbstx.com</emailAddress>
+            <isVerified>false</isVerified>
+            <routingName>TX NM Austin 1</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>TX NM Austin 2</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>ppn_austin@bcbstx.com</emailAddress>
+            <isVerified>false</isVerified>
+            <routingName>TX NM Austin 2</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>TX NM El Paso</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>provider_relations_el_paso@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>TX NM El Paso</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>TX NM Houston</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>provider_relations_houston@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>TX NM Houston</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>TX NM Lubbock</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>provider_relations_lubbock_amarillo@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>TX NM Lubbock</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>TX NM Midland</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>provider_relations_midland@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>TX NM Midland</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>TX NM Richardson</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>provider_relations_dfw@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>TX NM Richardson</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>TX NM South Texas</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>provider_relations_south_texas@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>TX NM South Texas</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>TX NM West 1</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>ppn_midland@bcbstx.com</emailAddress>
+            <isVerified>false</isVerified>
+            <routingName>TX NM West 1</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>TX NM West 2</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>ppnmidland@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>TX NM West 2</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>TX NM West 3</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>tx_nm_midland@bcbstx.com</emailAddress>
+            <isVerified>false</isVerified>
+            <routingName>TX NM West 3</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>TX NM West 4</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>ppn_el_paso@bcbstx.com</emailAddress>
+            <isVerified>false</isVerified>
+            <routingName>TX NM West 4</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>TX NM West 5</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>tx_nm_el_paso@bcbstx.com</emailAddress>
+            <isVerified>false</isVerified>
+            <routingName>TX NM West 5</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>TX PDSC Consumer Complaints</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>pdscconsumercomplaints@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>TX PDSC Consumer Complaints</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>TX Written Notices</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>tx_written_notices@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>TX Written Notices</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>TXBCBSAinquiries@bcbstx.com</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>txbcbsainquiries@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>TXBCBSA Inquiries</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>TX Core Credentialing Customer Service</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>txcorecredentialingcustomerservice@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>TXCoreCredentialingCustomerService@bcbstx.com </routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>TXCustomTiering</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>txcustomtiering@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>TXCustomTiering</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>TX Dental Provider Maintenance</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>txdentalprovidermaintenance@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>TXDentalProviderMaintenance@bcbstx.com </routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>TXFPS</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>txfps@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>TXFPS</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Email</caseOrigin>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>txintaketeampiermailbox@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>TXIntake</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>TXPSClaimsSupport</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>txpsclaimssupport@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>TXPSClaimsSupport</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>TX PS Contract Copy Requests</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>txpscontractcopyrequests@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>TXPSContractCopyRequests@bcbstx.com </routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>TX Provider Maintenance</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>txprovidermaintenance@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>TXProviderMaintenance@bcbstx.com </routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>TX Provider Update Submission</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>txproviderupdatesubmission@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>TXProviderUpdateSubmission@bcbstx.com</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>TX VA Requests and Inquiries</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>txvarequestsandinquiries@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>TXVARequestsandInquiries@bcbstx.com</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>TX_ Medicaid Expansion_Voicemail</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>medicaidexpansion_voicemail@bcbstx.com</emailAddress>
+            <isVerified>false</isVerified>
+            <routingName>TX_ Medicaid Expansion_Voicemail</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>TX_Contract_SP</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>tx_contract_sp@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>TX_Contract_SP</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>TX_TexasMedicaidNetworkDepartment_Voicemail</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>texasmedicaidnetworkdepartment_voicemail@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>TX_TexasMedicaidNetworkDepartment_Voicemail</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Texas Facility - CSRN</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>texasfacilitycsrn@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Texas Facility - CSRN</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Texas Healthcare Delivery Internal Routing</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>texas_healthcare_delivery_internal_routing@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Texas Healthcare Delivery Internal Routing</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Texas Medicare Advantage Network</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>texasmedicareadvantagenetwork@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Texas Medicare Advantage Network</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Texas Retail - CSRN</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>texasretailcsrn@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Texas Retail - CSRN</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>TriCare Customer Service</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>tricarecustomerservice@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>TriCareCustomerService@bcbstx.com</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>TriWest VA</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>vatriwest@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>TriWest VA</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Tx Standard Contracting Team</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>tx_standard_contracting_team@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Tx Standard Contracting Team</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>TX Provider Record Setup</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>txproviderrecordsetup@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>TxProviderRecordSetup@bcbstx.com </routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Tx_Medicare_Advantage_VM</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>texasmedicareadvantagenetwork_voicemail@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Tx_Medicare_Advantage_VM</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Tx_Network_Central_Voicemail</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>tx_network_central_voicemail@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Tx_Network_Central_Voicemail</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Tx_Network_North_Voicemail</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>tx_network_north_voicemail@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Tx_Network_North_Voicemail</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Tx_Network_SouthEast_Voicemail</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>tx_network_southeast_voicemail@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Tx_Network_SouthEast_Voicemail</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Tx_Network_South_Voicemail</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>tx_network_south_voicemail@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Tx_Network_South_Voicemail</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Tx_Network_West_Voicemail</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>tx_network_west_voicemail@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Tx_Network_West_Voicemail</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>VATriWest_voicemail@bcbstx.com</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>vatriwest_voicemail@bcbstx.com</emailAddress>
+            <isVerified>false</isVerified>
+            <routingName>VATriWest_voicemail@bcbstx.com</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Vistar Customer Service</caseOrigin>
+            <caseOwner>Texas_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>vistarcustomerservice@bcbstx.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>VistarCustomerService@bcbstx.com </routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>Web Desk</caseOrigin>
+            <caseOwner>Montana_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>webdesk@bcbsmt.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>Web Desk</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <caseOrigin>West IL</caseOrigin>
+            <caseOwner>Illinois_Queue</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>westil@bcbsil.com</emailAddress>
+            <isVerified>true</isVerified>
+            <routingName>West IL</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <unauthorizedSenderAction>Discard</unauthorizedSenderAction>
+    </emailToCase>
+    <enableCaseFeed>true</enableCaseFeed>
+    <enableDraftEmails>false</enableDraftEmails>
+    <enableEarlyEscalationRuleTriggers>false</enableEarlyEscalationRuleTriggers>
+    <enableEmailActionDefaultsHandler>true</enableEmailActionDefaultsHandler>
+    <enableSuggestedSolutions>true</enableSuggestedSolutions>
+    <escalateCaseBefore>false</escalateCaseBefore>
+    <keepRecordTypeOnAssignmentRule>true</keepRecordTypeOnAssignmentRule>
+    <notifyContactOnCaseComment>false</notifyContactOnCaseComment>
+    <notifyDefaultCaseOwner>false</notifyDefaultCaseOwner>
+    <notifyOwnerOnCaseComment>false</notifyOwnerOnCaseComment>
+    <notifyOwnerOnCaseOwnerChange>false</notifyOwnerOnCaseOwnerChange>
+    <showEmailAttachmentsInCaseAttachmentsRL>true</showEmailAttachmentsInCaseAttachmentsRL>
+    <showFewerCloseActions>false</showFewerCloseActions>
+    <systemUserEmail>automatedcase@00d41000000ftwdeas.ext</systemUserEmail>
+    <useSystemEmailAddress>true</useSystemEmailAddress>
+    <useSystemUserAsDefaultCaseUser>false</useSystemUserAsDefaultCaseUser>
+    <webToCase>
+        <enableWebToCase>false</enableWebToCase>
+    </webToCase>
+</CaseSettings>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>fakeemail@bcbsil.com</email>
+    <name>OMNI_TX_TX NM Central / Austin Email</name>
+    <queueMembers>
+        <users>
+            <user>ben_malapitan@bcbstx.com.provider</user>
+            <user>cristina_fernandez@bcbstx.com.provider</user>
+            <user>elsa_wilmington@bcbstx.com.provider</user>
+            <user>joshua_m_williams@bcbstx.com.provider</user>
+            <user>sharon_sodek@bcbstx.com.provider</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>Priority_6</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>OMNI_Queue__c</sobjectType>
+    </queueSobject>
+</Queue>

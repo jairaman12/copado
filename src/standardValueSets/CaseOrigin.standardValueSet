@@ -1,0 +1,974 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>true</sorted>
+    <standardValue>
+        <fullName>Agreements</fullName>
+        <default>false</default>
+        <label>Agreements</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Ancillary Contracting North</fullName>
+        <default>false</default>
+        <label>Ancillary Contracting North</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Ancillary Contracting SE</fullName>
+        <default>false</default>
+        <label>Ancillary Contracting SE</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Ancillary Contracting SW</fullName>
+        <default>false</default>
+        <label>Ancillary Contracting SW</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Ancillary Contracting Voicemail</fullName>
+        <default>false</default>
+        <label>Ancillary Contracting Voicemail</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Ancillary Gov Expansion</fullName>
+        <default>false</default>
+        <label>Ancillary Gov Expansion</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Ancillary Networks</fullName>
+        <default>false</default>
+        <label>Ancillary Networks</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Availity</fullName>
+        <default>false</default>
+        <label>Availity</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Balance Billing</fullName>
+        <default>false</default>
+        <label>Balance Billing</label>
+    </standardValue>
+    <standardValue>
+        <fullName>BCBSTXCredentialing_CVO</fullName>
+        <default>false</default>
+        <label>BCBSTXCredentialing_CVO</label>
+    </standardValue>
+    <standardValue>
+        <fullName>CAQH Communications</fullName>
+        <default>false</default>
+        <label>CAQH Communications</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Central IL</fullName>
+        <default>false</default>
+        <label>Central IL</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Central Texas Network Recruitment</fullName>
+        <default>false</default>
+        <label>Central Texas Network Recruitment</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Chicago Metro</fullName>
+        <default>false</default>
+        <label>Chicago Metro</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Commercial_Encounter@bcbsil.com</fullName>
+        <default>false</default>
+        <label>Commercial_Encounter@bcbsil.com</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Commercial Encounter</fullName>
+        <default>false</default>
+        <label>Commercial Encounter</label>
+    </standardValue>
+    <standardValue>
+        <fullName>CredentialingCommittee</fullName>
+        <default>false</default>
+        <label>CredentialingCommittee</label>
+    </standardValue>
+    <standardValue>
+        <fullName>CredentialingPSV</fullName>
+        <default>false</default>
+        <label>CredentialingPSV</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Custom Networks</fullName>
+        <default>false</default>
+        <label>Custom Networks</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Delegated Credentialing</fullName>
+        <default>false</default>
+        <label>Delegated Credentialing</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email</fullName>
+        <default>false</default>
+        <label>Email</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email-IL</fullName>
+        <default>false</default>
+        <label>Email-IL</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email-MT</fullName>
+        <default>false</default>
+        <label>Email-MT</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email-NM</fullName>
+        <default>false</default>
+        <label>Email-NM</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email-OK</fullName>
+        <default>false</default>
+        <label>Email-OK</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email-TX</fullName>
+        <default>false</default>
+        <label>Email-TX</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Enterprise Credentialing</fullName>
+        <default>false</default>
+        <label>Enterprise Credentialing</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Facility_Demographic_Changes</fullName>
+        <default>false</default>
+        <label>Facility_Demographic_Changes</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Facility_Demographic_Changes@bcbsil.com</fullName>
+        <default>false</default>
+        <label>Facility_Demographic_Changes@bcbsil.com</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Facility Contract Notices</fullName>
+        <default>false</default>
+        <label>Facility Contract Notices</label>
+    </standardValue>
+    <standardValue>
+        <fullName>FacilityCredentialing_Enterprise</fullName>
+        <default>false</default>
+        <label>FacilityCredentialing_Enterprise</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Fax</fullName>
+        <default>false</default>
+        <label>Fax</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Fee Schedule Requests</fullName>
+        <default>false</default>
+        <label>Fee Schedule Requests</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Gov Expansion</fullName>
+        <default>false</default>
+        <label>Gov Expansion</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Gov Netops Provider Update</fullName>
+        <default>false</default>
+        <label>Gov Netops Provider Update</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Gov Providers</fullName>
+        <default>false</default>
+        <label>Gov Providers</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Gov Recontracting 2018</fullName>
+        <default>false</default>
+        <label>Gov Recontracting 2018</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Hcsspecialist</fullName>
+        <default>false</default>
+        <label>Hcsspecialist</label>
+    </standardValue>
+    <standardValue>
+        <fullName>HCS Specialists</fullName>
+        <default>false</default>
+        <label>HCS Specialists</label>
+    </standardValue>
+    <standardValue>
+        <fullName>HCSX6100</fullName>
+        <default>false</default>
+        <label>HCSX6100</label>
+    </standardValue>
+    <standardValue>
+        <fullName>HCS-X6100</fullName>
+        <default>false</default>
+        <label>HCS-X6100</label>
+    </standardValue>
+    <standardValue>
+        <fullName>HFS_OIGINQUIRIES</fullName>
+        <default>false</default>
+        <label>HFS_OIGINQUIRIES</label>
+    </standardValue>
+    <standardValue>
+        <fullName>HMO Networks</fullName>
+        <default>false</default>
+        <label>HMO Networks</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Houston Fee Inquiry</fullName>
+        <default>false</default>
+        <label>Houston Fee Inquiry</label>
+    </standardValue>
+    <standardValue>
+        <fullName>IHH</fullName>
+        <default>false</default>
+        <label>IHH</label>
+    </standardValue>
+    <standardValue>
+        <fullName>IL_Network_Reporting_Analytics@bcbsil.com</fullName>
+        <default>false</default>
+        <label>IL_Network_Reporting_Analytics@bcbsil.com</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ILBCBSAinquiries@bcbsil.com</fullName>
+        <default>false</default>
+        <label>ILBCBSAinquiries@bcbsil.com</label>
+    </standardValue>
+    <standardValue>
+        <fullName>IL Consumer Provider Data</fullName>
+        <default>false</default>
+        <label>IL Consumer Provider Data</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ILContracts</fullName>
+        <default>false</default>
+        <label>ILContracts</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ILDentalMaintenanceRequest</fullName>
+        <default>false</default>
+        <label>ILDentalMaintenanceRequest</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Il ECred Inquires</fullName>
+        <default>false</default>
+        <label>Il ECred Inquires</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ILHCM_IPARequests@bcbsil.com</fullName>
+        <default>false</default>
+        <label>ILHCM_IPARequests@bcbsil.com</label>
+    </standardValue>
+    <standardValue>
+        <fullName>IL HCM IPA Requests</fullName>
+        <default>false</default>
+        <label>IL HCM IPA Requests</label>
+    </standardValue>
+    <standardValue>
+        <fullName>IL HCM Production Support</fullName>
+        <default>false</default>
+        <label>IL HCM Production Support</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ILHCMProductionSupport@bcbsil.com</fullName>
+        <default>false</default>
+        <label>ILHCMProductionSupport@bcbsil.com</label>
+    </standardValue>
+    <standardValue>
+        <fullName>IL HCM Provider Services Quality and Training</fullName>
+        <default>false</default>
+        <label>IL HCM Provider Services Quality and Training</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ILHCMProviderServicesQualityandTraining@bcbsil.com</fullName>
+        <default>false</default>
+        <label>ILHCMProviderServicesQualityandTraining@bcbsil.com</label>
+    </standardValue>
+    <standardValue>
+        <fullName>IL Hospital Charge Increase</fullName>
+        <default>false</default>
+        <label>IL Hospital Charge Increase</label>
+    </standardValue>
+    <standardValue>
+        <fullName>IL Network Reporting Analytics</fullName>
+        <default>false</default>
+        <label>IL Network Reporting Analytics</label>
+    </standardValue>
+    <standardValue>
+        <fullName>IL Network Reporting and Analytics</fullName>
+        <default>false</default>
+        <label>IL Network Reporting and Analytics</label>
+    </standardValue>
+    <standardValue>
+        <fullName>IL No Claim Campaign</fullName>
+        <default>false</default>
+        <label>IL No Claim Campaign</label>
+    </standardValue>
+    <standardValue>
+        <fullName>IL Provider Roster</fullName>
+        <default>false</default>
+        <label>IL Provider Roster</label>
+    </standardValue>
+    <standardValue>
+        <fullName>IL Provider Roster Requests</fullName>
+        <default>false</default>
+        <label>IL Provider Roster Requests</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ILProviderRosterRequests@bcbsil.com</fullName>
+        <default>false</default>
+        <label>ILProviderRosterRequests@bcbsil.com</label>
+    </standardValue>
+    <standardValue>
+        <fullName>IncompletecredentialingApplication</fullName>
+        <default>false</default>
+        <label>IncompletecredentialingApplication</label>
+    </standardValue>
+    <standardValue>
+        <fullName>In Person</fullName>
+        <default>false</default>
+        <label>In Person</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Internal</fullName>
+        <default>false</default>
+        <label>Internal</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Internal PNC Inquiries</fullName>
+        <default>false</default>
+        <label>Internal PNC Inquiries</label>
+    </standardValue>
+    <standardValue>
+        <fullName>MA Encounter</fullName>
+        <default>false</default>
+        <label>MA Encounter</label>
+    </standardValue>
+    <standardValue>
+        <fullName>maencounter@bcbsil.com</fullName>
+        <default>false</default>
+        <label>maencounter@bcbsil.com</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Mail</fullName>
+        <default>false</default>
+        <label>Mail</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Manual On-boarding</fullName>
+        <default>false</default>
+        <label>Manual On-boarding</label>
+    </standardValue>
+    <standardValue>
+        <fullName>MetroSouth IL</fullName>
+        <default>false</default>
+        <label>MetroSouth IL</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Metro South IL</fullName>
+        <default>false</default>
+        <label>Metro South IL</label>
+    </standardValue>
+    <standardValue>
+        <fullName>MTBCBSAinquiries@bcbsmt.com</fullName>
+        <default>false</default>
+        <label>MTBCBSAinquiries@bcbsmt.com</label>
+    </standardValue>
+    <standardValue>
+        <fullName>NetOps_QualityAudit</fullName>
+        <default>false</default>
+        <label>NetOps_QualityAudit</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Netops Facility</fullName>
+        <default>false</default>
+        <label>Netops Facility</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Netops Provider Update</fullName>
+        <default>false</default>
+        <label>Netops Provider Update</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Network AG</fullName>
+        <default>false</default>
+        <label>Network AG</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Network Contracting</fullName>
+        <default>false</default>
+        <label>Network Contracting</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Network Contracts Incoming</fullName>
+        <default>false</default>
+        <label>Network Contracts Incoming</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Network Roster Submission</fullName>
+        <default>false</default>
+        <label>Network Roster Submission</label>
+    </standardValue>
+    <standardValue>
+        <fullName>NM_Network_Priority@bcbsnm.com</fullName>
+        <default>false</default>
+        <label>NM_Network_Priority@bcbsnm.com</label>
+    </standardValue>
+    <standardValue>
+        <fullName>nm_network_scripting_test@bcbsnm.com</fullName>
+        <default>false</default>
+        <label>nm_network_scripting_test@bcbsnm.com</label>
+    </standardValue>
+    <standardValue>
+        <fullName>nm_network_scripting@bcbsnm.com</fullName>
+        <default>false</default>
+        <label>nm_network_scripting@bcbsnm.com</label>
+    </standardValue>
+    <standardValue>
+        <fullName>NMBCBSAinquiries@bcbsnm.com</fullName>
+        <default>false</default>
+        <label>NMBCBSAinquiries@bcbsnm.com</label>
+    </standardValue>
+    <standardValue>
+        <fullName>NM Commercial</fullName>
+        <default>false</default>
+        <label>NM Commercial</label>
+    </standardValue>
+    <standardValue>
+        <fullName>NM Credentialing</fullName>
+        <default>false</default>
+        <label>NM Credentialing</label>
+    </standardValue>
+    <standardValue>
+        <fullName>NM Medicare</fullName>
+        <default>false</default>
+        <label>NM Medicare</label>
+    </standardValue>
+    <standardValue>
+        <fullName>NM Network Priority</fullName>
+        <default>false</default>
+        <label>NM Network Priority</label>
+    </standardValue>
+    <standardValue>
+        <fullName>NM Network Provider Finder Inquiries</fullName>
+        <default>false</default>
+        <label>NM Network Provider Finder Inquiries</label>
+    </standardValue>
+    <standardValue>
+        <fullName>NM Network Single Case Agreements</fullName>
+        <default>false</default>
+        <label>NM Network Single Case Agreements</label>
+    </standardValue>
+    <standardValue>
+        <fullName>NMNRSSOUEOU</fullName>
+        <default>false</default>
+        <label>NMNRSSOUEOU</label>
+    </standardValue>
+    <standardValue>
+        <fullName>NMNRSSOUEOU@bcbsnm.com</fullName>
+        <default>false</default>
+        <label>NMNRSSOUEOU@bcbsnm.com</label>
+    </standardValue>
+    <standardValue>
+        <fullName>NMProviderNEtworkRpt_Svcs@bcbsnm.com</fullName>
+        <default>false</default>
+        <label>NMProviderNEtworkRpt_Svcs@bcbsnm.com</label>
+    </standardValue>
+    <standardValue>
+        <fullName>NM Provider NEtworkRpt Svcs</fullName>
+        <default>false</default>
+        <label>NM Provider NEtworkRpt Svcs</label>
+    </standardValue>
+    <standardValue>
+        <fullName>NM Provider Network Rpt Svcs</fullName>
+        <default>false</default>
+        <label>NM Provider Network Rpt Svcs</label>
+    </standardValue>
+    <standardValue>
+        <fullName>NM Provider Network SOUEOU</fullName>
+        <default>false</default>
+        <label>NM Provider Network SOUEOU</label>
+    </standardValue>
+    <standardValue>
+        <fullName>North IL</fullName>
+        <default>false</default>
+        <label>North IL</label>
+    </standardValue>
+    <standardValue>
+        <fullName>North Texas Network Recruitment</fullName>
+        <default>false</default>
+        <label>North Texas Network Recruitment</label>
+    </standardValue>
+    <standardValue>
+        <fullName>NSD_Custom_Networks@bcbsnm.com</fullName>
+        <default>false</default>
+        <label>NSD_Custom_Networks@bcbsnm.com</label>
+    </standardValue>
+    <standardValue>
+        <fullName>NSD Custom Networks</fullName>
+        <default>false</default>
+        <label>NSD Custom Networks</label>
+    </standardValue>
+    <standardValue>
+        <fullName>NSD Right Fax</fullName>
+        <default>false</default>
+        <label>NSD Right Fax</label>
+    </standardValue>
+    <standardValue>
+        <fullName>OKBCBSAinquiries@bcbsok.com</fullName>
+        <default>false</default>
+        <label>OKBCBSAinquiries@bcbsok.com</label>
+    </standardValue>
+    <standardValue>
+        <fullName>OK Network Management</fullName>
+        <default>false</default>
+        <label>OK Network Management</label>
+    </standardValue>
+    <standardValue>
+        <fullName>OKNetworkVM</fullName>
+        <default>false</default>
+        <label>OKNetworkVM</label>
+    </standardValue>
+    <standardValue>
+        <fullName>OK Pricing</fullName>
+        <default>false</default>
+        <label>OK Pricing</label>
+    </standardValue>
+    <standardValue>
+        <fullName>OK Shared Email</fullName>
+        <default>false</default>
+        <label>OK Shared Email</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Others</fullName>
+        <default>false</default>
+        <label>Others</label>
+    </standardValue>
+    <standardValue>
+        <fullName>PDO Delegated Rosters</fullName>
+        <default>false</default>
+        <label>PDO Delegated Rosters</label>
+    </standardValue>
+    <standardValue>
+        <fullName>PDSC_Setup_VM</fullName>
+        <default>false</default>
+        <label>PDSC_Setup_VM</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Performance and Results Right Fax</fullName>
+        <default>false</default>
+        <label>Performance and Results Right Fax</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Phone</fullName>
+        <default>false</default>
+        <label>Phone</label>
+    </standardValue>
+    <standardValue>
+        <fullName>PNC NetOps Inquiries</fullName>
+        <default>false</default>
+        <label>PNC NetOps Inquiries</label>
+    </standardValue>
+    <standardValue>
+        <fullName>PNC TMG Inquiries</fullName>
+        <default>false</default>
+        <label>PNC TMG Inquiries</label>
+    </standardValue>
+    <standardValue>
+        <fullName>PPN CorpusChristi</fullName>
+        <default>false</default>
+        <label>PPN CorpusChristi</label>
+    </standardValue>
+    <standardValue>
+        <fullName>PPN EIPaso</fullName>
+        <default>false</default>
+        <label>PPN EIPaso</label>
+    </standardValue>
+    <standardValue>
+        <fullName>PPN Lubbock-Amerillo</fullName>
+        <default>false</default>
+        <label>PPN Lubbock-Amerillo</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Professional Govt Contracting</fullName>
+        <default>false</default>
+        <label>Professional Govt Contracting</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Professional Provider Network Dept</fullName>
+        <default>false</default>
+        <label>Professional Provider Network Dept</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Provider Directory Discrepancies</fullName>
+        <default>false</default>
+        <label>Provider Directory Discrepancies</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Provider Inquiry</fullName>
+        <default>false</default>
+        <label>Provider Inquiry</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Provider Relation DFW</fullName>
+        <default>false</default>
+        <label>Provider Relation DFW</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Provider relations DFW</fullName>
+        <default>false</default>
+        <label>Provider relations DFW</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Provider Relations Houston</fullName>
+        <default>false</default>
+        <label>Provider Relations Houston</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Provider Relations IL</fullName>
+        <default>false</default>
+        <label>Provider Relations IL</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Provider Relations Midland</fullName>
+        <default>false</default>
+        <label>Provider Relations Midland</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Provider Relations South Texas</fullName>
+        <default>false</default>
+        <label>Provider Relations South Texas</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Provider Relations Voicemail</fullName>
+        <default>false</default>
+        <label>Provider Relations Voicemail</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Retro Submission</fullName>
+        <default>false</default>
+        <label>Retro Submission</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Snail Mail</fullName>
+        <default>false</default>
+        <label>Snail Mail</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SouthEast Texas Network Recruitment</fullName>
+        <default>false</default>
+        <label>SouthEast Texas Network Recruitment</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Southern IL</fullName>
+        <default>false</default>
+        <label>Southern IL</label>
+    </standardValue>
+    <standardValue>
+        <fullName>South Texas Network Recruitment</fullName>
+        <default>false</default>
+        <label>South Texas Network Recruitment</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SWHR_Email</fullName>
+        <default>false</default>
+        <label>SWHR_Email</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SW Provider Relations</fullName>
+        <default>false</default>
+        <label>SW Provider Relations</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SW Region Provider Relations</fullName>
+        <default>false</default>
+        <label>SW Region Provider Relations</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Texas Facility - CSRN</fullName>
+        <default>false</default>
+        <label>Texas Facility - CSRN</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Texas Healthcare Delivery Internal Routing</fullName>
+        <default>false</default>
+        <label>Texas Healthcare Delivery Internal Routing</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Texas Medicare Advantage Network</fullName>
+        <default>false</default>
+        <label>Texas Medicare Advantage Network</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Texas Retail - CSRN</fullName>
+        <default>false</default>
+        <label>Texas Retail - CSRN</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TriCare Customer Service</fullName>
+        <default>false</default>
+        <label>TriCare Customer Service</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TriWest VA</fullName>
+        <default>false</default>
+        <label>TriWest VA</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TX_Contract_SP</fullName>
+        <default>false</default>
+        <label>TX_Contract_SP</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TX_ Medicaid Expansion_Voicemail</fullName>
+        <default>false</default>
+        <label>TX_ Medicaid Expansion_Voicemail</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Tx_Medicare_Advantage_VM</fullName>
+        <default>false</default>
+        <label>Tx_Medicare_Advantage_VM</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Tx_Network_Central_Voicemail</fullName>
+        <default>false</default>
+        <label>Tx_Network_Central_Voicemail</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Tx_Network_North_Voicemail</fullName>
+        <default>false</default>
+        <label>Tx_Network_North_Voicemail</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Tx_Network_South_Voicemail</fullName>
+        <default>false</default>
+        <label>Tx_Network_South_Voicemail</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Tx_Network_SouthEast_Voicemail</fullName>
+        <default>false</default>
+        <label>Tx_Network_SouthEast_Voicemail</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Tx_Network_West_Voicemail</fullName>
+        <default>false</default>
+        <label>Tx_Network_West_Voicemail</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TX_TexasMedicaidNetworkDepartment_Voicemail</fullName>
+        <default>false</default>
+        <label>TX_TexasMedicaidNetworkDepartment_Voicemail</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TX Ancillary Contracting</fullName>
+        <default>false</default>
+        <label>TX Ancillary Contracting</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TXBCBSAinquiries@bcbstx.com</fullName>
+        <default>false</default>
+        <label>TXBCBSAinquiries@bcbstx.com</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TX Core Credentialing Customer Service</fullName>
+        <default>false</default>
+        <label>TX Core Credentialing Customer Service</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TXCustomTiering</fullName>
+        <default>false</default>
+        <label>TXCustomTiering</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TX Dental Provider Maintenance</fullName>
+        <default>false</default>
+        <label>TX Dental Provider Maintenance</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TXFPS</fullName>
+        <default>false</default>
+        <label>TXFPS</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TX Internal Requests</fullName>
+        <default>false</default>
+        <label>TX Internal Requests</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TX Medicaid Expansion</fullName>
+        <default>false</default>
+        <label>TX Medicaid Expansion</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TX Medicaid Network Dept</fullName>
+        <default>false</default>
+        <label>TX Medicaid Network Dept</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TX NM Austin</fullName>
+        <default>false</default>
+        <label>TX NM Austin</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TX NM Austin 1</fullName>
+        <default>false</default>
+        <label>TX NM Austin 1</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TX NM Austin 2</fullName>
+        <default>false</default>
+        <label>TX NM Austin 2</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TX NM El Paso</fullName>
+        <default>false</default>
+        <label>TX NM El Paso</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TX NM Houston</fullName>
+        <default>false</default>
+        <label>TX NM Houston</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TX NM Lubbock</fullName>
+        <default>false</default>
+        <label>TX NM Lubbock</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TX NM Midland</fullName>
+        <default>false</default>
+        <label>TX NM Midland</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TX NM Richardson</fullName>
+        <default>false</default>
+        <label>TX NM Richardson</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TX NM South Texas</fullName>
+        <default>false</default>
+        <label>TX NM South Texas</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TX NM West 1</fullName>
+        <default>false</default>
+        <label>TX NM West 1</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TX NM West 2</fullName>
+        <default>false</default>
+        <label>TX NM West 2</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TX NM West 3</fullName>
+        <default>false</default>
+        <label>TX NM West 3</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TX NM West 4</fullName>
+        <default>false</default>
+        <label>TX NM West 4</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TX NM West 5</fullName>
+        <default>false</default>
+        <label>TX NM West 5</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TX PDSC Consumer Complaints</fullName>
+        <default>false</default>
+        <label>TX PDSC Consumer Complaints</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TX Provider Maintenance</fullName>
+        <default>false</default>
+        <label>TX Provider Maintenance</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TX Provider Record Setup</fullName>
+        <default>false</default>
+        <label>TX Provider Record Setup</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TX Provider Update Submission</fullName>
+        <default>false</default>
+        <label>TX Provider Update Submission</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TXPSClaimsSupport</fullName>
+        <default>false</default>
+        <label>TXPSClaimsSupport</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TX PS Contract Copy Requests</fullName>
+        <default>false</default>
+        <label>TX PS Contract Copy Requests</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Tx Standard Contracting Team</fullName>
+        <default>false</default>
+        <label>Tx Standard Contracting Team</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TX VA Requests and Inquiries</fullName>
+        <default>false</default>
+        <label>TX VA Requests and Inquiries</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TX Written Notices</fullName>
+        <default>false</default>
+        <label>TX Written Notices</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Validation Review</fullName>
+        <default>false</default>
+        <label>Validation Review</label>
+    </standardValue>
+    <standardValue>
+        <fullName>VATriWest_voicemail@bcbstx.com</fullName>
+        <default>false</default>
+        <label>VATriWest_voicemail@bcbstx.com</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Vistar Customer Service</fullName>
+        <default>false</default>
+        <label>Vistar Customer Service</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Voicemail</fullName>
+        <default>false</default>
+        <label>Voicemail</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Web-Demographics</fullName>
+        <default>false</default>
+        <label>Web-Demographics</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Web Desk</fullName>
+        <default>false</default>
+        <label>Web Desk</label>
+    </standardValue>
+    <standardValue>
+        <fullName>WebEx</fullName>
+        <default>false</default>
+        <label>WebEx</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Web On-boarding</fullName>
+        <default>false</default>
+        <label>Web On-boarding</label>
+    </standardValue>
+    <standardValue>
+        <fullName>West IL</fullName>
+        <default>false</default>
+        <label>West IL</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Written</fullName>
+        <default>false</default>
+        <label>Written</label>
+    </standardValue>
+</StandardValueSet>

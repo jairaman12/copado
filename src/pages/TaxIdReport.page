@@ -1,0 +1,56 @@
+<apex:page controller="TaxIdReport" tabstyle="Tax_Id_Reporting__tab" readOnly="true">
+<apex:includeScript value="https://code.jquery.com/jquery-1.12.4.js"/>
+<apex:form >
+	<apex:sectionheader title="Accounts and Cases by Tax ID Report" />
+
+  <apex:pageBlock title="Enter Tax ID" >
+      <apex:inputText value="{!taxId}" id="taxId" maxlength="10" size="50" /> &nbsp;
+      <apex:CommandButton Id="rRep" action="{!getAccounts}" rerender="caseTable" value="Run Report" />
+      <apex:commandButton value="Download Report" action="{!downloadReport}" id="downBtn" />    
+  </apex:pageBlock>
+	<apex:pageblock title="Cases" id="caseTable" >
+		<apex:repeat value="{!accounts}" var="a" >
+         <b><apex:outputField value="{!a.Name}"  /></b>
+        
+      	<apex:pageBlockTable value="{!a.Cases__r}" var="cr"  columns="7" columnsWidth="50px,50px,50px,100px,40px,40px,100px" >
+
+       <apex:column headerValue="Case Number" rendered="{!((a.Cases__r.size>0))}">
+            <apex:outputLink value="/{!cr.Id}">{!cr.CaseNumber} </apex:outputLink>
+		</apex:column>
+      	<apex:column value="{!cr.Origin}" rendered="{!((a.Cases__r.size>0))}"/>
+      	<apex:column value="{!cr.Reason}" rendered="{!((a.Cases__r.size>0))}"/>
+      	 <apex:column value="{!cr.Description}" rendered="{!((a.Cases__r.size>0))}"/>
+       	<apex:column value="{!cr.Subject}" rendered="{!((a.Cases__r.size>0))}"/>
+      	 <apex:column value="{!cr.Case_Entity__c}" rendered="{!((a.Cases__r.size>0))}"/>
+                                    
+             		  <apex:outputText rendered="{!a.Cases__r.size==0}">
+          <table width="100%">
+              <tr><td colspan="2" style="text-align:center;">No Records</td></tr>
+          </table>
+      </apex:outputText>
+   
+    </apex:pageBlockTable>
+
+    	<apex:pageBlockTable value="{!a.Cases}" var="c" columns="7" columnsWidth="50px,50px,50px,100px,40px,40px,100px">
+  
+      	  <apex:column headerValue="Case Number" rendered="{!((a.Cases.size>0))}">
+            <apex:outputLink value="/{!c.Id}">{!c.CaseNumber}</apex:outputLink>
+		</apex:column>
+      	<apex:column value="{!c.Origin}" rendered="{!((a.Cases.size>0))}"/>
+      	<apex:column value="{!c.Reason}" rendered="{!((a.Cases.size>0))}"/>
+        <apex:column value="{!c.Description}" rendered="{!((a.Cases.size>0))}"/>
+        <apex:column value="{!c.Subject}" rendered="{!((a.Cases.size>0))}"/>
+        <apex:column value="{!c.Case_Entity__c}" rendered="{!((a.Cases.size>0))}" />
+                        
+      <apex:outputText rendered="{!a.Cases.size==0}">
+          <table width="100%">
+              <tr><td colspan="2" style="text-align:center;">No Records</td></tr>
+          </table>
+      </apex:outputText>
+    </apex:pageBlockTable>
+
+</apex:repeat>
+	</apex:pageblock>
+        
+</apex:form>
+</apex:page>

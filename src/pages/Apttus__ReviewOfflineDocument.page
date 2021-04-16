@@ -1,0 +1,636 @@
+<!-- 
+    Apttus Contract Management
+    ReviewOfflineDocument
+     
+    @2018-2019 Apttus Inc. All rights reserved.
+
+ -->
+<apex:page standardController="Apttus__APTS_Agreement__c" sidebar="false"  
+           extensions="Apttus.ReviewOfflineDocumentController">    
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <apex:stylesheet value="{!URLFOR($Resource.Apttus__PDFViewerJS, 'web/viewer.css')}"/>
+    <script type="text/javascript" src="/soap/ajax/42.0/connection.js"></script>
+    <script type="text/javascript" src="/soap/ajax/42.0/apex.js"></script>      
+    <apex:include pageName="Apttus__ComplyJSLibInclude" />
+    
+    <apex:variable var="overlayPopupAddAction" value="add"/>
+    <apex:variable var="overlayPopupEditAction" value="edit"/>
+    <apex:variable var="overlayPopupDeleteAction" value="delete"/>
+    <apex:variable var="overlayPopupCancelAction" value="cancel"/>
+    <apex:variable var="overlayPopupCloseAction" value="close"/>    
+    <apex:variable var="overlayPopupAddActionFromRightclick" value="addfrompdf"/>
+
+    <style type="text/css">
+        .scanQuality {
+            text-align: center; 
+            color: black; 
+            padding-top: 5px; 
+            padding-left: 40px; 
+            font-size: 15px;
+        }
+        .radioOpt td {
+            padding-bottom: 10px;
+            padding-left: 10px;
+        }
+
+        .addClause {
+            display:none; position:absolute; 
+            min-width: 150px;
+            box-shadow: 2px 2px 2px -2px #ddd; 
+            text-align:center;
+            background: #fff;
+            z-index: 9999;
+            border: thin solid #ddd;
+            border-radius: 2px;   
+            padding: 15px;
+            cursor: pointer;
+            margin: 5px 0;
+            font-size: 12px;
+        }        
+        .addClause:hover {
+            background :#f5f5f5;
+        }
+        .category {
+            background : #d3d3d3;
+            padding-bottom: 7px;
+            padding-top: 5px;
+        }
+        .sub-category {
+            background : #d3d3d3;
+            padding-bottom: 7px;
+        }
+        .clausedetail {
+            background: #ece8e8;
+            overflow-y:scroll;
+            height: 90px;
+        }
+        .clause-details {
+            box-sizing: border-box;
+            border-bottom: 1px solid #a8a8a8;
+        }
+    </style>
+
+    <script type="text/javascript">
+		
+		/** Redirect back to agreement detail page if the statuscategory of agreement is NOT Import
+         *  and status is NOT Review.
+         */            
+        var agreementStatusCategory = '{!JSENCODE(APTS_Agreement__c.Status_Category__c)}';
+        var agreementStatus = '{!JSENCODE(APTS_Agreement__c.Status__c)}';
+            
+        if(agreementStatusCategory != '{!$Label.IntelligentImportStatusCategory}' && agreementStatus != '{!$Label.IntelligentImportStatus}') {            
+            if((typeof sforce != 'undefined') && sforce && sforce.one) {
+                sforce.one.navigateToURL('{!URLFOR($Action.APTS_Agreement__c.View, APTS_Agreement__c.Id)}');
+            }
+            else {      
+                window.open('{!URLFOR($Action.APTS_Agreement__c.View, APTS_Agreement__c.Id)}', '_self');
+            }                        
+        }
+
+
+        function getSelectionText() {
+            document.getElementById('addClauseId').style.display = 'none';
+            var selectedText = ""
+            
+            if (document.getElementById('pdfFrame').contentWindow.getSelection) { 
+                selectedText = document.getElementById('pdfFrame').contentWindow.getSelection().toString();
+            }
+            if(selectedText.trim().length < 1) {
+                alert('{!$Label.IDEReviewScreenNoTextSelected}');
+                return;
+            } else{                
+                openPopUpSelectedClause('addfrompdf', selectedText);
+            }
+        }
+		
+        /**
+         * Initializes the call
+         */
+        function initCall() {
+            try {
+                sforce.connection.sessionId = "{!$Api.Session_ID}"; //to avoid session timeout
+            } catch(e) {
+                erroralert(cERROR_UNKNOWN,e);                
+            }        
+        }
+        
+        /*
+         * load PDF.js plugin Iframe.
+         */
+        function loadPDF() {        
+            
+            // IDE analysed document Id.
+            var analysedAttachmentId = "{!JSENCODE(ideAnalysedDocumentId)}";
+            
+            try {
+            
+                // STEP I - initialize the call
+                initCall();
+
+                // STEP II - get the body of IDE analysed Attachment/File.
+                var attorFileBody = doFetchAttOrFileBody(analysedAttachmentId);
+
+                // STEP III - update the PDF.js Plugin IFrame with attorFileBody fetched above in Step II.
+                var pdfJSFrame = document.getElementById('pdfFrame'); 
+                pdfJSFrame.contentWindow.postMessage(attorFileBody,'*');  
+                setAddClause();
+                            
+            } catch(ex) {
+                erroralert(cERROR_UNKNOWN,ex);
+            }  
+        }
+
+        /**
+         * used to switch between clause and agreement detail tabs.
+         */
+        function openTab(evt, TabId) {
+		
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+			
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+			
+            tablinks = document.getElementsByClassName("tablinks");
+			
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(TabId).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        /**
+         * pass the selected clause value to the PDF.JS plugin search box.
+         */
+        function passvalueToFind(value, elem, parentElement) {    
+		
+            document.getElementById('pdfFrame').contentWindow.document.getElementById('findInput').value = value;
+            document.getElementById('pdfFrame').contentWindow.document.getElementById('findInput').click(); 
+			var clauseElmnts = document.querySelectorAll(elem);
+			
+            for(var i = 0; i < clauseElmnts.length; i++){
+                clauseElmnts[i].classList.remove('activeClause');
+            }
+            parentElement.classList.add('activeClause');
+            
+        }
+        
+        /**
+         * display max chars limit on focus of clause input.
+         */
+        function onFocusClauseInput(elem, maxChars) {            
+            document.getElementById(maxChars).classList.remove('hidden');
+        }
+        
+        /**
+         * hide max chars limit on blur of clause input.
+         */
+        function onBlurClauseInput(elem, maxChars,errMsgClause) {
+		
+            document.getElementById(errMsgClause).classList.add('hidden');            
+            document.getElementById(maxChars).classList.add('hidden');
+			
+            if(elem.value == null || elem.value.trim() == "") {
+                document.getElementById(errMsgClause).classList.remove('hidden');
+            }            
+        }
+
+        function drpClauseChangeJs(rbClauseDropdownId) {
+            if(document.getElementById(rbClauseDropdownId).value != null                     
+                && document.getElementById(rbClauseDropdownId).value.trim() == "-1") {
+                    document.getElementById('errEmptyClauseNamedrp').classList.remove('hidden'); 
+            }
+            else {
+                document.getElementById('errEmptyClauseNamedrp').classList.add('hidden');  
+            }
+        }
+        
+        /**
+         * check if there is some valid text entered in the clause header and clause text fields.
+         * display Error message if any of the field (clauseheader or clausetext) is blank.
+         */
+        function ValidateClause(actionType, clauseTextName, clauseTextArea, rbClause, rbClauseDropdownId) {
+		
+            var validationSuccess = true;
+
+            var rbClauseVal;
+            var theRadioButtonSet = document.getElementsByName(rbClause);
+            for (var x = 0; x < theRadioButtonSet.length; x++) 
+            {
+                if (theRadioButtonSet[x].checked) {
+                    rbClauseVal = theRadioButtonSet[x].value;
+                }
+            }
+            if(rbClauseVal == '{!$Label.apttus__new}') {
+                if(document.getElementById(clauseTextName).value == null 
+                    || document.getElementById(clauseTextName).value.trim() == "") {
+                    document.getElementById('errEmptyClauseName').classList.remove('hidden');  
+                    validationSuccess = false;
+                }
+            }
+            else if(rbClauseVal == '{!$Label.apttus__select}') {
+                if(document.getElementById(rbClauseDropdownId).value == null 
+                    || document.getElementById(rbClauseDropdownId).value.trim() == ""
+                    || document.getElementById(rbClauseDropdownId).value.trim() == "-1") {
+                    document.getElementById('errEmptyClauseNamedrp').classList.remove('hidden');  
+                    validationSuccess = false;
+                }
+                else {
+                    document.getElementById('errEmptyClauseNamedrp').classList.add('hidden');  
+                }
+            }
+			
+            if(document.getElementById(clauseTextArea).value == null 
+                || document.getElementById(clauseTextArea).value.trim() == "") {
+                document.getElementById('errEmptyClauseText').classList.remove('hidden');  
+                validationSuccess = false;
+            }            
+			
+            if(validationSuccess) {                
+                if(actionType == '{!overlayPopupAddAction}') {                    
+                    addClause();
+                } else if(actionType == '{!overlayPopupEditAction}') {                    
+                    saveClause();
+                }      
+            }
+            return false;       
+        }
+
+        /**
+         * function to load the pdf.js asynchronously.
+         */
+        function asyncLoad() {
+            // set the Agreement Detail tab as active on initial page load.
+            document.getElementById("AgreementTabId").click();
+            
+            // load the pdf file after the onload.
+            loadPDF();
+        }
+		
+		/**
+         * function to expand the pdf viewer section to full width.
+         */
+        function expandPDFViewerSection(elem, parentElem){
+            parentElem.style.width = '99%'; 
+            document.getElementById('detailnClauseSectionId').style.display = 'none';
+            document.getElementById('resetPDFViewer').style.display = 'block';            
+            elem.style.display = 'none';
+        }
+	
+        /**
+         * function to reset the pdf viewer section to original width.
+         */
+        function resetPDFViewerSection(elem, parentElem){
+            parentElem.style.width = '49.5%'; 
+            document.getElementById('detailnClauseSectionId').style.display = 'block';
+            document.getElementById('expandPDFViewer').style.display = 'block';            
+            elem.style.display = 'none';
+        }
+        
+		/**
+         * function to expand the clauses and detail section to full width.
+         */
+        function expandAgreementDetailAndClauseSection(elem, parentElem){
+            parentElem.style.width = '99%'; 
+            document.getElementById('pdfViewerSectionId').style.display = 'none';
+            document.getElementById('resetClauseViewer').style.display = 'block';            
+            elem.style.display = 'none';            
+        }
+        
+		/**
+         * function to reset the clauses and detail section to original width.
+         */
+        function resetAgreementDetailAndClauseSection(elem, parentElem){
+            parentElem.style.width = '49.5%'; 
+            document.getElementById('pdfViewerSectionId').style.display = 'block';
+            document.getElementById('expandClauseViewer').style.display = 'block';            
+            elem.style.display = 'none';
+        }
+
+        function setAddClause(){      
+            document.getElementById("pdfFrame").contentWindow.document.getElementById('viewerContainer').addEventListener("contextmenu", function(event){
+                
+                document.getElementById('addClauseId').style.display = 'none';
+
+                event.preventDefault();
+             
+                document.getElementById('addClauseId').style.display = 'block';
+                document.getElementById('addClauseId').style.top = document.getElementById("pdfFrame").offsetTop + event.clientY + 'px';
+                document.getElementById('addClauseId').style.left = document.getElementById("pdfFrame").offsetLeft + event.clientX + 'px';
+              
+            });
+
+            document.getElementById("pdfFrame").contentWindow.document.getElementById('viewerContainer').addEventListener("click", function(event){
+                document.getElementById('addClauseId').style.display = 'none';
+            });
+        }
+        
+    </script>
+    
+    <!--Markup starts here-->
+    <div class="mainContainer">
+        <apex:form >
+            <apex:actionFunction name="openPopUpSelectedClause" action="{!showPopup}" rerender="popup">
+                <apex:param value="" name="overlayPopupAction" assignTo="{!overlayPopupAction}"/>
+                <apex:param value="" name="clauseValue" assignTo="{!clauseValue}"/>
+            </apex:actionFunction>
+            
+			<apex:outputText value="{!Apttus__APTS_Agreement__c.Apttus__Initiation_Type__c}" rendered="false"></apex:outputText> 
+			<apex:outputText value="{!Apttus__APTS_Agreement__c.Apttus__Status_Category__c}" rendered="false"></apex:outputText> 
+			<apex:outputText value="{!Apttus__APTS_Agreement__c.Apttus__Status__c}" rendered="false"></apex:outputText> 
+			<apex:outputText value="{!Apttus__APTS_Agreement__c.Apttus__VersionAware__c}" rendered="false" />
+			<apex:outputText value="{!Apttus__APTS_Agreement__c.Apttus__Agreement_Number__c}" rendered="false" />
+			<apex:outputText value="{!Apttus__APTS_Agreement__c.Apttus__FF_Agreement_Number__c}" rendered="false" />
+            
+            <!-- panel to display error messages -->
+            <apex:outputPanel id="pageMsgId">
+                <apex:pageMessages />
+            </apex:outputPanel>
+			
+            <!-- header container -->
+            <div class="headerContainer"> 
+
+                <!-- fields container -->
+                <!-- @ displays fields from FieldSet - ReviewIntelligentImportFieldSet -->
+                <div class="headerfieldsContainer"> 
+                    <apex:repeat value="{!$ObjectType.Apttus__APTS_Agreement__c.FieldSets.Apttus__ReviewIntelligentImportFieldSet}" var="f">
+                        <div class="fieldCls"> 
+                            <apex:outputLabel styleClass="labelCls" value="{!$ObjectType.Apttus__APTS_Agreement__c.fields[f].label}:"></apex:outputLabel> <br/>                         
+                            <apex:outputField value="{!Apttus__APTS_Agreement__c[f]}"/>                        
+                        </div>
+                    </apex:repeat>
+                </div>
+                
+                <!-- Actions/Buttons container -->
+                <!-- contains buttons for Save, Cancel -->
+                <div class="headerBtnContainer"> 
+					
+					<!-- panel containing action buttons -- save and cancel -->
+					<apex:outputPanel id="actionBtnId">
+						<button type="button" class="cancelBtn" onclick="openPopUp('{!overlayPopupCancelAction}')" title="Cancel">
+							<span>{!$Label.Cancel}</span>
+						</button>
+						<apex:actionFunction name="openPopUp" action="{!showPopup}" rerender="popup">
+							<apex:param value="" name="overlayPopupAction" assignTo="{!overlayPopupAction}"/>
+						</apex:actionFunction>
+						
+						<button type="button" class="saveBtn" title="Save" onclick="this.disabled = true; saveAgreement()">
+							<span>{!$Label.Save}</span>
+						</button>
+						<apex:actionFunction name="saveAgreement" action="{!saveAgreement}" rerender="pageMsgId, popup, actionBtnId"/>
+                    </apex:outputPanel>
+                </div>
+            </div><!-- end of header container -->
+            
+            <!-- Content Container : contains two sections - PDF Viewer, AgreementDetail and Clauses Tab. -->
+            <div id="contentId" class="contentContainer">
+                
+                <!-- PDF Viewer container -->   
+                <div id="pdfViewerSectionId" class="pdfViewerContainer" style="overflow:hidden">
+				
+					<div class="material-icons iconsCls" id="expandPDFViewer" onclick="expandPDFViewerSection(this, this.parentElement)" style="float:right">chevron_right</div>
+                    <div class="material-icons iconsCls" id="resetPDFViewer" onclick="resetPDFViewerSection(this, this.parentElement)" style="float:right; display:none">chevron_left</div>
+					
+                    <div class="scanQuality"> {!$Label.OCRQuality} : <b>{!ocrQualityText}</b></div>
+                    
+                    <div id="addClauseId" class="addClause" onclick="getSelectionText()">{!$Label.IDEReviewScreen_AddClause}</div>
+                    
+                    <iframe style="border: none; height:80vh;" scrolling="no"  id="pdfFrame" 
+                            src="{!URLFOR($Resource.PDFViewerJS, 'web/viewer.html')}" class="pdfFrame" width="100%"></iframe>
+                </div><!-- end of pdfviewer container -->         
+                
+                <!-- detail and clause container -->
+                <div id="detailnClauseSectionId" class="detailnClauseContainer">
+					
+					<div class="material-icons iconsCls" id="expandClauseViewer" onclick="expandAgreementDetailAndClauseSection(this, this.parentElement)" style="float:right">chevron_left</div>
+                    <div class="material-icons iconsCls" id="resetClauseViewer" onclick="resetAgreementDetailAndClauseSection(this, this.parentElement)" style="float:right; display:none">chevron_right</div>
+					
+                    <!-- Tab Panel  1. AGREEMENT DETAIL, 2. CLAUSES  -->
+                    <div class="tab">
+                        <div id="AgreementTabId" class="tablinks active" onclick="openTab(event, 'AgreementDetailId')">
+                            {!$Label.IDEReviewScreen_AgreementDetailTab}
+                        </div>
+                        <div class="tablinks " onclick="openTab(event, 'ClausesId')">
+                            {!$Label.IDEReviewScreen_ClausesTab}
+                        </div>
+                    </div>               
+
+                    <!-- Agreement Detail Tab -->
+                    <div id="AgreementDetailId" class="tabcontent">                  
+                        <div style="margin:20px">
+                            <div class="detailsEditHeaderCls">
+                                {!$Label.IDEReviewScreen_ContractInformationTitle}
+                            </div>
+    
+                            <apex:repeat value="{!$ObjectType.Apttus__APTS_Agreement__c.FieldSets.Apttus__UpdateFieldsIntelligentImportFieldSet}"
+                            var="fld"> 
+                                <div class="fieldClsClauseTab"> 
+                                    <apex:outputLabel styleClass="labelCls" 
+                                        value="{!$ObjectType.Apttus__APTS_Agreement__c.fields[fld].label}"> </apex:outputLabel> <br/>
+                                    <apex:inputField styleClass="inputValueCls" value="{!Apttus__APTS_Agreement__c[fld]}"/>
+                                </div>
+                            </apex:repeat> 
+                        </div>       
+                    </div> <!-- end of Agreement Detail Tab -->
+
+                    <!-- Clauses Tab -->
+                    <div id="ClausesId" class="tabcontent">
+                        <div class="clausePanelCls">
+                            <button type="button" class="cancelBtn" onclick="openPopUp('{!overlayPopupAddAction}')">
+                                <span>{!$Label.IDEReviewScreen_AddClause}</span>
+                            </button>
+                            <apex:actionFunction name="openPopUp" action="{!showPopup}" rerender="popup">
+                                <apex:param value="" name="overlayPopupAction" assignTo="{!overlayPopupAction}"/>
+                            </apex:actionFunction>                            
+                        </div><br/>
+        
+                        <apex:outputPanel id="clauseRefreshPanel">
+                            <apex:repeat value="{!lstIDEClauseExtraction}" var="objClause">
+                                <div class="clauseCls" id="clauseId">
+                                    <div style="float:right">
+                                    
+                                        <button type="button" style="font-size:20px!important" 
+                                            onclick="openClauseOverlay('{!overlayPopupEditAction}','{!objClause.Id}'); 
+                                            return false;" class="material-icons iconsCls">{!overlayPopupEditAction}</button>
+                                            
+                                        <button type="button" style="font-size:20px!important" 
+                                            onclick="openClauseOverlay('{!overlayPopupDeleteAction}','{!objClause.Id}'); 
+                                            return false;" class="material-icons iconsCls">{!overlayPopupDeleteAction}</button>
+                                    </div>                                    
+                                    <div onclick="passvalueToFind('{!JSEncode(objClause.ExtractedValue__c)}', '.clauseCls', this.parentElement)" 
+                                        class="clauseHeaderCls">
+										<apex:outputField value="{!objClause.Apttus__ClauseHeader__c}"/>
+									</div>
+                                        
+                                    <div onclick="passvalueToFind('{!JSEncode(objClause.ExtractedValue__c)}', '.clauseCls', this.parentElement)" 
+                                        class="clauseValueCls">
+										<apex:outputField value="{!objClause.Apttus__ExtractedValue__c}"/>
+									</div>
+                                </div>
+                            </apex:repeat>
+
+                            <apex:actionFunction name="openClauseOverlay" action="{!showPopup}" rerender="popup">
+                                <apex:param assignTo="{!overlayPopupAction}" value="" name="overlayPopupAction"/>
+                                <apex:param assignTo="{!selectedClauseId}" value="" name="selectedClauseId"/>
+                            </apex:actionFunction>
+                            
+                        </apex:outputPanel>
+                    </div>
+                </div><!-- end of detail and clause container -->
+            </div><!-- end of Content Container -->
+            
+            
+           <apex:outputPanel id="popup">               
+                <apex:outputPanel styleClass="popupBackground" layout="block" rendered="{!displayOverlayPopup}"/>
+                
+                <apex:outputPanel styleClass="addClausePopuUpCls" layout="block" rendered="{!displayOverlayPopup}">
+                    <div class="addClauseHeaderPanel">
+                        <h3 class="addClauseHeaderText">{!overlayPopupTitle}</h3>
+
+                        <button type="button" style="float:right; font-size:20px!important" onclick="No(); return false;" 
+                                class="material-icons iconsCls">
+                            {!overlayPopupCloseAction}
+                        </button>
+                        
+                    </div>
+                    <div class="addClauseInputContainer">
+                        <apex:outputPanel rendered="{!overlayPopupAction = overlayPopupCancelAction}">
+                            {!$Label.apttus__idereviewscreen_cancelactionwarningmsg}
+                        </apex:outputPanel>
+                        
+                        <apex:outputPanel rendered="{!OR(overlayPopupAction = overlayPopupEditAction, overlayPopupAction = overlayPopupAddAction, overlayPopupAction = overlayPopupAddActionFromRightclick)}">
+                            <div style="padding-bottom:10px;" class="addClauseInputLabel">
+                                {!$Label.IDEReviewScreen_ClauseNameTitle}
+                            </div>
+                           
+                            <div>
+                                <apex:selectRadio id="rbClause"  styleClass="radioOpt" value="{!rbClauseValue}">
+                                    <apex:selectOption itemLabel="{!$Label.apttus__select}" itemValue="{!$Label.apttus__select}"></apex:selectOption>
+                                    <apex:selectOption itemLabel="{!$Label.apttus__new}" itemValue="{!$Label.apttus__new}"></apex:selectOption>
+                                    <apex:actionsupport event="onchange" rerender="rbClauseChangeSection" action="{!doClauseRadioChange}"/>
+                                </apex:selectRadio>    
+                            </div>
+                           
+                            <apex:outputPanel id="rbClauseChangeSection">   
+                                <apex:selectList size="1" rendered="{!rbClauseDropdown}" styleClass="addClauseInputValue" value="{!selectedClauseValue}" id="rbClauseDropdownId" onmouseup="javascript:drpClauseChangeJs('{!$Component.rbClauseDropdownId}');" >
+                                    <apex:selectOptions value="{!clauseList}"></apex:selectOptions>
+                                    <apex:actionSupport event="onchange" rerender="drpClauseCategorysection" action="{!doClauseDropdownChange}"/>
+                                </apex:selectList>
+
+                               <apex:inputText maxlength="255" id="clauseTextName" 
+                                    onblur="onBlurClauseInput(this, 'maxCharClauseName', 'errEmptyClauseName')" 
+                                    onfocus="onFocusClauseInput(this, 'maxCharClauseName')" value="{!clauseTitle}" 
+                                    styleClass="addClauseInputValue"  rendered="{!rbClauseTextBox}"/>
+                                
+                                <div style="min-height:25px">
+                                    <span id="errEmptyClauseNamedrp" class="hidden" style="color:red">
+                                        {!$Label.ClauseSelectErrorMssage}
+                                    </span>
+                                    <span id="errEmptyClauseName" class="hidden" style="color:red">
+                                        {!$Label.IDEReviewScreen_ClauseNameErrMsg}
+                                    </span>
+                                    <span id="maxCharClauseName" style="float:right" class="hidden">
+                                        {!$Label.IDEReviewScreen_ClauseNameMaxChars}
+                                    </span>
+                                </div>
+                                <apex:outputPanel rendered="{!rbClauseDropdown}" id="drpClauseCategorysection">
+                                    <h5>
+                                        <b translate="" aria-label="Mapped Clause Details" id="MappedClauseDetails">{!$Label.IDEReviewScreenMappedClauseDetails}</b>
+                                    </h5>
+                                    <div class="clause-details">
+                                        <div class="category"><span translate="" aria-label="Category">{!$Label.IDEReviewScreenCategory}</span>&nbsp;:&nbsp;
+                                            <span>
+                                                <b id="Category">
+                                                <apex:outputText value="{!drpClauseCategoryValue}" />
+                                                </b>
+                                            </span>
+                                        </div>
+                                        <div class="sub-category"><span translate="" aria-label="Sub Category">{!$Label.IDEReviewScreenSubCategory}</span>&nbsp;:&nbsp;
+                                            <span>
+                                                <b id="SubCategory">
+                                                    <apex:outputText value="{!drpClauseSubCategoryValue}" />
+                                                </b>
+                                            </span>
+                                        </div>
+                                        <div class="clausedetail">
+                                            <div>
+                                                <apex:outputText value="{!drpClauseContentValue}" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </apex:outputPanel>
+                            </apex:outputPanel>
+                            
+                            <div style="padding-top:25px;" class="addClauseInputLabel"> 
+                                {!$label.IDEReviewScreen_ClauseTextTitle} 
+                            </div>
+                            <apex:inputTextArea style="resize: none;" html-maxlength="2000" rows="5" id="clauseTextArea" 
+                                onblur="onBlurClauseInput(this, 'maxCharClauseText', 'errEmptyClauseText')" 
+                                onfocus="onFocusClauseInput(this, 'maxCharClauseText')"  
+                                value="{!clauseValue}" styleClass="addClauseInputValue"/>
+
+                            <div style="min-height:25px">
+                                <span id="errEmptyClauseText" class="hidden" style="color:red">
+                                    {!$Label.IDEReviewScreen_ClauseTextErrMsg}
+                                </span>
+                                <span id="maxCharClauseText" style="float:right" class="hidden">
+                                    {!$Label.IDEReviewScreen_ClauseTextMaxChars}
+                                </span>
+                            </div>
+
+                        </apex:outputPanel>
+                        
+                        <apex:outputPanel rendered="{!overlayPopupAction = overlayPopupDeleteAction}">
+                            {!$Label.apttus__idereviewscreen_deleteactionwarningmsg} {!ClauseTitle} ?
+                        </apex:outputPanel>
+                    </div>
+                
+                    <div class="addClauseButtonContainer">
+                        <apex:outputPanel rendered="{!OR(overlayPopupAction = overlayPopupCancelAction, overlayPopupAction = overlayPopupDeleteAction)}">
+                            <button type="button" class="cancelBtn" onclick="No()">
+                                <span>{!$Label.No}</span>
+                            </button>
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!overlayPopupAction = overlayPopupCancelAction}">   
+                            <button type="button" class="saveBtn" onclick="CancelYes()">
+                                <span>{!$Label.Yes}</span>
+                            </button>
+                        </apex:outputPanel>
+                        
+                        <apex:outputPanel rendered="{!overlayPopupAction = overlayPopupDeleteAction}">                           
+                            <button type="button" class="saveBtn" onclick="this.disabled=true;confirmDeleteYes()">
+                                <span>{!$Label.Yes}</span>
+                            </button>
+                        </apex:outputPanel>
+                        
+                        <apex:outputPanel rendered="{!OR(overlayPopupAction = overlayPopupAddAction, overlayPopupAction = overlayPopupAddActionFromRightclick)}">
+                            <button type="button" class="saveBtn" onclick="ValidateClause('{!overlayPopupAddAction}', '{!$Component.clauseTextName}', '{!$Component.clauseTextArea}', '{!$Component.rbClause}', '{!$Component.rbClauseDropdownId}')">
+                                <span>{!$Label.IDEReviewScreen_AddClause}</span>
+                            </button>
+                        </apex:outputPanel>
+                        
+                        
+                        <apex:outputPanel rendered="{!overlayPopupAction = overlayPopupEditAction}">
+                            <button type="button" class="saveBtn" onclick="ValidateClause('{!overlayPopupEditAction}', '{!$Component.clauseTextName}', '{!$Component.clauseTextArea}', '{!$Component.rbClause}', '{!$Component.rbClauseDropdownId}')">
+                                <span>{!$Label.Save}</span>
+                            </button>
+                        </apex:outputPanel>
+                                                
+                        <apex:actionFunction name="No" action="{!closePopup}" rerender="popup" />
+                        <apex:actionFunction name="CancelYes" action="{!Cancel}" rerender="popup" />                        
+                        <apex:actionFunction name="confirmDeleteYes" action="{!deleteClause}" rerender="popup,clauseRefreshPanel"/>
+                        <apex:actionFunction name="addClause" action="{!addClause}" rerender="popup,clauseRefreshPanel" />
+                        <apex:actionFunction name="saveClause" action="{!saveClause}" rerender="popup,clauseRefreshPanel" />
+                    </div>
+                </apex:outputPanel>
+            </apex:outputPanel>
+            
+            <apex:actionFunction name="onload" oncomplete="asyncLoad()" />
+        </apex:form>
+    </div> <!-- end of Main container -->
+    <!-- Markup end here-->    
+
+</apex:page>

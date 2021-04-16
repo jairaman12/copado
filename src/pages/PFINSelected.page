@@ -1,0 +1,118 @@
+<apex:page controller="ManualCaseCreationController" action="{!fetchUrlAddress}" sidebar="false" docType="html-5.0">
+  <html lang="en">
+    <head>
+        <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+            rel = "stylesheet"/>
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script>
+     function validate(){
+         if($("input[type='text'][id*='pfin']")[0].value.length <= 0){
+             alert('Please select the PFIN');
+               return false;
+          }
+         
+         }
+      $( function() {
+      $( "#pfin" ).autocomplete({
+      source: function(request, response) {
+            Visualforce.remoting.Manager.invokeAction( '{!$RemoteAction.ManualCaseCreationController.populatePFIN}',
+            request.term,
+            '{!acctId}',
+            function(result, event){
+                if (event.status)
+
+                {
+
+                    console.log(result);
+
+                    response(result);
+
+                }
+
+                else
+
+                {
+
+                    alert(event.message);
+
+                }
+
+            });
+
+      },
+
+      select:function( event, ui ){       
+
+             callControllermethod(ui.item.label);
+
+      }
+
+             
+
+    });
+  } );
+
+  </script>
+
+</head>
+
+<body>
+
+ <apex:form id="pfrmId">
+     <apex:inputHidden value="{!acctId}" id="acctId"/>
+     <apex:pagemessages id="pageMessages" escape="false" /> 
+<apex:pageBlock title=""  id="pageblockid"> 
+         <apex:pageBlockSection rendered="{!hidePFINPage}"> 
+         		<apex:selectList label="Case Mode Selection:" value="{!caseMode}"  id="cs" Size="1" >
+                    <apex:selectOption itemValue="Add" itemLabel="Add"/>
+                    <apex:selectOption itemValue="Change" itemLabel="Change"/>
+                    <apex:selectOption itemValue="Delete" itemLabel="Delete"/>
+                </apex:selectList>
+               
+        <div class="ui-widget">
+
+          <label for="pfin">PFIN Number:</label>
+
+          <input id="pfin" maxlength="10" value="{!$CurrentPage.parameters.urlPFIN}" size="16"/>
+			
+        </div>
+        		</apex:pageBlockSection> 
+        <apex:actionRegion >
+            <apex:actionFunction name="callControllermethod" action="{!fetchAddress}" reRender="addrInfo">
+                <apex:param name="setPFIN" value=""/>
+            </apex:actionFunction>
+        </apex:actionRegion>
+        <apex:outputPanel id="addrInfo">
+        <apex:pageBlockSection columns="1"> 
+                             <apex:pageBlockTable value="{!AddressInfo}" var="a" id="wrapperid" styleClass="dataTable">
+                                <apex:column width="10%" headerValue="Address Type">
+                                    <apex:outputText value="{!a.CM_SPL_Addr_Type__c}"/>
+                                </apex:column>
+                                <apex:column headerValue="Address Line 1">
+                                    <apex:outputText value="{!a.CM_SPL_Addr_Line_1__c}">
+                                </apex:outputText>
+                                </apex:column>  
+                                 <apex:column headerValue="Address Line 2">
+                                 <apex:outputText value="{!a.CM_SPL_Add_Line_2__c}">
+                                </apex:outputText>
+                                </apex:column>  
+                                <apex:column headerValue="State">
+                                    <apex:outputText value="{!a.CM_SPL_State__c}">
+                                </apex:outputText>
+                                </apex:column>
+                            </apex:pageBlockTable>                            
+                    </apex:pageBlockSection> 
+    </apex:outputPanel>
+					<apex:pageBlockButtons id="buttonBlockId" location="bottom" html-align="right">
+                        <apex:commandButton value="Back" action="{!prevUrl}"/>
+                    <apex:commandButton value="Next" action="{!selectChange}" disabled="{!isDisabled}" onClick="return validate();"/>
+                    </apex:pageBlockButtons>
+     </apex:pageBlock>
+    </apex:form>
+
+ </body>
+
+</html>
+    
+</apex:page>

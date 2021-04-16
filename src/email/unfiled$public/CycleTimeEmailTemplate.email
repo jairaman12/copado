@@ -1,0 +1,6 @@
+Monthly <a href="{!Environment}{!ReportId}">Cycle Time Report </a> is available in Salesforce.
+
+
+
+
+(For Internal Purpose only : ref: {!Case.Thread_Id})

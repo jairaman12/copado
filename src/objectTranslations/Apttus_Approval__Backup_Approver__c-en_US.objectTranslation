@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- Action to activate or deactivate the backup --></help>
+        <label><!-- Backup/Delegate Action --></label>
+        <name>Apttus_Approval__Backup_Action__c</name>
+    </fields>
+    <fields>
+        <label><!-- Backup/Delegate User --></label>
+        <name>Apttus_Approval__Backup_User__c</name>
+        <relationshipLabel><!-- Backup/Delegate Approvers (Backup/Delegate User) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cancellation Date --></label>
+        <name>Apttus_Approval__Cancellation_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comment --></label>
+        <name>Apttus_Approval__Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current User --></label>
+        <name>Apttus_Approval__Current_User__c</name>
+        <relationshipLabel><!-- Backup/Delegate Approvers (Current User) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- IDs of approvers who were designated as Delegate of Backup --></help>
+        <label><!-- Delegate Users --></label>
+        <name>Apttus_Approval__DelegateUserIds__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please enter an effective date only if you are not activating it immediately. Otherwise use the Activate button on the next screen to Activate Backup immediately. --></help>
+        <label><!-- Effective Date --></label>
+        <name>Apttus_Approval__Effective_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please enter an expiration date only if you need the system to expire it automatically at a future date. Otherwise use the Deactivate button on the next screen to cancel the backup immediately --></help>
+        <label><!-- Expiration Date --></label>
+        <name>Apttus_Approval__Expiration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- In Effect --></label>
+        <name>Apttus_Approval__InEffect__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Active --></label>
+        <name>Apttus_Approval__IsActive__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates that the this entry is for delegate user. --></help>
+        <label><!-- Is Delegate --></label>
+        <name>Apttus_Approval__IsDelegate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicator to enable/disable notification to Delegate Approver --></help>
+        <label><!-- Suppress Delegate Notification --></label>
+        <name>Apttus_Approval__SuppressDelegateNotification__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transfer in-flight --></label>
+        <name>Apttus_Approval__Transfer_in_flight__c</name>
+    </fields>
+    <webLinks>
+        <label><!-- Activate --></label>
+        <name>Apttus_Approval__Activate</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Cancel --></label>
+        <name>Apttus_Approval__Cancel</name>
+    </webLinks>
+</CustomObjectTranslation>

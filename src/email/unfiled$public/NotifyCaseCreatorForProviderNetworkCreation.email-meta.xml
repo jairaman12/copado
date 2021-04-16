@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>NotifyCaseCreatorForProviderNetworkCreation</name>
+    <style>none</style>
+    <subject>Notification for Provider Detail Creation</subject>
+    <textOnly>Hello,
+
+Please enter the mandatory details under the Provider Details section in the credentialing case {!Case.CaseNumber}  to complete the case creation process.
+ Without provider details, this case will not go through credentialing for further processing.
+
+Thanks,
+Salesforce ITG</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

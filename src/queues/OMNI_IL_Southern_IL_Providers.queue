@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>fakeemail@bcbsil.com</email>
+    <name>OMNI_IL_Southern IL Providers</name>
+    <queueMembers>
+        <users>
+            <user>allison_scott@bcbsil.com.provider</user>
+            <user>amanda_williams@bcbsil.com.provider</user>
+            <user>christopher_p_mccorkle@bcbsil.com.provider</user>
+            <user>jerlenbush@bcbsil.com.provider</user>
+            <user>jennifer_lipscomb@bcbsil.com.provider</user>
+            <user>josh_warren@bcbsil.com.provider</user>
+            <user>paul_meyer@bcbsil.com.provider</user>
+            <user>shawn_williams@bcbsil.com.provider</user>
+            <user>stacy_poehlman@bcbsil.com.provider</user>
+            <user>trumbleyt@bcbsil.com.provider</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>Priority_5</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>OMNI_Queue__c</sobjectType>
+    </queueSobject>
+</Queue>

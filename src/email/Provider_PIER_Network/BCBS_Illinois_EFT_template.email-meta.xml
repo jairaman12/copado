@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>BCBS Illinois EFT template</name>
+    <style>none</style>
+    <subject>BCBSIL EFT Registration</subject>
+    <textOnly>Dear {!IF(NOT(ISBLANK(Case.Name_Submitter__c)),Case.Name_Submitter__c, Case.Account_Name_for_Email_Templates__c)}:
+
+Your request to be included in the Blue Cross and Blue Shield (BCBSIL) provider file as a non-contracting provider has been accepted. Electronic options are preferred. To get started, you must establish a vendor connection. You will need to enlist the services of a third-party electronic business vendor, such as Availity® or your preferred vendor. If you have questions, contact us at Netops_Provider_Update@bcbsil.com.
+
+We look forward to serving you!
+
+Sincerely,
+
+BCBSIL Network Operations
+
+
+For Internal Purpose only. (NOTE: Please do not remove the Ref id) Ref id {!Case.EmailThread_On_Child__c}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>fakeemail@bcbsil.com</email>
+    <name>TX Contracting – South CC/SA</name>
+    <queueMembers>
+        <users>
+            <user>geraldi_barrios@bcbstx.com.provider</user>
+            <user>sharon_evans@bcbstx.com.provider</user>
+            <user>tanillya_n_renner@bcbstx.com.provider</user>
+            <user>valerie_martinez@bcbstx.com.provider</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

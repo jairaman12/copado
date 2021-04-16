@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_22024065</developerName>
+        <masterLabel>Plan</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>ROLE</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Illinois PNC</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Illinois Supervisor</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Provider Data Rep- IL</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CLM Illinois</sourceValue>
+            </sourceValues>
+            <value>Illinois</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>New Mexico Supervisor</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Provider Data Rep- NM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>New Mexico PNC</sourceValue>
+            </sourceValues>
+            <value>New Mexico</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Montana Supervisor</sourceValue>
+            </sourceValues>
+            <value>Montana</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Business Admin</sourceValue>
+            </sourceValues>
+            <value>Enterprise</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Provider Data Rep- OK</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Oklahoma Supervisor</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Oklahoma PNC</sourceValue>
+            </sourceValues>
+            <value>Oklahoma</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Provider Data Rep- TX</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Texas Supervisor</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Texas PNC</sourceValue>
+            </sourceValues>
+            <value>Texas</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <columns>
+        <field>EMPNO</field>
+    </columns>
+    <columns>
+        <field>ROLE</field>
+    </columns>
+    <columns>
+        <field>PROFILE</field>
+    </columns>
+    <columns>
+        <field>LAST_LOGIN</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>PROFILE</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>System Administrator,Intake Profile</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>FIRST_NAME</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Illinois,Montana,New Mexico,Oklahoma,Texas</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>EMAIL</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>providerintakedev@bcbstx.com</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_22024065</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Active User Report</name>
+    <params>
+        <name>active</name>
+        <value>active</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>User</reportType>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>EMPNO</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>LAST_LOGIN</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

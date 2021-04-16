@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>DefaultQueueSettings</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DefaultQueueSettings</value>
+    </caseValues>
+    <fields>
+        <label><!-- IsContractingQueue --></label>
+        <name>IsContractingQueue__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsDataEntryQueue --></label>
+        <name>IsDataEntryQueue__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsEscalateQueue --></label>
+        <name>IsEscalateQueue__c</name>
+    </fields>
+    <fields>
+        <label><!-- PlanId --></label>
+        <name>PlanId__c</name>
+    </fields>
+    <fields>
+        <label><!-- QueueId --></label>
+        <name>QueueId__c</name>
+    </fields>
+    <fields>
+        <label><!-- QueueName --></label>
+        <name>QueueName__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

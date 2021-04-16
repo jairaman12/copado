@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>22.0</apiVersion>
+    <available>false</available>
+    <description>Email Template for Agreement Approval Notification (Notify Only)</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Apttus Agreement Approval Notification (Notify Only)</name>
+    <packageVersions>
+        <majorNumber>10</majorNumber>
+        <minorNumber>444</minorNumber>
+        <namespace>Apttus</namespace>
+    </packageVersions>
+    <packageVersions>
+        <majorNumber>9</majorNumber>
+        <minorNumber>26</minorNumber>
+        <namespace>Apttus_Approval</namespace>
+    </packageVersions>
+    <style>none</style>
+    <subject>Approval Request for Agreement &apos;&apos; has been submitted</subject>
+    <type>visualforce</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

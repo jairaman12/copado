@@ -1,0 +1,47 @@
+<!--
+   Apttus Contract Management
+   IDESettingList
+    
+   @2018 Apttus Inc. All rights reserved.
+  -->
+<apex:page Controller="Apttus.IDESettingEditController" >
+<style>
+        .width400 {
+            width: 400px;
+        }
+        .height200 {
+            height: 100px;
+        }
+</style>
+	 <apex:form >
+	     <div class="bPageTitle">
+	         <div class="ptBody secondaryPalette brandSecondaryBrd">
+	             <div class="content">		
+	                 <h1 class="pageType">{!$Label.apttus__customsetting}</h1>
+	                 <h2 class="pageDescription">{!$Label.apttus__idesetting}</h2>
+	             </div>
+	         </div>
+		</div>
+		<apex:pageBlock >
+		    <apex:pageMessages />
+		    <apex:outputPanel id="tokenPanel">       
+		    <apex:pageBlockSection columns="1">
+		        <apex:inputField value="{!objIDESetting.Name}"/>
+		        <apex:inputField value="{!objIDESetting.Apttus__IDEServiceURL__c}" styleClass="width400" />
+		        <apex:inputField value="{!objIDESetting.Apttus__LogoURL__c}" styleClass="width400" />
+		        <apex:inputField value="{!objIDESetting.Apttus__AdditionalSetting__c}" styleClass="width400 height200" />
+		        <apex:inputField value="{!objIDESetting.Apttus__Active__c}"/>   
+		        <apex:inputField value="{!objIDESetting.Apttus__Token__c}" styleClass="width400" />				
+		        <apex:inputcheckbox value="{!checkTokenVisible}" label="{!$Label.apttus__ideshowtoken}" >    
+		            <apex:actionSupport event="onchange" rerender="tokenPanel" action="{!checkTokenVisibleClick}"/>   
+		        </apex:inputcheckbox>       
+		    </apex:pageBlockSection>  
+		    </apex:outputPanel>             
+		    <apex:pageBlockButtons location="bottom">
+		        <apex:commandButton action="{!save}" value="{!$Label.apttus__save}"/>
+		        <apex:outputLink title="{!$Label.apttus__cancel}" styleClass="btn" value="/apex/IDESettingList" style="text-decoration:none;padding:4px;" >{!$Label.apttus__cancel}</apex:outputLink>               
+		        <apex:commandButton action="{!syncProvisions}" value="{!$Label.apttus__syncprovisions}" rendered="{!mode=='EDIT'}"/>   
+		    </apex:pageBlockButtons>
+		</apex:pageBlock>
+	 </apex:form>
+</apex:page>

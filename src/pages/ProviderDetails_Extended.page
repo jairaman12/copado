@@ -1,0 +1,461 @@
+<apex:page controller="ProviderDetails_Extended" tabStyle="Account" sidebar="false" lightningStylesheets="true" title="Provider Details" >
+    <apex:includeScript value="{!$Resource.jqueryMin}"/>
+    <link class="user" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>   
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>  
+    <apex:includeScript value="{!$Resource.js4_paginationPage}"/>
+        <apex:stylesheet value="{!$Resource.css4_paginationPage}"/> 
+            <script>
+            /* Initialize the number of records to show in pagination */
+            var numberOfRecordsToShow = parseInt({!numberOfRecordsToShow});
+    
+    
+    	$(document).ready(function(){
+        
+            /* Used to show/hide the Provider Tax Identification Section. Had to do this way because of rendering problem in Lightning */
+            $("img[id*='TaxIdSection']").click(function() {
+                $("[id*=TaxIdOutputPanel]").toggle();
+            });
+        
+    	});
+    </script>    
+    <style>
+        .lex_background {
+            background-color: rgb(175, 197, 222);
+            height: -webkit-fill-available;
+            background-image: url(/_slds/images/themes/oneSalesforce/banner-brand-default.png?cache=210.2);
+            background-repeat: repeat-x;
+            background-position: top left;
+        }
+        body .pbBody table.list tr.headerRow td, body .pbBody table.list tr.headerRow th {
+        	background-color: rgb(250, 250, 249);
+        }
+    </style>
+    <apex:form styleClass="lex_background">
+        <apex:outputPanel rendered="{!accountList[0].RecordType.name == 'Person Account' || accountList[0].RecordType.name == 'Physician' || accountList[0].RecordType.name == 'Rolodex'}">
+            <style>
+                .sfdcBody .accountMru .mruIcon, .sfdcBody .bRelatedList .accountBlock .relatedListIcon, .sfdcBody.accountTab .pageTitleIcon        
+                {
+                    background-position: initial;
+                    background-image: url('/img/icon/t4v35/standard/person_account_60.png');
+                    content: url('/img/icon/t4v35/standard/person_account_60.png');
+                }
+            </style>
+        </apex:outputPanel>
+        <apex:sectionHeader subtitle="{!accountList[0].name}" title="Provider details"/>
+        <apex:pageBlock title="Provider Info">
+            <style type="text/css">
+                .showContacts {
+                	background: transparent url('/img/icon/t4v35/standard/account_60.png') 0 0 no-repeat;
+                }
+                .hideContacts {
+                	background: transparent url('/img/icon/t4v35/standard/account_60.png') 0 -11px no-repeat;
+                }
+            </style>
+            <!--- Provider Information block -->
+            <apex:pageBlockSection title="Provider Info" columns="2" rendered="{!IF(accountList.size ==0,false,true)}" collapsible="true" >
+                <apex:outputField value="{!accountList[0].Name}" />
+                <apex:outputField label="Parent Account" value="{!accountList[0].Parent.Name}" />
+                <apex:outputField value="{!accountList[0].Class__c}" />
+                <apex:outputField value="{!accountList[0].Organization_Type__c}" />
+                <apex:outputField value="{!accountList[0].Website}" />
+                <apex:outputField value="{!accountList[0].Designation__c}" />
+                <apex:outputField value="{!accountList[0].Prov_ID__c}" />
+                <apex:outputField value="{!accountList[0].CM_Corporate_Entity_Code__c}" />
+                <apex:outputField value="{!accountList[0].Status__c}" />
+            </apex:pageBlockSection>
+            <!-- End of Provider Information block -->
+            <!-- Provider Identification Info block -->
+            <apex:pageblocksection title="Provider Identification Info" showheader="true" collapsible="true" columns="1" >
+                <apex:pageBlockTable id="pii" value="{!provIdentificationList}" var="provIdentification" rendered="{!IF(provIdentificationList.size ==0,false,true)}">
+                    <apex:column headerValue="PROVIDER ID INFO">
+                        <apex:outputlink value="/{!provIdentification.Id}">
+                            <apex:outputtext value="{!provIdentification.Name}"/>
+                        </apex:outputlink>
+                    </apex:column>
+                    <apex:column value="{!provIdentification.CM_Prvdr_Iden_Typ_Cd__c}" headerValue="ID TYPE" />
+                    <apex:column value="{!provIdentification.CM_Issu_Ident_Nmbr__c}" headerValue="ID NUM TYPE" />
+                    <apex:column value="{!provIdentification.CM_PI_NPI_Type_CD__c}" />
+                    <apex:column value="{!provIdentification.CM_PI_State__c}" />
+                    <apex:column value="{!provIdentification.CM_PI_Board_Code__c}" />
+                    <apex:column value="{!provIdentification.CM_PI_License_Status__c}" />
+                    <apex:column value="{!provIdentification.CM_PI_Effective_Date__c}" />
+                    <apex:column value="{!provIdentification.CM_PI_End_Date__c}" />
+                    <apex:column value="{!provIdentification.CM_PI_Valid__c}" />
+                </apex:pageBlockTable>
+            </apex:pageblocksection>            
+            <!-- End of Provider Identification Info block -->
+            
+            
+            <!--Provider Tax Identification Info block with Service and Payee address location -->
+            <apex:pageBlockSection id="TaxIdSection" title="Provider Tax Identification Info" columns="1" collapsible="true" />
+            	<apex:outputPanel id="TaxIdOutputPanel" >
+                        <table id="tableprovider" class="list" style="padding:10px; padding-left: 10px;">
+                        <thead>
+                            <tr>
+                                <th>{!$objectType.CM_Provider_Tax_Id__c.Fields.Name.Label}</th>
+                                <th>{!$objectType.CM_Provider_Tax_Id__c.Fields.CM_PTI_Tax_Id__c.Label}</th>
+                                <th>{!$objectType.CM_Provider_Tax_Id__c.Fields.CM_PTI_Tax_Shared_Ind__c.Label}</th>
+                                <th>{!$objectType.CM_Provider_Tax_Id__c.Fields.CM_PTI_Prov_Name_From__c.Label}</th>
+                                <th>{!$objectType.CM_Provider_Tax_Id__c.Fields.CM_PTI_Prov_Id_Start_Date__c.Label}</th>
+                                <th>{!$objectType.CM_Provider_Tax_Id__c.Fields.CM_PTI_Prov_Id_End_Date__c.Label}</th>
+                                <th>{!$objectType.CM_Provider_Tax_Id__c.Fields.CM_PTI_Tax_Type__c.Label}</th>                  
+                            </tr>  
+                        </thead>    
+                        <tbody>
+                            <apex:repeat id="repeatprovider" value="{!listProvTaxIdentWrapper}" var="item">
+                                <apex:variable var="pro" value="{!item.provTaxIden}" /> 
+                                <tr id="{!$Component.repeatprovider}:provider" class="dataRow">
+                                    <td class="dataCell">
+                                        <apex:outputLink id="linkShowHide" value="javascript:toggleContactRow('{!$Component.repeatprovider}')">
+                                            <img id="{!$Component.repeatprovider}:Img" src="/s.gif" class="hideContacts" border="0" height="11px" width="11px" style="padding-right: 4px;"/>                                            
+                                        </apex:outputLink>
+                                        <apex:outputLink value="/{!pro.Id}">
+                                            <apex:outputText value="{!pro.Name}"></apex:outputText>
+                                        </apex:outputLink>
+                                    </td>                                    
+                                    <td class="dataCell"><apex:outputField value="{!pro.CM_PTI_Tax_Id__c}" /></td> 
+                                    <td class="dataCell"><apex:outputField value="{!pro.CM_PTI_Tax_Shared_Ind__c}" /></td>
+                                    <td class="dataCell"><apex:outputField value="{!pro.CM_PTI_Prov_Name_From__c}" /></td>
+                                    <td class="dataCell"><apex:outputField value="{!pro.CM_PTI_Prov_Id_Start_Date__c}" /></td>
+                                    <td class="dataCell"><apex:outputField value="{!pro.CM_PTI_Prov_Id_End_Date__c}" /></td>
+                                    <td class="dataCell"><apex:outputField value="{!pro.CM_PTI_Tax_Type__c}" /></td>
+                                </tr>
+                                <tr id="{!$Component.repeatprovider}:First" colspan="100" style="padding:10px; padding-left: 90px;">
+                                    <td colspan="80" style="padding:10px; padding-left: 45px;">
+                                        <apex:outputPanel layout="none" rendered="{!IF(item.spAddrList.size > 0,true,false)}">                                             
+                                            <h3>Service and Payee Location Address Info</h3>
+                                            <table id="tableSPL" class="list slds-vf-data-table" border="0" cellpadding="0" cellspacing="0">                                
+                                                <tr class="headerRow">                                                        
+                                                    <th>{!$objectType.CM_SPL_Addr__c.Fields.Name.Label}</th> 
+                                                    <th>{!$objectType.CM_SPL_Addr__c.Fields.CM_SPL_PFIN_No__c.Label}</th>
+                                                    <th>{!$objectType.CM_SPL_Addr__c.Fields.CM_SPL_Addr_Type__c.Label}</th>
+                                                    <th>{!$objectType.CM_SPL_Addr__c.Fields.PFIN_Type__c.Label}</th>
+                                                    <th>{!$objectType.CM_SPL_Addr__c.Fields.CM_SPL_Addr_Line_1__c.Label}</th>
+                                                    <th>{!$objectType.CM_SPL_Addr__c.Fields.CM_SPL_Add_Line_2__c.Label}</th>
+                                                    <th>{!$objectType.CM_SPL_Addr__c.Fields.CM_SPL_Mobile_No__c.Label}</th>
+                                                    <th>{!$objectType.CM_SPL_Addr__c.Fields.CM_SPL_Email__c.Label}</th>
+                                                    <th>{!$objectType.CM_SPL_Addr__c.Fields.CM_SPL_PFIN_Reason__c.Label}</th>
+                                                </tr>                                
+                                                <apex:repeat id="repeatSPLs" value="{!item.spAddrList}" var="subitem">
+                                                    <apex:variable value="{!subitem}" var="sp" />
+                                                    <tr class="dataRow" >                                                       
+                                                        <td>
+                                                            <apex:outputLink value="/{!sp.Id}">
+                                                                <apex:outputText value="{!sp.Name}"></apex:outputText>
+                                                            </apex:outputLink>
+                                                        </td>
+                                                        <td>{!sp.CM_SPL_PFIN_No__c}</td> 
+                                                        <td>{!sp.CM_SPL_Addr_Type__c}</td>   
+                                                        <td>{!sp.PFIN_Type__c}</td>
+                                                        <td>{!sp.CM_SPL_Addr_Line_1__c}</td>
+                                                        <td>{!sp.CM_SPL_Add_Line_2__c}</td>             
+                                                        <td>{!sp.CM_SPL_Mobile_No__c}</td>
+                                                        <td>{!sp.CM_SPL_Email__c}</td> 
+                                                        <td>{!sp.CM_SPL_PFIN_Reason__c}</td> 
+                                                    </tr>
+                                                    <tr id="{!$Component.repeatSPLNetworks}:Second"  colspan="100" style="padding:10px; padding-left: 90px;">
+                                                        <td colspan="70" style="padding:10px; padding-left: 45px;">
+                                                            <apex:outputPanel layout="none" rendered="{!IF(sp.Networks1__r.size == 0,false,true)}">                                                                 
+                                                                <h3>Address Network Info</h3>
+                                                                <table id="tableNet" class="list slds-vf-data-table" border="0" cellpadding="0" cellspacing="0">                                                                     
+                                                                    <tr class="headerRow">   
+                                                                        <th>{!$objectType.CM_Network__c.Fields.Name.Label}</th>
+                                                                        <th>{!$objectType.CM_Network__c.Fields.CM_Network__c.Label}</th>
+                                                                        <th>{!$objectType.CM_Network__c.Fields.CM_Name__c.Label}</th>
+                                                                        <th>{!$objectType.CM_Network__c.Fields.CM_Network_Effective_Date__c.Label}</th>
+                                                                        <th>{!$objectType.CM_Network__c.Fields.CM_Network_End_Date__c.Label}</th>
+                                                                        <th>{!$objectType.CM_Network__c.Fields.CM_Reason_Code__c.Label}</th>
+                                                                        <th>{!$objectType.CM_Network__c.Fields.CM_Provider_Network_Designation__c.Label}</th>
+                                                                        <th>{!$objectType.CM_Network__c.Fields.CM_Directory_Exclusion_Indicator__c.Label}</th>      
+                                                                    </tr>
+                                                                    <apex:repeat id="repeatNetworksData" value="{!sp.Networks1__r}" var="ntwrk">
+                                                                        <tr class="dataRow">                                                                       
+                                                                            <td>
+                                                                                <apex:outputLink value="/{!ntwrk.Id}">
+                                                                                    <apex:outputText value="{!ntwrk.Name}"></apex:outputText>
+                                                                                </apex:outputLink>
+                                                                            </td>
+                                                                            <td>{!ntwrk.CM_Network__c}</td>
+                                                                            <td>{!ntwrk.CM_Name__c}</td>
+                                                                            <td>{!ntwrk.CM_Network_Effective_Date__c}</td>
+                                                                            <td>{!ntwrk.CM_Network_End_Date__c}</td>
+                                                                            <td>{!ntwrk.CM_Reason_Code__c}</td>
+                                                                            <td>{!ntwrk.CM_Provider_Network_Designation__c}</td>
+                                                                            <td>{!ntwrk.CM_Directory_Exclusion_Indicator__c}</td>      
+                                                                        </tr> 
+                                                                        <tr id="{!$Component.repeatprovider}:Third" class="dataRow">
+                                                                            <td colspan="60" style="padding:10px; padding-left: 45px;">                       
+                                                                                <apex:outputPanel layout="none" rendered="{!IF(splAddressIdWithNtwrkSpltyMap_1[ntwrk.Id]== null,false,true)}" > 
+                                                                                    <apex:variable var="index" value="{!0}" />
+                                                                                    <table id="tableNetSpl" class="list slds-vf-data-table" border="0" cellpadding="0" cellspacing="0">
+                                                                                        <apex:repeat id="repeatNetworkSpl" value="{!splAddressIdWithNtwrkSpltyMap_1[ntwrk.Id]}" var="ntwrkspl">
+                                                                                            <apex:outputPanel layout="none" rendered="{!IF(index == 0,true,false)}" >                    
+                                                                                                <h3>Network Specialty Info</h3> 
+                                                                                                <tr class="headerRow">                                                        
+                                                                                                    <th>{!$objectType.CM_Specialty__c.Fields.Name.Label}</th>
+                                                                                                    <th>{!$objectType.CM_Specialty__c.Fields.CM_SP_Specialty__c.Label}</th>
+                                                                                                    <th>{!$objectType.CM_Specialty__c.Fields.CM_SP_Prov_Type__c.Label}</th>
+                                                                                                    <th>{!$objectType.CM_Specialty__c.Fields.CM_SP_Board_CD__c.Label}</th>
+                                                                                                    <th>{!$objectType.CM_Specialty__c.Fields.CM_SP_Effective_Date__c.Label}</th>
+                                                                                                    <th>{!$objectType.CM_Specialty__c.Fields.CM_SP_End_Date__c.Label}</th>
+                                                                                                    <th>{!$objectType.CM_Specialty__c.Fields.CM_SP_SubSpec_CD__c.Label}</th>
+                                                                                                    <th>{!$objectType.CM_Specialty__c.Fields.CM_SP_Specialty_CD__c.Label}</th>
+                                                                                                    <th>{!$objectType.CM_Specialty__c.Fields.CM_SP_Provi_Type_CD__c.Label}</th>
+                                                                                                    <apex:variable var="index" value="{!index + 1}" />
+                                                                                                </tr> 
+                                                                                            </apex:outputPanel>   
+                                                                                            <tr> 
+                                                                                                <td class="dataCell">
+                                                                                                    <apex:outputLink value="/{!ntwrkspl.Id}">
+                                                                                                        <apex:outputText value="{!ntwrkspl.Name}">                                                                                                    </apex:outputText>
+                                                                                                    </apex:outputLink>
+                                                                                                </td>
+                                                                                                <td class="dataCell"><apex:outputField value="{!ntwrkspl.CM_SP_Specialty__c}"/></td>
+                                                                                                <td class="dataCell"><apex:outputField value="{!ntwrkspl.CM_SP_Prov_Type__c}" /></td>                                                        
+                                                                                                <td class="dataCell"><apex:outputField value="{!ntwrkspl.CM_SP_Board_CD__c}" /></td>
+                                                                                                <td class="dataCell"><apex:outputField value="{!ntwrkspl.CM_SP_Effective_Date__c}" /></td>
+                                                                                                <td class="dataCell"><apex:outputField value="{!ntwrkspl.CM_SP_End_Date__c}" /></td>
+                                                                                                <td class="dataCell"><apex:outputField value="{!ntwrkspl.CM_SP_SubSpec_CD__c}" /></td>
+                                                                                                <td class="dataCell"><apex:outputField value="{!ntwrkspl.CM_SP_Specialty_CD__c}" /></td>
+                                                                                                <td class="dataCell"><apex:outputField value="{!ntwrkspl.CM_SP_Provi_Type_CD__c}" /></td>
+                                                                                            </tr>
+                                                                                        </apex:repeat>                                
+                                                                                    </table>
+                                                                                </apex:outputPanel>
+                                                                            </td>   
+                                                                        </tr>
+                                                                    </apex:repeat>
+                                                                </table>
+                                                            </apex:outputPanel>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="{!$Component.repeatprovider}:Fourth" class="dataRow">
+                                                        <td colspan="50" style="padding:10px; padding-left: 45px;"> 
+                                                            <apex:outputPanel layout="none" rendered="{!IF(sp.Specialties__r.size == 0,false,true)}"> 
+                                                                <h3>Address Specialty Info</h3>                                                                
+                                                                <table id="tableaddSpl" class="list slds-vf-data-table" border="0" cellpadding="0" cellspacing="0">                                
+                                                                    <tr class="headerRow">                                                        
+                                                                        <th>{!$objectType.CM_Specialty__c.Fields.Name.Label}</th>
+                                                                        <th>{!$objectType.CM_Specialty__c.Fields.CM_SP_Specialty__c.Label}</th>
+                                                                        <th>{!$objectType.CM_Specialty__c.Fields.CM_SP_Prov_Type__c.Label}</th>
+                                                                        <th>{!$objectType.CM_Specialty__c.Fields.CM_SP_Board_CD__c.Label}</th>
+                                                                        <th>{!$objectType.CM_Specialty__c.Fields.CM_SP_Effective_Date__c.Label}</th>
+                                                                        <th>{!$objectType.CM_Specialty__c.Fields.CM_SP_End_Date__c.Label}</th>
+                                                                        <th>{!$objectType.CM_Specialty__c.Fields.CM_SP_SubSpec_CD__c.Label}</th>
+                                                                        <th>{!$objectType.CM_Specialty__c.Fields.CM_SP_Specialty_CD__c.Label}</th>
+                                                                        <th>{!$objectType.CM_Specialty__c.Fields.CM_SP_Provi_Type_CD__c.Label}</th>
+                                                                    </tr>                                
+                                                                    <apex:repeat id="repeatAddSpl" value="{!sp.Specialties__r}" var="addrspl">
+                                                                        <tr class="dataRow">                                                       
+                                                                            <td class="dataCell">
+                                                                                <apex:outputLink value="/{!addrspl.Id}">
+                                                                                    <apex:outputText value="{!addrspl.Name}">                                                                                                    </apex:outputText>
+                                                                                </apex:outputLink>
+                                                                            </td>
+                                                                            <td class="dataCell"><apex:outputField value="{!addrspl.CM_SP_Specialty__c}"/></td>
+                                                                            <td class="dataCell"><apex:outputField value="{!addrspl.CM_SP_Prov_Type__c}" /></td>                                                        
+                                                                            <td class="dataCell"><apex:outputField value="{!addrspl.CM_SP_Board_CD__c}" /></td>
+                                                                            <td class="dataCell"><apex:outputField value="{!addrspl.CM_SP_Effective_Date__c}" /></td>
+                                                                            <td class="dataCell"><apex:outputField value="{!addrspl.CM_SP_End_Date__c}" /></td>
+                                                                            <td class="dataCell"><apex:outputField value="{!addrspl.CM_SP_SubSpec_CD__c}" /></td>
+                                                                            <td class="dataCell"><apex:outputField value="{!addrspl.CM_SP_Specialty_CD__c}" /></td>
+                                                                            <td class="dataCell"><apex:outputField value="{!addrspl.CM_SP_Provi_Type_CD__c}" /></td>
+                                                                        </tr>
+                                                                    </apex:repeat>                                
+                                                                </table>
+                                                            </apex:outputPanel>
+                                                        </td>   
+                                                    </tr>
+                                                    <tr id="{!$Component.repeatprovider}:Fifth" class="dataRow">
+                                                        <td colspan="50" style="padding:10px; padding-left: 45px;">                                                            
+                                                            <apex:outputPanel layout="none" rendered="{!IF(sp.Hours_of_Operation__r.size == 0,false,true)}"> 
+                                                                <h3>Hours of Operation Info</h3>
+                                                                <table id="tableHOO" class="list slds-vf-data-table" border="0" cellpadding="0" cellspacing="0">                                
+                                                                    <tr class="headerRow">                                                        
+                                                                        <th>{!$objectType.CM_Hours_of_Operation__c.Fields.Name.Label}</th>
+                                                                        <th>{!$objectType.CM_Hours_of_Operation__c.Fields.CM_HoO_Monday_Opening_Hour__c.Label}</th>
+                                                                        <th>{!$objectType.CM_Hours_of_Operation__c.Fields.CM_HoO_Monday_Closing_Hour__c.Label}</th>
+                                                                        <th>{!$objectType.CM_Hours_of_Operation__c.Fields.CM_HoO_Tuesday_Opening_Hour__c.Label}</th>
+                                                                        <th>{!$objectType.CM_Hours_of_Operation__c.Fields.CM_HoO_Tuesday_Closing_Hour__c.Label}</th>
+                                                                        <th>{!$objectType.CM_Hours_of_Operation__c.Fields.CM_HoO_Wednesday_Opening_Hour__c.Label}</th>
+                                                                        <th>{!$objectType.CM_Hours_of_Operation__c.Fields.CM_HoO_Wednesday_Closing_Hour__c.Label}</th>
+                                                                        <th>{!$objectType.CM_Hours_of_Operation__c.Fields.CM_HoO_Thursday_Opening_Hour__c.Label}</th>
+                                                                        <th>{!$objectType.CM_Hours_of_Operation__c.Fields.CM_HoO_Thursday_Closing_Hour__c.Label}</th>
+                                                                        <th>{!$objectType.CM_Hours_of_Operation__c.Fields.CM_HoO_Friday_Opening_Hour__c.Label}</th>
+                                                                        <th>{!$objectType.CM_Hours_of_Operation__c.Fields.CM_HoO_Friday_Closing_Hour__c.Label}</th>
+                                                                        <th>{!$objectType.CM_Hours_of_Operation__c.Fields.CM_HoO_Saturday_Opening_Hour__c.Label}</th>
+                                                                        <th>{!$objectType.CM_Hours_of_Operation__c.Fields.CM_HoO_Saturday_Closing_Hour__c.Label}</th>
+                                                                        <th>{!$objectType.CM_Hours_of_Operation__c.Fields.CM_HoO_Sunday_Opening_Hour__c.Label}</th>
+                                                                        <th>{!$objectType.CM_Hours_of_Operation__c.Fields.CM_HoO_Sunday_Closing_Hour__c.Label}</th> 
+                                                                        <th>{!$objectType.CM_Hours_of_Operation__c.Fields.CM_HoO_Part_of_Day_Code__c.Label}</th>
+                                                                        <th>{!$objectType.CM_Hours_of_Operation__c.Fields.CM_HoO_Open_24_7__c.Label}</th>                  
+                                                                    </tr>                                
+                                                                    <apex:repeat id="repeathoursofOp" value="{!sp.Hours_of_Operation__r}" var="hoo">
+                                                                        <tr class="dataRow">                                                       
+                                                                            <td class="dataCell">
+                                                                                <apex:outputLink value="/{!hoo.Id}">
+                                                                                    <apex:outputText value="{!hoo.Name}"></apex:outputText>
+                                                                                </apex:outputLink>
+                                                                            </td>                                                                            
+                                                                            <td class="dataCell"><apex:outputField value="{!hoo.CM_HoO_Monday_Opening_Hour__c}"/></td>
+                                                                            <td class="dataCell"><apex:outputField value="{!hoo.CM_HoO_Monday_Closing_Hour__c}" /></td>                                                        
+                                                                            <td class="dataCell"><apex:outputField value="{!hoo.CM_HoO_Tuesday_Opening_Hour__c}" /></td>
+                                                                            <td class="dataCell"><apex:outputField value="{!hoo.CM_HoO_Tuesday_Closing_Hour__c}" /></td>
+                                                                            <td class="dataCell"><apex:outputField value="{!hoo.CM_HoO_Wednesday_Opening_Hour__c}" /></td>
+                                                                            <td class="dataCell"><apex:outputField value="{!hoo.CM_HoO_Wednesday_Closing_Hour__c}" /></td>
+                                                                            <td class="dataCell"><apex:outputField value="{!hoo.CM_HoO_Thursday_Opening_Hour__c}" /></td>
+                                                                            <td class="dataCell"><apex:outputField value="{!hoo.CM_HoO_Thursday_Closing_Hour__c}" /></td>
+                                                                            <td class="dataCell"><apex:outputField value="{!hoo.CM_HoO_Friday_Opening_Hour__c}" /></td>
+                                                                            <td class="dataCell"><apex:outputField value="{!hoo.CM_HoO_Friday_Closing_Hour__c}" /></td>
+                                                                            <td class="dataCell"><apex:outputField value="{!hoo.CM_HoO_Saturday_Opening_Hour__c}" /></td>
+                                                                            <td class="dataCell"><apex:outputField value="{!hoo.CM_HoO_Saturday_Closing_Hour__c}" /></td>
+                                                                            <td class="dataCell"><apex:outputField value="{!hoo.CM_HoO_Sunday_Opening_Hour__c}" /></td>
+                                                                            <td class="dataCell"><apex:outputField value="{!hoo.CM_HoO_Sunday_Closing_Hour__c}" /></td>
+                                                                            <td class="dataCell"><apex:outputField value="{!hoo.CM_HoO_Part_of_Day_Code__c}" /></td>
+                                                                            <td class="dataCell"><apex:outputField value="{!hoo.CM_HoO_Open_24_7__c}" /></td>
+                                                                        </tr>
+                                                                    </apex:repeat>                                
+                                                                </table>
+                                                            </apex:outputPanel>
+                                                        </td>   
+                                                    </tr>              
+                                                </apex:repeat>                                
+                                            </table>
+                                        </apex:outputPanel>
+                                    </td>   
+                                </tr>
+                            </apex:repeat>  
+                        </tbody>    
+                    </table>
+                </apex:outputPanel>
+
+            <!-- End of Provider Tax Identification Info block with Service and Payee address location-->
+            
+            <!-- Affiliation Information block -->
+            <apex:pageblocksection title="Affiliation Info"  showheader="true" collapsible="true" columns="1" >
+                <apex:pageBlockTable id="pii" value="{!affiliationsList}" var="affiliation" rendered="{!IF(affiliationsList.size ==0,false,true)}">
+                    <apex:column headerValue="Affiliation Info">
+                        <apex:outputlink value="/{!affiliation.Id}">
+                            <apex:outputtext value="{!affiliation.Name}"/>
+                        </apex:outputlink>
+                    </apex:column>
+                    <apex:column value="{!affiliation.Account__c}" />
+                    <apex:column value="{!affiliation.PFIN__c}" />
+                    <apex:column value="{!affiliation.CM_Billing_PFIN__c}" /> 
+                    <apex:column value="{!affiliation.CM_Affiliated_Provider_Name__c}" />
+                    <apex:column value="{!affiliation.CM_Affiliated_to_Service_PFIN__c}" />
+                    <apex:column value="{!affiliation.CM_Affiliated_to_Billing_PFIN__c}" />
+                    <apex:column value="{!affiliation.CM_Affiliated_to_Network_Code__c}" />
+                    <apex:column value="{!affiliation.Start_Date__c}" />
+                    <apex:column value="{!affiliation.End_Date__c}" />
+                    <apex:column value="{!affiliation.Type__c}" />
+                </apex:pageBlockTable>
+            </apex:pageblocksection>
+            <!-- End of Affiliation Information block -->
+            
+            <!-- Speciality Information block -->
+            <apex:pageblocksection title="Provider Specialty Info"  showheader="true" collapsible="true" columns="1" >
+                <apex:pageBlockTable id="pii" value="{!specialityList}" var="speciality" rendered="{!IF(specialityList.size ==0,false,true)}">
+                    <apex:column headerValue="Specialty Info">
+                        <apex:outputlink value="/{!speciality.Id}">
+                            <apex:outputtext value="{!speciality.Name}"/>
+                        </apex:outputlink>
+                    </apex:column>
+                    <apex:column value="{!speciality.CM_SP_Specialty__c}" />
+                    <apex:column value="{!speciality.CM_SP_Prov_Type__c}" />
+                    <apex:column value="{!speciality.CM_SP_Board_CD__c}" />
+                    <apex:column value="{!speciality.CM_SP_Effective_Date__c}" />
+                    <apex:column value="{!speciality.CM_SP_End_Date__c}" />
+                    <apex:column value="{!speciality.CM_SP_SubSpec_CD__c}" />
+                    <apex:column value="{!speciality.CM_SP_Specialty_CD__c}" />
+                    <apex:column value="{!speciality.CM_SP_Provi_Type_CD__c}" />
+                </apex:pageBlockTable>
+            </apex:pageblocksection>
+            <!-- End of Speciality Information block -->
+            
+            <!-- Case Information block -->
+            <apex:pageblocksection title="Case Info"  showheader="true" collapsible="true" columns="1" >
+                <apex:pageBlockTable id="pii" value="{!caseList}" var="case" rendered="{!IF(caseList.size ==0,false,true)}">
+                    <apex:column headerValue="Case Number">
+                        <apex:outputlink value="/{!case.Id}">
+                            <apex:outputtext value="{!case.CaseNumber}"/>
+                        </apex:outputlink>
+                    </apex:column>
+                    <apex:column value="{!case.Subject}" />
+                    <apex:column value="{!case.CreatedDate}" />
+                    <apex:column value="{!case.ClosedDate}" />
+                    <apex:column value="{!case.Status}" />
+                    <apex:column value="{!case.Priority}" />
+                </apex:pageBlockTable>
+            </apex:pageblocksection>
+            <!-- End of Case Information block -->
+            
+            <!-- Rolodex Account Information block -->
+            <!--<apex:pageblocksection title="Rolodex Info"  showheader="true" collapsible="true" >
+                <apex:pageBlockTable id="pii" value="{!rolodexAccountsList}" var="rolodex" rendered="{!IF(rolodexAccountsList.size ==0,false,true)}">
+                    <apex:column headerValue="Account Name (Rolodex Name)">
+                        <apex:outputlink value="/{!rolodex.Id}">
+                            <apex:outputtext value="{!rolodex.Name}"/>
+                        </apex:outputlink>
+                    </apex:column>
+                    <apex:column value="{!rolodex.PersonTitle}" />
+                    <apex:column value="{!rolodex.Phone}" />
+                    <apex:column value="{!rolodex.Fax}" />
+                    <apex:column value="{!rolodex.PersonEmail}" />
+                    <apex:column value="{!rolodex.CM_RX_Effect_Date__pc}" />
+                    <apex:column value="{!rolodex.CM_RX_End_Date__pc}" />
+                    <apex:column value="{!rolodex.CM_RX_Rsn_For_Leaving__pc}" />
+                    <apex:column value="{!rolodex.PersonMobilePhone}" />
+                    <apex:column value="{!rolodex.CM_Corporate_Entity_Code__c}" />
+                    <apex:column value="{!rolodex.CM_Rolodex_Account__c}" />
+                </apex:pageBlockTable>
+            </apex:pageblocksection>-->
+            <!-- End of Rolodex Account Information block -->            
+            
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!prevPage}" value="Back to Provider Page"/>
+            </apex:pageBlockButtons><script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+            <script>
+                jQuery.noConflict();
+            function toggleContactRow(rowId) {
+                try {
+                    var HeadTable = jQuery(document.getElementById(rowId + ":Img"));
+                    var FirstTable = jQuery(document.getElementById(rowId + ":First"));
+                    var SecondTable = jQuery(document.getElementById(rowId + "Second"));
+                    var ThirdTable = jQuery(document.getElementById(rowId + ":Third"));
+                    var FourthTable = jQuery(document.getElementById(rowId + ":Fourth"));
+                    var FifthTable = jQuery(document.getElementById(rowId + ":Fifth"));
+                    
+                    if (HeadTable.hasClass("hideContacts")) {
+                        HeadTable.attr("class", "showContacts");
+                        FirstTable.hide();
+                        SecondTable.hide();
+                        ThirdTable.hide();
+                        FourthTable.hide();
+                        FifthTable.hide();
+                    }
+                    else {
+                        HeadTable.attr("class", "hideContacts");
+                        FirstTable.show();
+                        SecondTable.show();
+                        ThirdTable.show();
+                        FourthTable.show();
+                        FifthTable.show();
+                    }
+                }
+                catch (e) { alert(e); }
+            }              
+            function toggleSelectAll(elCheckbox, rowId) {
+                try {
+                    var SelectAll = jQuery(elCheckbox);
+                    var ContactsRow = jQuery(document.getElementById(rowId + ":Contact"));
+                    ContactsRow.find(".ContactCheckbox").each(function() {
+                        jQuery(this).prop("checked", SelectAll.is(":checked"));
+                    });
+                }
+                catch (e) { alert(e); }
+            }            
+            </script>           
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

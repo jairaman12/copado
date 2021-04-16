@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>fakeemail@bcbsil.com</email>
+    <name>TX Cred Inquiry to Network – SouthEast</name>
+    <queueMembers>
+        <roles>
+            <role>Provider_Data_Rep_TX</role>
+            <role>Texas_PNC</role>
+            <role>Texas_Supervisor</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

@@ -1,0 +1,17 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">    
+    <center><b><h3 class="slds-text-heading_small">NOTE:</h3></b></center>
+    <div class="slds-align_absolute-center slds-text-longform">
+        <ol>
+            <li>All requests are worked in the order they were received. Once completed, a notification will be sent to the email address submitted.</li>
+            <li>Please contact your appropriate state below for further information
+                <ul>
+                    <li>For Illinois - Netops_Provider_Update@bcbsil.com</li>
+                    <li>For Montana  - HCS-X6100@bcbsmt.com</li>
+                    <li>For Texas  - Contact your network representative or click here <lightning:formattedText linkify="true" value="https://www.bcbstx.com/provider/contact_us.html" /></li>
+                    <li>For New Mexico - <lightning:formattedText linkify="true" value="https://www.bcbsnm.com/provider/contact_us.html" /></li>
+                    <li>For Oklahoma  - 1-800-722-3730 or email oknetworkmanagement@bcbsok.com</li>
+                </ul>
+            </li>
+        </ol>       
+    </div>    
+</aura:component>

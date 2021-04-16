@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>fakeemail@bcbsil.com</email>
+    <name>OMNI_TX_Standard Contracting Email</name>
+    <queueMembers>
+        <users>
+            <user>alison_flaumenbaum@bcbstx.com.provider</user>
+            <user>alivia_hughes@bcbstx.com.provider</user>
+            <user>ann_poweska@bcbstx.com.provider</user>
+            <user>carmen_flint@bcbstx.com.provider</user>
+            <user>dori_a_sanchez@bcbstx.com.provider</user>
+            <user>ebony_white@bcbstx.com.provider</user>
+            <user>elvia_bolivar@bcbstx.com.provider</user>
+            <user>helen_carley@bcbstx.com.provider</user>
+            <user>jared_j_boldon@bcbstx.com.provider</user>
+            <user>karla_cortinas@bcbstx.com.provider</user>
+            <user>kelly_rooney@bcbstx.com.provider</user>
+            <user>lanette_nalepa@bcbstx.com.provider</user>
+            <user>samantha_franklin@bcbstx.com.provider</user>
+            <user>shalaman_washington@bcbstx.com.provider</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>Priority_5</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>OMNI_Queue__c</sobjectType>
+    </queueSobject>
+</Queue>

@@ -1,0 +1,48 @@
+<apex:page standardController="Provider_Networks__c" extensions="ProviderNetworkLoadEditPageController" lightningStylesheets="true">
+    <apex:form >
+        <apex:sectionHeader title="Provider Details Edit" subtitle="{!provNetObj.Name}" />
+        <apex:pageBlock title="Provider Details Edit" >
+            <apex:pageBlockButtons >
+                    <apex:commandButton title="Save" value="Save" action="{!save}"/>
+                    <apex:commandButton title="Cancel" value="Cancel" action="{!cancel}"/>
+                </apex:pageBlockButtons>
+            <apex:pagemessages />
+            <apex:pageBlockSection columns="2">
+            
+                <apex:outputField value="{!provNetObj.Prov_ID__c}" />
+                
+                <apex:pageBlockSectionItem rendered="{!provNetObj.Case_Number__c!=null}" >
+                    <apex:outputLabel value="Network Case" />
+                    <apex:outputField value="{!provNetObj.Case_Number__c}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem rendered="{!provNetObj.Contracting_Case__c!=null}" >
+                    <apex:outputLabel value="Contracting Case" />
+                    <apex:outputField value="{!provNetObj.Contracting_Case__c}" />
+                </apex:pageBlockSectionItem>
+                  <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Provider Name"/>
+                  <apex:outputField value="{!provNetObj.ProviderName__c}" />                  
+              </apex:pageBlockSectionItem>             
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="PFIN"/> 
+                <apex:outputField value="{!provNetObj.PFIN_onBoarding__c}" />              
+              </apex:pageBlockSectionItem>
+                <apex:inputField value="{!provNetObj.Network_Code_Name__c}" required="true"/>
+                <apex:pageBlockSectionItem >
+              <apex:outputLabel value="Plan Id"/>
+                <apex:outputField value="{!provNetObj.Plan_Id__c}" />
+               </apex:pageBlockSectionItem>
+                <apex:inputField value="{!provNetObj.Networks_Effective_Date__c}" />
+                <apex:inputField value="{!provNetObj.Designation_Code__c}" />
+                <apex:inputField value="{!provNetObj.Comp_Grid_Code__c}" />
+                <apex:inputField value="{!provNetObj.Panel_code__c}" />
+                <apex:inputField value="{!provNetObj.Roles_Code__c}" />
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="" />
+                    <apex:inputField value="{!provNetObj.Network_Load_Plan_Id__c}" style="display:none" />
+                </apex:pageBlockSectionItem>
+                
+                </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

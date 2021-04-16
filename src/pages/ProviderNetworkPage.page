@@ -1,0 +1,62 @@
+<apex:page sidebar="false" Standardcontroller="Provider_Networks__c" extensions="ProviderNetworkCls" tabStyle="Account" title="New Provider Network">
+   <apex:form id="networkForm" >
+        <apex:sectionHeader title="New Provider Network" subtitle="New Provider Network"/>
+       <apex:pageBlock id="casePageBlock" tabStyle="Account">
+           <apex:pageBlockButtons location="top" >
+               <apex:outputPanel >
+                   <apex:commandButton value="Save" action="{!saveAction}" />
+                   <apex:commandButton value="Save & New" action="{!saveAndNewAction}"/>
+                   <apex:commandButton value="Cancel" action="{!backToCase}"/>
+               </apex:outputPanel>
+           </apex:pageBlockButtons>
+       
+       <apex:pageBlockSection columns="2" showHeader="true" title="Provider Network Information">
+           
+           <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Network"  />
+                    <apex:actionRegion >
+                        <apex:selectList size="1" id="network" value="{!network}">
+                              <apex:actionSupport event="onchange" action="{!displayNetworkNames}" reRender="networkName"/>
+                            <apex:selectOptions value="{!networks}"></apex:selectOptions>
+                        </apex:selectList>
+                    </apex:actionRegion>
+           </apex:pageBlockSectionItem>
+           
+           <apex:outputField value="{!providerNetwork.Case_Number__c}" />
+           <apex:pageBlockSectionItem >
+               <apex:outputLabel value="Name"  />
+               <apex:selectList size="1" id="networkName" value="{!networkName}">
+                   <apex:actionSupport event="onchange" action="{!displayNetworks}" reRender="network"/>
+                   <apex:selectOptions value="{!networkNames}"></apex:selectOptions>
+               </apex:selectList>
+           </apex:pageBlockSectionItem>
+           
+           <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Network Effective Date"/>
+                    <apex:inputField value="{!providerNetwork.Networks_Effective_Date__c}" />
+           </apex:pageBlockSectionItem>
+           
+           <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Comp Grid Code"/>
+                    <apex:inputField value="{!providerNetwork.Comp_Grid_Code__c	}" />
+           </apex:pageBlockSectionItem>
+           
+           <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Designation Code"/>
+                    <apex:inputField value="{!providerNetwork.Designation_Code__c	}" />
+           </apex:pageBlockSectionItem>
+           
+           <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Role Code"/>
+                    <apex:inputField value="{!providerNetwork.Roles_Code__c	}" />
+           </apex:pageBlockSectionItem>
+           <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Panel Code"/>
+                    <apex:inputField value="{!providerNetwork.Panel_code__c}" />
+           </apex:pageBlockSectionItem>
+           <apex:outputText value="{!providerNetwork.Plan_Id__c}" />
+       </apex:pageBlockSection>
+      </apex:pageBlock>
+
+    </apex:form>
+</apex:page>

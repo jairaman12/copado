@@ -1,0 +1,95 @@
+<apex:page standardController="Account" extensions="EmbeddedHospitalAffiliations_Ext" lightningStylesheets="true">
+    <apex:slds />     
+    <apex:includeScript value="{!$Resource.jqueryMin}"/>
+    <link class="user" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>   
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>  
+    <apex:includeScript value="{!$Resource.js4_paginationPage}"/>
+    <apex:stylesheet value="{!$Resource.css4_paginationPage}"/>     
+    <apex:stylesheet value="{!$Resource.css4_embeddedHospitalAffiliations}"/>
+    <script>
+        
+     /*
+        Initialize the number of records to show in pagination.
+     */
+    var numberOfRecordsToShow = 5;        
+        
+        
+    function confirmDelete(){
+        return confirm("Are you sure?");           
+     }   
+    
+    
+    </script>
+
+     
+    <body>
+        <apex:form id="accountsForm" html-novalidate="novalidate">                                      
+            <div id="ffiliationsDisplayContainer">
+                <div style="float:right;"> 
+                Type : 
+                <apex:selectList value="{!type}" multiselect="false" size="1" onChange="{!selectedTypeList}">
+                    <apex:actionSupport event="onchange" action="{!selectedTypeList}" />
+                    <apex:selectOptions value="{!items}"/>
+                </apex:selectList>
+                </div>
+                <apex:outputPanel id="AffiliationList">
+                    <apex:outputPanel >
+                        <div  id="{!Account.Affiliations__r}{!Account.Affiliations2__r}">                    
+                            <div id="tableWrapper">                                             
+                                <table class="list">
+                                    <thead>
+                                        <tr>
+                                             <apex:outputPanel >
+                                                    <td>
+                                                        Action 
+                                                    </td>       
+                                             </apex:outputPanel>                
+                                            
+                                            <td>
+                                               Affiliation Info   
+                                            </td> 
+                                            <td>
+                                                Provider Name
+                                            </td>                             
+                                            <td>
+                                                Affiliated Provider Name
+                                            </td>
+                                              <td>
+                                                Role
+                                            </td>
+                                            <td>
+                                                Affiliation Effective Date  
+                                            </td>                       
+                                            <td>
+                                                Affiliation End Date    
+                                            </td> 
+                                             <td>
+                                                Affiliated to Service PFIN  
+                                            </td>
+                                            <td>
+                                                Type
+                                            </td> 
+                                            <td>
+                                                Affiliated Description Code 
+                                            </td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <apex:outputPanel rendered="{!!isOnchange}">
+                                            <c:affiliationsRepeater relation="{!Account.Affiliations__r}" account="{!Account}" />                           
+                                            <c:affiliationsRepeater relation="{!Account.Affiliations2__r}" account="{!Account}" /> 
+                                        </apex:outputPanel>
+                                        <apex:outputPanel rendered="{!isOnchange}"> 
+                                            <c:affiliationsRepeater relation="{!affiliationList}" account="{!Account}" />
+                                        </apex:outputPanel> 
+                                    </tbody>  
+                                </table>  
+                            </div>
+                        </div>                
+                    </apex:outputPanel> 
+                    <apex:pageMessages />                  
+                </apex:outputPanel>    
+            </div>   
+        </apex:form>
+    </body>    
+</apex:page>

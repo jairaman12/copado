@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>fakemeail@bcbsil.com</email>
+    <name>IL Provider Roster Delegated Automation</name>
+    <queueMembers>
+        <publicGroups>
+            <publicGroup>HSCS_Illinoic_Case_Group_new</publicGroup>
+        </publicGroups>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

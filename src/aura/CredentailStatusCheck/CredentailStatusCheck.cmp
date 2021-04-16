@@ -1,0 +1,128 @@
+<!--
+ Developer                   Date                   Description
+ Ashok N                    06/02/2019                PPN-40802
+-->
+
+<aura:component  controller ="CredentialingStatusCheck">
+  
+    <ltng:require scripts="{!$Resource.jqueryMin}" afterScriptsLoaded="{!c.loadJquery}"/>
+     
+    <!--Attributes defined for handler--> 
+    <aura:handler event="aura:waiting" action="{!c.showSpinner}"/>
+    <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/>
+    <aura:attribute name="Spinner" type="boolean" default="false"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name='CredentialingStatusListWrapper' type='Object' description = 'Returned list from server side controller'/>
+   
+    <!--Attributes defined for compoenent -->
+    <aura:attribute name="LicenseNumber" type="String"/>
+    <aura:attribute name="NPINumber" type="String"/>
+    <aura:attribute name="Mycolumns" type="List"/>
+    
+    <!--loading spinner start... style=Brand Medium (blue dots)-->
+    <aura:if isTrue="{!v.Spinner}">
+        <div aura:id="spinnerId" class="slds-spinner_container">
+            <div class="slds-spinner--brand  slds-spinner slds-spinner--large slds-is-relative" role="alert">
+                <span class="slds-assistive-text">Loading</span>
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+    </aura:if>
+    
+    <!-- Loading spinner end-->   
+    
+    <aura:if isTrue="{!v.showError}">
+        <!-- Show the message to ui -->
+        <div class="slds-notify slds-notify_toast slds-theme_error">
+            <span class="slds-assistive-text">error</span>
+            <div class="slds-notify__content">
+                <h5 class="slds-text-heading_small slds-align_absolute-center">Error Message </h5>
+                <br/>
+                <p class="slds-align_absolute-center">{!v.errorMessage}</p>                
+            </div>
+        </div>
+    </aura:if>
+   
+   <!--Header Information -->
+    
+    <div class="slds-align_absolute-center" style="height:5rem">
+        <lightning:layout verticalAlign="center" class="x-large">
+            <div class="slds-text-align_center">
+                <div class="slds-text-heading_large">Credentialing Status Check</div>
+            </div>
+        </lightning:layout>
+    </div>
+    
+    <form class="slds-form--stacked"> 
+        
+     <!--Form Input -->   
+    <div class="slds-align_absolute-center" style="height:10rem">
+        <div class="c-container">
+            <lightning:layout horizontalAlign ="center" class="x-large"> 
+                <lightning:layoutItem flexibility="auto" padding="around-small">
+                    <div class="row">
+                        
+                        <lightning:input name="text" aura:id="License_Number" label="License Number" 
+                                         placeholder="License Number" value="{!v.LicenseNumber}" onchange ="{!c.Onchangelicensenumber}" />
+                        <div lass="slds-align_absolute-center" style="height:0.5rem">
+                        <P style="text-align:center;color:red">OR</P>
+                        </div>
+                        <lightning:input name="text" aura:id="NPI_Number" label="NPI Number"  
+                                         placeholder="NPI Number" value="{!v.NPINumber}" onchange ="{!c.OnchangeNPINumber}" />
+                    </div> 
+                </lightning:layoutItem>
+                    <!-- Brand variant: Identifies the primary action in a group of buttons -->
+              </lightning:layout>
+            <lightning:layout horizontalAlign ="center" class="x-large">
+            <lightning:button variant="brand" aura:id="Get_Status" label="Get Status" title="Get Status" disabled="true"
+                              onclick="{!c.getStatus }" />
+            </lightning:layout>
+        </div>
+    </div>
+        
+      <!--Capture the error message when the NoProviderId is null--> 
+      
+        <br></br>
+        
+        <aura:if isTrue="{!v.CredentialingStatusListWrapper.NoProviderId!=null}">
+            <div class="slds-text-color_inverse slds-align_absolute-center slds-box slds-theme_default" style="padding:0.5rem;background:#16325c">
+                <h1 style="color:White;text-align:center">{!v.CredentialingStatusListWrapper.NoProviderId}</h1>
+            </div>
+        </aura:if>
+        
+        <!--Capture the error message when the LicenseNumber is null--> 
+        <br></br>
+        
+        <aura:if isTrue="{!v.CredentialingStatusListWrapper.LicenseNumber!=null}">
+            <div class="slds-text-color_inverse slds-align_absolute-center slds-box slds-theme_default" style="padding:0.5rem;background:#16325c">
+                    {!v.CredentialingStatusListWrapper.LicenseNumber}    
+                </div>
+            <lightning:datatable data="{!v.CredentialingStatusListWrapper.ListAccounts}"
+                                 columns="{!v.Mycolumns}" keyField="id" hideCheckboxColumn="true" sortable="true" />
+           </aura:if>
+        
+        <br></br>
+        
+           <!--Capture the error message when the NPINumber is null--> 
+        
+        <aura:if isTrue="{!v.CredentialingStatusListWrapper.NPINumber!=null}">
+              <div class="slds-text-color_inverse slds-align_absolute-center slds-box slds-theme_default" style="padding:0.5rem;background:#16325c">
+                  {!v.CredentialingStatusListWrapper.NPINumber}
+             </div>
+          
+            <!--Used to capture  the column values and columns are refered in helper with the name "LicenseNumber"--> 
+            
+            <lightning:datatable data="{!v.CredentialingStatusListWrapper.ListAccounts}"
+                                 columns="{!v.Mycolumns}" keyField="id" hideCheckboxColumn="true"/>
+            
+        </aura:if>
+        
+    </form>
+    
+   <br></br>
+    
+  <c:CaseStatusNote/>
+   
+    
+</aura:component>

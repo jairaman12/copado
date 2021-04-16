@@ -1,0 +1,13 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<p class="MsoNormal">It has come to our attention that emails sent externally
+from Salesforce using the “Send Email” or “Reply” button are not being
+encrypted when sent.&nbsp;</p><p class="MsoNormal"><br></p><p class="MsoNormal">Staring immediately,&nbsp;all outbound emails containing
+PHI or SPI must be encrypted by including “Secure” in the subject line (see
+example below).&nbsp;</p><p class="MsoNormal">This finding is being reported to the Regulatory &amp;
+Compliance office.&nbsp;</p><p class="MsoNormal"><br></p><p class="MsoNormal">In the meantime, we are in the process of pulling a
+report to identify all previous emails containing PHI/SPI that were sent
+externally without the proper encryption. &nbsp;Example of how email should be formatted below.</p><p class="MsoNormal"><br></p><p class="MsoNormal">If you have any questions, please feel free to contact me. &nbsp;</p><p class="MsoNormal"><br></p><p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">Jennifer Gilliam<o:p></o:p></span></p><p class="MsoNormal"></p><p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">Enterprise Network Integration &amp; Delivery<o:p></o:p></span></p><p class="MsoNormal"><span style="font-size: 10pt; font-family: Wingdings; color: blue;">(</span><span style="font-size: 10pt; font-family: Arial, sans-serif; color: navy;">:</span><span style="font-size: 10pt; font-family: Arial, sans-serif;">&nbsp;972-766-7907</span><span style="font-size: 10pt; font-family: Garamond, serif;">|&nbsp;</span><span style="font-size: 10pt; font-family: Wingdings; color: blue;">*</span><span style="font-size: 10pt; font-family: Arial, sans-serif; color: blue;">:Jennifer_gilliam@bcbstx.com</span></p><p class="MsoNormal"><br></p><p class="MsoNormal"><img src="https://hcscprovider--c.na35.content.force.com/servlet/servlet.ImageServer?id=01541000003FzUF&amp;oid=00D41000000FtwD" border="0" align="left" alt=""><br></p><p class="MsoNormal"><br></p><p class="MsoNormal"><br></p><p class="MsoNormal"><br></p>]]></td>
+</tr>
+</table>

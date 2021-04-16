@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Network_Code__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Network Code</label>
+        <length>10</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Network_Name__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Network Name</label>
+        <length>160</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Plan_Id__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Plan Id</label>
+        <required>true</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>IL1</fullName>
+                    <default>true</default>
+                    <label>IL1</label>
+                </value>
+                <value>
+                    <fullName>MT1</fullName>
+                    <default>false</default>
+                    <label>MT1</label>
+                </value>
+                <value>
+                    <fullName>NM1</fullName>
+                    <default>false</default>
+                    <label>NM1</label>
+                </value>
+                <value>
+                    <fullName>OK1</fullName>
+                    <default>false</default>
+                    <label>OK1</label>
+                </value>
+                <value>
+                    <fullName>TX1</fullName>
+                    <default>false</default>
+                    <label>TX1</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Networks &amp; Codes</label>
+    <pluralLabel>Networks &amp; Codes</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>27.0</apiVersion>
+    <available>false</available>
+    <description>Email Template for Agreement LineItem Approval Notification (Cancellation)</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Apttus Agreement LineItem Approval Notification (Cancellation)</name>
+    <packageVersions>
+        <majorNumber>10</majorNumber>
+        <minorNumber>444</minorNumber>
+        <namespace>Apttus</namespace>
+    </packageVersions>
+    <packageVersions>
+        <majorNumber>9</majorNumber>
+        <minorNumber>26</minorNumber>
+        <namespace>Apttus_Approval</namespace>
+    </packageVersions>
+    <style>none</style>
+    <subject>Approval Request for Agreement Line Item &apos;&apos; has been cancelled</subject>
+    <type>visualforce</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

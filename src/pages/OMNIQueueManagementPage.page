@@ -1,0 +1,309 @@
+<apex:page controller="OMNIQueueManagementCls" extensions="OMNIReservedQueueManagementCls" tabStyle="Case">
+<apex:includeScript value="{!URLFOR($Resource.JQuery,'jquery-3.1.1.min.js')}"  />
+    <apex:includeScript value="{!URLFOR($Resource.jqueryModal,'jquery.modal.min.js')}"  />
+    <apex:stylesheet value="{!URLFOR($Resource.jqueryModal,'jquery.modal.min.css')}"/>
+    <style type="text/css">
+        
+      .required:before
+    {  
+        color: red;
+        content: '* ';
+        display: inline;
+        background-position: right top;
+    }
+
+    .active[rel="modal"] 
+    {
+       display: block;
+    }
+    
+    .clearfix::after 
+    {
+      clear: both;
+    }
+    
+ [rel="modal"] .modal-buttons {
+    padding: 0 0 10px;
+    }
+ #rte-modalOverlay
+    {
+        background-color: #003466;
+        display: none;
+        height: 100%;
+        left: 0;
+        opacity: 0.5;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 99998;          
+    }
+ .topics-label-custom 
+  {
+    padding-top: 2px;
+    padding-right: 10px;
+    padding-bottom: 2px;
+    padding-left: 176px;
+    text-align: left;
+    font-size: 91%;
+    font-weight: bold;
+    color : #4a4a56;
+    padding-left: 13.85%;
+    }
+     
+   [rel="modal"] 
+   {
+        padding: 1.5em; 
+        max-height: calc(100% - 5em);
+        max-width: calc(100% - 5em);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+        background: #fff none repeat scroll 0 0;
+        border-radius: 10px;
+        color: #003366;
+        text-align: center;
+        text-transform: uppercase;
+        z-index: 999999;
+                
+    }           
+       
+        
+    select[id*='priority'], span#afterPriority
+    {
+        float: left;      
+    }
+        
+    span#afterPriority
+    {
+        
+        margin-top: -1em;
+        margin-left: 1em;
+        
+    }    
+        
+        
+        
+    </style>
+    <script type="text/javascript">
+    $j = jQuery.noConflict();
+    function openRteEditor(rowNumber)
+    {        
+        document.getElementById('{!$Component.frm.rowNumberHidden}').value = rowNumber;  
+        displayProcessors();
+        $j('#rte-modalOverlay').css('display','block');
+        $j('#rte-modal').addClass('active');
+    }
+    function displayRequestTypes(){
+        findrequestTypes();
+    }
+    function processorsForreservedQueue()
+    {
+         ApexPages.getMessages().clear();
+        processorsForreservedQueue();
+    }
+    function callDisplayRecords(){
+        doDisplayQueuerecords();
+    }
+    function closeModalWindow()
+    {
+        //updateProcessors();
+        $j('#rte-modal').removeClass('active');
+        $j('#rte-modalOverlay').css('display','none');
+    }
+    
+     function intiateSave()
+    {
+        var selectedRow = $j('input[id$="rowNumberHidden"]').val();
+        updateProcessors();
+       $j('#rte-modalOverlay').css('display','none');
+       $j('#rte-modal').removeClass('active');
+    }
+    </script>
+    
+    <script>
+    $j().ready(  
+        function()
+        {
+            $j("select[id*='priority']").after("<span id='afterPriority'><p>Priority 1-3    ->  Highest Reserved Priority Queue</p><p>Priority 4    ->  Reserved for Govt queues</p><p>Priority 5-15    ->  5 = High Priority Queue 15 = Lowest Priority Queue</p></span>");    
+            
+        }
+       );
+    </script>
+
+    <apex:form id="frm">
+     <apex:pageMessages id="showmsg"></apex:pageMessages>
+        <apex:inputHidden id="rowNumberHidden" value="{!rowNumberHidden}" />
+         <apex:tabPanel switchType="client" selectedTab="name1" id="theTabPanel">
+              <apex:tab label="New Queue" name="name1" id="tabOne">
+               <apex:commandButton style="margin-left:40%;width:100px;" value="Save" action="{!doSave}"/>
+               <apex:commandButton style="margin-left:.5%;width:100px;" value="Cancel" action="{!refreshPage}"/>
+              <apex:pageBlock >
+                  <apex:actionfunction name="findrequestTypes" action="{!displayCaseReqtypes}" rerender="out,msp1,pgBlock,out3" status="mystatus"/>
+                  <apex:actionfunction name="displayProcessors" action="{!displayProcessors}" rerender="out3,msp2" status="mystatus"/>
+                  <apex:actionfunction name="updateProcessors" action="{!updateProcessors}" rerender="pgBlock" status="mystatus" />
+                  
+                  <apex:pageblocksection title="Queue Information" columns="1" collapsible="true" >
+                        <apex:inputfield label="Queue Name*" value="{!omniQueueObj.Name}" rendered="{!IF(isEditPage==false,true,false)}" />
+                       <apex:outputField label="Queue Name" value="{!omniQueueObj.Name}" rendered="{!IF(isEditPage==true,true,false)}"/>
+
+                       <apex:inputField label="Priority*" value="{!omniQueueObj.Queue_Priority__c}" id="priority"></apex:inputField>                     
+                      <apex:selectList label="Case Types*" size="1" value="{!selectedCaseType}" onchange="displayRequestTypes();" id="caseTypeList" rendered="{!IF(caseTypeOptions.size>0,true,false)}" >
+                                <apex:selectOption itemLabel="None" itemvalue="None" ></apex:selectOption>
+                                <apex:selectOptions value="{!caseTypeOptions}"></apex:selectOptions>
+                      </apex:selectList>                      
+                      <apex:outputpanel id="out" >
+                          <apex:actionstatus id="mystatus" startText="loading.....">
+                            <apex:facet name="stop">
+                                <c:MultiselectPicklist id="msp1" rendered="{!IF(OR(allRequestTypes.size>0,selectedRequests.size>0),true,false)}" leftLabel="Available request types"
+                                                        leftOption="{!allRequestTypes}"
+                                                        rightLabel="Selected request types*"
+                                                        rightOption="{!selectedRequests}"
+                                                        size="6"
+                                                        width="350px">
+                                  </c:MultiselectPicklist>
+                             </apex:facet>
+                          </apex:actionstatus>
+                      </apex:outputpanel>
+                </apex:pageblocksection> 
+          
+      <!--Start of Processor Block -->
+          <!--<apex:pageBlock title="" id="pgBlock"> -->
+            <apex:outputPanel id="pgBlock">
+            <apex:actionRegion rendered="{!displayUserBlock}">
+                  <apex:pageBlockSection id="omniSec" title="Processor Selection" columns="1" collapsible="true">
+                      <apex:variable value="{!0}" var="rowNumber"/>
+                       <apex:outputPanel layout="block">
+                            <apex:commandButton value="Add Processor" action="{!addNewProcessorSelection}" reRender="omniSec" status="myStatus"/> 
+                       </apex:outputPanel>
+                      <apex:pageBlockTable id="omniTable" value="{!omniUserGrpList}" var="omni"> 
+                           <apex:column id="col2" headerValue="Select processor(s)*">
+                             <apex:inputField id="sutFld1" value="{!omni.Selected_Users__c}"/>
+                              <a href="#" onclick="openRteEditor('{!rowNumber}')">
+                                  <apex:image value="{!$Resource.lookup}" width="50" height="50"></apex:image> 
+                               </a>
+                           </apex:column>
+                           <apex:column id="col3" headerValue="Start Date*">
+                             <apex:inputField id="sutFld2" value="{!omni.Start_Date__c}" onmouseout="dataValidation();"/>
+                           </apex:column>
+                            <apex:column id="col4" headerValue="End date*">
+                             <apex:inputField id="sutFld4" value="{!omni.End_Date__c}"/>
+                           </apex:column>
+                           <apex:column id="col6" headerValue="Days*">
+                             <apex:inputField id="sutFld6" value="{!omni.Week_Days__c}"/>
+                           </apex:column>
+                           <apex:column id="col7" headerValue="Active">
+                             <apex:inputField id="sutFld7" value="{!omni.Active__c}"/>
+                           </apex:column>
+                           <apex:column headerValue="Delete">
+                            <apex:commandLink action="{!deleteCurrentRow}" type="image/png" reRender="omniSec" status="myStatus">
+                                <apex:image value="{!$Resource.TrashCanIcon}" width="20" height="20"/>
+                                <apex:param name="rowTodelete" assignTo="{!rowToDelete}" value="{!rowNumber}"/>
+                            </apex:commandLink>
+                            <apex:variable var="rowNumber" value="{!rowNumber + 1}"/>
+                        </apex:column>
+                      </apex:pageBlockTable>
+                  </apex:pageBlockSection>
+            </apex:actionRegion>
+           </apex:outputPanel>
+           <!-- Modal window code -->
+            <div id="rte-modalOverlay" onclick="closeModalWindow()"></div>
+            <div id="rte-modal" rel="modal">
+                <div class="modal-buttons clearfix">
+                        <button type="button" onclick="intiateSave()">Save</button>
+                        <!-- <button type="button">Reset</button> -->
+                        <button type="button" onclick="closeModalWindow()">Cancel</button>
+                </div>
+                <apex:outputPanel id="out3">
+                <c:MultiselectPicklist id="msp2" 
+                                       leftLabel="Available processors"
+                                       leftOption="{!allProcessors}"
+                                       rightLabel="Selected processors"
+                                       rightOption="{!selectedProcessors}"
+                                       size="15"
+                                       width="200px">
+                </c:MultiselectPicklist>
+                </apex:outputPanel>
+           </div>
+         <!-- End of Model Window block-->
+        <!--</apex:pageBlock>-->
+        <!--End of Processor block -->
+              </apex:pageBlock>
+              </apex:tab>
+                  <apex:tab label="Existing Queue(s)" name="name2" id="tabTwo" ontabenter="callDisplayRecords();">
+                      <apex:actionfunction name="doDisplayQueuerecords" action="{!doDisplayQueuerecords}" rerender="queueRecsPanel" status="myStatus" />
+                        <apex:outputpanel id="queueRecsPanel" >
+                        <apex:actionstatus id="mystatus" startText="loading.....">
+                        <apex:facet name="stop">
+                            <apex:pageBlock rendered="{!IF(omniQueueList.size ==0,false,true)}" title="Existing Custom Queue(s)">
+                              <apex:pageBlockTable value="{!omniQueueList}" var="omni">
+                                  <apex:column headerValue="Action">
+                                      <apex:commandLink action="{!openPage}">
+                                          <apex:param name="sid" value="{!omni.id}" assignTo="{!RecordToPass}"/>
+                                          <apex:param name="oid" value="{!omni.OwnerId}" assignTo="{!OwnerIdToPass}"/>
+                                        <apex:outputtext value="Edit"/>
+                                     </apex:commandLink>
+                                  </apex:column>
+                                  <apex:column headerValue="Queue Name" value="{!omni.Name}"/>
+                                  <apex:column headerValue="Selected Case Type" value="{!omni.Case_Type__c}"/>
+                                  <apex:column headerValue="Selected Request Type(s)" value="{!omni.Request_Type_s__c}"/>
+                                  <!--<apex:column headerValue="Selected request Values" value="{!omni.Case_Type_Name_Origin__c}"/> -->
+                                  <apex:column headerValue="Queue Priority" value="{!omni.Queue_Priority__c}"/>
+                                  <apex:column headerValue="Created By" value="{!omni.CreatedById}"/>
+                                  <apex:column headerValue="Last Modified By" value="{!omni.LastModifiedById}"/>
+                              </apex:pageBlockTable>
+                             <!--<apex:outputLabel rendered="{!IF(omniQueueList.size==0,true,false)}">
+                                 No Queue records created yet.
+                             </apex:outputLabel> -->
+                          </apex:pageBlock>
+                         
+                </apex:facet>
+            </apex:actionstatus>
+            <apex:pageBlock rendered="{!IF(omnireservedQueueList.size ==0,false,true)}" title="Reserved Queue(s)">
+                              <apex:pageBlockTable value="{!omnireservedQueueList}" var="omniReservedrecords">
+                                  <apex:column headerValue="Reserved Queue Name" value="{!omniReservedrecords.Name}"/>
+                                  <apex:column headerValue="Selected Processors" value="{!omniReservedrecords.Reserved_Queue_Users__c}"/>
+                                  <apex:column headerValue="Queue Priority" value="{!omniReservedrecords.Queue_Priority__c}"/>
+                                  <apex:column headerValue="Created By" value="{!omniReservedrecords.CreatedById}"/>
+                                  <apex:column headerValue="Last Modified By" value="{!omniReservedrecords.LastModifiedById}"/>
+                              </apex:pageBlockTable>
+            </apex:pageBlock>
+          </apex:outputpanel>
+          </apex:tab>
+          <!--- Block to display reserved Queue -->
+         <apex:tab label="Reserved Priority Queue(s)" name="name3" id="tabThree">
+               <apex:pageBlock id="reservedBlock">
+                   <apex:actionfunction name="processorsForreservedQueue" action="{!processorsForreservedQueue}" rerender="msp2,out4" status="mystatus1"/>
+                   <apex:pageBlockButtons >
+                       <apex:commandButton style="margin-left:20%;width:100px;" value="Save" action="{!doSave1}"/>
+                       <!--<apex:commandButton style="margin-left:.5%;width:100px;" value="Cancel" action="{!refreshPage1}"/> -->
+                   </apex:pageBlockButtons>
+                   <apex:pageblocksection title="Reserved Queues" columns="1" collapsible="true" >
+                       <apex:outputLabel value="Reserved Queue Name" styleClass="topics-label-custom" rendered="{!IF(reservedQueueOption.size>0,true,false)}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                           <apex:selectList size="1" value="{!selectedReserveQueue}" onchange="processorsForreservedQueue()">
+                                <apex:selectOption itemLabel="None" itemvalue="None" ></apex:selectOption>
+                                <apex:selectOptions value="{!reservedQueueOption}"></apex:selectOptions>
+                          </apex:selectList>
+                      </apex:outputLabel> 
+                      <apex:outputpanel id="out4" styleClass="topics-label-custom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                         <apex:actionstatus id="mystatus1" startText="loading.....">
+                         <apex:facet name="stop"> 
+                         <apex:outputLabel >{!isDisplay}</apex:outputLabel>
+                          <c:MultiselectPicklist id="msp2" 
+                                       leftLabel="Available processors"
+                                       leftOption="{!leftOptions}"
+                                       rightLabel="Selected processors"
+                                       rightOption="{!rightOptions}"
+                                       size="15"
+                                       width="350px" rendered="{!IF(isDisplay==true, true, false)}">
+                           </c:MultiselectPicklist>
+                           </apex:facet>
+                           </apex:actionstatus>
+                     </apex:outputpanel>
+                   </apex:pageblocksection>
+              </apex:pageBlock>
+          </apex:tab>
+         </apex:tabPanel> 
+    </apex:form>
+</apex:page>

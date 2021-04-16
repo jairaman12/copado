@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>RecordType settings</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>RecordType settings</value>
+    </caseValues>
+    <fields>
+        <help><!-- Record type developer name --></help>
+        <label><!-- DeveloperName --></label>
+        <name>DeveloperName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Record type Name --></help>
+        <label><!-- Name --></label>
+        <name>Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Record type Id --></help>
+        <label><!-- Record type Id --></label>
+        <name>Record_type_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- Object Name --></help>
+        <label><!-- sObject Type --></label>
+        <name>sObject_Type__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

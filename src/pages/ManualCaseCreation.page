@@ -1,0 +1,182 @@
+<!-- 
+/*****************************************************************
+@Author:    Provider Intake Salesforce team 
+@Date:   09/30/2017
+@Description: This Visual page is created for Manual case creation
+******************************************************************
+*******************************************************
+S.No        ModifiedBy          Description         ModifiedDate
+1.          Subhashini          US# 12814            03/23/2018
+2.          Andrew M.           US# 13773            04/02/2018
+2.          Andrew M.           US# 14663            04/18/2018
+3.          Subhashini          US# 13773            05/03/2018
+4.          Subhashini          US# 17108            27/07/2018
+*******************************************************/    
+-->
+
+<apex:page controller="ManualCaseCreationController" tabStyle="Case" standardStylesheets="false" title="" lightningStylesheets="true" docType="html-5.0">
+<apex:includeScript value="{!$Resource.jqueryMin}"/>
+<apex:stylesheet value="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" /> 
+<apex:includeScript value="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"/>
+<apex:includeScript value="/support/console/39.0/integration.js"/>
+<apex:includeScript value="{!$Resource.js4_paginationPage}"/>
+<apex:slds />    
+<script>
+/* Initialize the number of records to show in pagination */
+var numberOfRecordsToShow = parseInt({!numberOfRecordsToShow});
+vObj.wrapList = {!stringifiedPFINList};
+
+</script>   
+
+<link href="jqueryUI/ui-lightness/query-ui-1.8.19.custom.css" rel="stylesheet" type="text/css"/>   
+
+<style type="text/css">
+    .lex_background {
+        background-color: rgb(175, 197, 222);
+        height: -webkit-fill-available;
+        background-image: url(/_slds/images/themes/oneSalesforce/banner-brand-default.png?cache=210.2);
+        background-repeat: repeat-x;
+        background-position: top left;
+    }
+</style>
+
+<apex:form >
+    <div class="lex_background">
+        <apex:sectionHeader subtitle="Manual Case Creation" title="Request Type Selection"/>
+        <div id="showOptMsgAlt">
+            <ul id="message">
+            </ul>    
+        </div>
+        <apex:pageMessages id="showOptMsg"/>
+        <apex:pageBlock id="pagination1" tabStyle="Account" >
+       
+            <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                    Selected Case Mode: <strong>{!casemode}</strong>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                        <apex:pageblockTable value="{!listOfAllPfinsToNavigate}" var="nonbillpfin" style="width:500px;height:90px;" styleClass="slds-table slds-table_cell-buffer slds-table_bordered">
+                            <apex:column value="{!nonbillpfin}" headerValue="PFIN Number(s)" headerClass="slds-text-title_caps"/>
+                        </apex:pageblockTable>
+                        <!--
+                            <apex:commandButton value="<" action="{!previousManual}" rendered="{!ManualpageNumber>0}" rerender="pagination"/>
+                            <apex:commandButton value=">" action="{!nextManual}" rendered="{!(overAllPfinList !=NULL && overAllPfinList.size > ((ManualpageNumber+1)*10))}" rerender="pagination"/>
+                            <apex:outputText rendered="{!IF(totalWrapPageNumber>1, true, false)}" > Page Number {!ManualpageNumber+1} of {!totalWrapPageNumber}</apex:outputText>
+                        -->
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+     
+    </apex:pageBlock> 
+    <div class="slds-card__header-title slds-truncate" >
+        <apex:pageBlock title="Select the Request Type(s):" tabStyle="Account">
+            <apex:pageBlockSection collapsible="false" rendered="{!IF(CaseMode = 'Add',true,false)}" columns="2" >
+                <apex:pageBlockSection title="Demographic Request Types" collapsible="false" columns="1">
+                    <apex:pageBlockSectionItem >
+                        <apex:inputCheckbox id="adminCheckbox" value="{!admChgFlg}" disabled="{!isAdmin}" />
+                        <apex:outputLabel for="adminCheckbox" value="Administrative Address" />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:inputCheckbox value="{!billChgFlg}" id="billingCheckbox" disabled="{!isBilling}"/>
+                        <apex:outputLabel for="billingCheckbox" value="Billing Address"  />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:inputCheckbox value="{!phyChgFlg}" id="serviceCheckbox" disabled="{!isServiceLocation}"/>
+                        <apex:outputLabel for="serviceCheckbox" value="Service Location" />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:inputCheckbox value="{!addProvFlg}" id="addProviderCheckbox"/>
+                        <apex:outputLabel for="addProviderCheckbox" value="Add Provider to Group/Location" />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:inputCheckbox value="{!specialtyFlg}" id="specialtyCheckbox"/>
+                        <apex:outputLabel for="specialtyCheckbox" value="Specialty" />
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection> 
+                <apex:pageBlockSection title="Network Request Types" collapsible="false" columns="1" >
+                    <apex:pageBlockSectionItem >
+                        <apex:inputCheckbox value="{!addNwkChgFlg}" id="addNetworkCheckbox"/>
+                        <apex:outputLabel for="addNetworkCheckbox" value="Add Network" />
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+                </apex:pageBlockSection>   
+                    <apex:pageBlockSection collapsible="false"  rendered="{!IF(CaseMode = 'Change',true,false)}">                         
+                        <apex:pageBlockSection title="Demographic Request Types" collapsible="false" columns="1">
+                            <apex:pageBlockSectionItem >
+                                <apex:inputCheckbox value="{!admChgFlg}" id="adminCheckbox" disabled="{!isAdmin}"/>
+                                <apex:outputLabel value="Administrative Address" for="adminCheckbox" />
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:inputCheckbox value="{!billChgFlg}" id="billingCheckbox" disabled="{!isBilling}"/>
+                                <apex:outputLabel value="Billing Address" for="billingCheckbox" />
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:inputCheckbox value="{!npiChgFlg}" id="npiAndTaxChecbox"/>
+                                <apex:outputLabel value="NPI/Tax" for="npiAndTaxChecbox" />
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:inputCheckbox value="{!nameChgFlg}" id="nameCheckbox"/>
+                                <apex:outputLabel value="Name" for="nameCheckbox" />
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                    <apex:inputCheckbox value="{!phyChgFlg}" id="serviceCheckbox" disabled="{!isServiceLocation}"/>
+                                 <apex:outputLabel value="Service Location" for="serviceCheckbox" />
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:inputCheckbox value="{!privilegesFlg}" id="privilegesCheckbox"/>
+                                <apex:outputLabel value="Privileges" for="privilegesCheckbox" />      
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                    <apex:inputCheckbox value="{!providerIDsFlg}" id="providerIdsCheckbox"/>
+                                  <apex:outputLabel value="Provider ID's" for="providerIdsCheckbox" /> 
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:inputCheckbox value="{!specialtyFlg}" id="specialtyCheckbox"/>
+                                <apex:outputLabel value="Specialty" for="specialtyCheckbox" />
+                             </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                    <apex:inputCheckbox value="{!othersFlg}" id="otherUpdatesCheckbox" />
+                                <apex:outputLabel value="Other Updates" for="otherUpdatesCheckbox" />
+                                </apex:pageBlockSectionItem>
+                            </apex:pageBlockSection>
+                            <apex:pageBlockSection title="Network Request Types" collapsible="false" columns="1" >
+                                <apex:pageBlockSectionItem >
+                                    <apex:inputCheckbox value="{!reinPrvChgFlg}" id="reinstatePfinCheckbox"/>
+                                    <apex:outputLabel value="Reinstate PFIN" for="reinstatePfinCheckbox" />
+                                </apex:pageBlockSectionItem>
+                            </apex:pageBlockSection>
+                        </apex:pageBlockSection>
+                <apex:pageBlockSection collapsible="false" rendered="{!IF(CaseMode = 'Delete',true,false)}">          
+                    <apex:pageBlockSection title="Demographic Request Types" collapsible="false" columns="1">
+                        <apex:pageBlockSectionItem >
+                            <apex:inputCheckbox value="{!admChgFlg}" id="adminCheckbox" disabled="{!isAdmin}"/>
+                            <apex:outputLabel value="Administrative Address" for="adminCheckbox" />
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:inputCheckbox value="{!phyChgFlg}" id="serviceCheckbox" disabled="{!isServiceLocation}"/>
+                            <apex:outputLabel value="Service Location" for="serviceCheckbox" />
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:inputCheckbox value="{!removeProvFlg}" id="removeProvCheckbox"/>
+                            <apex:outputLabel value="Remove Provider from Group/Location" for="removeProvCheckbox" />
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="Network Request Types" collapsible="false" columns="1" >
+                        <apex:pageBlockSectionItem >
+                            <apex:inputCheckbox value="{!rmNwrkChgFlg}" id="removeNetworkCheckbox"/>
+                            <apex:outputLabel value="Remove Network" for="removeNetworkCheckbox" />   
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:inputCheckbox value="{!termPrvChgFlg}" id="terminatePfinCheckbox"/>
+                            <apex:outputlabel value="Terminate PFIN" for="terminatePfinCheckbox" />
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                </apex:pageBlockSection>
+            <apex:pageBlockButtons id="buttonBlockId" location="bottom">
+                <apex:commandButton action="{!pFINUrl}" value="Back" styleClass="slds-button slds-button_neutral" id="backButton" />
+                <apex:commandButton action="{!redirectPage}" value="Next" onclick="return vObj.validate();" styleClass="slds-button slds-button_brand" id="nextButton"/>           
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        </div>
+    </div>
+</apex:form>
+</apex:page>

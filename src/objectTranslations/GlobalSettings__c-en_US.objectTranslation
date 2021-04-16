@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Global Settings</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Global Settings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Acceptable Plan Ids --></label>
+        <name>Acceptable_Plan_Ids__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account trigger switch --></label>
+        <name>Account_trigger_switch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Affiliation Trigger Switch --></label>
+        <name>Affiliation_Trigger_Switch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Agent trigger switch --></label>
+        <name>Agent_trigger_switch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attachment Trigger Switch --></label>
+        <name>Attachment_Trigger_Switch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Authorised Profiles To Escalate Case --></label>
+        <name>Authorised_Profiles_To_Escalate_Case__c</name>
+    </fields>
+    <fields>
+        <label><!-- Authorized_Profiles_To_Route_Contracting --></label>
+        <name>Authorized_Profiles_To_Route_Contracting__c</name>
+    </fields>
+    <fields>
+        <label><!-- Avoided Case Origins --></label>
+        <name>Avoided_Case_Origins__c</name>
+    </fields>
+    <fields>
+        <label><!-- CRM Case Origin Values --></label>
+        <name>CRM_Case_Origin_Values__c</name>
+    </fields>
+    <fields>
+        <label><!-- CRM Case Status fields --></label>
+        <name>CRM_Case_Status_fields__c</name>
+    </fields>
+    <fields>
+        <label><!-- CRM_Case_record_Type_Id --></label>
+        <name>CRM_Case_record_Type_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- CRM Master Record Type Id --></label>
+        <name>CRM_Master_Record_Type_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- CaseComment Trigger Switch --></label>
+        <name>CaseComment_Trigger_Switch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Attachment Trigger Switch --></label>
+        <name>Case_Attachment_Trigger_Switch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case trigger Switch --></label>
+        <name>Case_trigger_Switch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Credentialing record types --></label>
+        <name>Credentialing_record_types__c</name>
+    </fields>
+    <fields>
+        <label><!-- EmailMessage Trigger Switch --></label>
+        <name>EmailMessage_Trigger_Switch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Enable Ancillary Facility --></label>
+        <name>Enable_Ancillary_Facility__c</name>
+    </fields>
+    <fields>
+        <label><!-- Entity record type id --></label>
+        <name>Entity_record_type_id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fake Email --></label>
+        <name>Fake_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Integration Profile Id --></label>
+        <name>Integration_Profile_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- List size --></label>
+        <name>List_size__c</name>
+    </fields>
+    <fields>
+        <label><!-- MCC Case Origin --></label>
+        <name>MCC_Case_Origin__c</name>
+    </fields>
+    <fields>
+        <label><!-- MCC trigger switch --></label>
+        <name>MCC_trigger_switch__c</name>
+    </fields>
+    <fields>
+        <label><!-- PFFileRecieved --></label>
+        <name>PFFileRecieved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Physician record id --></label>
+        <name>Physician_record_id__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field values are utilized in Apex class  &apos;OMNIQueueRecaluclation&apos; to eliminate the Case record types while querying the records --></help>
+        <label><!-- Record Type Names --></label>
+        <name>Record_Type_Names__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

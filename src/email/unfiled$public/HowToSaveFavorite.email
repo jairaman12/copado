@@ -1,0 +1,12 @@
+Hi all,
+
+Please ensure you have saved the favorite in your browser correctly so you do not have login errors. 
+This will save you hours with the help desk making sure this is saved correctly!
+
+Chrome is the preferred browser for Salesforce.
+
+In Chrome right click on the favorite, click edit, validate the URL field contains only https://hcscprovider.my.salesforce.com/
+
+In Internet Explorer right click on the favorite, click properties, validate the URL field contains only https://hcscprovider.my.salesforce.com/
+
+Thanks!

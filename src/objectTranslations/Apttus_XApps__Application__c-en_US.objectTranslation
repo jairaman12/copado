@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Activated --></label>
+        <name>Apttus_XApps__Activated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unique Id --></label>
+        <name>Apttus_XApps__UniqueId__c</name>
+    </fields>
+    <webLinks>
+        <label><!-- Assign --></label>
+        <name>Apttus_XAppsDS__Assign</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- EditInExcelSetup --></label>
+        <name>Apttus_XApps__EditInExcelSetup</name>
+    </webLinks>
+</CustomObjectTranslation>

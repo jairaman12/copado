@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Remove Network Reasons</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Remove Network Reasons</value>
+    </caseValues>
+    <fields>
+        <label><!-- Inactive Reason Code --></label>
+        <name>Inactive_Reason_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inactive Reason Description --></label>
+        <name>Inactive_Reason_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plan Id --></label>
+        <name>Plan_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Code --></label>
+        <name>Status_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Description --></label>
+        <name>Status_Description__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

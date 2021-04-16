@@ -1,0 +1,474 @@
+<!--
+/******************************
+Visulaforce Page Name : CLM_LocationSearch
+Version               : 1.0
+Function              : This Page is for Agreement provider location selections.
+
+* Developer                     Date                  
+* ----------------------------------------------------------------------------                 
+* Chaitanya Motupalli           04/23/2019 
+
+*****************************/
+-->
+
+<apex:page standardController="Apttus__APTS_Agreement__c" id="page" extensions="CLM_LocationSearchController"  action="{!updteNPIDetails}" showheader="false" lightningStyleSheets="true" sidebar="false">
+    
+    <style>
+        .Rebutton {
+        background-image:url({!URLFOR($Resource.CLM_RemoveIcon)});
+        
+        }
+        .RemoveLocbutton {
+        background-image:url({!URLFOR($Resource.CLM_RemoveIcon)});
+        
+        }
+    </style>
+    
+    <apex:outputPanel rendered="{! !isclassic}">
+        <apex:slds />
+    </apex:outputPanel>
+    <div class="slds-scope" >
+        
+        
+        
+        
+        
+        <!--It generate warning message as per formula field "CLM_Error_Condition__c" created on agreement object(IL,TX,MN plans specific to Professtional and Medical Group types only in classic-->
+        <apex:outputPanel rendered="{!isclassic}">
+            <apex:form >
+                
+                
+                <apex:pageblock rendered="{!(agrmtrec.CLM_Error_Condition__c)}">
+                    
+                    <apex:pageMessage title="Information"
+                                      detail="Cannot select location for this plan"
+                                      severity="warning" strength="1"  />
+                    
+                    <apex:pageBlockButtons location="bottom">
+                        <apex:commandbutton value="Back" action="{!cancel}"  />  
+                    </apex:pageBlockButtons>
+                    
+                </apex:pageblock> 
+                
+            </apex:form>
+        </apex:outputPanel>
+        
+        <!--It generate warning message for IL,TX,MN plans specific to Professtional and Medical Group types only in lightning-->
+        <apex:outputPanel rendered="{! !isclassic}">
+            <apex:form >
+                
+                <apex:pageblock rendered="{!(agrmtrec.CLM_Error_Condition__c)}">
+                    
+                    
+                    <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_warning"  role="alert">
+                        <apex:pageMessage detail="CAN NOT SELECT LOCATIONS FOR THIS PLAN" severity="warning" strength="1"/>
+                    </div>
+                    
+                    <br/><br/>
+                    <div align="center">
+                        <apex:commandbutton value="Back" action="{!cancel}" styleclass="slds-button slds-button_brand"  />
+                        
+                    </div>
+                </apex:pageblock> 
+            </apex:form>
+        </apex:outputPanel>     
+        
+        
+        
+        
+        
+        <!-- Scripting for Selectall checkbox functionality-->
+        
+        <script> 
+        
+         function noenter(ev)  {
+            if (window.event && window.event.keyCode == 13 || ev.which == 13) {
+                callAcctRet();
+                return false;
+             } else {
+                  return true;
+             }
+         }
+         
+         function noenterOther(ev)  {
+            if (window.event && window.event.keyCode == 13 || ev.which == 13) {
+                callAcctRetOther();
+                return false;
+             } else {
+                  return true;
+             }
+         }
+         
+         function selectAll(selecAllBool){
+            
+            if(selecAllBool){
+                for(var i=0; i<'{!searchSites}'.length; i++){
+                    
+                    document.getElementById('page:ajax3:pb1:table:'+i+':selected').checked=true;
+                }
+            }
+            else{
+                for(var i=0; i<'{!searchSites}'.length; i++){
+                    // alert('---'+i);
+                    document.getElementById('page:ajax3:pb1:table:'+i+':selected').checked=false;
+                }
+            }
+        }
+        
+        
+        </script>
+        
+        
+        <!-- This follwing location grid rendered as per the condition embeded in "CLM_Non_Error_Condition__c" formula field on agreement object-->
+        <apex:form id="ajax3" rendered="{!agrmtrec.CLM_Non_Error_Condition__c }">
+            
+            <div  class="slds-box slds-theme_shade">
+                
+                
+                <!-- Funtion to call "RemoveProvId" controller method. It results removing other provider ids from searchWrapList-->
+                
+                <apex:actionFunction name="removeItemFn" action="{!removeProvId}" rerender="ajax3">
+                    <apex:param value="" assignTo="{!removeProvIdTxt}" name="removeProvIdTxt"/>
+                </apex:actionFunction>
+                
+                
+                <!-- Funtion to call "RemoveLocation" controller method. it results remove the perticular record from Agreement provider location 
+related list when you click on "cross"(*) symbol in location grid -->
+                
+                <apex:actionFunction name="removeLocFn" action="{!removeLocation}" rerender="ajax3">
+                    <apex:param value="" assignTo="{!removeLocId}" name="removeLocId"/>
+                </apex:actionFunction>
+                
+                
+                
+                
+                
+                <apex:pageblock title="New Agreement Provider Location" id="pb1">
+                    
+                    
+                    <!-- save and cancel buttons only for lightning UI to show at top of the page -->
+                    
+                    <apex:outputPanel rendered="{! !isclassic}">
+                        <div align="center"  >
+                            
+                            <div class="slds-button-group" role="group">
+                                <apex:commandbutton value="Save & Exit" action="{!createLocations}" styleclass="slds-button slds-button_neutral" />
+                                <apex:commandbutton value="Quick Save" action="{!quickSave}" styleclass="slds-button slds-button_neutral" rerender="resultTable"/>
+                                <apex:commandbutton value="Cancel" action="{!Cancel}"  styleclass="slds-button slds-button_neutral" />
+                            </div>
+                        </div><br/><br/>
+                    </apex:outputPanel>
+                    
+                    <table width="50%">
+                        <tr>
+                            <td>
+                                <b> Agreement: </b>&nbsp;&nbsp;<apex:outputfield value="{!Apttus__APTS_Agreement__c.Name}" />
+                            </td>
+                        </tr>
+                        <tr><td/><td/></tr>
+                        <tr><td/><td/></tr>
+                        <tr>
+                            <td>
+                                <b> Account:</b> &nbsp;&nbsp;<apex:outputfield value="{!Apttus__APTS_Agreement__c.Apttus__Account__c}" />
+                            </td>
+                            <td style="width:880px">
+                                <b> Prov Id:</b>&nbsp;&nbsp;<apex:outputfield value="{!Apttus__APTS_Agreement__c.CLM_Provider_Id__c}" />
+                            </td>
+                        </tr>
+                    </table>
+                    <br/><br/>
+                    
+                    
+                    
+                    
+                    
+                    <apex:outputpanel id="provSearch" rendered="{!agrmtrec.CLM_Other_Prov_ID_Search__c}">
+                        
+                        <apex:actionFunction action="{!searchProvId}" name="callAcctRetOther"/>
+                        
+                        <b> Search PFINs or Locations for Other Prov IDs</b><br/><br/>
+                        <apex:pagemessages />
+                        <div class="slds-is-absolute">
+                            <table>
+                                
+                                <tr>
+                                    <!-- It loads "Plus" image and calls "SearchProvId" controller method to add "other provider Id" related loctions to grid-->
+                                    <td style="padding-left:0%;"><b>Other Provider ID:</b> &nbsp; &nbsp; <apex:inputtext value="{!provIdSearchTxt}" onkeypress="return noenterOther(event);" style="height:20px"  html-placeholder="Enter Provider ID"/> </td>
+                                    <td style="padding-right:65%;"><apex:commandbutton image="{!URLFOR($Resource.CLM_Plus)}" style="max-height:20px;"  action="{!searchProvId}" rerender="provSearch,resultTable,pagination,removeAjax"/></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br/>
+                        
+                        
+                    </apex:outputpanel>  
+                    
+                    
+                    <br/>
+                    
+                    <apex:outputpanel id="removeAjax" rendered="{!agrmtrec.CLM_Other_Prov_ID_Search__c}"> 
+                        
+                        <apex:actionregion >                      
+                            <apex:repeat value="{!searchWrapListFinal}" var="wrap">
+                                
+                                <table> 
+                                    
+                                    <tr>
+                                        
+                                        <!--Introduce blank space here-->
+                                        <td style="width:400px"> </td>
+                                        
+                                        <td>
+                                            {!wrap.provId} - {!wrap.accName}
+                                        </td>
+                                        
+                                        
+                                        <td style="width:600px">
+                                            <apex:outputpanel rendered="{!wrap.provId<>null&& wrap.provId<>Apttus__APTS_Agreement__c.CLM_Provider_Id__c }">
+                                                <input type="button" style="width:18px;height:20px;"  onclick="removeItemFn('{!wrap.provId}')" class="Rebutton" />   
+                                            </apex:outputpanel>    
+                                        </td>
+                                        
+                                        
+                                    </tr>
+                                </table>
+                                
+                            </apex:repeat><br/>
+                        </apex:actionregion> 
+                        
+                    </apex:outputpanel>
+                    
+                    
+                    
+                    
+                    <apex:pageblock id="ajax2" > 
+                        
+                        <b> Search By PFIN or Tax ID or NPI </b><br/><br/>
+                        
+                        <table width="60%">
+                            <tr>
+                                <td width="1%">
+                                    <b>PFIN</b>
+                                </td>
+                                <td width="10%">
+                                    <apex:inputCheckbox value="{!pFIN}" disabled="{!IF(taxId=true,true,IF(npi=true,true,false))}" >
+                                        <apex:actionsupport event="onchange" rerender="ajax3,table"/>
+                                    </apex:inputcheckbox>
+                                </td>
+                                
+                                <td width="2%">
+                                    <b>Tax ID</b>
+                                </td>
+                                
+                                <td width="10%">
+                                    <apex:inputCheckbox value="{!taxId}" disabled="{!IF(pFIN=true,true,IF(npi=true,true,false))}">
+                                        <apex:actionsupport event="onchange" rerender="ajax3,table"/>
+                                    </apex:inputcheckbox>
+                                </td>
+                                
+                                
+                                <td width="1%">
+                                    <b>NPI</b>
+                                </td>
+                                <td width="10%">
+                                    <apex:inputCheckbox value="{!npi}" disabled="{!IF(pFIN=true,true,IF(taxId=true,true,false))}">
+                                        <apex:actionsupport event="onchange" rerender="ajax3,table"/>
+                                    </apex:inputcheckbox>
+                                </td>
+                            </tr>
+                            
+                        </table>
+                        
+                        
+                        
+                    </apex:pageblock> 
+                    
+                    <apex:outputpanel rendered="{!pFIN || taxId || npi}">
+                       
+                       <apex:actionFunction action="{!smartsearch}" name="callAcctRet"/>
+                       <table>  
+                        <!-- this event calls "smartsearch" controller method-->
+                            <tr>
+                                <td>Search: &nbsp;<apex:inputtext value="{!searchText}" onkeypress="return noenter(event);" style="height:20px" html-placeholder="Do a search...">
+                                    <apex:actionSupport event="onkeyup" action="{!smartsearch}" rerender="resultTable,pagination"/>
+                                    </apex:inputtext>
+                                </td><td></td>
+                            </tr>
+                        </table><br/>   
+                         
+                        
+                        <apex:outputPanel id="resultTable">
+                            <apex:pageblocktable value="{!searchSites}" var="loc" id="table" styleclass="slds-table slds-table_bordered " >
+                                <apex:column id="colum">
+                                    
+                                    
+                                    <!-- mastercheckbox event calls "mastercheckbox" controller method. results to perform select all functionality limit to current page locations-->     
+                                    <apex:facet name="header">
+                                        <apex:inputCheckbox value="{!master}">
+                                            
+                                            <apex:actionsupport event="onchange" action="{!masterCheckBox}" rerender="resultTable,ajax3"/>
+                                            
+                                        </apex:inputCheckbox>
+                                    </apex:facet>
+                                    
+                                    
+                                    <!-- To check individual checkboxes in location grid-->         
+                                    <apex:inputcheckbox value="{!loc.isSelected}" id="selected" rendered="{!loc.disable=false}"/>
+                                    
+                                    
+                                    
+                                    
+                                    <!-- To load an image "green checkbox" when save action gets perform on location record -->         
+                                    <apex:outputpanel rendered="{!loc.disable=true}">
+                                        <img src="{!$Resource.CLM_Selected}" width="80%" height="80%" />
+                                    </apex:outputpanel>
+                                </apex:column>
+                                
+                                <!-- It loads image "cross red mark" when save action get performed results location record disable for further selection on location grid-->     
+                                <apex:column >
+                                    <apex:outputpanel rendered="{!loc.disable=true}">
+                                        <input type="button" style="width:18px;height:20px;"  onclick="removeLocFn('{!loc.servLocation.Id}')" class="RemoveLocbutton" />   
+                                    </apex:outputpanel>
+                                </apex:column>
+                                
+                                
+                                <apex:column rendered="{!if(agrmtRec.Plan__c="Texas",true,false)}">
+                                    <apex:facet name="header">Provider Name</apex:facet>
+                                    <apex:outputfield value="{!loc.servLocation.CM_SPL_Prov__c}"/>
+                                </apex:column>
+                                
+                                
+                                <apex:column rendered="{!(agrmtRec.Plan__c="Montana" && Apttus__APTS_Agreement__c.APTS_Record_Type_Name__c="Non-ASC Ancillary")}">
+                                    <apex:facet name="header">Facility Name</apex:facet>
+                                    <apex:outputfield value="{!loc.servLocation.CM_SPL_Prov__c}"/>
+                                </apex:column>
+                                
+                                <apex:column rendered="{!(agrmtRec.Plan__c="Montana" && Apttus__APTS_Agreement__c.APTS_Record_Type_Name__c="ASC")}">
+                                    <apex:facet name="header">Facility Name</apex:facet>
+                                    <apex:outputfield value="{!loc.servLocation.CM_SPL_Prov__c}"/>
+                                </apex:column>
+                                
+                                <apex:column rendered="{!(agrmtRec.Plan__c="Montana" && Apttus__APTS_Agreement__c.APTS_Record_Type_Name__c="Facility")}">
+                                    <apex:facet name="header">Medical Hospital Facility Name</apex:facet>
+                                    <apex:outputfield value="{!loc.servLocation.CM_SPL_Prov__c}"/>
+                                </apex:column>
+                                
+                                <apex:column rendered="{!if(agrmtRec.Plan__c="Oklahoma",true,false)}">
+                                    <apex:facet name="header">Facility Name</apex:facet>
+                                    <apex:outputfield value="{!loc.servLocation.CM_SPL_Prov__c}"/>
+                                </apex:column>
+                                
+                                <apex:column rendered="{!if(agrmtRec.Plan__c="New Mexico",true,false)}" >
+                                    <apex:facet name="header">Facility Name</apex:facet>
+                                    <apex:outputfield value="{!loc.servLocation.CM_SPL_Prov__c}" />
+                                </apex:column>
+                                
+                                <apex:column rendered="{!if(agrmtRec.Plan__c="Illinois",true,false)}" >
+                                    <apex:facet name="header">Name</apex:facet>
+                                    <apex:outputfield value="{!loc.servLocation.CM_SPL_Prov__c}" />
+                                </apex:column>
+                                
+                                <apex:column rendered="{!if(agrmtRec.Plan__c="Texas",true,false)}">
+                                    <apex:facet name="header">Provider Number(PFIN)</apex:facet>
+                                    {!loc.servLocation.CM_SPL_PFIN_No__c}
+                                </apex:column>
+                                
+                                <apex:column rendered="{!agrmtrec.CLM_PlanSpecificPFIN__c }">
+                                    <apex:facet name="header">PFIN Number</apex:facet>
+                                    {!loc.servLocation.CM_SPL_PFIN_No__c}
+                                </apex:column>
+                                
+                                
+                                
+                                
+                                <apex:column value="{!loc.servLocation.CM_SPL_Addr_Type__c}"/>
+                                <apex:column value="{!loc.servLocation.CLM_Address__c}" />
+                                <apex:column value="{!loc.servLocation.CM_SPL_City__c}" />
+                                <apex:column value="{!loc.servLocation.CM_SPL_Zip_CD__c}"/>
+                                <apex:column value="{!loc.servLocation.CM_SPA_Tax_ID__c}"/>
+                                <apex:column value="{!loc.servLocation.CLM_NPI__c}" />
+                                <apex:column value="{!loc.servLocation.CLM_SPL_Medicare_Number__c}" />
+                                <apex:column value="{!loc.servLocation.CLM_Medicaid_Provider_Number__c}"  />
+                                
+                                
+                                
+                                <apex:column rendered="{!if(agrmtRec.Plan__c="Texas",true,false)}">
+                                    <apex:facet name="header">Vistar Number</apex:facet>
+                                    <apex:outputfield value="{!loc.servLocation.Prov_Id__c}" />
+                                </apex:column>
+                                
+                                
+                                <apex:column rendered="{!if(agrmtRec.Plan__c="New Mexico",true,false)}">
+                                    <apex:facet name="header">Service Type</apex:facet>
+                                    <apex:outputfield value="{!Apttus__APTS_Agreement__c.Provider_Service_Type__c}" />
+                                </apex:column>
+                                
+                            </apex:pageblocktable>
+                            
+                        </apex:outputPanel><br/><br/>
+                       
+                        
+                        
+                        
+                        <!-- Pagination buttons-->  
+                        <apex:outputpanel id="pagination">
+                        
+                         
+                        
+                         <apex:outputpanel rendered="{!searchText=''}" id="pagination3" Style="width:20%"> 
+                         
+                                 
+                            
+                            <apex:outputLabel >Total Locations: {!ofRecords} to {!numRecs} out of {!tot}</apex:outputLabel>
+                          
+                         </apex:outputpanel>
+                              
+                            <div align="center">
+                                <apex:commandButton value="<<" action="{!Firstbtn}" disabled="{!prv}" reRender="ajax3" styleClass="slds-button slds-button_outline-brand"/>
+                                <apex:commandButton value="<" action="{!prvbtn}" disabled="{!prv}" reRender="ajax3"  styleClass="slds-button slds-button_outline-brand"/>
+                                <apex:commandButton value=">" action="{!Nxtbtn}" disabled="{!nxt}"  reRender="ajax3" styleClass="slds-button slds-button_outline-brand"/>
+                                <apex:commandButton value=">>" action="{!lstbtn}" disabled="{!nxt}" reRender="ajax3,pagination3" styleClass="slds-button slds-button_outline-brand"/>
+                                
+                            </div>
+                        </apex:outputpanel>
+                    
+                    </apex:outputpanel> 
+                    
+                    <!-- save and cnacel buttons only for classic view-->  
+                    <apex:pageBlockButtons >
+                        <apex:outputPanel rendered="{!isclassic}">
+                            
+                            <apex:commandbutton value="Save & Exit" action="{!createLocations}"  />
+                            <apex:commandbutton value="Quick Save" action="{!quickSave}"  rerender="resultTable"/>
+                            <apex:commandbutton value="Cancel" action="{!Cancel}" />
+                            
+                        </apex:outputPanel>
+                    </apex:pageBlockButtons><br/><br/>
+                    
+                    
+                    
+                    
+                    <!-- save and cancel buttons only for lightning UI to show at bottom of page -->
+                    <apex:outputPanel rendered="{! !isclassic}">
+                        <div align="center"  >
+                            <div class="slds-button-group" role="group">
+                                <apex:commandbutton value="Save & Exit" action="{!createLocations}" styleclass="slds-button slds-button_neutral" />
+                                <apex:commandbutton value="Quick Save" action="{!quickSave}" styleclass="slds-button slds-button_neutral" rerender="resultTable"/>
+                                <apex:commandbutton value="Cancel" action="{!Cancel}"  styleclass="slds-button slds-button_neutral" />
+                            </div>
+                        </div><br/><br/>
+                    </apex:outputPanel>
+                    
+                    
+                    
+                    
+                    
+                    
+                </apex:pageblock> 
+                
+            </div>
+        </apex:form>
+    </div> 
+    
+    
+</apex:page>

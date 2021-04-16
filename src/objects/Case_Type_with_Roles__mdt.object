@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>CaseType__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>CaseType</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Plan_Id__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Plan Id</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>IL1</fullName>
+                    <default>true</default>
+                    <label>IL1</label>
+                </value>
+                <value>
+                    <fullName>OK1</fullName>
+                    <default>false</default>
+                    <label>OK1</label>
+                </value>
+                <value>
+                    <fullName>NM1</fullName>
+                    <default>false</default>
+                    <label>NM1</label>
+                </value>
+                <value>
+                    <fullName>MT1</fullName>
+                    <default>false</default>
+                    <label>MT1</label>
+                </value>
+                <value>
+                    <fullName>TX1</fullName>
+                    <default>false</default>
+                    <label>TX1</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Role_Developer_Name__c</fullName>
+        <description>All developer names should be separated with ;
+Use below Query to get role Developer Names. 
+&apos;SELECT DeveloperName,Id,Name FROM UserRole&apos;</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Role Developer Name</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <label>Case Type with Roles</label>
+    <pluralLabel>Case Type with Roles</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

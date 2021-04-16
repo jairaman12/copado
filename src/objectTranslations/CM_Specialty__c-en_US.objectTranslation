@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Specialty</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Specialty</value>
+    </caseValues>
+    <fields>
+        <help><!-- Account Tax Address Identifier --></help>
+        <label><!-- Provider Tax Address Identifier --></label>
+        <name>CM_SP_Acc_Tax_Addr__c</name>
+        <relationshipLabel><!-- Specialty --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Board Code --></label>
+        <name>CM_SP_Board_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective Date --></label>
+        <name>CM_SP_Effective_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>CM_SP_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Network --></label>
+        <name>CM_SP_Network__c</name>
+        <relationshipLabel><!-- Specialty --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Provider Type Description --></label>
+        <name>CM_SP_Prov_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider Type Code --></label>
+        <name>CM_SP_Provi_Type_CD__c</name>
+    </fields>
+    <fields>
+        <help><!-- Provider --></help>
+        <label><!-- Provider --></label>
+        <name>CM_SP_Provider__c</name>
+        <relationshipLabel><!-- Specialty --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Specialty Code --></label>
+        <name>CM_SP_Specialty_CD__c</name>
+    </fields>
+    <fields>
+        <help><!-- Specialty --></help>
+        <label><!-- Specialty --></label>
+        <name>CM_SP_Specialty__c</name>
+    </fields>
+    <fields>
+        <label><!-- SubSpecialty Code --></label>
+        <name>CM_SP_SubSpec_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Corporate Entity Code --></label>
+        <name>Corporate_Entity_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Specialty Indicator --></label>
+        <name>Primary_Specialty_Indicator__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- Please use this indicator to enable or disable the IDE provision --></help>
+        <label><!-- Active --></label>
+        <name>Apttus__Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- The provision description --></help>
+        <label><!-- Description --></label>
+        <name>Apttus__Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- The IDE field number --></help>
+        <label><!-- Field Number --></label>
+        <name>Apttus__FieldNumber__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of the IDE provider --></help>
+        <label><!-- IDE Name --></label>
+        <name>Apttus__IDEName__c</name>
+    </fields>
+</CustomObjectTranslation>

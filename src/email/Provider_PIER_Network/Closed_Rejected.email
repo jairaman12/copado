@@ -1,0 +1,11 @@
+Dear {!Case.Title_Submitter__c}.{!Case.Name_Submitter__c} 
+
+For Case Number {!Case.CaseNumber}.
+
+We are sorry that we could not process the change request for {!Case.Name_of_Provider_Group__c}. Please contact us for more information.
+
+ref: {!Case.Thread_Id}
+
+
+Best Regards
+Thank you

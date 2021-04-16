@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Network Codes</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Network Codes</value>
+    </caseValues>
+    <fields>
+        <label><!-- Clinic Class --></label>
+        <name>Clinic_Class__c</name>
+    </fields>
+    <fields>
+        <label><!-- Facility Class --></label>
+        <name>Facility_Class__c</name>
+    </fields>
+    <fields>
+        <label><!-- Government_Network_Indicator --></label>
+        <name>Government_Network_Indicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Network Code --></label>
+        <name>Network_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Network Description --></label>
+        <name>Network_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Physician Class --></label>
+        <name>Physician_Class__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plan Id --></label>
+        <name>Plan_Id__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

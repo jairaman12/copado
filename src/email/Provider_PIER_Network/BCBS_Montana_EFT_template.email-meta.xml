@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>BCBS Montana EFT template</name>
+    <style>none</style>
+    <subject>BCBSMT EFT Registration</subject>
+    <textOnly>Dear {!IF(NOT(ISBLANK(Case.Name_Submitter__c)),Case.Name_Submitter__c, Case.Account_Name_for_Email_Templates__c)},&lt;br&gt;&lt;/br&gt;
+
+Your request to be listed on our file as a Non-Participating Provider has been completed. Sign up for EFT/ERA you must be a registered Availity® Provider Portal user – there is no cost to register at availity.com. If you have questions or inquiries, please contact us at 406-437-6100 or hcsx6100@bcbsmt.com.
+
+We look forward to serving you.
+
+Sincerely,
+Bob Janicek , VP
+
+
+For Internal Purpose only. (NOTE: Please do not remove the Ref id) Ref id {!Case.EmailThread_On_Child__c}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

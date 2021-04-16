@@ -1,0 +1,18 @@
+<!--
+  This component is used to navigate to the Manual ADC Creation Visualforce Page (PFINSelection.vfp)
+  It is invoked by custom actions on Account, Service & Payee Location Address, and Case.
+  Developer: Travis Self
+-->
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:hasSObjectName,force:lightningQuickAction" access="global" controller="ManualADCButtonController">
+    <aura:html tag="style">
+        .slds-modal__container {
+        	display: none;
+        }
+    </aura:html>
+    
+    <lightning:workspaceAPI aura:id="workspace" />	<!-- Identifies where the lightning component was launched -->
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="sobjecttype" type="String" default="{!v.sObjectName}"/>
+  	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>	<!-- Calls the Cient-Side Controller to navigate to the Manual ADC Page -->
+    
+ </aura:component>

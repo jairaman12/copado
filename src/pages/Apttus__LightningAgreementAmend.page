@@ -1,0 +1,42 @@
+<!-- 
+    Apttus Contract Management
+    LightningAgreementAmend
+     
+    @2017-2018 Apttus Inc. All rights reserved.
+
+ -->
+<apex:page standardController="Apttus__APTS_Agreement__c" 
+           extensions="Apttus.AgreementAmendController" docType="html-5.0">
+    <apex:includeLightning />
+    <apex:form id="frmid">
+         <style>
+          html{
+               background: white!important;
+          }
+          body{
+               background: RGB(244,246,249)!important;
+          }
+        </style>
+       <div id="amendAgreementContainer"/>
+        <script>    
+            var autoSaveValue='{!JSENCODE($CurrentPage.parameters.autoSave)}';
+            var retIdValue = '{!JSENCODE($CurrentPage.parameters.retId)}';
+                $Lightning.use("{!ComponentNamespace}:AgreementEditApp", function() {
+                    $Lightning.createComponent("{!ComponentNamespace}:LightningAggregate",{                 
+                        recordTypeId : '{!RecordTypeId}',
+                        recordName : '{!Apttus__APTS_Agreement__c.Name}',
+                        sObjectName : '{!$ObjectType.Apttus__APTS_Agreement__c.Name}',
+                        action : '{!$Label.apttus__amend}',  
+                        recordId : '{!Apttus__APTS_Agreement__c.Id}',
+                        typeofImage : '/images/actions/amend.png',
+                        paramMap : {autoSave : autoSaveValue,retId : retIdValue},
+                        editMode : '{!IsRecordTypeUpdateAllowed}'
+                    },
+                    "amendAgreementContainer",
+                    function(cmp) {
+                        console.log('Component created');
+                    });
+                });
+            </script>
+    </apex:form>
+</apex:page>

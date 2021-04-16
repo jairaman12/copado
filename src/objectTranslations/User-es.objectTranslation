@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Approval Level_OBSOLETE --></label>
+        <name>Apttus_Approval__Approval_Level__c</name>
+        <picklistValues>
+            <masterLabel>Level 1</masterLabel>
+            <translation><!-- Level 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Level 2</masterLabel>
+            <translation><!-- Level 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Level 3</masterLabel>
+            <translation><!-- Level 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Level 4</masterLabel>
+            <translation><!-- Level 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Level 5</masterLabel>
+            <translation><!-- Level 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Level 6</masterLabel>
+            <translation><!-- Level 6 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Next Level Approver_OBSOLETE --></label>
+        <name>Apttus_Approval__Next_Level_Approver__c</name>
+        <relationshipLabel><!-- Users --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- DB Region --></label>
+        <name>DB_Region__c</name>
+        <picklistValues>
+            <masterLabel>APAC</masterLabel>
+            <translation><!-- APAC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA</masterLabel>
+            <translation><!-- EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LA</masterLabel>
+            <translation><!-- LA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NA</masterLabel>
+            <translation><!-- NA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- API_URL --></label>
+        <name>copado__API_URL__c</name>
+    </fields>
+    <fields>
+        <help><!-- The visibility of the message asking users to rate &amp; feedback Copado on the AppExchange is controlled here. --></help>
+        <label><!-- Hide Copado feedback --></label>
+        <name>copado__Hide_Copado_feedback__c</name>
+    </fields>
+    <fields>
+        <label><!-- Show Copado Tips --></label>
+        <name>copado__Show_Copado_Tips__c</name>
+    </fields>
+    <fields>
+        <label><!-- Work Manager Panels --></label>
+        <name>copado__Work_Manager_Panels__c</name>
+    </fields>
+    <fields>
+        <label><!-- Default Marketing Cloud Page --></label>
+        <name>et4ae5__Default_ET_Page__c</name>
+    </fields>
+    <fields>
+        <label><!-- Default MID --></label>
+        <name>et4ae5__Default_MID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Marketing Cloud for AppExchange Admin --></label>
+        <name>et4ae5__ExactTargetForAppExchangeAdmin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Marketing Cloud for AppExchange User --></label>
+        <name>et4ae5__ExactTargetForAppExchangeUser__c</name>
+    </fields>
+    <fields>
+        <label><!-- Marketing Cloud Username --></label>
+        <name>et4ae5__ExactTargetUsername__c</name>
+    </fields>
+    <fields>
+        <label><!-- @deprecated --></label>
+        <name>et4ae5__ExactTarget_OAuth_Token__c</name>
+    </fields>
+    <fields>
+        <label><!-- Valid Marketing Cloud Admin --></label>
+        <name>et4ae5__ValidExactTargetAdmin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Valid Marketing Cloud User --></label>
+        <name>et4ae5__ValidExactTargetUser__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- You do not have permission to edit First Name --></errorMessage>
+        <name>User_FirstName</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You do not have permission to edit Last Name --></errorMessage>
+        <name>User_LastName</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You do not have permission to edit Middle Name --></errorMessage>
+        <name>User_MiddleName</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- ChangeNextLevelApprover --></label>
+        <name>Apttus_Approval__ChangeNextLevelApprover</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GenerateApprovalMatrix --></label>
+        <name>Apttus_Approval__GenerateApprovalMatrix</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GetBackupApprover --></label>
+        <name>Apttus_Approval__GetBackupApprover</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- InactivateUserApprovalMatrix --></label>
+        <name>Apttus_Approval__InactivateUserApprovalMatrix</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SetBackupApprover --></label>
+        <name>Apttus_Approval__SetBackupApprover</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- ViewApprovalMatrix --></label>
+        <name>Apttus_Approval__ViewApprovalMatrix</name>
+    </webLinks>
+</CustomObjectTranslation>

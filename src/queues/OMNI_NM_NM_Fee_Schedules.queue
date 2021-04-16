@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>fakeemail@bcbsil.com</email>
+    <name>OMNI_NM_NM Fee Schedules</name>
+    <queueMembers>
+        <users>
+            <user>althea_james@bcbsnm.com.provider</user>
+            <user>frances_martinez@bcbsnm.com.provider</user>
+            <user>laura_nguyen@bcbsnm.com.provider</user>
+            <user>peter_romano@bcbsnm.com.provider</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>Priority_7</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>OMNI_Queue__c</sobjectType>
+    </queueSobject>
+</Queue>

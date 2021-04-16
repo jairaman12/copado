@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This button helps rep to route Demographic and ADC cases to Contracting queue and it has created part of PPN-30084</description>
+    <height>250</height>
+    <label>Route To Contracting Area</label>
+    <lightningComponent>RouteToContractingButton</lightningComponent>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>LightningComponent</type>
+    <width>-100</width>
+</QuickAction>

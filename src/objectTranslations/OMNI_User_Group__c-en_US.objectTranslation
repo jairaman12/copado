@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>OMNI User Group</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>OMNI User Group</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Group --></label>
+        <name>Group__c</name>
+        <relationshipLabel><!-- OMNI User Group --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Plan Id --></label>
+        <name>Plan_Id__c</name>
+        <picklistValues>
+            <masterLabel>IL1</masterLabel>
+            <translation><!-- IL1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MT1</masterLabel>
+            <translation><!-- MT1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NM1</masterLabel>
+            <translation><!-- NM1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OK1</masterLabel>
+            <translation><!-- OK1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX1</masterLabel>
+            <translation><!-- TX1 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- RowNumber --></label>
+        <name>RowNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Selected User Ids --></label>
+        <name>Selected_User_Ids__c</name>
+    </fields>
+    <fields>
+        <label><!-- Selected Users --></label>
+        <name>Selected_Users__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>User__c</name>
+        <relationshipLabel><!-- OMNI User Group --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Week Days --></label>
+        <name>Week_Days__c</name>
+        <picklistValues>
+            <masterLabel>Friday</masterLabel>
+            <translation><!-- Friday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monday</masterLabel>
+            <translation><!-- Monday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Saturday</masterLabel>
+            <translation><!-- Saturday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunday</masterLabel>
+            <translation><!-- Sunday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thursday</masterLabel>
+            <translation><!-- Thursday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tuesday</masterLabel>
+            <translation><!-- Tuesday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wednesday</masterLabel>
+            <translation><!-- Wednesday --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

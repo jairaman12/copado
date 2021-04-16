@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>fakemeail@bcbsil.com</email>
+    <name>SF Health Tech Issue Log</name>
+    <queueMembers>
+        <users>
+            <user>brian_ackerman@bcbsmt.com.provider</user>
+            <user>cecelia_guerrero@bcbsil.com.provider</user>
+            <user>christopher_fairchild@bcbsok.com.provider</user>
+            <user>cynthia_montoya@bcbsnm.com.provider</user>
+            <user>darlene_thurston@bcbsok.com.provider</user>
+            <user>sanchezf@bcbsil.com.provider</user>
+            <user>fatima_flores@bcbsil.com.provider</user>
+            <user>gaurav_dubey@bcbsil.com.provider</user>
+            <user>jacqueline_fernandez@bcbsil.com.provider</user>
+            <user>jagrut_patel@bcbsil.com.provider</user>
+            <user>jennifer_gilliam@bcbstx.com.provider</user>
+            <user>karen_reasons@hcsc.net.provider</user>
+            <user>gordonk@bcbsil.com.provider</user>
+            <user>kellie_meza@bcbstx.com.provider</user>
+            <user>lanchi_pham@bcbstx.com.provider</user>
+            <user>lauren_e_sakoff@bcbsil.com.provider</user>
+            <user>hicksl@bcbsil.com.provider</user>
+            <user>mary_khalaf@bcbsil.com.provider</user>
+            <user>melinda_waggoner@bcbsnm.com.provider</user>
+            <user>mike_smith@bcbstx.com.provider</user>
+            <user>poorna_kashibhotla@bcbsil.com.provider</user>
+            <user>renae_arbuckle@bcbsok.com.provider</user>
+            <user>darbyr@bcbsil.com.provider</user>
+            <user>rod_johns@hcsc.net.provider</user>
+            <user>saba_naeem@bcbstx.com.provider</user>
+            <user>hutchisons@bcbsil.com.provider</user>
+            <user>shannon_merkys@bcbsil.com.provider</user>
+            <user>shawn_higgins@bcbsil.com.provider</user>
+            <user>shehryar_bhatta@bcbstx.com.provider</user>
+            <user>subhash_chandra_das@bcbsil.com.provider</user>
+            <user>william_eaton@bcbsil.com.provider</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>SFHealthTechIssueLog__c</sobjectType>
+    </queueSobject>
+</Queue>

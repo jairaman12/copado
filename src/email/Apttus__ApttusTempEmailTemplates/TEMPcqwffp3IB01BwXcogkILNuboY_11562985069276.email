@@ -1,0 +1,61 @@
+<table cellpadding="0" cellspacing="0" style="height:450px; width:500px">
+	<tbody>
+		<tr valign="top">
+			<td style=" background-color:#FFFFFF; bEditID:r1st1; bLabel:header; vertical-align:top; height:100; text-align:left;">&nbsp;</td>
+		</tr>
+		<tr valign="top">
+			<td style=" background-color:#AAAAFF; bEditID:r2st1; bLabel:accent1; height:5;">&nbsp;</td>
+		</tr>
+		<tr valign="top">
+			<td style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;">
+			<table border="0" cellpadding="5" cellspacing="5" style="height:400px; width:550px">
+				<tbody>
+					<tr valign="top">
+						<td style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;">
+						<table border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse; width:199pt">
+							<tbody>
+								<tr style="mso-height-source:userset;height:361.5pt">
+									<td class="xl63" style="height:361.5pt;width:199pt">Hello,<br />
+									&nbsp;<br />
+									This E-mail has been sent to notify you that Agreement PRODVRF-Facility - 180 MEDICAL INC - BCBSOK is pending your review. Your action is required. Please review the document and/or details in the section outlined below. Please also provide redlines, comments and any instructions to the details of&nbsp; the Agreement.<br />
+									<br />
+									&nbsp;
+									<p style="font-size:12pt"><font>Agreement Name : PRODVRF-Facility - 180 MEDICAL INC - BCBSOK</font></p>
+
+									<p style="font-size:12pt"><font>Account : 180 MEDICAL INC<br />
+									Agreement Number : 00012141.0<br />
+									Start Date :<br />
+									End Date :<br />
+									&nbsp;</font></p>
+
+									<p style="font-size:16px"><font><span style="font-size:12pt">Please click on the following link to review the details and to take ownership as necessary.&nbsp;</span><span style="background-color:#ffffff; color:#212121; font-family:Arial,sans-serif,serif,EmojiFont">The link below is only for the use of employees of&nbsp;</span><span style="background-color:#ffffff; color:#222222; font-family:Arial,sans-serif,serif,EmojiFont">Health Care Service Corporation.</span>&nbsp;</font></p>
+
+									<p style="font-size:12pt"><br />
+									<font>https://hcscprovider.my.salesforce.com/a0p1K00000CELFl</font></p>
+									<font> </font><br />
+									<br />
+									<br />
+									<br />
+									<font>Thank You!</font><br />
+									<br />
+									&nbsp;</td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td style=" background-color:#FFFFFF; bEditID:r4st1; bLabel:accent2; height:5;">&nbsp;</td>
+		</tr>
+		<tr valign="top">
+			<td style=" background-color:#FFFFFF; bEditID:r5st1; bLabel:footer; vertical-align:top; height:100; text-align:left;">&nbsp;</td>
+		</tr>
+		<tr valign="top">
+			<td style=" background-color:#AAAAFF; bEditID:r6st1; bLabel:accent3; height:5;">&nbsp;</td>
+		</tr>
+	</tbody>
+</table>

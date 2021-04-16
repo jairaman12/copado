@@ -1,0 +1,26 @@
+<apex:page controller="W2Ccontroller" cache="false" showHeader="false" sidebar="false" html-doc="5.0">
+<apex:includeScript value="{!$Resource.jqueryMin}"/>
+<apex:includeScript value="{!$Resource.js4_commonDemographicUpdate}"/>
+<apex:stylesheet value="{!$Resource.css4_commonDemographicUpdate}"/>
+    <html>
+        <body>          
+    <div id='t' class="msgConfirm" >       
+       <apex:outputPanel rendered="{!If($CurrentPage.parameters.caseNumber!='',true,false)}">          
+        <p>Thank you for submitting the form.</p>
+        <p>Your case number:{!$CurrentPage.parameters.caseNumber}</p> 
+         <p>Your request may take up to {!$CurrentPage.parameters.slaDays} days to complete. Once completed, a notification will be sent to the email address submitted with the Demographic Change Request Form.</p>   
+           <p>Please close the tab using X (Close) Button. </p>
+        </apex:outputPanel>          
+        <apex:outputPanel rendered="{!If($CurrentPage.parameters.caseNumber='',true,false)}">
+        <p>Oops! Something went wrong. Please create the change again or contact the Administrator.</p> 
+             <p>Please close the tab using X (Close) Button. </p>
+		</apex:outputPanel> 
+         </div> 
+        <div align="center">
+             <br/><br/><br/><br/><br/> <br/><br/><br/><br/><br/> <br/> 
+        <input type="hidden" value="{!$CurrentPage.parameters.planId}" id="pId"/>
+     	<input type="button" value="Submit Another Request" onclick="getlocation()" class="subRequestButton"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         </div>   
+         </body>
+      </html> 
+</apex:page>

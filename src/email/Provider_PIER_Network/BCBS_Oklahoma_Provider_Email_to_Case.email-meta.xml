@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email to Provider for Case Creation acknowledgement for email-to-case request</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>BCBS Oklahoma Provider Email to Case</name>
+    <style>none</style>
+    <subject>BCBS of Oklahoma Inquiry Received: {!Case.Subject}</subject>
+    <textOnly>Thank you for contacting Blue Cross and Blue Shield of Oklahoma.
+
+This email is confirmation we have received your request, case number  {!Case.CaseNumber}.
+
+Please see below for approximate processing times for the different request/inquiry types. Once completed, a notification will be sent to the email address submitted.
+PROVIDER NOTIFICATION - DEMOGRAPHIC ADD/CHANGE/TERM
+Please allow minimum 30-45 days for the request to be processed.
+SOLO PROVIDER/GROUP CONTRACTING PACKET
+Please allow minimum 60-90 days for the request to be processed.
+ALL OTHER INQUIRIES
+Please allow minimum 30-45 days for your request to be processed.
+STATUS FOLLOW-UP
+It is recommended that status updates be requested no earlier than:
+30 days for Provider Notification Forms and all other inquiries
+45 days for Solo Provider Contracting Packets
+
+To check the status of your case, please click on status checker ({!$Setup.UtilitySettings_Hierarchy__c.CaseStatusUrl__c}) or for any questions, contact 1-800-722-3730 or email oknetworkmanagement@bcbsok.com.
+
+Sincerely,
+Blue Cross and Blue Shield of Oklahoma
+
+
+Powered by: SalesforceTM
+
+
+
+Blue Cross and Blue Shield of Oklahoma, a Division of Health Care Service Corporation, a Mutual Legal Reserve Company, an Independent Licensee of the Blue Cross and Blue Shield Association.
+
+
+
+© 2017 Health Care Service Corporation. All rights reserved.
+
+(NOTE: Please do not remove the Ref id) Ref id {!Case.Thread_Id}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

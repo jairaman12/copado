@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Network</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Networks</value>
+    </caseValues>
+    <fields>
+        <label><!-- Corporate Entity Code --></label>
+        <name>CM_Corporate_Entity_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Directory Exclusion Indicator --></label>
+        <name>CM_Directory_Exclusion_Indicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name --></label>
+        <name>CM_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Network Effective Date --></label>
+        <name>CM_Network_Effective_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Network End Date --></label>
+        <name>CM_Network_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>CM_Network_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Network --></label>
+        <name>CM_Network__c</name>
+    </fields>
+    <fields>
+        <label><!-- Panel --></label>
+        <name>CM_Panel__c</name>
+        <picklistValues>
+            <masterLabel>A – Accepting</masterLabel>
+            <translation><!-- A – Accepting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C – Closed</masterLabel>
+            <translation><!-- C – Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>E – Existing Patients only</masterLabel>
+            <translation><!-- E – Existing Patients only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>F – Existing &amp; Family only</masterLabel>
+            <translation><!-- F – Existing &amp; Family only --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Provider Network Designation --></label>
+        <name>CM_Provider_Network_Designation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason Code --></label>
+        <name>CM_Reason_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Role --></label>
+        <name>CM_Role__c</name>
+        <picklistValues>
+            <masterLabel>Both PCP/PSP</masterLabel>
+            <translation><!-- Both PCP/PSP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PCP – Primary Care Physician</masterLabel>
+            <translation><!-- PCP – Primary Care Physician --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PSP – Primary Specialist Physician</masterLabel>
+            <translation><!-- PSP – Primary Specialist Physician --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Service &amp; Payee Location Address --></label>
+        <name>CM_Service_Payee_Location_Address__c</name>
+        <relationshipLabel><!-- Networks --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- External Key --></label>
+        <name>External_Key__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

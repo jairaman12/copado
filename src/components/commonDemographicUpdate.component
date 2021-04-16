@@ -1,0 +1,2473 @@
+<apex:component controller="W2Ccontroller" layout="none" allowdml="true" id="cdu">
+<script type="text/javascript">
+    
+    this.enableExtensition = function( telephoneId , extId )
+    {
+        var attrVal =  $("input[id*='"+telephoneId+"']")[0].value;
+        var extVal	=	$("input[id*='"+extId+"']")[0].value;
+         console.log('=====>>>>111'+extVal);
+          console.log('=====>>>>'+attrVal);
+        if(attrVal.length>0)
+        {
+             console.log('=====>>>>'+attrVal.length);
+            $("input[id*='"+extId+"']")[0].readOnly = false;
+        }else{
+            $("input[id*='"+extId+"']")[0].readOnly = true;
+            $("input[id*='"+extId+"']")[0].value	= '';
+        }
+       
+    }
+    
+</script>
+        
+    <!-- 
+Get state value passed in from calling VFP, load it into a variable
+-->    
+    <apex:attribute name="stateValue" description="State value passed in by state page."
+                    type="String" required="true"/>
+    <apex:includeScript value="{!$Resource.jqueryMin}"/>
+    <apex:includeScript value="{!URLFOR($Resource.js4_timepicker,
+                               'jquery-timepicker-master/jquery.timepicker.js')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.js4_timepicker,
+                            'jquery-timepicker-master/jquery.timepicker.css')}" />    
+    <apex:stylesheet value="{!$Resource.jqueryCSS}"/>
+    
+    
+    <!--
+Initialization functions (this needs to be the first app JS file
+-->    
+    <apex:includeScript value="{!$Resource.js4_piReady}"/>
+    <!--
+Common JS objects and functions
+-->    
+    <apex:includeScript value="{!$Resource.js4_commonDemographicUpdate}"/>
+    <!--
+State specific business JS functions (used for form validation)
+-->        
+    <apex:includeScript value="{!$Resource.js4_commonBusiness}"/>       
+    
+    <apex:stylesheet value="{!$Resource.css4_commonDemographicUpdate}"/>  
+    <apex:includescript value="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.js"></apex:includescript>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>   
+    
+    <script>
+        
+        /*
+        Initialize the global image paths for static resources.
+        When JavaScript is stored as a static resource, the !URLFOR 
+        expressions are not interpretted as VF expressions, 
+        they are read as plain text, so the file paths are initialized
+        here to be used later in the application.
+     */
+        var blockMeImagePath = "{!URLFOR($Resource.Loader)}";
+    var calendarImagePath = "{!URLFOR($Resource.small_calendar)}";
+    
+    $().ready(  
+        function(){
+            var s = document.getElementById('{!$Component.providerForm:provider.pId}').value = '{!stateValue}1';                              
+            
+            
+        }
+    );  
+    
+    </script>                
+    <apex:form id="providerForm" html-novalidate="novalidate">
+        <apex:pageBlock id="provider">
+            <div id="container">
+                <div id="header">
+                    <h1>Change Existing Demographic Information</h1>           
+                    <hr/>
+                    <!-- Create a hidden div for displaying validation messages
+-->                
+                    <div id="errorMessageContainer">
+                        <div id='emcBoilerPlate'>
+                            Some required information is missing or incomplete. Please correct your entries and try again.
+                        </div>
+                        <div id='detailsContainer'>
+                            <div id="detailMessages">
+                                <!-- This empty ordered list needs to remain here as it is used for 
+presenting validation messages
+-->
+                                <ol>
+                                </ol>
+                            </div>                        
+                        </div>
+                    </div>                  
+                </div>
+                
+                <div id="p1" class="success">
+                    <h2>Identification Information</h2>
+                    <p class="note required">Indicates required field</p>
+                    
+                    <div class="section">                  
+                        <!-- Added borderVisible="true" so there are no styles applied to the fieldset,
+this allows us to reference this fieldset as required-->                    
+                        <apex:selectRadio value="{!compFormFor}" id="typProvId"  borderVisible="true" title="Please select a provider type." legendText="Type of Provider" html-home="true">
+                            <apex:selectOption itemValue="Individual Provider" itemLabel="Individual Provider"/>                          
+                            <apex:selectOption itemValue="Locum Tenens" itemLabel="Locum Tenens"  />                            
+                            <apex:selectOption itemValue="Group/Clinic" itemLabel="Group/Clinic" />
+                            <apex:selectOption itemValue="Facility/Ancillary" itemLabel="Facility/Ancillary" />    
+                        </apex:selectRadio>
+                    </div>   
+                    <div class="section">
+                        <div class="column">
+                            <div>
+                                <h3>Submitter Information</h3>                                                     
+                            </div>
+                            
+                            <!-- <p>
+<label class="required"> Name:</label><br />
+<apex:inputHidden value="{!planId}" id="pId"/>
+<apex:inputText id="nameSubId" value="{!nameSub}" maxlength="255" required="true" title="Please complete the required field." />
+</p>-->
+                            <!-- PPN-20007 -->
+                            <p>
+                                <label class="required"> First Name:</label><br />                            
+                                <apex:inputText id="firstnameSubId" value="{!firstnameSub}" maxlength="255" required="true" 
+                                                title="Please enter value. Can contain only Alpha characters."/>
+                            </p>
+                            <p>
+                                <label class="required"> Last Name:</label><br />
+                                <apex:inputHidden value="{!planId}" id="pId"/>
+                                <apex:inputText id="lastnameSubId" value="{!nameSub}" maxlength="255" required="true"    
+                                                title="Please enter value. Can contain only Alpha characters." />
+                            </p> 
+                            <div style="overflow: hidden; width:80%;margin-top: -1em;margin-bottom: -1em;">
+                                <p style="float: left;">
+                                            <label class="required"> Telephone Number:</label><br />                       
+                                            <apex:inputText id="telsubId" maxlength="14"  html-pattern="(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}" html-fieldtype="tel" value="{!telNumbSub}"
+                                                            required="true" html-placeholder="Numeric digits only." title="Please enter a valid phone number."
+                                                            onchange="enableExtensition('telsubId','submitterExtId')" />
+                                            
+                                </p>   
+                                <p style="float: left;">
+                                    <label>Ext:</label><br/>
+                                            <apex:inputText id="submitterExtId" maxlength="5"  html-pattern="\d[0-9]{0,5}" value="{!submitterPhoneExt}"
+                                                            html-placeholder="Numeric digits only." title="Please enter a valid extension number."
+                                                            html-readOnly="true"/>
+                                </p>
+                            </div>
+                             <!--         
+                             <div class="stateAndZipContainer"> 
+                               <div class="floatL">   
+                                    <p>
+                                        <label class="required"> Telephone Number:</label><br />                       
+                                        <apex:inputText styleClass="PhoneandExtensionCss" id="telsubId" maxlength="14"  html-pattern="(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}" html-fieldtype="tel" value="{!telNumbSub}"
+                                                        required="true" html-placeholder="Numeric digits only.  For example: 1234567890" title="Please enter a valid phone number." />
+                                    </p>
+                                 </div>
+                                 <div class="floatL">
+                                   
+                                    <p>
+                                        <label> Ext:</label><br/>
+                                        <apex:inputText styleClass="PhoneandExtensionCss"  id="submitterExtId" maxlength="5"  html-pattern="\d{5}" value="{!submitterPhoneExt}"
+                                                        html-placeholder="Numeric digits only.  For example: 12345" title="Please enter a valid extension number." />
+                                    </p>
+                                 </div>
+                            </div> -->
+                            <p>
+                                <label class="required"> Job Title/Position:</label><br />
+                                <apex:inputText id="titleSubId" value="{!titleSub}"  maxlength="50" required="true" title="Please complete the required field." />
+                            </p>
+                            <p>
+                                <label class="required"> Email Address:</label><br />
+                                <apex:inputText id="emailSubId" value="{!emailAddrSub}" html-fieldtype="email" html-placeholder="you@example.com" required="true" title="Please enter a valid email address."/>
+                            </p>
+                        </div>
+                        <div class="column">
+                            <div>
+                                <h3>Provider Information</h3>     
+                            </div>
+                            
+                            <p>
+                                <label class="required"> Name of Provider/Group:</label><br />
+                                <apex:inputText id="nmPrvGrpId" value="{!nameOfProvGrp}" maxlength="255" required="true" title="Please complete the required field."/>
+                            </p>
+                            <p>
+                                <label class="required"> Tax ID Number:</label><br />
+                                <apex:inputText id="taxIDNumId" value="{!taxIDNumber}" maxlength="9" html-pattern="[0-9]{9}" required="true"  title="This field must be 9 numeric characters." styleClass="allow_numeric" />
+                            </p>
+                            <p>
+                                <label> Rendering NPI:</label><br />
+                                <apex:inputText id="rendNPiId" value="{!rendNPI}" styleClass="allow_numeric" html-pattern="[0-9]{10}" maxlength="10" title="This field must be 10 numeric characters."/>
+                            </p>
+                            <p>
+                                <label class="required"> Billing NPI Number:</label><br />
+                                <apex:inputText id="billNPINumId" value="{!billNPINum}" styleClass="allow_numeric" maxlength="10" html-pattern="[0-9]{10}" required="true" title="This field must be 10 numeric characters." />
+                            </p>               
+                        </div>
+                        <div class="section">
+                            <div class="column">
+                                &nbsp;
+                            </div>
+                            <div class="column">                                                       
+                                <p>                                                           
+                                    <!-- Added borderVisible="true" so there are no styles applied to the fieldset,
+this allows us to reference this fieldset as required-->
+                                    <apex:selectRadio value="{!billNPItype}" Id="billNPTypId"  borderVisible="true" title="Please select one type." legendText="Type" html-remote="true">
+                                        <apex:selectoption itemLabel="Type 1 (Individual)" itemvalue="Type 1(Individual)" id="yesid"/>                                                  
+                                        <apex:selectoption itemLabel="Type 2 (Group)" itemvalue="Type 2(Group)" id="noId"/>                              
+                                    </apex:selectRadio>
+                                    
+                                </p>      
+                                <div class="buttonContainer">
+                                    <button type="button" class="next">
+                                        Next
+                                    </button>
+                                </div>     
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+                <div id="p2" class="success section">
+                    <div class="section">
+                        
+                        <ul>
+                            <li>
+                                <!--
+Placing this h2 inside the ul/li to support add/removal of error message for no checkbox selection
+-->
+                                <h2>
+                                    Type of Change
+                                </h2>
+                            </li>
+                            
+                            <li>
+                                <apex:inputCheckBox id="nmId" html-associated="p3" value="{!nmChg}"/>                        
+                                <span><label for="{!$Component.nmId}">Name</label></span> 
+                            </li>
+                            
+                            <li>                         
+                                <apex:inputCheckBox id="npiId"  html-associated="p4"  value="{!npiTaxIdChg}" />
+                                <span><label for="{!$Component.npiId}">NPI/Tax</label></span>
+                            </li>                     
+                            <li>                         
+                                <apex:inputCheckBox id="phyId"  html-associated="p5"  value="{!PhyAddrChg}" />
+                                <span><label for="{!$Component.phyId}">Office Physical Address</label></span>
+                            </li>                     
+                            <li>                        
+                                <apex:inputCheckBox id="billId"  html-associated="p6" value="{!BillAddrChg}" />
+                                <span><label for="{!$Component.billId}">Billing Address</label></span> 
+                            </li>
+                            <li>                         
+                                <apex:inputCheckBox id="credId"  html-associated="p7" value="{!CredAddrChg}" />
+                                <span><label for="{!$Component.credId}">Credentialing Address</label></span>
+                            </li>
+                            <li>                         
+                                <apex:inputCheckBox id="admId"  html-associated="p8"  value="{!AdminAddrChg}" />
+                                <span><label for="{!$Component.admId}">Administrative Address</label></span>
+                            </li>
+                            <li>                         
+                                <apex:inputCheckBox id="otherId"  html-associated="p9"  value="{!OtherProvInfo}"/>
+                                <span><label for="{!$Component.otherId}">Other Provider Updates</label></span>
+                            </li>
+                            <li id="removeProviderContainer"> 
+                                <hr width="33%" align="left"/>
+                                <apex:inputCheckBox id="rmProvId"  html-associated="p10"  value="{!removeProvGrpLoc}"/>
+                                <span><label for="{!$Component.rmProvId}">Remove Provider from Group/Location</label></span>
+                            </li> 
+                        </ul>
+                        
+                    </div>
+                    <div class="buttonContainer">
+                        <button type="button" class="back" onclick="no.hideShowSection('p2','p1'); return false;" id="inlineSkip">
+                            Back
+                        </button>
+                        <button type="button" class="next">
+                            Next
+                        </button>
+                    </div>                 
+                </div>
+                <div id="p3" class="success">  
+                    <h2>Name Change</h2>
+                    <p class="note required">Indicates required field</p>
+                    <p>Attach signed and dated W-9 for name change. If you have multiple titles please list additional titles in the below comments box.</p>
+                    <div class="section">
+                        <div class="column">  
+                            <div>
+                                <h3>Current Name</h3>                                                           
+                            </div>                         
+                            <p>
+                                <label>First Name:</label><br />
+                                <apex:inputText id="fnameCurId" value="{!fnameCur}" maxlength="255" html-compare="current"/>
+                            </p>
+                            <p>
+                                <label>Middle Initial:</label><br />
+                                <apex:inputText id="midIntCurId" value="{!midInitialCur}" maxlength="2" html-compare="current"/>
+                            </p>
+                            <p>
+                                <label>Last Name:</label><br />
+                                <apex:inputText id="lnCurId" value="{!lnameCur}" maxlength="255" html-compare="current"/>
+                            </p>
+                            <p>
+                                <label>Suffix:</label><br />         
+                                <apex:selectList id="suffixCurId" multiselect="false" size="1" value="{!suffixCur}" required="false" >
+                                    <apex:selectOption itemLabel="" itemValue=""/>
+                                    <apex:selectOption itemLabel="I" itemValue="I"/>
+                                    <apex:selectOption itemLabel="II" itemValue="II"/>
+                                    <apex:selectOption itemLabel="III" itemValue="III"/>
+                                    <apex:selectOption itemLabel="IV" itemValue="IV"/>
+                                    <apex:selectOption itemLabel="JR" itemValue="JR"/>
+                                    <apex:selectOption itemLabel="SR" itemValue="SR"/>
+                                </apex:selectList>
+                            </p>
+                            <p>
+                                <label>Current Title:</label><br />
+                                <apex:inputText id="tileCurId" value="{!titleCur}" maxlength="100" html-compare="current"/>                        
+                            </p>
+                            <p>
+                                
+                                <label>Current Practice Name:</label><br />
+                                <apex:inputText id="pNameCurId" value="{!curPracName}" html-compare="current"/>
+                            </p>
+                        </div>
+                        <div class="column">
+                            <div>
+                                <h3>New Name</h3>    
+                            </div> 
+                            
+                            <p>
+                                <label>First Name:</label><br />
+                                <apex:inputText id="fnameNewId" value="{!fnameNew}" maxlength="255"  html-compare="new"/>
+                            </p>
+                            <p>
+                                <label>Middle Initial:</label><br />
+                                <apex:inputText id="midIntNewId" value="{!midInitialNew}" maxlength="2" html-compare="new"/>
+                            </p>
+                            <p>
+                                <label>Last Name:</label><br />
+                                <apex:inputText id="lnNewId" value="{!lnameNew}" maxlength="255" html-compare="new"/>
+                            </p>
+                            <p>
+                                <label>Suffix:</label><br />        
+                                <apex:selectList id="suffixNewId" multiselect="false" size="1" value="{!suffixNew}" required="false" >
+                                    <apex:selectOption itemLabel="" itemValue=""/>
+                                    <apex:selectOption itemLabel="I" itemValue="I"/>
+                                    <apex:selectOption itemLabel="II" itemValue="II"/>
+                                    <apex:selectOption itemLabel="III" itemValue="III"/>
+                                    <apex:selectOption itemLabel="IV" itemValue="IV"/>
+                                    <apex:selectOption itemLabel="JR" itemValue="JR"/>
+                                    <apex:selectOption itemLabel="SR" itemValue="SR"/>
+                                </apex:selectList>
+                            </p>
+                            <p>
+                                <label>New Title:</label><br />
+                                <apex:inputText id="tileNewId" value="{!titleNew}" maxlength="100" html-compare="new"/>
+                                
+                            </p>
+                            <p>
+                                <label>New Practice Name:</label><br />
+                                <apex:inputText id="pNameNewID" value="{!NewPracName}" html-compare="new"/>
+                            </p>
+                            
+                        </div>
+                    </div>                                   
+                    <div class="section additionalInformation">                                 
+                        <h2>Additional Information</h2>
+                        <div class="column">               
+                            <label>Comments:</label><br />
+                            <apex:inputTextarea id="comNMId" value="{!commentNameChg}" rows="5"/>                
+                        </div>       
+                        <div class="column">
+                            <div class="column">
+                                <label class="required"> 
+                                    Effective Date of Change:
+                                </label>
+                                <apex:input id="effNMDateId" html-fauxtype="date" html-readonly="readonly"  value="{!effDateofNameChg}" html-fauxrequired="true"/>
+                                
+                            </div>
+                            <div class="column">                                 
+                                <label>Attach Documentation:</label>                               
+                                <div class="uploadFile">
+                                    
+                                    <span id="combinedFileSize">Combined file size = 0.0 MB</span>    
+                                    
+                                    
+                                    <apex:inputFile value="{!nmAttach1.body}" styleclass="upload" filename="{!nmAttach1.name}" id="nmAttachId1"/>
+                                    <apex:inputFile value="{!nmAttach2.body}" styleclass="upload" filename="{!nmAttach2.name}" id="nmAttachId2"/>
+                                    <apex:inputFile value="{!nmAttach3.body}" styleclass="upload" filename="{!nmAttach3.name}" id="nmAttachId3"/>
+                                    <apex:inputFile value="{!nmAttach4.body}" styleclass="upload" filename="{!nmAttach4.name}" id="nmAttachId4"/>
+                                    <apex:inputFile value="{!nmAttach5.body}" styleclass="upload" filename="{!nmAttach5.name}" id="nmAttachId5"/>
+                                    <div class="smallSpaceOnTop">
+                                        <span class="addAFile">+</span><span class="fileFormatText">Add another file</span>
+                                    </div>
+                                </div>                                  
+                            </div>                 
+                        </div>                              
+                    </div>    
+                    <div class="buttonContainer">
+                        <button type="button" class="back">
+                            Back
+                        </button>
+                        <button type="button" class="next" id="n3">
+                            Next
+                        </button>
+                    </div>                 
+                    
+                </div>                     
+                <div id="p4" class="success">
+                    <h2>NPI/Tax ID Change</h2>
+                    <p class="note required">Indicates required field</p>
+                    <p>Attach signed and dated W-9 with correct classification box checked.</p>
+                    <div class="section">
+                        <div class="column">
+                            <div>
+                                <h3>Current Information</h3>                               
+                            </div>
+                            
+                            <p>
+                                <label>Current Billing NPI Number:</label><br />
+                                <apex:inputText id="billCurId" value="{!billNPINumCur}" html-pattern="[0-9]{10}" maxlength="10" title="This field must be 10 numeric characters."  styleClass="allow_numeric"  html-compare="current" />
+                            </p>
+                            <p>
+                                <label>Current Tax ID Number:</label><br />
+                                <apex:inputText id="taxCurId" value="{!taxIDNumCur}" styleClass="allow_numeric" html-pattern="[0-9]{9}" maxlength="9" title="This field must be 9 numeric characters." html-compare="current"/>
+                            </p>
+                            
+                        </div>
+                        <div class="column">
+                            <div>
+                                <h3>New Information</h3>           
+                            </div>
+                            
+                            <p>
+                                <label>New Billing NPI Number:</label><br />
+                                <apex:inputText id="billNewId" value="{!newBillNPINum}" styleClass="allow_numeric"  html-pattern="[0-9]{10}" maxlength="10" title="This field must be 10 numeric characters." html-compare="new" />
+                            </p>
+                            <p>
+                                <label>New Tax ID Number:</label><br />
+                                <apex:inputText id="taxNewId" value="{!newTaxIDNum}" styleClass="allow_numeric"  html-pattern="[0-9]{9}" maxlength="9" title="This field must be 9 numeric characters." html-compare="new"/>
+                            </p>
+                        </div>
+                        <div class="section additionalInformation">
+                            <h2>
+                                Additional Information
+                            </h2>
+                            <div class="column">                                                                  
+                                <label>Comments:</label><br />
+                                <apex:inputTextarea id="npiComId" value="{!commentNPITax}" rows="5"/>                        
+                            </div>
+                            <div class="column">                                                  
+                                <div class="column">
+                                    <label class="required"> 
+                                        Effective Date of Change:
+                                    </label>
+                                    <apex:input id="effDateNPIId" html-fauxtype="date" html-readonly="readonly" value="{!effDateofNPIChg}"   html-fauxrequired="true"/>
+                                    
+                                </div>
+                                <div class="column">   
+                                    <label>Attach Documentation:</label><br />
+                                    
+                                    <div class="uploadFile">
+                                        
+                                        
+                                        <span id="combinedFileSize">Combined file size = 0.0 MB</span>   
+                                        
+                                        
+                                        <apex:inputFile id="npiAttachId1" value="{!npiAttach1.body}" styleclass="upload" filename="{!npiAttach1.name}" />
+                                        <apex:inputFile id="npiAttachId2" value="{!npiAttach2.body}" styleclass="upload" filename="{!npiAttach2.name}" />
+                                        <apex:inputFile id="npiAttachId3" value="{!npiAttach3.body}" styleclass="upload" filename="{!npiAttach3.name}" />
+                                        <apex:inputFile id="npiAttachId4" value="{!npiAttach4.body}" styleclass="upload" filename="{!npiAttach4.name}" />
+                                        <apex:inputFile id="npiAttachId5"  value="{!npiAttach5.body}" styleclass="upload" filename="{!npiAttach5.name}" />
+                                        <div class="smallSpaceOnTop">
+                                            <span class="addAFile">+</span><span class="fileFormatText">Add another file</span>
+                                        </div>
+                                    </div>  
+                                </div>
+                            </div>                         
+                        </div>
+                    </div>
+                    <div class="buttonContainer">
+                        <button class="back" type="button">Back</button>
+                        <button id = 'n4' class="next" type="button">Next</button>                   
+                    </div> 
+                </div>
+                <div id="p5" class="success">
+                    <h2>Office Physical Address/Telephone/Fax/Email/Hours of Operation Change</h2>
+                    <p class="note required">Indicates required field</p>
+                    <p>Complete a separate form for each office physical address change request.  
+                        This information is utilized for the member directories. 
+                        A P.O. Box address will not be accepted as an official physical address.  
+                        If your primary address change involves moving to a different county, this could impact your claims payment.
+                    </p>
+                    <div class="section">
+                        <div class="column" id="currentOfficePhysicalAddressContainer">
+                            <div>
+                                <h3>
+                                    Current Office Physical Address
+                                </h3>                              
+                            </div>
+                            <p>
+                                <label>Address Line 1:</label><br />
+                                <apex:inputText id="addrPhy" value="{!StrAddrPhyCur}" maxlength="255" html-compare="current"/>
+                            </p>
+                            <p>
+                                <label>Address Line 2:</label><br />
+                                <apex:inputText id="addr2Phy" value="{!StrAddr2PhyCur}" maxlength="255" html-compare="current"/>
+                            </p>
+                            <p>
+                                <label>City:</label><br />
+                                <apex:inputText id="City_Physical_Current" value="{!cityPhyCur}" maxlength="255" html-compare="current"/>
+                            </p>
+                            <div class="stateAndZipContainer">                                                                                                        
+                                <div class="floatL">
+                                    <label>State:</label><br />
+                                    <apex:selectList id="offStateCurId" multiselect="false" size="1" value="{!statePhyCur}" required="false" >
+                                        <apex:selectOption itemLabel="" itemValue=""/>
+                                        <apex:selectOption itemLabel="AA" itemValue="AA"/>
+                                        <apex:selectOption itemLabel="AE" itemValue="AE"/>
+                                        <apex:selectOption itemLabel="AK" itemValue="AK"/>
+                                        <apex:selectOption itemLabel="AL" itemValue="AL"/>
+                                        <apex:selectOption itemLabel="AP" itemValue="AP"/>
+                                        <apex:selectOption itemLabel="AR" itemValue="AR"/>
+                                        <apex:selectOption itemLabel="AS" itemValue="AS"/>
+                                        <apex:selectOption itemLabel="AZ" itemValue="AZ"/>
+                                        <apex:selectOption itemLabel="CA" itemValue="CA"/>
+                                        <apex:selectOption itemLabel="CO" itemValue="CO"/>
+                                        <apex:selectOption itemLabel="CT" itemValue="CT"/>
+                                        <apex:selectOption itemLabel="CZ" itemValue="CZ"/>
+                                        <apex:selectOption itemLabel="DC" itemValue="DC"/>
+                                        <apex:selectOption itemLabel="DE" itemValue="DE"/>
+                                        <apex:selectOption itemLabel="FL" itemValue="FL"/>
+                                        <apex:selectOption itemLabel="FM" itemValue="FM"/>
+                                        <apex:selectOption itemLabel="GA" itemValue="GA"/>
+                                        <apex:selectOption itemLabel="GU" itemValue="GU"/>
+                                        <apex:selectOption itemLabel="HI" itemValue="HI"/>
+                                        <apex:selectOption itemLabel="IA" itemValue="IA"/>
+                                        <apex:selectOption itemLabel="ID" itemValue="ID"/>
+                                        <apex:selectOption itemLabel="IL" itemValue="IL"/>
+                                        <apex:selectOption itemLabel="IN" itemValue="IN"/>
+                                        <apex:selectOption itemLabel="KS" itemValue="KS"/>
+                                        <apex:selectOption itemLabel="KY" itemValue="KY"/>
+                                        <apex:selectOption itemLabel="LA" itemValue="LA"/>
+                                        <apex:selectOption itemLabel="MA" itemValue="MA"/>
+                                        <apex:selectOption itemLabel="MD" itemValue="MD"/>
+                                        <apex:selectOption itemLabel="ME" itemValue="ME"/>
+                                        <apex:selectOption itemLabel="MI" itemValue="MI"/>
+                                        <apex:selectOption itemLabel="MH" itemValue="MH"/>
+                                        <apex:selectOption itemLabel="MN" itemValue="MN"/>
+                                        <apex:selectOption itemLabel="MO" itemValue="MO"/>
+                                        <apex:selectOption itemLabel="MP" itemValue="MP"/>
+                                        <apex:selectOption itemLabel="MS" itemValue="MS"/>
+                                        <apex:selectOption itemLabel="MT" itemValue="MT"/>
+                                        <apex:selectOption itemLabel="NC" itemValue="NV"/>
+                                        <apex:selectOption itemLabel="ND" itemValue="ND"/>
+                                        <apex:selectOption itemLabel="NE" itemValue="NE"/>
+                                        <apex:selectOption itemLabel="NH" itemValue="NH"/>
+                                        <apex:selectOption itemLabel="NJ" itemValue="NJ"/>
+                                        <apex:selectOption itemLabel="NM" itemValue="NM"/>
+                                        <apex:selectOption itemLabel="NV" itemValue="NV"/>
+                                        <apex:selectOption itemLabel="NY" itemValue="NY"/>
+                                        <apex:selectOption itemLabel="OH" itemValue="OH"/>
+                                        <apex:selectOption itemLabel="OK" itemValue="OK"/>
+                                        <apex:selectOption itemLabel="OR" itemValue="OR"/>
+                                        <apex:selectOption itemLabel="PA" itemValue="PA"/>
+                                        <apex:selectOption itemLabel="PR" itemValue="PR"/>
+                                        <apex:selectOption itemLabel="PW" itemValue="PW"/>
+                                        <apex:selectOption itemLabel="RI" itemValue="RI"/>
+                                        <apex:selectOption itemLabel="SC" itemValue="SC"/>
+                                        <apex:selectOption itemLabel="SD" itemValue="SD"/>
+                                        <apex:selectOption itemLabel="TN" itemValue="TN"/>
+                                        <apex:selectOption itemLabel="TX" itemValue="TX"/>
+                                        <apex:selectOption itemLabel="UT" itemValue="UT"/>
+                                        <apex:selectOption itemLabel="VA" itemValue="VA"/>
+                                        <apex:selectOption itemLabel="VI" itemValue="VI"/>
+                                        <apex:selectOption itemLabel="VT" itemValue="VT"/>
+                                        <apex:selectOption itemLabel="WA" itemValue="WA"/>
+                                        <apex:selectOption itemLabel="WI" itemValue="WI"/>
+                                        <apex:selectOption itemLabel="WV" itemValue="WV"/>
+                                        <apex:selectOption itemLabel="WY" itemValue="WY"/>
+                                        <apex:selectOption itemLabel="Other" itemValue=""/>
+                                    </apex:selectList>
+                                </div>
+                                <div class="floatL">
+                                    <label>Zip Code:</label><br />
+                                    <apex:inputText id="zipPhyCurId" value="{!zipPhyCur}" maxlength="10"  html-compare="current"/>
+                                </div>
+                            </div>
+                            <div style="overflow: hidden; width:80%;margin-top: -1em;margin-bottom: -1em;">
+                                <p style="float: left;">
+                                    <label>Telephone Number:</label><br />
+                                    <apex:inputText id="telPhyCurId" value="{!telPhyCur}" maxlength="14"
+                                                    html-pattern="(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}"
+                                                    html-compare="current" title="Please enter a valid phone number."
+                                                    html-fieldtype="tel" html-placeholder="Numeric digits only."
+                                                    onchange="enableExtensition('telPhyCurId','telPhyCurExtId')"/>
+                                </p>
+                                <!-- PPN-34681 -->
+                                <p style="float: left;">
+                                    <label>Ext:</label><br />
+                                    <apex:inputText id="telPhyCurExtId" value="{!currPhysicalAddressPhoneExt}" maxlength="5"
+                                                    html-pattern="\d[0-9]{0,5}"
+                                                    html-compare="current" title="Please enter a valid extension number."
+                                                    html-placeholder="Numeric digits only."
+                                                    html-readOnly="true"/>
+                                </p>
+                            </div>
+                            <p>
+                                <label>Email:</label><br />
+                                <apex:input id="emailPhyCurId" type="text" value="{!emailPhyCur}" html-fieldtype="email"  html-placeholder="you@example.com"  html-compare="current" title="Please enter a valid email address."/>
+                            </p>
+                            <p>
+                                <label>Fax Number:</label><br />          
+                                <apex:inputText id="faxPhyCurId" value="{!faxPhyCur}"   maxlength="14" html-compare="current" html-pattern="(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}" title="Please enter a valid fax number."  html-fieldtype="tel"  html-placeholder="Numeric digits only.  For example: 1234567890"/>
+                            </p>
+                        </div>
+                        <div class="column" id="newOfficePhysicalAddressContainer">
+                            <div>
+                                <h3>
+                                    New Office Physical Address
+                                </h3>     
+                            </div>
+                            
+                            <p>
+                                <label>Address Line 1:</label><br />
+                                <apex:inputText id="addrPhyID" value="{!StrAddrPhyNew}" maxlength="255" html-compare="new"/>
+                            </p>
+                            <p>
+                                <label>Address Line 2:</label><br />
+                                <apex:inputText id="addr2PhyID" value="{!StrAddr2PhyNew}" maxlength="255" html-compare="new"/>
+                            </p>
+                            <p>
+                                <label>City:</label><br />
+                                <apex:inputText id="cityPhyNewID" value="{!cityPhyNew}" maxlength="255" html-compare="new"/>
+                            </p>
+                            <div class="stateAndZipContainer">                                                       
+                                <div class="floatL">
+                                    <label>State:</label><br />
+                                    <apex:selectList id="offStateNewId" multiselect="false" size="1" value="{!statePhyNew}" required="false" >
+                                        <apex:selectOption itemLabel="" itemValue=""/>
+                                        <apex:selectOption itemLabel="AA" itemValue="AA"/>
+                                        <apex:selectOption itemLabel="AE" itemValue="AE"/>
+                                        <apex:selectOption itemLabel="AK" itemValue="AK"/>
+                                        <apex:selectOption itemLabel="AL" itemValue="AL"/>
+                                        <apex:selectOption itemLabel="AP" itemValue="AP"/>
+                                        <apex:selectOption itemLabel="AR" itemValue="AR"/>
+                                        <apex:selectOption itemLabel="AS" itemValue="AS"/>
+                                        <apex:selectOption itemLabel="AZ" itemValue="AZ"/>
+                                        <apex:selectOption itemLabel="CA" itemValue="CA"/>                            
+                                        <apex:selectOption itemLabel="CO" itemValue="CO"/>
+                                        <apex:selectOption itemLabel="CT" itemValue="CT"/>
+                                        <apex:selectOption itemLabel="CZ" itemValue="CZ"/>
+                                        <apex:selectOption itemLabel="DC" itemValue="DC"/>
+                                        <apex:selectOption itemLabel="DE" itemValue="DE"/>
+                                        <apex:selectOption itemLabel="FL" itemValue="FL"/>
+                                        <apex:selectOption itemLabel="FM" itemValue="FM"/>
+                                        <apex:selectOption itemLabel="GA" itemValue="GA"/>
+                                        <apex:selectOption itemLabel="GU" itemValue="GU"/>
+                                        <apex:selectOption itemLabel="HI" itemValue="HI"/>
+                                        <apex:selectOption itemLabel="IA" itemValue="IA"/>
+                                        <apex:selectOption itemLabel="ID" itemValue="ID"/>
+                                        <apex:selectOption itemLabel="IL" itemValue="IL"/>
+                                        <apex:selectOption itemLabel="IN" itemValue="IN"/>
+                                        <apex:selectOption itemLabel="KS" itemValue="KS"/>
+                                        <apex:selectOption itemLabel="KY" itemValue="KY"/>
+                                        <apex:selectOption itemLabel="LA" itemValue="LA"/>
+                                        <apex:selectOption itemLabel="MA" itemValue="MA"/>
+                                        <apex:selectOption itemLabel="MD" itemValue="MD"/>
+                                        <apex:selectOption itemLabel="ME" itemValue="ME"/>
+                                        <apex:selectOption itemLabel="MI" itemValue="MI"/>
+                                        <apex:selectOption itemLabel="MH" itemValue="MH"/>
+                                        <apex:selectOption itemLabel="MN" itemValue="MN"/>
+                                        <apex:selectOption itemLabel="MO" itemValue="MO"/>
+                                        <apex:selectOption itemLabel="MP" itemValue="MP"/>
+                                        <apex:selectOption itemLabel="MS" itemValue="MS"/>
+                                        <apex:selectOption itemLabel="MT" itemValue="MT"/>
+                                        <apex:selectOption itemLabel="NC" itemValue="NV"/>
+                                        <apex:selectOption itemLabel="ND" itemValue="ND"/>
+                                        <apex:selectOption itemLabel="NE" itemValue="NE"/>
+                                        <apex:selectOption itemLabel="NH" itemValue="NH"/>
+                                        <apex:selectOption itemLabel="NJ" itemValue="NJ"/>
+                                        <apex:selectOption itemLabel="NM" itemValue="NM"/>
+                                        <apex:selectOption itemLabel="NV" itemValue="NV"/>
+                                        <apex:selectOption itemLabel="NY" itemValue="NY"/>
+                                        <apex:selectOption itemLabel="OH" itemValue="OH"/>
+                                        <apex:selectOption itemLabel="OK" itemValue="OK"/>
+                                        <apex:selectOption itemLabel="OR" itemValue="OR"/>
+                                        <apex:selectOption itemLabel="PA" itemValue="PA"/>
+                                        <apex:selectOption itemLabel="PR" itemValue="PR"/>
+                                        <apex:selectOption itemLabel="PW" itemValue="PW"/>
+                                        <apex:selectOption itemLabel="RI" itemValue="RI"/>
+                                        <apex:selectOption itemLabel="SC" itemValue="SC"/>
+                                        <apex:selectOption itemLabel="SD" itemValue="SD"/>
+                                        <apex:selectOption itemLabel="TN" itemValue="TN"/>
+                                        <apex:selectOption itemLabel="TX" itemValue="TX"/>
+                                        <apex:selectOption itemLabel="UT" itemValue="UT"/>
+                                        <apex:selectOption itemLabel="VA" itemValue="VA"/>
+                                        <apex:selectOption itemLabel="VI" itemValue="VI"/>
+                                        <apex:selectOption itemLabel="VT" itemValue="VT"/>
+                                        <apex:selectOption itemLabel="WA" itemValue="WA"/>
+                                        <apex:selectOption itemLabel="WI" itemValue="WI"/>
+                                        <apex:selectOption itemLabel="WV" itemValue="WV"/>
+                                        <apex:selectOption itemLabel="WY" itemValue="WY"/>
+                                        <apex:selectOption itemLabel="Other" itemValue=""/>
+                                    </apex:selectList>
+                                </div>
+                                <div class="floatL">
+                                    <label>Zip Code:</label><br />
+                                    <apex:inputText id="zipPhyNewID" value="{!zipPhyNew}" maxlength="10" html-compare="new"/>
+                                </div>               
+                            </div>
+                            <div style="overflow: hidden; width:80%;margin-top: -1em;margin-bottom: -1em;">
+                                <p style="float: left;">
+                                    <label>Telephone Number:</label><br />
+                                    <apex:inputText id="telPhyNewID" value="{!telPhyNew}"
+                                                    maxlength="14" html-compare="new" html-pattern="(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}"
+                                                    title="Please enter a valid phone number."
+                                                    html-fieldtype="tel" html-placeholder="Numeric digits only."
+                                                    onchange="enableExtensition('telPhyNewID','extPhyNewID')"/>
+                                </p>
+                                <p style="float: left;">
+                                    <label>Ext:</label><br />
+                                    <apex:inputText id="extPhyNewID" value="{!newphysicalAddressPhoneExt}"
+                                                    maxlength="5" html-compare="new" html-pattern="\d[0-9]{0,5}"
+                                                    html-placeholder="Numeric digits only."
+                                                    title="Please enter a valid extension number."
+                                                    html-readOnly="true"/>
+                                </p>
+                            </div>
+                            <p>
+                                <label>Email:</label><br />
+                                <apex:input type="text" id="emailPhyNewID" value="{!emailPhyNew}" html-fieldtype="email"   html-placeholder="you@example.com"  html-compare="new" title="Please enter a valid email address."/>
+                            </p>
+                            <p>
+                                <label>Fax Number:</label><br />
+                                <apex:inputText id="faxPhyNewID" value="{!faxPhyNew}"   maxlength="14" html-compare="new" html-pattern="(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}" html-fieldtype="tel"  title="Please enter a valid fax number." html-placeholder="Numeric digits only.  For example: 1234567890"/>
+                            </p>
+                            
+                            <div class="fieldsetInColumn">  
+                                
+                                <table>
+                                    <tr>
+                                        <td><label>Primary Location:</label></td>
+                                        <td>
+                                            <apex:selectRadio id="prLocId" value="{!primaryLocPhy}" title="Please select a primary location.">
+                                                <apex:selectOption itemValue="Yes" itemLabel="Yes" />
+                                                <apex:selectOption itemValue="No" itemLabel="No" />
+                                            </apex:selectRadio>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>                          
+                            <br /><label>Supervising Physician:</label>
+                            <apex:inputText id="superPhyID" value="{!supervisingPhy}" maxlength="255"/>
+                            
+                            <p>
+                                <label>Accepting New Patients:</label> 
+                                <apex:selectList id="accptNewPatId" multiselect="false" size="1" value="{!acceptNewPat}" required="false" >
+                                    <apex:selectOption itemLabel="" itemValue=""/>
+                                    <apex:selectOption itemLabel="Active, Accepting New Patients" itemValue="Active, Accepting New Patients"/>
+                                    <apex:selectOption itemLabel="Active, Accepting Newborns Only" itemValue="Active, Accepting Newborns Only"/>
+                                    <apex:selectOption itemLabel="Active, Closed to New Patients" itemValue="Active, Closed to New Patients"/>
+                                    <apex:selectOption itemLabel="Active, Open to All Members" itemValue="Active, Open to All Members"/>
+                                    <apex:selectOption itemLabel="Awaiting Departicipation" itemValue=" Awaiting Departicipation"/>
+                                </apex:selectList>
+                            </p>
+                        </div>
+                    </div>
+                    <h2>Hours of Operation Change</h2>
+                    <p>For more than one set of hours for same day, please note in the comments box below.</p>
+                    <div class="section">
+                        <p>
+                            <label>
+                                <apex:inputCheckBox id="open24Id" value="{!open24Phy}" html-target="#h"/>
+                                Open 24/7
+                            </label>
+                        </p>
+                        <div id="h">
+                            <table>
+                                <tr>
+                                    <td>           
+                                        Mon         
+                                    </td>
+                                    <td>
+                                        <apex:inputText id="monOpenId" value="{!monOpen}" size="2" maxlength="10" />
+                                    </td>
+                                    <td> to </td>
+                                    <td>
+                                        <apex:inputText id="monCloseId" value="{!monClose}" size="2" maxlength="10" />
+                                    </td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                    <td>           
+                                        Wed         
+                                    </td>
+                                    <td>
+                                        <apex:inputText id="wedOpenId" value="{!wedOpen}" size="2" maxlength="10" />
+                                    </td>
+                                    <td> to </td>
+                                    <td>
+                                        <apex:inputText id="wedCloseId" value="{!wedClose}" size="2" maxlength="10" />
+                                    </td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                    
+                                    <td>           
+                                        Fri         
+                                    </td>
+                                    <td>
+                                        <apex:inputText id="friOpenId" value="{!friOpen}" size="2" maxlength="10" />
+                                    </td>
+                                    <td> to </td>
+                                    <td>
+                                        <apex:inputText id="friCloseId" value="{!friClose}" size="2" maxlength="10" />
+                                    </td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                    
+                                    <td>           
+                                        Sun         
+                                    </td>
+                                    <td>
+                                        <apex:inputText id="sunOpenId" value="{!sunOpen}" size="2" maxlength="10" />
+                                    </td>
+                                    <td> to </td>
+                                    <td>
+                                        <apex:inputText id="sunCloseId" value="{!sunClose}" size="2" maxlength="10" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>           
+                                        Tue         
+                                    </td>
+                                    <td>
+                                        <apex:inputText id="tueOpenId" value="{!tueOpen}" size="2" maxlength="10"/>
+                                    </td>
+                                    <td> to </td>
+                                    <td>
+                                        <apex:inputText id="tueCloseId" value="{!tueClose}" size="2" maxlength="10"/>
+                                    </td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                    
+                                    <td>           
+                                        Thu        
+                                    </td>
+                                    <td>
+                                        <apex:inputText id="thuOpenId" value="{!thuOpen}" size="2" maxlength="10"/>
+                                    </td>
+                                    <td> to </td>
+                                    <td>
+                                        <apex:inputText id="thuCloseId" value="{!thuClose}" size="2" maxlength="10"/>
+                                    </td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                    <td>           
+                                        Sat        
+                                    </td>
+                                    <td>
+                                        <apex:inputText id="satOpenId" value="{!satOpen}" size="2" maxlength="10"/>
+                                    </td>
+                                    <td> to </td>
+                                    <td>
+                                        <apex:inputText id="satCloseId" value="{!satClose}" size="2" maxlength="10"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>  
+                    <div class="section">
+                        <h2>
+                            Americans with Disabilities Act (ADA)                               
+                        </h2>
+                        <hr />
+                        <label class="required"> 
+                            Are the following standards in accordance with the Americans with Disabilities Act? 
+                            <span class="floatR">
+                                <apex:selectRadio id="acordnceWithADA" value="{!acordnceWithADA}">
+                                    <apex:selectOption itemValue="Yes" itemLabel="Yes" />
+                                    <apex:selectOption itemValue="No" itemLabel="No" />
+                                </apex:selectRadio>
+                            </span>
+                        </label>
+                        <div id="adaItems" class="greyedOut">
+                            
+                            <div class="padTopAndBottom">
+                                If yes, please check at least one of the following:
+                            </div>
+                            <div class="thirds">                            
+                                <label>
+                                    <apex:inputCheckBox id="siteAccessible" value="{!siteAccessible}" />
+                                    Site Accessible 
+                                </label>
+                                <label>
+                                    <apex:inputCheckBox id="parkAccesbility" value="{!parkAccesbility}" />
+                                    Parking Accessibility
+                                </label>
+                                <label>
+                                    <apex:inputCheckBox id="extBuilding" value="{!extBuilding}" />
+                                    Exterior Building
+                                </label>
+                                <label>
+                                    <apex:inputCheckBox id="intBuilding" value="{!intBuilding}" />
+                                    Interior Building
+                                </label>
+                            </div>
+                            <div class="thirds">
+                                <label>
+                                    <apex:inputCheckBox id="examRoom" value="{!examRoom}" />
+                                    Exam Room
+                                </label>
+                                <label>
+                                    <apex:inputCheckBox id="examTable" value="{!examTable}" />
+                                    Exam Table
+                                </label>
+                                <label>
+                                    <apex:inputCheckBox id="offRecpArea" value="{!offRecpArea}" />
+                                    Office Reception Area
+                                </label>
+                                <label>
+                                    <apex:inputCheckBox id="clsProxmty2PublcTransprt" value="{!ClsProxmty2PublcTransprt}" />
+                                    Close Proximity to Public Transportation 
+                                </label>                            
+                            </div>
+                            <div class="thirds">
+                                <label>
+                                    <apex:inputCheckBox id="restroom" value="{!restroom}" />
+                                    Restroom
+                                </label>
+                                <label>
+                                    <apex:inputCheckBox id="scale" value="{!scale}" />
+                                    Scale
+                                </label>                     
+                            </div>
+                        </div>     
+                    </div> 
+                    
+                    <div id="treatingCategories" class="section greyedOut">
+                        <h2>
+                            Treating Categories                              
+                        </h2>
+                        <hr />
+                        <label class="required"> 
+                            Does the provider treat the following? 
+                        </label>
+                        
+                        <div class="padTopAndBottom">
+                            Please check at least one:
+                        </div>
+                        <div class="thirds">                            
+                            <label>
+                                <apex:inputCheckBox id="homeBound" value="{!homeBound}" />
+                                Homebound
+                            </label>
+                            <label>
+                                <apex:inputCheckBox id="homeless" value="{!homeless}" />
+                                Homeless
+                            </label>
+                            <label>
+                                <apex:inputCheckBox id="blndnesOrVsualyImprd" value="{!blndnesOrVsualyImprd}" />
+                                Blindness or Visually Impaired
+                            </label>
+                            
+                        </div>
+                        <div class="thirds">
+                            <label>
+                                <apex:inputCheckBox id="chroncIlness" value="{!chroncIlness}" />
+                                Chronic Illness
+                            </label>
+                            <label>
+                                <apex:inputCheckBox id="srMentalIlness" value="{!srMentalIlness}" />
+                                Serious Mental Illness
+                            </label>
+                            <label>
+                                <apex:inputCheckBox id="coOccrDisordr" value="{!coOccrDisordr}" />
+                                Co-occurring Disorders
+                            </label>
+                            
+                        </div>
+                        <div class="thirds">
+                            <label>
+                                <apex:inputCheckBox id="hivOrAids" value="{!hivOrAids}" />
+                                HIV/AIDS
+                            </label>
+                            <label>
+                                <apex:inputCheckBox id="phyDisablty" value="{!phyDisablty}" />
+                                Physical Disabilities
+                            </label>
+                            <label>
+                                <apex:inputCheckBox id="deafOrHrdHear" value="{!deafOrHrdHear}" />
+                                Deafness or Hard of Hearing
+                            </label>                 
+                        </div>
+                        
+                    </div>                    
+                    
+                    <div class="section additionalInformation">
+                        <h2>
+                            Additional Information                         
+                        </h2>
+                        
+                        <div class="column">
+                            <label>Comments:</label><br />
+                            <apex:inputTextArea id="comPhyID" value="{!commentPhy}" rows="5"/>
+                        </div>
+                        <div class="column">
+                            <div class="column">
+                                <label class="required"> 
+                                    Effective Date of Change:
+                                </label>
+                                <apex:input html-fauxtype="date" html-readonly="readonly"  id="effDatePhyID" value="{!effDateofChgPhy}"   html-fauxrequired="true"/>
+                            </div>
+                            <div class="column">
+                                <label>Attach Documentation:</label>
+                                
+                                <div class="uploadFile">
+                                    
+                                    <span id="combinedFileSize">Combined file size = 0.0 MB</span>   
+                                    
+                                    <apex:inputFile id="phyAttach1" value="{!phyAttach1.body}" styleclass="upload" filename="{!phyAttach1.name}" />
+                                    <apex:inputFile id="phyAttach2" value="{!phyAttach2.body}" styleclass="upload" filename="{!phyAttach2.name}" />
+                                    <apex:inputFile id="phyAttach3" value="{!phyAttach3.body}" styleclass="upload" filename="{!phyAttach3.name}" />
+                                    <apex:inputFile id="phyAttach4" value="{!phyAttach4.body}" styleclass="upload" filename="{!phyAttach4.name}" />
+                                    <apex:inputFile id="phyAttach5" value="{!phyAttach5.body}" styleclass="upload" filename="{!phyAttach5.name}" />
+                                    <div class="smallSpaceOnTop">
+                                        <span class="addAFile">+</span><span class="fileFormatText">Add another file</span>
+                                    </div>
+                                </div>
+                            </div>                       
+                        </div> 
+                        
+                        
+                        
+                    </div>       
+                    <div class="buttonContainer">
+                        <button class="back" type="button">Back</button>
+                        <button id = 'n5' class="next" type="button">Next</button>                   
+                    </div>                                                         
+                </div>
+                <div id="p6" class="success">
+                    <h2>Billing Address/Telephone/Fax/Email Change</h2>
+                    <p class="note required">Indicates required field</p>
+                    <p>Changes requested to a group's information will only be accepted if submitted by the group.  <i>Supporting documentation must be</i> submitted on the group letterhead.</p>
+                    <div class="section">
+                        <div class="column">
+                            <div>
+                                <h3>
+                                    Current Billing Address 
+                                </h3>     
+                            </div>
+                            
+                            <p>
+                                <label>Address Line 1:</label><br />
+                                <apex:inputText id="addrBillCur" value="{!strAddrBillCur}" maxlength="255"  html-compare="current"/>
+                            </p>
+                            <p>
+                                <label>Address Line 2:</label><br />
+                                <apex:inputText id="addr2BillCur" value="{!strAddr2BillCur}" maxlength="255" html-compare="current"/>
+                            </p>
+                            <p>
+                                <label>City:</label><br />
+                                <apex:inputText id="City_Billing_Current" value="{!cityBillCur}" maxlength="255" html-compare="current"/>
+                            </p>
+                            
+                            <div class="floatL marginR">
+                                <label>State:</label><br />
+                                <apex:selectList id="billStateCurId" multiselect="false" size="1" value="{!stateBillCur}" required="false" >
+                                    <apex:selectOption itemLabel="" itemValue=""/>
+                                    <apex:selectOption itemLabel="AA" itemValue="AA"/>
+                                    <apex:selectOption itemLabel="AE" itemValue="AE"/>
+                                    <apex:selectOption itemLabel="AK" itemValue="AK"/>
+                                    <apex:selectOption itemLabel="AL" itemValue="AL"/>
+                                    <apex:selectOption itemLabel="AP" itemValue="AP"/>
+                                    <apex:selectOption itemLabel="AR" itemValue="AR"/>
+                                    <apex:selectOption itemLabel="AS" itemValue="AS"/>
+                                    <apex:selectOption itemLabel="AZ" itemValue="AZ"/>
+                                    <apex:selectOption itemLabel="CA" itemValue="CA"/> 
+                                    <apex:selectOption itemLabel="CO" itemValue="CO"/>
+                                    <apex:selectOption itemLabel="CT" itemValue="CT"/>
+                                    <apex:selectOption itemLabel="CZ" itemValue="CZ"/>
+                                    <apex:selectOption itemLabel="DC" itemValue="DC"/>
+                                    <apex:selectOption itemLabel="DE" itemValue="DE"/>
+                                    <apex:selectOption itemLabel="FL" itemValue="FL"/>
+                                    <apex:selectOption itemLabel="FM" itemValue="FM"/>
+                                    <apex:selectOption itemLabel="GA" itemValue="GA"/>
+                                    <apex:selectOption itemLabel="GU" itemValue="GU"/>
+                                    <apex:selectOption itemLabel="HI" itemValue="HI"/>
+                                    <apex:selectOption itemLabel="IA" itemValue="IA"/>
+                                    <apex:selectOption itemLabel="ID" itemValue="ID"/>
+                                    <apex:selectOption itemLabel="IL" itemValue="IL"/>
+                                    <apex:selectOption itemLabel="IN" itemValue="IN"/>
+                                    <apex:selectOption itemLabel="KS" itemValue="KS"/>
+                                    <apex:selectOption itemLabel="KY" itemValue="KY"/>
+                                    <apex:selectOption itemLabel="LA" itemValue="LA"/>
+                                    <apex:selectOption itemLabel="MA" itemValue="MA"/>
+                                    <apex:selectOption itemLabel="MD" itemValue="MD"/>
+                                    <apex:selectOption itemLabel="ME" itemValue="ME"/>
+                                    <apex:selectOption itemLabel="MI" itemValue="MI"/>
+                                    <apex:selectOption itemLabel="MH" itemValue="MH"/>
+                                    <apex:selectOption itemLabel="MN" itemValue="MN"/>
+                                    <apex:selectOption itemLabel="MO" itemValue="MO"/>
+                                    <apex:selectOption itemLabel="MP" itemValue="MP"/>
+                                    <apex:selectOption itemLabel="MS" itemValue="MS"/>
+                                    <apex:selectOption itemLabel="MT" itemValue="MT"/>
+                                    <apex:selectOption itemLabel="NC" itemValue="NV"/>
+                                    <apex:selectOption itemLabel="ND" itemValue="ND"/>
+                                    <apex:selectOption itemLabel="NE" itemValue="NE"/>
+                                    <apex:selectOption itemLabel="NH" itemValue="NH"/>
+                                    <apex:selectOption itemLabel="NJ" itemValue="NJ"/>
+                                    <apex:selectOption itemLabel="NM" itemValue="NM"/>
+                                    <apex:selectOption itemLabel="NV" itemValue="NV"/>
+                                    <apex:selectOption itemLabel="NY" itemValue="NY"/>
+                                    <apex:selectOption itemLabel="OH" itemValue="OH"/>
+                                    <apex:selectOption itemLabel="OK" itemValue="OK"/>
+                                    <apex:selectOption itemLabel="OR" itemValue="OR"/>
+                                    <apex:selectOption itemLabel="PA" itemValue="PA"/>
+                                    <apex:selectOption itemLabel="PR" itemValue="PR"/>
+                                    <apex:selectOption itemLabel="PW" itemValue="PW"/>
+                                    <apex:selectOption itemLabel="RI" itemValue="RI"/>
+                                    <apex:selectOption itemLabel="SC" itemValue="SC"/>
+                                    <apex:selectOption itemLabel="SD" itemValue="SD"/>
+                                    <apex:selectOption itemLabel="TN" itemValue="TN"/>
+                                    <apex:selectOption itemLabel="TX" itemValue="TX"/>
+                                    <apex:selectOption itemLabel="UT" itemValue="UT"/>
+                                    <apex:selectOption itemLabel="VA" itemValue="VA"/>
+                                    <apex:selectOption itemLabel="VI" itemValue="VI"/>
+                                    <apex:selectOption itemLabel="VT" itemValue="VT"/>
+                                    <apex:selectOption itemLabel="WA" itemValue="WA"/>
+                                    <apex:selectOption itemLabel="WI" itemValue="WI"/>
+                                    <apex:selectOption itemLabel="WV" itemValue="WV"/>
+                                    <apex:selectOption itemLabel="WY" itemValue="WY"/>
+                                    <apex:selectOption itemLabel="Other" itemValue=""/>
+                                </apex:selectList>
+                            </div>
+                            <div class="floatL">
+                                <label>Zip Code:</label><br />
+                                <apex:inputText id="Zip_Billing_Current" value="{!zipBillCur}" maxlength="10" html-compare="current"/>
+                            </div>
+                            <div class="clear"></div>
+                            <div style="overflow: hidden; width:80%;margin-top: -1em;margin-bottom: -1em;">
+                                <p style="float: left;">
+                                    <label>Telephone Number:</label><br />
+                                    <apex:inputText id="telBillCurId" value="{!telBillCur}"   maxlength="14"
+                                                    html-compare="current" html-pattern="(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}"
+                                                    title="Please enter a valid phone number." html-fieldtype="tel"
+                                                    html-placeholder="Numeric digits only."
+                                                    onchange="enableExtensition('telBillCurId','extBillCurrID')"/>
+                                </p>
+                                <!-- PPN-34681 -->
+                                <p style="float: left;">
+                                    <label>Ext:</label><br />
+                                    <apex:inputText id="extBillCurrID" value="{!currBillingAddressPhoneExt}"
+                                                    maxlength="5" html-compare="new" html-pattern="\d[0-9]{0,5}"
+                                                    html-placeholder="Numeric digits only."
+                                                    title="Please enter a valid extension number."
+                                                    html-readOnly="true"/>
+                                </p>
+                            </div>
+                            <p>
+                                <label>Email:</label><br />
+                                <apex:input type="text" id="Email_Billing_Current" html-fieldtype="email" value="{!emailBillCur}"   html-placeholder="you@example.com"  html-compare="current" title="Please enter a valid email address."/>
+                            </p>
+                            <p>
+                                <label>Fax Number:</label><br />
+                                <apex:inputText id="Fax_Billing_Current" value="{!faxBillCur}"   maxlength="14" html-compare="current" html-pattern="(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}" title="Please enter a valid fax number." html-fieldtype="tel" html-placeholder="Numeric digits only.  For example: 1234567890"/> 
+                            </p>
+                        </div>
+                        <div class="column">
+                            <div>
+                                <h3>
+                                    New Billing Address 
+                                </h3>     
+                            </div>
+                            
+                            <p>
+                                <label>Address Line 1:</label><br />
+                                <apex:inputText id="addrBillNew" value="{!strAddrBillNew}" maxlength="255" html-compare="new"/>
+                            </p>
+                            <p>
+                                <label>Address Line 2:</label><br />
+                                <apex:inputText id="addr2BillNew" value="{!strAddr2BillNew}" maxlength="255" html-compare="new"/>
+                            </p>
+                            <p>
+                                <label>City:</label><br />
+                                <apex:inputText id="City_Billing_New" value="{!cityBillNew}" maxlength="255" html-compare="new"/>
+                            </p>
+                            
+                            <div class="floatL marginR">
+                                <label>State:</label><br />
+                                <apex:selectList id="billStateNewId" multiselect="false" size="1" value="{!stateBillNew}" required="false" >
+                                    <apex:selectOption itemLabel="" itemValue=""/>
+                                    <apex:selectOption itemLabel="AA" itemValue="AA"/>
+                                    <apex:selectOption itemLabel="AE" itemValue="AE"/>
+                                    <apex:selectOption itemLabel="AK" itemValue="AK"/>
+                                    <apex:selectOption itemLabel="AL" itemValue="AL"/>
+                                    <apex:selectOption itemLabel="AP" itemValue="AP"/>
+                                    <apex:selectOption itemLabel="AR" itemValue="AR"/>
+                                    <apex:selectOption itemLabel="AS" itemValue="AS"/>
+                                    <apex:selectOption itemLabel="AZ" itemValue="AZ"/>
+                                    <apex:selectOption itemLabel="CA" itemValue="CA"/> 
+                                    <apex:selectOption itemLabel="CO" itemValue="CO"/>
+                                    <apex:selectOption itemLabel="CT" itemValue="CT"/>
+                                    <apex:selectOption itemLabel="CZ" itemValue="CZ"/>
+                                    <apex:selectOption itemLabel="DC" itemValue="DC"/>
+                                    <apex:selectOption itemLabel="DE" itemValue="DE"/>
+                                    <apex:selectOption itemLabel="FL" itemValue="FL"/>
+                                    <apex:selectOption itemLabel="FM" itemValue="FM"/>
+                                    <apex:selectOption itemLabel="GA" itemValue="GA"/>
+                                    <apex:selectOption itemLabel="GU" itemValue="GU"/>
+                                    <apex:selectOption itemLabel="HI" itemValue="HI"/>
+                                    <apex:selectOption itemLabel="IA" itemValue="IA"/>
+                                    <apex:selectOption itemLabel="ID" itemValue="ID"/>
+                                    <apex:selectOption itemLabel="IL" itemValue="IL"/>
+                                    <apex:selectOption itemLabel="IN" itemValue="IN"/>
+                                    <apex:selectOption itemLabel="KS" itemValue="KS"/>
+                                    <apex:selectOption itemLabel="KY" itemValue="KY"/>
+                                    <apex:selectOption itemLabel="LA" itemValue="LA"/>
+                                    <apex:selectOption itemLabel="MA" itemValue="MA"/>
+                                    <apex:selectOption itemLabel="MD" itemValue="MD"/>
+                                    <apex:selectOption itemLabel="ME" itemValue="ME"/>
+                                    <apex:selectOption itemLabel="MI" itemValue="MI"/>
+                                    <apex:selectOption itemLabel="MH" itemValue="MH"/>
+                                    <apex:selectOption itemLabel="MN" itemValue="MN"/>
+                                    <apex:selectOption itemLabel="MO" itemValue="MO"/>
+                                    <apex:selectOption itemLabel="MP" itemValue="MP"/>
+                                    <apex:selectOption itemLabel="MS" itemValue="MS"/>
+                                    <apex:selectOption itemLabel="MT" itemValue="MT"/>
+                                    <apex:selectOption itemLabel="NC" itemValue="NV"/>
+                                    <apex:selectOption itemLabel="ND" itemValue="ND"/>
+                                    <apex:selectOption itemLabel="NE" itemValue="NE"/>
+                                    <apex:selectOption itemLabel="NH" itemValue="NH"/>
+                                    <apex:selectOption itemLabel="NJ" itemValue="NJ"/>
+                                    <apex:selectOption itemLabel="NM" itemValue="NM"/>
+                                    <apex:selectOption itemLabel="NV" itemValue="NV"/>
+                                    <apex:selectOption itemLabel="NY" itemValue="NY"/>
+                                    <apex:selectOption itemLabel="OH" itemValue="OH"/>
+                                    <apex:selectOption itemLabel="OK" itemValue="OK"/>
+                                    <apex:selectOption itemLabel="OR" itemValue="OR"/>
+                                    <apex:selectOption itemLabel="PA" itemValue="PA"/>
+                                    <apex:selectOption itemLabel="PR" itemValue="PR"/>
+                                    <apex:selectOption itemLabel="PW" itemValue="PW"/>
+                                    <apex:selectOption itemLabel="RI" itemValue="RI"/>
+                                    <apex:selectOption itemLabel="SC" itemValue="SC"/>
+                                    <apex:selectOption itemLabel="SD" itemValue="SD"/>
+                                    <apex:selectOption itemLabel="TN" itemValue="TN"/>
+                                    <apex:selectOption itemLabel="TX" itemValue="TX"/>
+                                    <apex:selectOption itemLabel="UT" itemValue="UT"/>
+                                    <apex:selectOption itemLabel="VA" itemValue="VA"/>
+                                    <apex:selectOption itemLabel="VI" itemValue="VI"/>
+                                    <apex:selectOption itemLabel="VT" itemValue="VT"/>
+                                    <apex:selectOption itemLabel="WA" itemValue="WA"/>
+                                    <apex:selectOption itemLabel="WI" itemValue="WI"/>
+                                    <apex:selectOption itemLabel="WV" itemValue="WV"/>
+                                    <apex:selectOption itemLabel="WY" itemValue="WY"/>
+                                    <apex:selectOption itemLabel="Other" itemValue=""/>
+                                </apex:selectList>
+                            </div>
+                            <div class="floatL">
+                                <label>Zip Code:</label><br />
+                                <apex:inputText id="Zip_Billing_New" value="{!zipBillNew}" maxlength="10" html-compare="new"/>
+                            </div>
+                            <div class="clear"></div>
+                            <div style="overflow: hidden; width:80%;margin-top: -1em;margin-bottom: -1em;">
+                                <p style="float: left;">
+                                    <label>Telephone Number:</label><br />
+                                    <apex:inputText id="telBillNewID" value="{!telBillNew}"
+                                                    maxlength="14" html-compare="new" html-pattern="(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}"
+                                                    title="Please enter a valid phone number." html-fieldtype="tel"
+                                                    html-placeholder="Numeric digits only."
+                                                    onchange="enableExtensition('telBillNewID','extBillNewID')" />
+                                </p>
+                                <!-- PPN-34681 -->
+                                <p style="float: left;">
+                                    <label>Ext:</label><br />
+                                    <apex:inputText id="extBillNewID" value="{!newBillingAddressPhoneExt}"
+                                                    maxlength="5" html-compare="new" html-pattern="\d[0-9]{0,5}"
+                                                    html-placeholder="Numeric digits only."
+                                                    title="Please enter a valid extension number."
+                                                    html-readOnly="true"/>
+                                </p>
+                            </div>
+                            <p>
+                                <label>Email:</label><br />
+                                <apex:input type="text" id="Email_Billing_New" value="{!emailBillNew}" html-fieldtype="email"   html-placeholder="you@example.com"  html-compare="new" title="Please enter a valid email address."/>
+                            </p>
+                            <p>
+                                <label>Fax Number:</label><br />
+                                <apex:inputText id="Fax_Billing_New" value="{!faxBillNew}"   maxlength="14" html-compare="new" html-pattern="(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}" title="Please enter a valid fax number."  html-fieldtype="tel" html-placeholder="Numeric digits only.  For example: 1234567890"/>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="section additionalInformation">
+                        <h2>
+                            Additional Information
+                        </h2>
+                        <div class="column">
+                            <label>Comments:</label><br />
+                            <apex:inputTextarea id="commentBill" value="{!commentBill}" rows="5"/>                        
+                        </div>
+                        <div class="column">
+                            <div class="column">
+                                <label class="required"> 
+                                    Effective Date of Change:
+                                </label>
+                                <apex:input id="effDateBillId" html-fauxtype="date" html-readonly="readonly" value="{!effDateofChgBill}"   html-fauxrequired="true"/>
+                            </div>
+                            <div class="column">
+                                <label>Attach Documentation:</label>
+                                <div class="uploadFile">
+                                    
+                                    <span id="combinedFileSize">Combined file size = 0.0 MB</span>   
+                                    
+                                    <apex:inputFile id="billAttach1" value="{!billAttach1.body}" styleclass="upload" filename="{!billAttach1.name}" />
+                                    <apex:inputFile id="billAttach2" value="{!billAttach2.body}" styleclass="upload" filename="{!billAttach2.name}" />
+                                    <apex:inputFile id="billAttach3" value="{!billAttach3.body}" styleclass="upload" filename="{!billAttach3.name}" />
+                                    <apex:inputFile id="billAttach4" value="{!billAttach4.body}" styleclass="upload" filename="{!billAttach4.name}" />
+                                    <apex:inputFile id="billAttach5" value="{!billAttach5.body}" styleclass="upload" filename="{!billAttach5.name}" />
+                                    <div class="smallSpaceOnTop">
+                                        <span class="addAFile">+</span><span class="fileFormatText">Add another file</span>
+                                    </div>
+                                </div>                                                                                             
+                            </div>                                               
+                        </div>                    
+                    </div>                                            
+                    <div class="buttonContainer">
+                        <button class="back" type="button">Back</button>
+                        <button id = 'n6' class="next" type="button">Next</button>                   
+                    </div> 
+                </div>
+                <div id="p7" class="success">
+                    <h2>Credentialing Address/Telephone/Fax/Email Change</h2>
+                    <p class="note required">Indicates required field</p>
+                    <p>Changes requested to a group's information will only be accepted if submitted by the group.  <i>Supporting documentation must be</i> submitted on the group letterhead.</p>
+                    <div class="section">
+                        <div class="column">
+                            <div>
+                                <h3>
+                                    Current Credentialing Address
+                                </h3>     
+                            </div>
+                            
+                            <p>
+                                <label>Address Line 1:</label><br />
+                                <apex:inputText id="addrCred" value="{!strAddrCredCur}" maxlength="255"  html-compare="current"/>
+                            </p>
+                            <p>
+                                <label>Address Line 2:</label><br />
+                                <apex:inputText id="addr2Credt" value="{!strAddr2CredCur}" maxlength="255" html-compare="current"/>
+                            </p>
+                            <p>
+                                <label>City:</label><br />
+                                <apex:inputText id="City_Credential_Current" value="{!cityCredCur}" maxlength="255" html-compare="current"/>
+                            </p>
+                            <div class="stateAndZipContainer">                                                          
+                                <div class="floatL marginR">
+                                    <label>State:</label><br />
+                                    <apex:selectList id="credStateCurId" multiselect="false" size="1" value="{!stateCredCur}" required="false" >
+                                        <apex:selectOption itemLabel="" itemValue=""/>
+                                        <apex:selectOption itemLabel="AA" itemValue="AA"/>
+                                        <apex:selectOption itemLabel="AE" itemValue="AE"/>
+                                        <apex:selectOption itemLabel="AK" itemValue="AK"/>
+                                        <apex:selectOption itemLabel="AL" itemValue="AL"/>
+                                        <apex:selectOption itemLabel="AP" itemValue="AP"/>
+                                        <apex:selectOption itemLabel="AR" itemValue="AR"/>
+                                        <apex:selectOption itemLabel="AS" itemValue="AS"/>
+                                        <apex:selectOption itemLabel="AZ" itemValue="AZ"/>
+                                        <apex:selectOption itemLabel="CA" itemValue="CA"/>                             
+                                        <apex:selectOption itemLabel="CO" itemValue="CO"/>
+                                        <apex:selectOption itemLabel="CT" itemValue="CT"/>
+                                        <apex:selectOption itemLabel="CZ" itemValue="CZ"/>
+                                        <apex:selectOption itemLabel="DC" itemValue="DC"/>
+                                        <apex:selectOption itemLabel="DE" itemValue="DE"/>
+                                        <apex:selectOption itemLabel="FL" itemValue="FL"/>
+                                        <apex:selectOption itemLabel="FM" itemValue="FM"/>
+                                        <apex:selectOption itemLabel="GA" itemValue="GA"/>
+                                        <apex:selectOption itemLabel="GU" itemValue="GU"/>
+                                        <apex:selectOption itemLabel="HI" itemValue="HI"/>
+                                        <apex:selectOption itemLabel="IA" itemValue="IA"/>
+                                        <apex:selectOption itemLabel="ID" itemValue="ID"/>
+                                        <apex:selectOption itemLabel="IL" itemValue="IL"/>
+                                        <apex:selectOption itemLabel="IN" itemValue="IN"/>
+                                        <apex:selectOption itemLabel="KS" itemValue="KS"/>
+                                        <apex:selectOption itemLabel="KY" itemValue="KY"/>
+                                        <apex:selectOption itemLabel="LA" itemValue="LA"/>
+                                        <apex:selectOption itemLabel="MA" itemValue="MA"/>
+                                        <apex:selectOption itemLabel="MD" itemValue="MD"/>
+                                        <apex:selectOption itemLabel="ME" itemValue="ME"/>
+                                        <apex:selectOption itemLabel="MI" itemValue="MI"/>
+                                        <apex:selectOption itemLabel="MH" itemValue="MH"/>
+                                        <apex:selectOption itemLabel="MN" itemValue="MN"/>
+                                        <apex:selectOption itemLabel="MO" itemValue="MO"/>
+                                        <apex:selectOption itemLabel="MP" itemValue="MP"/>
+                                        <apex:selectOption itemLabel="MS" itemValue="MS"/>
+                                        <apex:selectOption itemLabel="MT" itemValue="MT"/>
+                                        <apex:selectOption itemLabel="NC" itemValue="NV"/>
+                                        <apex:selectOption itemLabel="ND" itemValue="ND"/>
+                                        <apex:selectOption itemLabel="NE" itemValue="NE"/>
+                                        <apex:selectOption itemLabel="NH" itemValue="NH"/>
+                                        <apex:selectOption itemLabel="NJ" itemValue="NJ"/>
+                                        <apex:selectOption itemLabel="NM" itemValue="NM"/>
+                                        <apex:selectOption itemLabel="NV" itemValue="NV"/>
+                                        <apex:selectOption itemLabel="NY" itemValue="NY"/>
+                                        <apex:selectOption itemLabel="OH" itemValue="OH"/>
+                                        <apex:selectOption itemLabel="OK" itemValue="OK"/>
+                                        <apex:selectOption itemLabel="OR" itemValue="OR"/>
+                                        <apex:selectOption itemLabel="PA" itemValue="PA"/>
+                                        <apex:selectOption itemLabel="PR" itemValue="PR"/>
+                                        <apex:selectOption itemLabel="PW" itemValue="PW"/>
+                                        <apex:selectOption itemLabel="RI" itemValue="RI"/>
+                                        <apex:selectOption itemLabel="SC" itemValue="SC"/>
+                                        <apex:selectOption itemLabel="SD" itemValue="SD"/>
+                                        <apex:selectOption itemLabel="TN" itemValue="TN"/>
+                                        <apex:selectOption itemLabel="TX" itemValue="TX"/>
+                                        <apex:selectOption itemLabel="UT" itemValue="UT"/>
+                                        <apex:selectOption itemLabel="VA" itemValue="VA"/>
+                                        <apex:selectOption itemLabel="VI" itemValue="VI"/>
+                                        <apex:selectOption itemLabel="VT" itemValue="VT"/>
+                                        <apex:selectOption itemLabel="WA" itemValue="WA"/>
+                                        <apex:selectOption itemLabel="WI" itemValue="WI"/>
+                                        <apex:selectOption itemLabel="WV" itemValue="WV"/>
+                                        <apex:selectOption itemLabel="WY" itemValue="WY"/>
+                                        <apex:selectOption itemLabel="Other" itemValue=""/>
+                                    </apex:selectList>
+                                </div>
+                                <div class="floatL">
+                                    <label>Zip Code:</label><br />
+                                    <apex:inputText id="Zip_Credential_Current" value="{!zipCredCur}" maxlength="10" html-compare="current"/>
+                                </div>                       
+                            </div>
+                            <div style="overflow: hidden; width:80%;margin-top: -1em;margin-bottom: -1em;">
+                                <p style="float: left;">
+                                    <label>Telephone Number:</label><br />
+                                    <apex:inputText id="Telephone_Credential_Current" value="{!telCredCur}"
+                                                    maxlength="14" html-compare="current" html-pattern="(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}"
+                                                    title="Please enter a valid phone number." html-fieldtype="tel" html-placeholder="Numeric digits only."
+                                                    onchange="enableExtensition('Telephone_Credential_Current','extCredCurId')" />
+                                </p>
+                                <!-- PPN-34681 -->
+                                <p style="float: left;">
+                                    <label>Ext:</label><br />
+                                    <apex:inputText id="extCredCurId" value="{!curCredentialingChangePhoneExt}"
+                                                    maxlength="5" html-compare="new" html-pattern="\d[0-9]{0,5}"
+                                                    html-placeholder="Numeric digits only."
+                                                    title="Please enter a valid extension number."
+                                                    html-readOnly="true" />
+                                </p>
+                            </div>
+                            <p>
+                                <label>Email:</label><br />
+                                <apex:inputText id="Email_Credential_Current" html-fieldtype="email" value="{!emailCredCur}"   html-placeholder="you@example.com"  html-compare="current" title="Please enter a valid email address."/>
+                            </p>
+                            <p>
+                                <label>Fax Number:</label><br />
+                                <apex:inputText id="Fax_Credential_Current" value="{!faxCredCur}"   maxlength="14" html-compare="current" html-pattern="(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}" title="Please enter a valid fax number." html-fieldtype="tel" html-placeholder="Numeric digits only.  For example: 1234567890"/> 
+                            </p>
+                            <p>
+                                <label>Credentialing Contact Name:</label><br />
+                                <apex:inputText id="credConNmID" value="{!credConNm}" maxlength="255"/>
+                            </p>
+                        </div>
+                        <div class="column">
+                            <div>
+                                <h3>
+                                    New Credentialing Address 
+                                </h3>     
+                            </div>
+                            
+                            <p>
+                                <label>Address Line 1:</label><br />
+                                <apex:inputText id="addrCredNew" value="{!strAddrCredNew}" maxlength="255" html-compare="new"/>
+                            </p>
+                            <p>
+                                <label>Address Line 2:</label><br />
+                                <apex:inputText id="addr2CredNew" value="{!strAddr2CredNew}" maxlength="255" html-compare="new"/>
+                            </p>
+                            <p>
+                                <label>City:</label><br />
+                                <apex:inputText id="City_Credential_New" value="{!cityCredNew}" maxlength="255" html-compare="new"/>
+                            </p>
+                            <div class="stateAndZipContainer">
+                                <div class="floatL marginR">
+                                    <label>State:</label><br />
+                                    <apex:selectList id="credStateNewId" multiselect="false" size="1" value="{!stateCredNew}" required="false" >
+                                        <apex:selectOption itemLabel="" itemValue=""/>
+                                        <apex:selectOption itemLabel="AA" itemValue="AA"/>
+                                        <apex:selectOption itemLabel="AE" itemValue="AE"/>
+                                        <apex:selectOption itemLabel="AK" itemValue="AK"/>
+                                        <apex:selectOption itemLabel="AL" itemValue="AL"/>
+                                        <apex:selectOption itemLabel="AP" itemValue="AP"/>
+                                        <apex:selectOption itemLabel="AR" itemValue="AR"/>
+                                        <apex:selectOption itemLabel="AS" itemValue="AS"/>
+                                        <apex:selectOption itemLabel="AZ" itemValue="AZ"/>
+                                        <apex:selectOption itemLabel="CA" itemValue="CA"/>                             
+                                        <apex:selectOption itemLabel="CO" itemValue="CO"/>
+                                        <apex:selectOption itemLabel="CT" itemValue="CT"/>
+                                        <apex:selectOption itemLabel="CZ" itemValue="CZ"/>
+                                        <apex:selectOption itemLabel="DC" itemValue="DC"/>
+                                        <apex:selectOption itemLabel="DE" itemValue="DE"/>
+                                        <apex:selectOption itemLabel="FL" itemValue="FL"/>
+                                        <apex:selectOption itemLabel="FM" itemValue="FM"/>
+                                        <apex:selectOption itemLabel="GA" itemValue="GA"/>
+                                        <apex:selectOption itemLabel="GU" itemValue="GU"/>
+                                        <apex:selectOption itemLabel="HI" itemValue="HI"/>
+                                        <apex:selectOption itemLabel="IA" itemValue="IA"/>
+                                        <apex:selectOption itemLabel="ID" itemValue="ID"/>
+                                        <apex:selectOption itemLabel="IL" itemValue="IL"/>
+                                        <apex:selectOption itemLabel="IN" itemValue="IN"/>
+                                        <apex:selectOption itemLabel="KS" itemValue="KS"/>
+                                        <apex:selectOption itemLabel="KY" itemValue="KY"/>
+                                        <apex:selectOption itemLabel="LA" itemValue="LA"/>
+                                        <apex:selectOption itemLabel="MA" itemValue="MA"/>
+                                        <apex:selectOption itemLabel="MD" itemValue="MD"/>
+                                        <apex:selectOption itemLabel="ME" itemValue="ME"/>
+                                        <apex:selectOption itemLabel="MI" itemValue="MI"/>
+                                        <apex:selectOption itemLabel="MH" itemValue="MH"/>
+                                        <apex:selectOption itemLabel="MN" itemValue="MN"/>
+                                        <apex:selectOption itemLabel="MO" itemValue="MO"/>
+                                        <apex:selectOption itemLabel="MP" itemValue="MP"/>
+                                        <apex:selectOption itemLabel="MS" itemValue="MS"/>
+                                        <apex:selectOption itemLabel="MT" itemValue="MT"/>
+                                        <apex:selectOption itemLabel="NC" itemValue="NV"/>
+                                        <apex:selectOption itemLabel="ND" itemValue="ND"/>
+                                        <apex:selectOption itemLabel="NE" itemValue="NE"/>
+                                        <apex:selectOption itemLabel="NH" itemValue="NH"/>
+                                        <apex:selectOption itemLabel="NJ" itemValue="NJ"/>
+                                        <apex:selectOption itemLabel="NM" itemValue="NM"/>
+                                        <apex:selectOption itemLabel="NV" itemValue="NV"/>
+                                        <apex:selectOption itemLabel="NY" itemValue="NY"/>
+                                        <apex:selectOption itemLabel="OH" itemValue="OH"/>
+                                        <apex:selectOption itemLabel="OK" itemValue="OK"/>
+                                        <apex:selectOption itemLabel="OR" itemValue="OR"/>
+                                        <apex:selectOption itemLabel="PA" itemValue="PA"/>
+                                        <apex:selectOption itemLabel="PR" itemValue="PR"/>
+                                        <apex:selectOption itemLabel="PW" itemValue="PW"/>
+                                        <apex:selectOption itemLabel="RI" itemValue="RI"/>
+                                        <apex:selectOption itemLabel="SC" itemValue="SC"/>
+                                        <apex:selectOption itemLabel="SD" itemValue="SD"/>
+                                        <apex:selectOption itemLabel="TN" itemValue="TN"/>
+                                        <apex:selectOption itemLabel="TX" itemValue="TX"/>
+                                        <apex:selectOption itemLabel="UT" itemValue="UT"/>
+                                        <apex:selectOption itemLabel="VA" itemValue="VA"/>
+                                        <apex:selectOption itemLabel="VI" itemValue="VI"/>
+                                        <apex:selectOption itemLabel="VT" itemValue="VT"/>
+                                        <apex:selectOption itemLabel="WA" itemValue="WA"/>
+                                        <apex:selectOption itemLabel="WI" itemValue="WI"/>
+                                        <apex:selectOption itemLabel="WV" itemValue="WV"/>
+                                        <apex:selectOption itemLabel="WY" itemValue="WY"/>
+                                        <apex:selectOption itemLabel="Other" itemValue=""/>
+                                    </apex:selectList>
+                                </div>
+                                <div class="floatL">
+                                    <label>Zip Code:</label><br />
+                                    <apex:inputText id="Zip_Credential_New" value="{!zipCredNew}" maxlength="10" html-compare="new"/>
+                                </div>                       
+                            </div>
+                            <div style="overflow: hidden; width:80%;margin-top: -1em;margin-bottom: -1em;">
+                                <p style="float: left;">
+                                    <label>Telephone Number:</label><br />
+                                    <apex:inputText id="Telephone_Credential_New" value="{!telCredNew}"
+                                                    maxlength="14" html-compare="new" html-pattern="(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}"
+                                                    title="Please enter a valid phone number." html-fieldtype="tel" html-placeholder="Numeric digits only."
+                                                    onchange="enableExtensition('Telephone_Credential_New','extCredNewId')" />
+                                </p>
+                                <!-- PPN-34681 -->
+                                <p style="float: left;">
+                                    <label>Ext:</label><br />
+                                    <apex:inputText id="extCredNewId" value="{!newCredentialingChangePhoneExt}"
+                                                    maxlength="5" html-compare="new" html-pattern="\d[0-9]{0,5}"
+                                                    html-placeholder="Numeric digits only."
+                                                    title="Please enter a valid extension number."
+                                                    html-readOnly="true" />
+                                </p>
+                            </div>
+                            <p>
+                                <label>Email:</label><br />
+                                <apex:input id="Email_Credential_New"  type="text" value="{!emailCredNew}" html-fieldtype="email"   html-placeholder="you@example.com"  html-compare="new" title="Please enter a valid email address."/>
+                            </p>
+                            <p>
+                                <label>Fax Number:</label><br />
+                                <apex:inputText id="Fax_Credential_New" value="{!faxCredNew}"   maxlength="14" html-compare="new" html-pattern="(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}" title="Please enter a valid fax number." html-fieldtype="tel" html-placeholder="Numeric digits only."/>
+                            </p>                   
+                            
+                        </div>
+                    </div>
+                    <div class="section additionalInformation">
+                        <h2>
+                            Additional Information                             
+                        </h2>                    
+                        <div class="column">
+                            <label>Comments:</label><br />
+                            <apex:inputTextarea id="commentCred" value="{!commentCred}" rows="5"/>                        
+                        </div>
+                        <div class="column">
+                            <div class="column">
+                                <label class="required"> 
+                                    Effective Date of Change:
+                                </label>
+                                <apex:input id="effDateCredId" html-fauxtype="date" html-readonly="readonly" value="{!effDateofCredChg}"   html-fauxrequired="true"/>
+                            </div>                                     
+                            <div class="column">
+                                <label>Attach Documentation:</label>
+                                <div class="uploadFile">
+                                    
+                                    <span id="combinedFileSize">Combined file size = 0.0 MB</span>   
+                                    
+                                    <apex:inputFile id="credAttach1" value="{!credAttach1.body}" styleclass="upload" filename="{!credAttach1.name}" />
+                                    <apex:inputFile id="credAttach2" value="{!credAttach2.body}" styleclass="upload" filename="{!credAttach2.name}" />
+                                    <apex:inputFile id="credAttach3" value="{!credAttach3.body}" styleclass="upload" filename="{!credAttach3.name}" />
+                                    <apex:inputFile id="credAttach4" value="{!credAttach4.body}" styleclass="upload" filename="{!credAttach4.name}" />
+                                    <apex:inputFile id="credAttach5" value="{!credAttach5.body}" styleclass="upload" filename="{!credAttach5.name}" />
+                                    <div class="smallSpaceOnTop">
+                                        <span class="addAFile">+</span><span class="fileFormatText">Add another file</span>
+                                    </div>
+                                </div>                                                                                              
+                            </div>    
+                        </div>                                
+                    </div> 
+                    <div class="buttonContainer">
+                        <button class="back" type="button">Back</button>
+                        <button id = 'n7' class="next" type="button">Next</button>                   
+                    </div>              
+                </div>
+                <div id="p8" class="success">
+                    <h2>Administrative Address/Telephone/Fax/Email Change</h2>
+                    <p class="note required">Indicates required field</p>
+                    <p>Changes requested to a group's information will only be accepted if submitted by the group.  <i>Supporting documentation must be</i> submitted on the group letterhead.</p>
+                    <div class="section">
+                        <div class="column">
+                            <div>
+                                <h3>
+                                    Current Administrative Address 
+                                </h3>     
+                            </div>
+                            
+                            <p>
+                                <label>Address Line 1:</label><br />
+                                <apex:inputText id="addrAdmCur" value="{!strAddrAdmCur}" maxlength="255" html-compare="current"/>
+                            </p>
+                            <p>
+                                <label>Address Line 2:</label><br />
+                                <apex:inputText id="addr2AdmCur" value="{!strAddr2AdmCur}" maxlength="255" html-compare="current"/>
+                            </p>
+                            <p>
+                                <label>City:</label><br />
+                                <apex:inputText id="City_Administrative_Current" value="{!cityAdmCur}" maxlength="255" html-compare="current"/>
+                            </p>
+                            <div class="stateAndZipContainer">
+                                <div class="floatL marginR">
+                                    <label>State:</label><br />
+                                    <apex:selectList id="admStateCurId" multiselect="false" size="1" value="{!stateAdmCur}" required="false" >
+                                        <apex:selectOption itemLabel="" itemValue=""/>
+                                        <apex:selectOption itemLabel="AA" itemValue="AA"/>
+                                        <apex:selectOption itemLabel="AE" itemValue="AE"/>
+                                        <apex:selectOption itemLabel="AK" itemValue="AK"/>
+                                        <apex:selectOption itemLabel="AL" itemValue="AL"/>
+                                        <apex:selectOption itemLabel="AP" itemValue="AP"/>
+                                        <apex:selectOption itemLabel="AR" itemValue="AR"/>
+                                        <apex:selectOption itemLabel="AS" itemValue="AS"/>
+                                        <apex:selectOption itemLabel="AZ" itemValue="AZ"/>
+                                        <apex:selectOption itemLabel="CA" itemValue="CA"/>                             
+                                        <apex:selectOption itemLabel="CO" itemValue="CO"/>
+                                        <apex:selectOption itemLabel="CT" itemValue="CT"/>
+                                        <apex:selectOption itemLabel="CZ" itemValue="CZ"/>
+                                        <apex:selectOption itemLabel="DC" itemValue="DC"/>
+                                        <apex:selectOption itemLabel="DE" itemValue="DE"/>
+                                        <apex:selectOption itemLabel="FL" itemValue="FL"/>
+                                        <apex:selectOption itemLabel="FM" itemValue="FM"/>
+                                        <apex:selectOption itemLabel="GA" itemValue="GA"/>
+                                        <apex:selectOption itemLabel="GU" itemValue="GU"/>
+                                        <apex:selectOption itemLabel="HI" itemValue="HI"/>
+                                        <apex:selectOption itemLabel="IA" itemValue="IA"/>
+                                        <apex:selectOption itemLabel="ID" itemValue="ID"/>
+                                        <apex:selectOption itemLabel="IL" itemValue="IL"/>
+                                        <apex:selectOption itemLabel="IN" itemValue="IN"/>
+                                        <apex:selectOption itemLabel="KS" itemValue="KS"/>
+                                        <apex:selectOption itemLabel="KY" itemValue="KY"/>
+                                        <apex:selectOption itemLabel="LA" itemValue="LA"/>
+                                        <apex:selectOption itemLabel="MA" itemValue="MA"/>
+                                        <apex:selectOption itemLabel="MD" itemValue="MD"/>
+                                        <apex:selectOption itemLabel="ME" itemValue="ME"/>
+                                        <apex:selectOption itemLabel="MI" itemValue="MI"/>
+                                        <apex:selectOption itemLabel="MH" itemValue="MH"/>
+                                        <apex:selectOption itemLabel="MN" itemValue="MN"/>
+                                        <apex:selectOption itemLabel="MO" itemValue="MO"/>
+                                        <apex:selectOption itemLabel="MP" itemValue="MP"/>
+                                        <apex:selectOption itemLabel="MS" itemValue="MS"/>
+                                        <apex:selectOption itemLabel="MT" itemValue="MT"/>
+                                        <apex:selectOption itemLabel="NC" itemValue="NV"/>
+                                        <apex:selectOption itemLabel="ND" itemValue="ND"/>
+                                        <apex:selectOption itemLabel="NE" itemValue="NE"/>
+                                        <apex:selectOption itemLabel="NH" itemValue="NH"/>
+                                        <apex:selectOption itemLabel="NJ" itemValue="NJ"/>
+                                        <apex:selectOption itemLabel="NM" itemValue="NM"/>
+                                        <apex:selectOption itemLabel="NV" itemValue="NV"/>
+                                        <apex:selectOption itemLabel="NY" itemValue="NY"/>
+                                        <apex:selectOption itemLabel="OH" itemValue="OH"/>
+                                        <apex:selectOption itemLabel="OK" itemValue="OK"/>
+                                        <apex:selectOption itemLabel="OR" itemValue="OR"/>
+                                        <apex:selectOption itemLabel="PA" itemValue="PA"/>
+                                        <apex:selectOption itemLabel="PR" itemValue="PR"/>
+                                        <apex:selectOption itemLabel="PW" itemValue="PW"/>
+                                        <apex:selectOption itemLabel="RI" itemValue="RI"/>
+                                        <apex:selectOption itemLabel="SC" itemValue="SC"/>
+                                        <apex:selectOption itemLabel="SD" itemValue="SD"/>
+                                        <apex:selectOption itemLabel="TN" itemValue="TN"/>
+                                        <apex:selectOption itemLabel="TX" itemValue="TX"/>
+                                        <apex:selectOption itemLabel="UT" itemValue="UT"/>
+                                        <apex:selectOption itemLabel="VA" itemValue="VA"/>
+                                        <apex:selectOption itemLabel="VI" itemValue="VI"/>
+                                        <apex:selectOption itemLabel="VT" itemValue="VT"/>
+                                        <apex:selectOption itemLabel="WA" itemValue="WA"/>
+                                        <apex:selectOption itemLabel="WI" itemValue="WI"/>
+                                        <apex:selectOption itemLabel="WV" itemValue="WV"/>
+                                        <apex:selectOption itemLabel="WY" itemValue="WY"/>
+                                        <apex:selectOption itemLabel="Other" itemValue=""/>
+                                    </apex:selectList>
+                                </div>
+                                <div class="floatL">
+                                    <label>Zip Code:</label><br />
+                                    <apex:inputText id="Zip_Administrative_Current" value="{!zipAdmCur}" maxlength="10" html-compare="current"/>
+                                </div>                  
+                            </div>
+                            <div style="overflow: hidden; width:80%;margin-top: -1em;margin-bottom: -1em;">
+                                <p style="float: left;">
+                                    <label>Telephone Number:</label><br />
+                                    <apex:inputText id="telAdmCurId" value="{!telAdmCur}"   maxlength="14"
+                                                    html-compare="current" html-pattern="(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}"
+                                                    title="Please enter a valid phone number." html-fieldtype="tel" html-placeholder="Numeric digits only."
+                                                    onchange="enableExtensition('telAdmCurId','extAdminCurID')" />
+                                </p>
+                                <!-- PPN-34681 -->
+                                <p style="float: left;">
+                                    <label>Ext:</label><br />
+                                    <apex:inputText id="extAdminCurID" value="{!curAdminAddressChangePhoneExt}"
+                                                    maxlength="5" html-compare="new" html-pattern="\d[0-9]{0,5}"
+                                                    html-placeholder="Numeric digits only."
+                                                    title="Please enter a valid extension number."
+                                                    html-readOnly="true"/>
+                                </p>
+                            </div>
+                            <p>
+                                <label>Email:</label><br />
+                                <apex:input id="Email_Administrative_Current"  type="text"  html-fieldtype="email" value="{!emailAdmCur}"    html-placeholder="you@example.com"  html-compare="current" title="Please enter a valid email address."/>
+                            </p>
+                            <p>
+                                <label>Fax Number:</label><br />
+                                <apex:inputText id="Fax_Administrative_Current" value="{!faxAdmCur}"   maxlength="14" html-compare="current" html-pattern="(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}" title="Please enter a valid fax number." html-fieldtype="tel" html-placeholder="Numeric digits only.  For example: 1234567890"/>
+                            </p>
+                            <p>
+                                <label>Administrative Contact Name:</label><br />
+                                <apex:inputText id="admConNmId" value="{!admConNm}" maxlength="255"/>
+                            </p>
+                        </div>
+                        <div class="column">
+                            <div>
+                                <h3>
+                                    New Administrative Address 
+                                </h3>     
+                            </div>
+                            
+                            <p>
+                                <label>Address Line 1:</label><br /> 
+                                <apex:inputText id="addrAdmNew" value="{!strAddrAdmNew}" maxlength="255" html-compare="new"/>
+                            </p>
+                            <p>
+                                <label>Address Line 2:</label><br />
+                                <apex:inputText id="addr2AdmNew" value="{!strAddr2AdmNew}" maxlength="255" html-compare="new"/>
+                            </p>
+                            <p>
+                                <label>City:</label><br />
+                                <apex:inputText id="City_Administrative_New" value="{!cityAdmNew}" maxlength="255" html-compare="new"/>
+                            </p>
+                            <div class="stateAndZipContainer">
+                                <div class="floatL marginR">
+                                    <label>State:</label><br />
+                                    <apex:selectList id="admStateNewId" multiselect="false" size="1" value="{!stateAdmNew}" required="false" >
+                                        <apex:selectOption itemLabel="" itemValue=""/>
+                                        <apex:selectOption itemLabel="AA" itemValue="AA"/>
+                                        <apex:selectOption itemLabel="AE" itemValue="AE"/>
+                                        <apex:selectOption itemLabel="AK" itemValue="AK"/>
+                                        <apex:selectOption itemLabel="AL" itemValue="AL"/>
+                                        <apex:selectOption itemLabel="AP" itemValue="AP"/>
+                                        <apex:selectOption itemLabel="AR" itemValue="AR"/>
+                                        <apex:selectOption itemLabel="AS" itemValue="AS"/>
+                                        <apex:selectOption itemLabel="AZ" itemValue="AZ"/>
+                                        <apex:selectOption itemLabel="CA" itemValue="CA"/>                             
+                                        <apex:selectOption itemLabel="CO" itemValue="CO"/>
+                                        <apex:selectOption itemLabel="CT" itemValue="CT"/>
+                                        <apex:selectOption itemLabel="CZ" itemValue="CZ"/>
+                                        <apex:selectOption itemLabel="DC" itemValue="DC"/>
+                                        <apex:selectOption itemLabel="DE" itemValue="DE"/>
+                                        <apex:selectOption itemLabel="FL" itemValue="FL"/>
+                                        <apex:selectOption itemLabel="FM" itemValue="FM"/>
+                                        <apex:selectOption itemLabel="GA" itemValue="GA"/>
+                                        <apex:selectOption itemLabel="GU" itemValue="GU"/>
+                                        <apex:selectOption itemLabel="HI" itemValue="HI"/>
+                                        <apex:selectOption itemLabel="IA" itemValue="IA"/>
+                                        <apex:selectOption itemLabel="ID" itemValue="ID"/>
+                                        <apex:selectOption itemLabel="IL" itemValue="IL"/>
+                                        <apex:selectOption itemLabel="IN" itemValue="IN"/>
+                                        <apex:selectOption itemLabel="KS" itemValue="KS"/>
+                                        <apex:selectOption itemLabel="KY" itemValue="KY"/>
+                                        <apex:selectOption itemLabel="LA" itemValue="LA"/>
+                                        <apex:selectOption itemLabel="MA" itemValue="MA"/>
+                                        <apex:selectOption itemLabel="MD" itemValue="MD"/>
+                                        <apex:selectOption itemLabel="ME" itemValue="ME"/>
+                                        <apex:selectOption itemLabel="MI" itemValue="MI"/>
+                                        <apex:selectOption itemLabel="MH" itemValue="MH"/>
+                                        <apex:selectOption itemLabel="MN" itemValue="MN"/>
+                                        <apex:selectOption itemLabel="MO" itemValue="MO"/>
+                                        <apex:selectOption itemLabel="MP" itemValue="MP"/>
+                                        <apex:selectOption itemLabel="MS" itemValue="MS"/>
+                                        <apex:selectOption itemLabel="MT" itemValue="MT"/>
+                                        <apex:selectOption itemLabel="NC" itemValue="NV"/>
+                                        <apex:selectOption itemLabel="ND" itemValue="ND"/>
+                                        <apex:selectOption itemLabel="NE" itemValue="NE"/>
+                                        <apex:selectOption itemLabel="NH" itemValue="NH"/>
+                                        <apex:selectOption itemLabel="NJ" itemValue="NJ"/>
+                                        <apex:selectOption itemLabel="NM" itemValue="NM"/>
+                                        <apex:selectOption itemLabel="NV" itemValue="NV"/>
+                                        <apex:selectOption itemLabel="NY" itemValue="NY"/>
+                                        <apex:selectOption itemLabel="OH" itemValue="OH"/>
+                                        <apex:selectOption itemLabel="OK" itemValue="OK"/>
+                                        <apex:selectOption itemLabel="OR" itemValue="OR"/>
+                                        <apex:selectOption itemLabel="PA" itemValue="PA"/>
+                                        <apex:selectOption itemLabel="PR" itemValue="PR"/>
+                                        <apex:selectOption itemLabel="PW" itemValue="PW"/>
+                                        <apex:selectOption itemLabel="RI" itemValue="RI"/>
+                                        <apex:selectOption itemLabel="SC" itemValue="SC"/>
+                                        <apex:selectOption itemLabel="SD" itemValue="SD"/>
+                                        <apex:selectOption itemLabel="TN" itemValue="TN"/>
+                                        <apex:selectOption itemLabel="TX" itemValue="TX"/>
+                                        <apex:selectOption itemLabel="UT" itemValue="UT"/>
+                                        <apex:selectOption itemLabel="VA" itemValue="VA"/>
+                                        <apex:selectOption itemLabel="VI" itemValue="VI"/>
+                                        <apex:selectOption itemLabel="VT" itemValue="VT"/>
+                                        <apex:selectOption itemLabel="WA" itemValue="WA"/>
+                                        <apex:selectOption itemLabel="WI" itemValue="WI"/>
+                                        <apex:selectOption itemLabel="WV" itemValue="WV"/>
+                                        <apex:selectOption itemLabel="WY" itemValue="WY"/>
+                                        <apex:selectOption itemLabel="Other" itemValue=""/>
+                                    </apex:selectList>
+                                </div>
+                                <div class="floatL">
+                                    <label>Zip Code:</label><br />
+                                    <apex:inputText id="Zip_Administrative_New" value="{!zipAdmNew}" maxlength="10" html-compare="new"/>
+                                </div>                 
+                            </div>
+                           <div style="overflow: hidden; width:80%;margin-top: -1em;margin-bottom: -1em;">
+                                <p style="float: left;">
+                                    <label>Telephone Number:</label><br />
+                                    <apex:inputText id="telAdmNew" value="{!telAdmNew}"    maxlength="14" html-compare="new"
+                                                    html-pattern="(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}" title="Please enter a valid phone number."
+                                                    html-fieldtype="tel" html-placeholder="Numeric digits only."
+                                                    onchange="enableExtensition('telAdmNew','extAdminNewID')" />
+                                </p>
+                                <!-- PPN-34681 -->
+                                <p style="float: left;">
+                                    <label>Ext:</label><br />
+                                    <apex:inputText id="extAdminNewID" value="{!newAdminAddressChangePhoneExt}"
+                                                    maxlength="5" html-compare="new" html-pattern="\d[0-9]{0,5}"
+                                                    html-placeholder="Numeric digits only."
+                                                    title="Please enter a valid extension number."
+                                                    html-readOnly="true" />
+                                </p>
+                            </div>
+                            <p>
+                                <label>Email:</label><br />
+                                <apex:input id="emailAdmNew"  type="text" value="{!emailAdmNew}" html-fieldtype="email"    html-placeholder="you@example.com"  html-compare="new" title="Please enter a valid email address."/>
+                            </p>
+                            <p>
+                                <label>Fax Number:</label><br />
+                                <apex:inputText id="faxAdmNewId" value="{!faxAdmNew}"   maxlength="14" html-compare="new" html-pattern="(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}" title="Please enter a valid fax number." html-fieldtype="tel" html-placeholder="Numeric digits only.  For example: 1234567890"/> 
+                            </p>                                                          
+                        </div>
+                    </div>
+                    <div class="section additionalInformation">
+                        <h2>
+                            Additional Information
+                        </h2>
+                        <div class="column">
+                            <label>Comments:</label><br />
+                            <apex:inputTextarea id="commentAdm" value="{!commentAdm}" rows="5"/>                        
+                        </div>
+                        <div class="column">
+                            <div class="column">
+                                <label class="required"> 
+                                    Effective Date of Change:
+                                </label>
+                                <apex:input id="effDateAdmIdNew" html-fauxtype="date" html-readonly="readonly" value="{!effDateofChgAdm}"   html-fauxrequired="true"/>
+                            </div>                                          
+                            <div class="column">
+                                <label>Attach Documentation:</label>
+                                <div class="uploadFile">
+                                    
+                                    <span id="combinedFileSize">Combined file size = 0.0 MB</span>   
+                                    
+                                    <apex:inputFile id="admAttach1" value="{!admAttach1.body}" styleclass="upload" filename="{!admAttach1.name}" />
+                                    <apex:inputFile id="admAttach2" value="{!admAttach2.body}" styleclass="upload" filename="{!admAttach2.name}" />
+                                    <apex:inputFile id="admAttach3" value="{!admAttach3.body}" styleclass="upload" filename="{!admAttach3.name}" />
+                                    <apex:inputFile id="admAttach4" value="{!admAttach4.body}" styleclass="upload" filename="{!admAttach4.name}" />
+                                    <apex:inputFile id="admAttach5" value="{!admAttach5.body}" styleclass="upload" filename="{!admAttach5.name}" />
+                                    <div class="smallSpaceOnTop">
+                                        <span class="addAFile">+</span><span class="fileFormatText">Add another file</span>
+                                    </div>
+                                </div>                                                                                                
+                            </div>                                                
+                        </div>                    
+                    </div>
+                    
+                    <div class="buttonContainer">
+                        <button class="back" type="button">Back</button>
+                        <button id = 'n8' class="next" type="button">Next</button>                   
+                    </div>                                           
+                </div>
+                <div id="p9" class="success">
+                    <h2>Other Provider Updates</h2>
+                    <p class="note required">Indicates required field</p>
+                    <div class="section">
+                        <div class="column">
+                            <div>
+                                <h3>Current Information</h3>     
+                            </div>
+                            
+                            <p>
+                                <label>Hospital Privilege (list all):</label><br />
+                                <apex:inputText id="hospPrIdCur" value="{!hospPrivListAll}"  maxlength="255" html-compare="current"/>
+                            </p>
+                            <p>
+                                <label>Ambulatory Surgery Center Privileges (list all):</label><br />
+                                <apex:inputText id="ambPrivIdCur" value="{!ambSurCenterPriv}" maxlength="255"  html-compare="current"/>
+                            </p>
+                            <p>
+                                <label>License Number:</label><br />
+                                <apex:inputText id="licenseOPCur" value="{!licenseOPCur}" maxlength="255" html-compare="current"/>
+                            </p>
+                            <p>
+                                <label>Specialty:</label><br />
+                                <apex:inputText id="Specialty" value="{!Specialty}" maxlength="255" html-compare="current"/>
+                            </p>
+                            <p>
+                                <label>Subspecialty:</label><br />
+                                <apex:inputText id="subSpecialtyCurId" value="{!subSpecialtyCur}" maxlength="255" html-compare="current"/>
+                            </p>
+                            <p>
+                                <label>Specialty Effective Date:</label>
+                                <apex:input id="speffdateCurId" html-fauxtype="date" html-readonly="readonly"   value="{!speffdateCur}" html-compare="current"/>
+                            </p>
+                            <p>
+                                <label>Specialty Certification Date:</label>
+                                <apex:input id="spcerdateCurId" html-fauxtype="date" html-readonly="readonly" value="{!spcerdateCur}" html-compare="current"/>
+                            </p>
+                            
+                            <table>
+                                <tr>
+                                    <div>
+                                        <td><label>Board Certified:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;</label></td>
+                                    </div>  
+                                    <td>
+                                        <apex:selectRadio id="boardCertified" value="{!boardCertified}">
+                                            <apex:selectOption itemValue="Yes" itemLabel="Yes" />
+                                            <apex:selectOption itemValue="No" itemLabel="No" />
+                                        </apex:selectRadio>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td><label>Provide Lactation Services:</label></td>
+                                    <td>
+                                        <apex:selectRadio id="ProvideLactationServices" value="{!ProvideLactationServices}">
+                                            <apex:selectOption itemValue="Yes" itemLabel="Yes" />
+                                            <apex:selectOption itemValue="No" itemLabel="No" />
+                                        </apex:selectRadio>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="column">
+                            <div>
+                                <h3>New Information</h3>     
+                            </div>
+                            
+                            <p>
+                                <label>Hospital Privilege (list all):</label><br />
+                                <apex:inputText id="hospPrNewId" value="{!hospPrivListAllNew}" maxlength="255" html-compare="new"/>
+                            </p>
+                            <p>
+                                <label>Ambulatory Surgery Center Privileges (list all):</label><br />
+                                <apex:inputText id="ambPrivNewId" value="{!ambSurCenterPrivNew}" maxlength="255" html-compare="new"/>
+                            </p>
+                            <p>
+                                <label>License Number:</label><br />
+                                <apex:inputText id="licenseOPNew" value="{!licenseOPNew}" maxlength="255" html-compare="new"/>
+                            </p>
+                            <p>
+                                <label>Specialty:</label><br />
+                                <apex:inputText id="SpecialtyNew" value="{!SpecialtyNew}" maxlength="255" html-compare="new"/>
+                            </p>
+                            <p>
+                                <label>Subspecialty:</label><br />
+                                <apex:inputText id="subSpecialtyNewId" value="{!subSpecialtyNew}" maxlength="255" html-compare="new"/>
+                            </p>
+                            <p>
+                                <label>Specialty Effective Date:</label>
+                                <apex:input id="speffdateNewId" html-fauxtype="date" html-readonly="readonly"  value="{!speffdateNew}" html-compare="new"/>
+                            </p>
+                            <p>
+                                <label>Specialty Certification Date:</label>
+                                <apex:input id="spcerdateNewId" html-fauxtype="date" html-readonly="readonly" value="{!spcerdateNew}" html-compare="new"/>
+                            </p>
+                            
+                            <table>
+                                <tr>
+                                    <div>
+                                        <td><label>Board Certified:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;</label></td>
+                                    </div>
+                                    <td>
+                                        <apex:selectRadio id="boardCertifiedNew" value="{!boardCertifiedNew}">
+                                            <apex:selectOption itemValue="Yes" itemLabel="Yes" />
+                                            <apex:selectOption itemValue="No" itemLabel="No" />
+                                        </apex:selectRadio>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td><label>Provide Lactation Services:</label></td>
+                                    <td>
+                                        <apex:selectRadio id="ProvideLactationServicesNew" value="{!ProvideLactationServicesNew}">
+                                            <apex:selectOption itemValue="Yes" itemLabel="Yes" />
+                                            <apex:selectOption itemValue="No" itemLabel="No" />
+                                        </apex:selectRadio>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p>
+                                <label>Date Of Birth:</label>
+                                <apex:input id="dobId" html-fauxtype="date" html-readonly="readonly" value="{!dateOfBirth}"/>
+                            </p>
+                            <p>
+                                <label>DEA Number:</label><br />        
+                                <apex:inputText id="dEA" value="{!dEA}" maxlength="50"/>
+                            </p>
+                            <p>
+                                <label>DEA Number Expiration Date:</label>
+                                <apex:input id="dEAExpirationDate" html-fauxtype="date" html-readonly="readonly" value="{!dEAExpirationDate}" />
+                            </p>
+                            <p>
+                                <label>Languages (spoken or written):</label><br />
+                                <apex:inputText id="langSpokenWritten" value="{!langSpokenWritten}" maxlength="255"/>
+                            </p>
+                            <p>
+                                <label>Medical School Name:</label><br />
+                                <apex:inputText id="schId" value="{!medSchoolName}" maxlength="255"/>
+                            </p>
+                            <p>
+                                <label>Date of Graduation:</label>
+                                <apex:input id="yearOfGrad" html-fauxtype="date" html-readonly="readonly" value="{!yearOfGrad}"/>
+                            </p>
+                            <p>
+                                <label>Residency Hospital Name:</label><br />
+                                <apex:inputText id="resNmId" value="{!resHospName}" maxlength="255"/>
+                            </p>
+                            <div id="residencyContainer">                                                      
+                                <div>
+                                    <label>Residency Period:</label>
+                                </div>
+                                <div class="floatL">                               
+                                    <label>From</label>&nbsp;&nbsp;
+                                    <apex:input id="FromOther" html-fauxtype="date" html-readonly="readonly"  value="{!FromOther}"/>
+                                </div>
+                                
+                                <div class="floatL">                               
+                                    <label> To</label>&nbsp;&nbsp;
+                                    <apex:input id="ToOther" html-fauxtype="date" html-readonly="readonly" value="{!ToOther}"/>
+                                </div>
+                            </div>
+                            <p>
+                                <label>Ethnicity:</label><br />
+                                <apex:selectList id="ethId" multiselect="false" size="1" value="{!ethnicity}">
+                                    <apex:selectOption itemValue="" itemLabel="" />
+                                    <apex:selectOption itemValue="American Indian or Alaskan Native" itemLabel="American Indian or Alaskan Native" />
+                                    <apex:selectOption itemValue="Asian or Pacific Islander" itemLabel="Asian or Pacific Islander" />
+                                    <apex:selectOption itemValue="Black" itemLabel="Black" />
+                                    <apex:selectOption itemValue="Hispanic" itemLabel="Hispanic" />
+                                    <apex:selectOption itemValue="White" itemLabel="White" />
+                                </apex:selectList>                              
+                            </p>
+                        </div>
+                    </div>
+                    <div class="section additionalInformation">
+                        <h2>
+                            Additional Information
+                        </h2>
+                        <div class="column">
+                            <label>Comments:</label><br />
+                            <apex:inputTextarea id="comOtherId" value="{!commentOther}" rows="5"/>                                
+                        </div>
+                        <div class="column">
+                            <div class="column">
+                                <label class="required"> 
+                                    Effective Date of Change:
+                                </label>
+                                <apex:input id="effDateAdmID" html-fauxtype="date" html-readonly="readonly"   value="{!effDateofChgOth}"   html-fauxrequired="true"/>
+                            </div>
+                            
+                            <div class="column">
+                                <label>Attach Documentation:</label>
+                                <div class="uploadFile">
+                                    
+                                    <span id="combinedFileSize">Combined file size = 0.0 MB</span>   
+                                    
+                                    <apex:inputFile id="otherAttach1" value="{!otherAttach1.body}" styleclass="upload" filename="{!otherAttach1.name}" />
+                                    <apex:inputFile id="otherAttach2" value="{!otherAttach2.body}" styleclass="upload" filename="{!otherAttach2.name}" />
+                                    <apex:inputFile id="otherAttach3" value="{!otherAttach3.body}" styleclass="upload" filename="{!otherAttach3.name}" />
+                                    <apex:inputFile id="otherAttach4" value="{!otherAttach4.body}" styleclass="upload" filename="{!otherAttach4.name}" />
+                                    <apex:inputFile id="otherAttach5" value="{!otherAttach5.body}" styleclass="upload" filename="{!otherAttach5.name}" />
+                                    <div class="smallSpaceOnTop">
+                                        <span class="addAFile">+</span><span class="fileFormatText">Add another file</span>
+                                    </div>
+                                </div>                                                                                                                                      
+                            </div>                                                                
+                        </div>                            
+                    </div>  
+                    <div class="buttonContainer">                   
+                        <button  class="back" type="button">Back</button>    
+                        <button id = 'n9' class="next" type="button">Next</button>  
+                    </div>                                 
+                    
+                    
+                </div>
+                <div id="p10" class="success">
+                    <h2>Remove Provider from Group/Location</h2>
+                    <p class="note required">Indicates required field</p>
+                    <p>If you are removing a provider from more than two service locations, please Attach an Excel file with all applicable locations.</p>
+                    <div class="section">
+                        <div class="column">
+                            <div>
+                                <h3>
+                                    Individual Provider Information
+                                </h3>    
+                            </div>                                              
+                            <p>
+                                <label class="required">Individual Provider Name:</label><br />
+                                <apex:inputText id="indProvNameId" value="{!indProvName}" maxlength="255" title="Please complete the required field." html-fauxrequired="true"/>
+                            </p>
+                            <p>
+                                <label>Individual's Type 1 NPI:</label><br />
+                                <apex:inputText id="indType1NPIId" value="{!indType1NPI}" styleClass="allow_numeric" maxlength="10" html-pattern="[0-9]{10}" title="This field must be 10 numeric characters." />
+                            </p>
+                            <p>
+                                <label>Other ID Number (Eg: Medicaid #, API #, LTSS #, TPI #):</label><br />
+                                <apex:inputText id="otherRId" value="{!otherId}" maxlength="255" />
+                            </p>
+                        </div>      
+                    </div>
+                    
+                    <div class="section">    
+                        <div class="column">
+                            <div>
+                                <h3>
+                                    Provider Location Information 
+                                </h3>
+                            </div>
+                            <p>
+                                <label>
+                                    <apex:inputCheckBox id="remFrmAllLocId" value="{!remFrmAllLoc}" html-target="#firstAddressContainer,  #removeAllContainer" />
+                                    Remove Provider from all locations on file
+                                </label><br /><br />
+                            </p>
+                        </div>
+                    </div>
+                    <div class="section" id="firstAddressContainer">  
+                        <div class="column">
+                            <div>                                                  
+                                <p>
+                                    <label>Address Line 1:</label><br />
+                                    <apex:inputText id="strAddProvGrpId" value="{!strAddProvGrp}" maxlength="255" />
+                                </p>
+                                <p>
+                                    <label>Address Line 2:</label><br />
+                                    <apex:inputText id="strAdd1ProvGrpId" value="{!strAdd1ProvGrp}" maxlength="255"/>
+                                </p>
+                                <p>
+                                    <label>City:</label><br />
+                                    <apex:inputText id="cityProvGrpId" value="{!cityProvGrp}" maxlength="255"/>
+                                </p>
+                                <div class="stateAndZipContainer">
+                                    <div class="floatL marginR">
+                                        <label>State:</label><br />
+                                        <apex:selectList id="stateProvGrpId" multiselect="false" size="1" value="{!stateProvGrp}">
+                                            <apex:selectOption itemLabel="" itemValue=""/>
+                                            <apex:selectOption itemLabel="AA" itemValue="AA"/>
+                                            <apex:selectOption itemLabel="AE" itemValue="AE"/>
+                                            <apex:selectOption itemLabel="AK" itemValue="AK"/>
+                                            <apex:selectOption itemLabel="AL" itemValue="AL"/>
+                                            <apex:selectOption itemLabel="AP" itemValue="AP"/>
+                                            <apex:selectOption itemLabel="AR" itemValue="AR"/>
+                                            <apex:selectOption itemLabel="AS" itemValue="AS"/>
+                                            <apex:selectOption itemLabel="AZ" itemValue="AZ"/>
+                                            <apex:selectOption itemLabel="CA" itemValue="CA"/>                             
+                                            <apex:selectOption itemLabel="CO" itemValue="CO"/>
+                                            <apex:selectOption itemLabel="CT" itemValue="CT"/>
+                                            <apex:selectOption itemLabel="CZ" itemValue="CZ"/>
+                                            <apex:selectOption itemLabel="DC" itemValue="DC"/>
+                                            <apex:selectOption itemLabel="DE" itemValue="DE"/>
+                                            <apex:selectOption itemLabel="FL" itemValue="FL"/>
+                                            <apex:selectOption itemLabel="FM" itemValue="FM"/>
+                                            <apex:selectOption itemLabel="GA" itemValue="GA"/>
+                                            <apex:selectOption itemLabel="GU" itemValue="GU"/>
+                                            <apex:selectOption itemLabel="HI" itemValue="HI"/>
+                                            <apex:selectOption itemLabel="IA" itemValue="IA"/>
+                                            <apex:selectOption itemLabel="ID" itemValue="ID"/>
+                                            <apex:selectOption itemLabel="IL" itemValue="IL"/>
+                                            <apex:selectOption itemLabel="IN" itemValue="IN"/>
+                                            <apex:selectOption itemLabel="KS" itemValue="KS"/>
+                                            <apex:selectOption itemLabel="KY" itemValue="KY"/>
+                                            <apex:selectOption itemLabel="LA" itemValue="LA"/>
+                                            <apex:selectOption itemLabel="MA" itemValue="MA"/>
+                                            <apex:selectOption itemLabel="MD" itemValue="MD"/>
+                                            <apex:selectOption itemLabel="ME" itemValue="ME"/>
+                                            <apex:selectOption itemLabel="MI" itemValue="MI"/>
+                                            <apex:selectOption itemLabel="MH" itemValue="MH"/>
+                                            <apex:selectOption itemLabel="MN" itemValue="MN"/>
+                                            <apex:selectOption itemLabel="MO" itemValue="MO"/>
+                                            <apex:selectOption itemLabel="MP" itemValue="MP"/>
+                                            <apex:selectOption itemLabel="MS" itemValue="MS"/>
+                                            <apex:selectOption itemLabel="MT" itemValue="MT"/>
+                                            <apex:selectOption itemLabel="NC" itemValue="NV"/>
+                                            <apex:selectOption itemLabel="ND" itemValue="ND"/>
+                                            <apex:selectOption itemLabel="NE" itemValue="NE"/>
+                                            <apex:selectOption itemLabel="NH" itemValue="NH"/>
+                                            <apex:selectOption itemLabel="NJ" itemValue="NJ"/>
+                                            <apex:selectOption itemLabel="NM" itemValue="NM"/>
+                                            <apex:selectOption itemLabel="NV" itemValue="NV"/>
+                                            <apex:selectOption itemLabel="NY" itemValue="NY"/>
+                                            <apex:selectOption itemLabel="OH" itemValue="OH"/>
+                                            <apex:selectOption itemLabel="OK" itemValue="OK"/>
+                                            <apex:selectOption itemLabel="OR" itemValue="OR"/>
+                                            <apex:selectOption itemLabel="PA" itemValue="PA"/>
+                                            <apex:selectOption itemLabel="PR" itemValue="PR"/>
+                                            <apex:selectOption itemLabel="PW" itemValue="PW"/>
+                                            <apex:selectOption itemLabel="RI" itemValue="RI"/>
+                                            <apex:selectOption itemLabel="SC" itemValue="SC"/>
+                                            <apex:selectOption itemLabel="SD" itemValue="SD"/>
+                                            <apex:selectOption itemLabel="TN" itemValue="TN"/>
+                                            <apex:selectOption itemLabel="TX" itemValue="TX"/>
+                                            <apex:selectOption itemLabel="UT" itemValue="UT"/>
+                                            <apex:selectOption itemLabel="VA" itemValue="VA"/>
+                                            <apex:selectOption itemLabel="VI" itemValue="VI"/>
+                                            <apex:selectOption itemLabel="VT" itemValue="VT"/>
+                                            <apex:selectOption itemLabel="WA" itemValue="WA"/>
+                                            <apex:selectOption itemLabel="WI" itemValue="WI"/>
+                                            <apex:selectOption itemLabel="WV" itemValue="WV"/>
+                                            <apex:selectOption itemLabel="WY" itemValue="WY"/>
+                                            <apex:selectOption itemLabel="Other" itemValue=""/>
+                                        </apex:selectList>
+                                    </div> 
+                                    <div class="floatL">
+                                        <label>Zip Code:</label><br />
+                                        <apex:inputText id="zipProvGrpId" value="{!zipProvGrp}" maxlength="10" />
+                                    </div>                  
+                                </div>  
+                            </div>   
+                            <p>
+                                <label class="required">Reason for leaving:</label><br />
+                                <apex:selectList id="reasonleavgrpId" multiselect="false" size="1" value="{!reasonleavgrp}" title="Please complete the required field." > 
+                                    <apex:selectOption itemLabel="" itemValue=""/>
+                                    <apex:selectOption itemLabel="Deceased" itemValue="Deceased"/>
+                                    <apex:selectOption itemLabel="Retired" itemValue="Retired"/>
+                                    <apex:selectOption itemLabel="Left Group" itemValue="Left Group"/>  
+                                    <apex:selectOption itemLabel="Individual no longer at service location" itemValue="Individual no longer at service location"/>                                  
+                                </apex:selectList>
+                            </p>                            
+                            <p>
+                                <label class="required">Effective Date of Termination:</label><br />
+                                <apex:input id="effDateofTrmId" html-fauxtype="date" html-readonly="readonly" value="{!effDateofTrmProvGrp}"/>                           
+                            </p>
+                            <p>
+                                <br /><br />
+                                <label>
+                                    <apex:inputCheckBox id="addLocPrvGrpId" value="{!addLocProvGrp}" html-target="#add2"/>
+                                    Add another location for removal
+                                </label>
+                            </p>
+                        </div>
+                        <div class="column" id="add2">                         
+                            <p>
+                                <label>Address Line 1:</label><br /> 
+                                <apex:inputText id="strAddProvGrp1Id" value="{!strAddProvGrp1}" maxlength="255" />
+                            </p>
+                            <p>
+                                <label>Address Line 2:</label><br />
+                                <apex:inputText id="strAdd1ProvGrp1Id" value="{!strAdd1ProvGrp1}" maxlength="255" />
+                            </p>
+                            <p>
+                                <label>City:</label><br />
+                                <apex:inputText id="cityProvGrp1Id" value="{!cityProvGrp1}" maxlength="255" />
+                            </p>
+                            <div class="stateAndZipContainer">
+                                <div class="floatL marginR">
+                                    <label>State:</label><br />
+                                    <apex:selectList id="stateProvGrp1id" multiselect="false" size="1" value="{!stateProvGrp1}" required="false" >
+                                        <apex:selectOption itemLabel="" itemValue=""/>
+                                        <apex:selectOption itemLabel="AA" itemValue="AA"/>
+                                        <apex:selectOption itemLabel="AE" itemValue="AE"/>
+                                        <apex:selectOption itemLabel="AK" itemValue="AK"/>
+                                        <apex:selectOption itemLabel="AL" itemValue="AL"/>
+                                        <apex:selectOption itemLabel="AP" itemValue="AP"/>
+                                        <apex:selectOption itemLabel="AR" itemValue="AR"/>
+                                        <apex:selectOption itemLabel="AS" itemValue="AS"/>
+                                        <apex:selectOption itemLabel="AZ" itemValue="AZ"/>
+                                        <apex:selectOption itemLabel="CA" itemValue="CA"/>                             
+                                        <apex:selectOption itemLabel="CO" itemValue="CO"/>
+                                        <apex:selectOption itemLabel="CT" itemValue="CT"/>
+                                        <apex:selectOption itemLabel="CZ" itemValue="CZ"/>
+                                        <apex:selectOption itemLabel="DC" itemValue="DC"/>
+                                        <apex:selectOption itemLabel="DE" itemValue="DE"/>
+                                        <apex:selectOption itemLabel="FL" itemValue="FL"/>
+                                        <apex:selectOption itemLabel="FM" itemValue="FM"/>
+                                        <apex:selectOption itemLabel="GA" itemValue="GA"/>
+                                        <apex:selectOption itemLabel="GU" itemValue="GU"/>
+                                        <apex:selectOption itemLabel="HI" itemValue="HI"/>
+                                        <apex:selectOption itemLabel="IA" itemValue="IA"/>
+                                        <apex:selectOption itemLabel="ID" itemValue="ID"/>
+                                        <apex:selectOption itemLabel="IL" itemValue="IL"/>
+                                        <apex:selectOption itemLabel="IN" itemValue="IN"/>
+                                        <apex:selectOption itemLabel="KS" itemValue="KS"/>
+                                        <apex:selectOption itemLabel="KY" itemValue="KY"/>
+                                        <apex:selectOption itemLabel="LA" itemValue="LA"/>
+                                        <apex:selectOption itemLabel="MA" itemValue="MA"/>
+                                        <apex:selectOption itemLabel="MD" itemValue="MD"/>
+                                        <apex:selectOption itemLabel="ME" itemValue="ME"/>
+                                        <apex:selectOption itemLabel="MI" itemValue="MI"/>
+                                        <apex:selectOption itemLabel="MH" itemValue="MH"/>
+                                        <apex:selectOption itemLabel="MN" itemValue="MN"/>
+                                        <apex:selectOption itemLabel="MO" itemValue="MO"/>
+                                        <apex:selectOption itemLabel="MP" itemValue="MP"/>
+                                        <apex:selectOption itemLabel="MS" itemValue="MS"/>
+                                        <apex:selectOption itemLabel="MT" itemValue="MT"/>
+                                        <apex:selectOption itemLabel="NC" itemValue="NV"/>
+                                        <apex:selectOption itemLabel="ND" itemValue="ND"/>
+                                        <apex:selectOption itemLabel="NE" itemValue="NE"/>
+                                        <apex:selectOption itemLabel="NH" itemValue="NH"/>
+                                        <apex:selectOption itemLabel="NJ" itemValue="NJ"/>
+                                        <apex:selectOption itemLabel="NM" itemValue="NM"/>
+                                        <apex:selectOption itemLabel="NV" itemValue="NV"/>
+                                        <apex:selectOption itemLabel="NY" itemValue="NY"/>
+                                        <apex:selectOption itemLabel="OH" itemValue="OH"/>
+                                        <apex:selectOption itemLabel="OK" itemValue="OK"/>
+                                        <apex:selectOption itemLabel="OR" itemValue="OR"/>
+                                        <apex:selectOption itemLabel="PA" itemValue="PA"/>
+                                        <apex:selectOption itemLabel="PR" itemValue="PR"/>
+                                        <apex:selectOption itemLabel="PW" itemValue="PW"/>
+                                        <apex:selectOption itemLabel="RI" itemValue="RI"/>
+                                        <apex:selectOption itemLabel="SC" itemValue="SC"/>
+                                        <apex:selectOption itemLabel="SD" itemValue="SD"/>
+                                        <apex:selectOption itemLabel="TN" itemValue="TN"/>
+                                        <apex:selectOption itemLabel="TX" itemValue="TX"/>
+                                        <apex:selectOption itemLabel="UT" itemValue="UT"/>
+                                        <apex:selectOption itemLabel="VA" itemValue="VA"/>
+                                        <apex:selectOption itemLabel="VI" itemValue="VI"/>
+                                        <apex:selectOption itemLabel="VT" itemValue="VT"/>
+                                        <apex:selectOption itemLabel="WA" itemValue="WA"/>
+                                        <apex:selectOption itemLabel="WI" itemValue="WI"/>
+                                        <apex:selectOption itemLabel="WV" itemValue="WV"/>
+                                        <apex:selectOption itemLabel="WY" itemValue="WY"/>
+                                        <apex:selectOption itemLabel="Other" itemValue=""/>
+                                    </apex:selectList>
+                                </div>
+                                <div class="floatL">
+                                    <label>Zip Code:</label><br />
+                                    <apex:inputText id="zipProvGrp1Id" value="{!zipProvGrp1}" maxlength="10" />
+                                </div>                 
+                            </div>
+                            <p>
+                                <label class="required">Reason for leaving:</label><br />
+                                <apex:selectList id="reasonleavgrp1" multiselect="false" size="1" value="{!reasonleavgrp1}" title="Please complete the required field."  >
+                                    <apex:selectOption itemLabel="" itemValue=""/>
+                                    <apex:selectOption itemLabel="Deceased" itemValue="Deceased"/>
+                                    <apex:selectOption itemLabel="Retired" itemValue="Retired"/>
+                                    <apex:selectOption itemLabel="Left Group" itemValue="Left Group"/>       
+                                    <apex:selectOption itemLabel="Individual no longer at service location" itemValue="Individual no longer at service location"/>                                                                  
+                                </apex:selectList>                            
+                            </p>                           
+                            <p>
+                                <label class="required">Effective Date of Termination:</label><br />                            
+                                <apex:input id="effDateofTrm1Id" html-fauxtype="date" html-readonly="readonly"  value="{!effDateofTrmProvGrp1}"/>                           
+                            </p>                                                  
+                        </div>
+                    </div>
+                    <div class="section column" id="removeAllContainer">
+                        <p>
+                            <label class="required">Reason for leaving:</label><br />
+                            <apex:selectList id="reasonleavgrpAllId" multiselect="false" size="1" value="{!reasonleavgrpAll}" title="Please complete the required field." > 
+                                <apex:selectOption itemLabel="" itemValue=""/>
+                                <apex:selectOption itemLabel="Deceased" itemValue="Deceased"/>
+                                <apex:selectOption itemLabel="Retired" itemValue="Retired"/>
+                                <apex:selectOption itemLabel="Left Group" itemValue="Left Group"/>   
+                                <apex:selectOption itemLabel="Individual no longer at service location" itemValue="Individual no longer at service location"/>                                                                  
+                            </apex:selectList>
+                        </p>                            
+                        <p>
+                            <label class="required">Effective Date of Termination:</label><br />
+                            <apex:input id="effDateofTrmProvGrpAllId" html-fauxtype="date" html-readonly="readonly"  value="{!effDateofTrmProvGrpAll}"/>                           
+                        </p>                                
+                    </div>
+                    <div class="section additionalInformation">
+                        <h2>
+                            Additional Information
+                        </h2>
+                        <div class="column">
+                            <label>Comments:</label><br />
+                            <apex:inputTextarea id="commProvGrpId" value="{!commProvGrp}" rows="5"/>                        
+                        </div>
+                        
+                        <div class="column">
+                            <label>Attach Documentation:</label>
+                            <div class="uploadFile">
+                                <div>
+                                    <span id="combinedFileSize">Combined file size = 0.0 MB</span>   
+                                </div>
+                                
+                                
+                                <apex:inputFile value="{!removeGrpAttach1.body}" styleclass="upload" filename="{!removeGrpAttach1.name}" id="removeGrpAttach1" />
+                                <apex:inputFile value="{!removeGrpAttach2.body}" styleclass="upload" filename="{!removeGrpAttach2.name}" id="removeGrpAttach2" />
+                                <apex:inputFile value="{!removeGrpAttach3.body}" styleclass="upload" filename="{!removeGrpAttach3.name}" id="removeGrpAttach3" />
+                                <apex:inputFile value="{!removeGrpAttach4.body}" styleclass="upload" filename="{!removeGrpAttach4.name}" id="removeGrpAttach4" />
+                                <apex:inputFile value="{!removeGrpAttach5.body}" styleclass="upload" filename="{!removeGrpAttach5.name}" id="removeGrpAttach5" />
+                                <div class="smallSpaceOnTop">
+                                    <span class="addAFile">+</span><span class="fileFormatText">Add another file</span>
+                                </div>
+                            </div>                                                                                               
+                        </div>                                                                                                                                                                             
+                    </div>
+                    <div class="section additionalInformation" >
+                        <p>                                
+                            <label class="required"><apex:inputCheckBox id="attProvGrpId" value="{!attProvGrp}" title="Please review the statement below and select the checkbox before submitting the form." required="true"/>
+                                I certify that the information submitted within this form is accurate and complete.</label>                        
+                        </p>    
+                    </div>            
+                    
+                    <div class="buttonContainer">
+                        <button id="lastBack"  class="back" type="button">Back</button>                                      
+                    </div>                                           
+                </div>                
+                
+                
+                <apex:outputText rendered="{!useCaptcha}">                                                                             
+                    <div id="s1" align='right'>      
+                        <button onclick="vfo.validateAndSubmitAllForm();" class="sButton" type="button">Submit Form</button>                                           
+                        <apex:commandLink value="Submit Form" action="{!saveProvInfo}" id="postCaptchaSubmit"/>    
+                    </div>    
+                </apex:outputText>                    
+                
+                <apex:outputText rendered="{!IF(useCaptcha == false,true,false)}">                      
+                    <div id="s1" align='right'>      
+                        <apex:commandLink value="Submit Form" action="{!saveProvInfo}" id="noCaptchaSubmit" styleClass="sButton" onclick="return vfo.validateAndSubmitAllNoCaptcha();"/>    
+                    </div>    
+                </apex:outputText>   
+                
+                <!-- don't render Captcha if automated testing -->   
+                <c:pi_captchaComponent rendered="{!useCaptcha}" publicKey="{!captchaPublicKey}"/>    
+                
+            </div>   
+        </apex:pageBlock>                                                            
+    </apex:form>       
+    <footer>
+        
+        <div>
+            Powered by Salesforce<sup>TM</sup>
+        </div>
+        
+    </footer>
+</apex:component>

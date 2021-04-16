@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Provider_Tax_Identification_Sharing_Rule_IL</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Provider Tax Identification Sharing Rule - IL</label>
+        <sharedTo>
+            <group>HSCS_Illinois_Case_Group</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>CM_Corporate_Entity_Code__c</field>
+            <operation>contains</operation>
+            <value>IL1</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Provider_Tax_Identification_Sharing_Rule_MT</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Provider Tax Identification Sharing Rule - MT</label>
+        <sharedTo>
+            <group>HCSC_Montana_Case_Group</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>CM_Corporate_Entity_Code__c</field>
+            <operation>contains</operation>
+            <value>MT1</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Provider_Tax_Identification_Sharing_Rule_MT_Rep</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Provider Tax Identification Sharing Rule - MT Rep</label>
+        <sharedTo>
+            <role>Provider_Data_Rep_MT</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>CM_Corporate_Entity_Code__c</field>
+            <operation>equals</operation>
+            <value>MT1</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Provider_Tax_Identification_Sharing_Rule_NM</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Provider Tax Identification Sharing Rule - NM</label>
+        <sharedTo>
+            <group>HCSC_NewMexico_case_Group</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>CM_Corporate_Entity_Code__c</field>
+            <operation>contains</operation>
+            <value>NM1</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Provider_Tax_Identification_Sharing_Rule_NM_Rep</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Provider Tax Identification Sharing Rule - NM Rep</label>
+        <sharedTo>
+            <role>Provider_Data_Rep_NM</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>CM_Corporate_Entity_Code__c</field>
+            <operation>equals</operation>
+            <value>NM1</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Provider_Tax_Identification_Sharing_Rule_OK</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Provider Tax Identification Sharing Rule - OK</label>
+        <sharedTo>
+            <group>HCSC_Oklahoma_case_Group</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>CM_Corporate_Entity_Code__c</field>
+            <operation>contains</operation>
+            <value>OK1</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Provider_Tax_Identification_Sharing_Rule_OK_Rep</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Provider Tax Identification Sharing Rule - OK Rep</label>
+        <sharedTo>
+            <role>Provider_Data_Rep_OK</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>CM_Corporate_Entity_Code__c</field>
+            <operation>equals</operation>
+            <value>OK1</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Provider_Tax_Identification_Sharing_Rule_TX</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Provider Tax Identification Sharing Rule - TX</label>
+        <sharedTo>
+            <group>HCSC_Texas_case_Group</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>CM_Corporate_Entity_Code__c</field>
+            <operation>contains</operation>
+            <value>TX1</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Provider_Tax_Identification_Sharing_Rule_TX_Rep</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Provider Tax Identification Sharing Rule - TX Rep</label>
+        <sharedTo>
+            <role>Provider_Data_Rep_TX</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>CM_Corporate_Entity_Code__c</field>
+            <operation>equals</operation>
+            <value>TX1</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Provider_Tax_Identification_sharing_rule_IL_Rep</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Provider Tax Identification sharing rule - IL Rep</label>
+        <sharedTo>
+            <role>Provider_Data_Rep_IL</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>CM_Corporate_Entity_Code__c</field>
+            <operation>equals</operation>
+            <value>IL1</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

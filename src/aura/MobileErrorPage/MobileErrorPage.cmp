@@ -1,0 +1,10 @@
+<aura:component >
+    <aura:attribute name="recordType" type="String" access="public"/>
+    <br/>
+    <aura:if isTrue="{!v.recordType == 'CRM'}" >
+        <div class="slds-text-heading_large">You can only create CRM cases from Accounts on mobile devices.</div>			
+        <aura:set attribute="else">
+            <div class="slds-text-heading_large">Manual ADC is not available on mobile devices.</div>
+    	</aura:set>
+    </aura:if>
+</aura:component>

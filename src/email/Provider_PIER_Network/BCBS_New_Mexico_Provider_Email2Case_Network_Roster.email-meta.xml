@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>New Mexico Email to Provider for Case Creation acknowledgement for email-to-case request for Network Roster Submission</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>BCBS New Mexico Provider Email2Case Network Roster</name>
+    <style>none</style>
+    <subject>BCBS of New Mexico Inquiry Received:  {!Case.Subject}</subject>
+    <textOnly>Thank you for your recent submission to the Network roster email box.
+
+This email is confirmation we have received your roster, case number is {!Case.CaseNumber}.
+
+You will receive confirmation of the status of your roster within 30 business days of this receipt.
+
+Please be advised, the Network roster email box is for roster submissions only. For questions or concerns regarding this roster case, please call 1-800-567-8540 or contact your Provider Relations Representative.To check the status of your case, please click on status checker.To check the status of your case, please click on status checker({!$Setup.UtilitySettings_Hierarchy__c.CaseStatusUrl__c}).
+
+
+Sincerely,
+Blue Cross and Blue Shield of New Mexico
+
+
+Powered by: SalesforceTM
+
+
+
+Blue Cross and Blue Shield of New Mexico, a Division of Health Care Service Corporation, a Mutual Legal Reserve Company, an Independent Licensee of the Blue Cross and Blue Shield Association.
+
+
+
+© 2017 Health Care Service Corporation. All rights reserved.
+
+(NOTE: Please do not remove the Ref id) Ref id {!Case.Thread_Id}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

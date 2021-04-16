@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>OWNER</field>
+    </columns>
+    <columns>
+        <field>CASE_NUMBER</field>
+    </columns>
+    <columns>
+        <field>AGE</field>
+    </columns>
+    <columns>
+        <field>OPEN</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>LAST_UPDATE</field>
+    </columns>
+    <columns>
+        <field>ORIGIN</field>
+    </columns>
+    <columns>
+        <field>LAST_UPDATE_BY</field>
+    </columns>
+    <description>North Region Open Consumer Complaints</description>
+    <filter>
+        <criteriaItems>
+            <column>ORIGIN</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>TX PDSC Consumer Complaints</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OWNER</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>OMNI_TX_TX NM North Email,Denita Miller,Jennifer Haines,Mickia Neal,Connie Traylor,Lupe Rocha,Linda Navejar,Melinda Barron,Melinda Faye White,Chris Turner,Ann Hestily,Kari Hampton,Rebecca Perkins,Dana Herin,Heather Clark,Beverly Parker,Mary Davis,Felicia McClendon,Daphne Lay,Suzon Cloud,Dan McPartland,Pavielle Britt,Kelsi Walker,Paula Kler,LaQuincy Williams,Belinda Walker,Shelley Riddlespurger,Tara Baker,Diane Carr,Dale Myers,Courtney Johnson,Matt Gammon,Jeanette Casias,Ashley Vanicek,Lori Breaux,Lauren Cockerham,Shaterria Blocker,Laura Barowski,Imeh Udoessien,Keyanna Watson,Allaina Ferguson</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>STATUS</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>In Progress</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>NORTH - Consumer Complaints</name>
+    <params>
+        <name>units</name>
+        <value>d</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CaseList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>LAST_UPDATE_BY</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATEONLY</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

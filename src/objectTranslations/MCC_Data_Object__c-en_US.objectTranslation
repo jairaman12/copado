@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Mass Case Creation Record</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Mass Case Creation Records</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Mass Case Creation Records --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Action --></label>
+        <name>Action__c</name>
+    </fields>
+    <fields>
+        <label><!-- Admin_Error_Message --></label>
+        <name>Admin_Error_Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- AutoDelReceivedDate --></label>
+        <name>AutoDelReceivedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- BH providers (N-P) seeing members 0-21 --></label>
+        <name>BH_providers_N_P_seeing_members_0_21__c</name>
+    </fields>
+    <fields>
+        <label><!-- BH providers (N-P) seeing members 22+ --></label>
+        <name>BH_providers_N_P_seeing_members_22__c</name>
+    </fields>
+    <fields>
+        <label><!-- BH providers (N-p) seeing members (both) --></label>
+        <name>BH_providers_N_p_seeing_members_both__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bad Data --></label>
+        <name>Bad_Data__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bill PFIN --></label>
+        <name>Bill_PFIN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Blindness or Visual Impairment Provider --></label>
+        <name>Blindness_or_Visual_Impairment_Provider__c</name>
+    </fields>
+    <fields>
+        <label><!-- CAQH Number --></label>
+        <name>CAQH_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Status --></label>
+        <name>Case_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Chronic Illness Provider --></label>
+        <name>Chronic_Illness_Provider__c</name>
+    </fields>
+    <fields>
+        <label><!-- Co-Occurring Disorders Provider --></label>
+        <name>Co_Occurring_Disorders_Provider__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comp Code --></label>
+        <name>Comp_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cred Cycle --></label>
+        <name>Cred_Cycle__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cred Status Date --></label>
+        <name>Cred_Status_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cred Status Time Stamp --></label>
+        <name>Cred_Status_Time_Stamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cred Status --></label>
+        <name>Cred_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- DUE Comp Code --></label>
+        <name>DUE_Comp_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- DUE Site ID --></label>
+        <name>DUE_Site_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deafness or Hard of Hearing Provider --></label>
+        <name>Deafness_or_Hard_of_Hearing_Provider__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dept Received Date --></label>
+        <name>Dept_Received_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective Date --></label>
+        <name>Effective_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Error Message --></label>
+        <name>Error_Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- Exam Room --></label>
+        <name>Exam_Room__c</name>
+    </fields>
+    <fields>
+        <label><!-- Exam Table --></label>
+        <name>Exam_Table__c</name>
+    </fields>
+    <fields>
+        <label><!-- External and Interior Building --></label>
+        <name>External_and_Interior_Building__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fax --></label>
+        <name>Fax__c</name>
+    </fields>
+    <fields>
+        <label><!-- File Count --></label>
+        <name>File_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Friday Close --></label>
+        <name>Friday_Close__c</name>
+    </fields>
+    <fields>
+        <label><!-- Friday Open --></label>
+        <name>Friday_Open__c</name>
+    </fields>
+    <fields>
+        <label><!-- Gender --></label>
+        <name>Gender__c</name>
+    </fields>
+    <fields>
+        <label><!-- Government --></label>
+        <name>Government__c</name>
+    </fields>
+    <fields>
+        <label><!-- HIV/AIDS Provider --></label>
+        <name>HIV_AIDS_Provider__c</name>
+    </fields>
+    <fields>
+        <label><!-- Handicap Accessible --></label>
+        <name>Handicap_Accessible__c</name>
+    </fields>
+    <fields>
+        <label><!-- Homebound Members --></label>
+        <name>Homebound_Members__c</name>
+    </fields>
+    <fields>
+        <label><!-- Homeless Population Provider --></label>
+        <name>Homeless_Population_Provider__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hospital Affiliation --></label>
+        <name>Hospital_Affiliation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Institute for Mental Diseases --></label>
+        <name>Institute_for_Mental_Diseases__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lang Line Interpreter --></label>
+        <name>Lang_Line_Interpreter__c</name>
+    </fields>
+    <fields>
+        <label><!-- Languages --></label>
+        <name>Languages__c</name>
+    </fields>
+    <fields>
+        <label><!-- License --></label>
+        <name>License__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assignee ID --></label>
+        <name>MCC_Assignee_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing NPI --></label>
+        <name>MCC_Billing_NPI__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case ID --></label>
+        <name>MCC_Case_Id__c</name>
+        <relationshipLabel><!-- Mass Case Creation Records --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Case Status --></label>
+        <name>MCC_Case_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Type --></label>
+        <name>MCC_Case_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>MCC_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Corp Received Date --></label>
+        <name>MCC_Corp_Recd_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Creator User ID --></label>
+        <name>MCC_Creator_User_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of Birth --></label>
+        <name>MCC_DOB__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of Death --></label>
+        <name>MCC_Date_of_Death__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Address --></label>
+        <name>MCC_Email_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- File Id --></label>
+        <name>MCC_File_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- File Type --></label>
+        <name>MCC_File_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Name --></label>
+        <name>MCC_First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Grouping ID --></label>
+        <name>MCC_Grouping_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Name --></label>
+        <name>MCC_Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Load Status --></label>
+        <name>MCC_Load_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Override Queue --></label>
+        <name>MCC_Override_Queue__c</name>
+    </fields>
+    <fields>
+        <label><!-- PFIN --></label>
+        <name>MCC_PFIN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plan ID --></label>
+        <name>MCC_Plan_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premier DOB --></label>
+        <name>MCC_Premier_DOB__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premier First Name --></label>
+        <name>MCC_Premier_First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premier Last Name --></label>
+        <name>MCC_Premier_Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Priority --></label>
+        <name>MCC_Priority__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Project Number --></label>
+        <name>MCC_Project_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider ID --></label>
+        <name>MCC_Prov_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request Type --></label>
+        <name>MCC_Request_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- SSN --></label>
+        <name>MCC_SSN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax ID --></label>
+        <name>MCC_Tax_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- MCD Comp Code --></label>
+        <name>MCD_Comp_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- MCD Site ID --></label>
+        <name>MCD_Site_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Medicaid ID --></label>
+        <name>Medicaid_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Medicare ID --></label>
+        <name>Medicare_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Middle Name --></label>
+        <name>Middle_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Monday Close --></label>
+        <name>Monday_Close__c</name>
+    </fields>
+    <fields>
+        <label><!-- Monday Open --></label>
+        <name>Monday_Open__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI Number --></label>
+        <name>NPI_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- NetOps Received Date --></label>
+        <name>NetOps_Received_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Office Name --></label>
+        <name>Office_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Office Reception Area --></label>
+        <name>Office_Reception_Area__c</name>
+    </fields>
+    <fields>
+        <label><!-- Onboarding Case ID --></label>
+        <name>Onboarding_Case_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Organization Name --></label>
+        <name>Organization_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parking Accessibility --></label>
+        <name>Parking_Accessibility__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone Number --></label>
+        <name>Phone_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Physical Disabilities Provider --></label>
+        <name>Physical_Disabilities_Provider__c</name>
+    </fields>
+    <fields>
+        <label><!-- Processed for reporting --></label>
+        <name>Processed_for_reporting__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Line Number --></label>
+        <name>Project_Line_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider Type Code --></label>
+        <name>Provider_Type_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider Type --></label>
+        <name>Provider_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Public Transportation --></label>
+        <name>Public_Transportation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Re-Cred Date --></label>
+        <name>Re_Cred_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Restroom --></label>
+        <name>Restroom__c</name>
+    </fields>
+    <fields>
+        <label><!-- Role Code --></label>
+        <name>Role_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Saturday Close --></label>
+        <name>Saturday_Close__c</name>
+    </fields>
+    <fields>
+        <label><!-- Saturday Open --></label>
+        <name>Saturday_Open__c</name>
+    </fields>
+    <fields>
+        <label><!-- Scale --></label>
+        <name>Scale__c</name>
+    </fields>
+    <fields>
+        <label><!-- Serious Mental Illness Provider --></label>
+        <name>Serious_Mental_Illness_Provider__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Address 1 --></label>
+        <name>Service_Address_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Address 2 --></label>
+        <name>Service_Address_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service City --></label>
+        <name>Service_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service State --></label>
+        <name>Service_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Zip Code --></label>
+        <name>Service_Zip_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site ID --></label>
+        <name>Site_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Specialty Code --></label>
+        <name>Specialty_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Specialty --></label>
+        <name>Specialty__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub Specialty Code --></label>
+        <name>Sub_Specialty_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub Specialty --></label>
+        <name>Sub_Specialty__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sunday Close --></label>
+        <name>Sunday_Close__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sunday Open --></label>
+        <name>Sunday_Open__c</name>
+    </fields>
+    <fields>
+        <label><!-- Supervising Phys License --></label>
+        <name>Supervising_Phys_License__c</name>
+    </fields>
+    <fields>
+        <label><!-- Supervising Physician --></label>
+        <name>Supervising_Physician__c</name>
+    </fields>
+    <fields>
+        <label><!-- TNF Comp Code --></label>
+        <name>TNF_Comp_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- TNF Site ID --></label>
+        <name>TNF_Site_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Thursday Close --></label>
+        <name>Thursday_Close__c</name>
+    </fields>
+    <fields>
+        <label><!-- Thursday Open --></label>
+        <name>Thursday_Open__c</name>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
+        <name>Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tuesday Close --></label>
+        <name>Tuesday_Close__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tuesday Open --></label>
+        <name>Tuesday_Open__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wednesday Close --></label>
+        <name>Wednesday_Close__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wednesday Open --></label>
+        <name>Wednesday_Open__c</name>
+    </fields>
+    <recordTypes>
+        <description><!-- Death File --></description>
+        <label><!-- Death File --></label>
+        <name>Death_File</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Network Recruitment --></description>
+        <label><!-- Network Recruitment --></label>
+        <name>Network_Recruitment</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Onboarding Cred Mass Status Update --></description>
+        <label><!-- Onboarding Cred Mass Status Update --></label>
+        <name>Onboarding_Cred_Mass_Status_Update</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Roster --></description>
+        <label><!-- Roster --></label>
+        <name>Roster</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

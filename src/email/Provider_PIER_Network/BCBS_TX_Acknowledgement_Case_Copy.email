@@ -1,0 +1,14 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<font face="Times New Roman, Times, serif"><span style="background-color: rgb(255, 255, 255);">Dear {!Case.Name_Submitter__c} ({!Case.Title_Submitter__c}),</span></font>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<div style="font-size: 12pt; font-family: arial; color: rgb(0, 0, 0);"><font face="Arial, sans-serif" style="font-size: small; background-color: rgb(255, 255, 255);"><br></font></div><font face="Times New Roman, Times, serif"><font style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">T</font><font style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">hank you for contacting Blue Cross and Blue Shield of Texas.&nbsp;This email is confirmation we have received your request, case number&nbsp;</font><font style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">{!Case.CaseNumber}, for {!Case.Name_of_Provider_Group__c}.&nbsp;Your request may take up to 30 days to complete. Once completed, a notification will be sent to the email address submitted with the Demographic Change Request Form.</font></font><div style="color: rgb(0, 0, 0);"><font style="background-color: rgb(255, 255, 255);" face="Times New Roman, Times, serif"><br></font></div><div><font face="Times New Roman, Times, serif"><span style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">To check on the status of your request or for any questions, contact&nbsp;</span>1-877-229-0719</font></div><div style="font-size: 12pt; font-family: arial;"><font face="Verdana, Helvetica, sans-serif" size="2"><br></font></div><div style="font-size: 12pt; font-family: arial;"><br></div>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[<p class="MsoNormal" style="color: rgb(0, 0, 0);"><font face="Times New Roman, Times, serif">Sincerely,<o:p></o:p></font></p><font face="Times New Roman, Times, serif"></font><p class="MsoNormal" style="color: rgb(0, 0, 0);"><font face="Times New Roman, Times, serif">Blue Cross and Blue Shield of Texas</font></p><p class="MsoNormal" style="font-size: 12pt; font-family: arial; color: rgb(0, 0, 0);"><font size="2" face="Verdana, Helvetica, sans-serif"><br></font></p><p class="MsoNormal"><font face="Times New Roman, Times, serif" size="1">(For Internal Purpose only : ref: {!Case.Thread_Id})</font></p>]]></td>
+</tr>
+</table>

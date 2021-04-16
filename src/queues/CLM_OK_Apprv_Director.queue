@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>true</doesSendEmailToMembers>
+    <email>fakemeail@bcbsil.com</email>
+    <name>CLM OK-Apprv-Director</name>
+    <queueMembers>
+        <users>
+            <user>laura_hottel@hcsc.net.provider</user>
+            <user>regina_brown@hcsc.net.provider</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Apttus_Approval__Approval_Request__c</sobjectType>
+    </queueSobject>
+</Queue>

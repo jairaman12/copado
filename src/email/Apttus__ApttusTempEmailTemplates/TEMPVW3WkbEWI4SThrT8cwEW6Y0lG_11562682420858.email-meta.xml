@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>TEMP-2019-07-09T14:26:31 GMT_11562682420858</name>
+    <style>none</style>
+    <subject>Agreement PRODVRF_Professional - # 1 CARE PA - BCBSTX is presented to you for your Wet Signature</subject>
+    <textOnly>Hello,
+
+This E-mail has been sent to notify you that Agreement {!Apttus__APTS_Agreement__c.Name} is pending your signature. Your action is required. Please review the document and/or details in the section outlined below and provide signature. Reply to this email with the signed document.
+
+
+Agreement Name : {!Apttus__APTS_Agreement__c.Name}
+
+Account : {!Apttus__APTS_Agreement__c.Apttus__Account__c}
+Agreement Number : {!Apttus__APTS_Agreement__c.Apttus__FF_Agreement_Number__c}
+Start Date : {!Apttus__APTS_Agreement__c.Apttus__Contract_Start_Date__c}
+End Date :{!Apttus__APTS_Agreement__c.Apttus__Contract_End_Date__c}
+
+Please click on the following link to review the details and to take ownership as necessary. The link below is only for the use of employees of Health Care Service Corporation.
+
+
+{!Apttus__APTS_Agreement__c.Link}
+
+
+
+
+
+Thank You!</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

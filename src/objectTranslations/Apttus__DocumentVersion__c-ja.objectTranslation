@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Document Version --></value>
+    </caseValues>
+    <fields>
+        <help>文書のバージョンに関連付けられている合意書ID</help>
+        <label><!-- Agreement --></label>
+        <name>Apttus__AgreementId__c</name>
+        <relationshipLabel><!-- Document Versions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>このドキュメントのバージョンをチェックアウトしたユーザーID</help>
+        <label><!-- Checkout By --></label>
+        <name>Apttus__CheckoutById__c</name>
+        <relationshipLabel><!-- Document Versions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>ドキュメントのチェックアウト日</help>
+        <label><!-- Checkout Date --></label>
+        <name>Apttus__CheckoutDate__c</name>
+    </fields>
+    <fields>
+        <help>チェックアウトされたバージョン詳細ID</help>
+        <label><!-- Checkout Version Detail --></label>
+        <name>Apttus__CheckoutVersionDetailId__c</name>
+        <relationshipLabel><!-- Document Versions (Checkout) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>ドキュメントのバージョンに関連付けられたカスタムオブジェクトID</help>
+        <label><!-- Custom Object Id (Deprecated) --></label>
+        <name>Apttus__CustomObjectId__c</name>
+    </fields>
+    <fields>
+        <help>一過性のバージョンを示します。ドキュメントが正常バージョンに添付されるまで、新しいバージョンが過渡状態です。ワークフロールールは、動作前に偽(false)テストするにはこのフィールドをチェックする必要があります</help>
+        <label><!-- Is Transient --></label>
+        <name>Apttus__IsTransient__c</name>
+    </fields>
+    <fields>
+        <help>最新バージョンのオブジェクトへの参照</help>
+        <label><!-- Latest Version Detail --></label>
+        <name>Apttus__LatestVersionId__c</name>
+        <relationshipLabel><!-- Document Versions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>このドキュメントの最新バージョンを表します</help>
+        <label><!-- Latest Version --></label>
+        <name>Apttus__LatestVersion__c</name>
+    </fields>
+    <fields>
+        <help>詳細バージョンの数はバージョンに関連付けられていることを示します</help>
+        <label><!-- Number Of Versions --></label>
+        <name>Apttus__NumberOfVersions__c</name>
+    </fields>
+    <fields>
+        <help>固有の外部参照識別子</help>
+        <label><!-- Reference --></label>
+        <name>Apttus__ReferenceId__c</name>
+    </fields>
+    <fields>
+        <help>バージョンに関連付けられたテンプレートID</help>
+        <label><!-- Template --></label>
+        <name>Apttus__TemplateId__c</name>
+        <relationshipLabel><!-- Document Versions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>ドキュメントタイトル</help>
+        <label><!-- Title --></label>
+        <name>Apttus__Title__c</name>
+    </fields>
+    <fields>
+        <help><!-- View latest version of the document --></help>
+        <label><!-- View --></label>
+        <name>Apttus__View__c</name>
+    </fields>
+    <nameFieldLabel><!-- Name --></nameFieldLabel>
+</CustomObjectTranslation>

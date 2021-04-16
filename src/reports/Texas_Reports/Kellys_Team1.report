@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Active Queues</description>
+    <filter>
+        <criteriaItems>
+            <column>Case.Plan_ID__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>TX1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CASE_OWNER</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>OMNI_TX_Standard Contracting Email,OMNI_TX_SCT - Outreach,Alivia Hughes,Ebony White,Hasan Khan,Helen Carley,Karla Cortinas,Elvia Bolivar,Ann Poweska,Alison Flaumenbaum,Dori Sanchez,Samantha Franklin,Shalaman Washington,Lanette Nalepa,Jared Bolden,Carmen Flint,OMNI TX Standard Contracting Email,OMNI TX SCT Outreach,TX Reserved Highest Priority Queue 1,TX Reserved Highest Priority Queue 2,TX Reserved Highest Priority Queue 3</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>STATUS</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CASE_OWNER</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Kellys Team</name>
+    <params>
+        <name>units</name>
+        <value>d</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CaseAuditHistory</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CASE_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

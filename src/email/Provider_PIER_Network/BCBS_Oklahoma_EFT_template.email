@@ -1,0 +1,20 @@
+<div style="border: thin solid #2C82BA;width:100%">
+<img src="https://hcscproviderintake.secure.force.com/resource/1489799226000/bcbsOKlogo"/>
+        <hr width="100%" size="20" color="#2C82BA"/>
+<br/>
+Dear {!IF(NOT(ISBLANK(Case.Name_Submitter__c)),Case.Name_Submitter__c, Case.Account_Name_for_Email_Templates__c)},<br></br>
+Your request to be listed on our file as a Non-Participating Provider has been completed. To sign up for EFT/ERA you must be a registered Availity&reg; Provider Portal user – there is no cost to register at <a href="http://www.availity.com">availity.com</a>. If you have questions or inquiries, please contact us at <b>oknetworkmanagement@bcbsok.com.</b><br><br>
+
+We look forward to serving you. 
+<br/><br/><br/>
+Sincerely,<br/>
+Health Care Delivery – Provider Network
+
+    <hr width="100%" size="20" color=" #2C82BA"/>
+            <p><center><b>Powered by: Salesforce<sup>TM</sup></b></center></p> <hr width="25%"/><br>      
+             <p><center>Blue Cross and Blue Shield of Oklahoma, a Division of Health Care Service Corporation,</center>
+            <center>a Mutual Legal Reserve Company, an Independent Licensee of the Blue Cross and Blue Shield Association.</center></p><br>
+            <p><center>&copy; 2017 Health Care Service Corporation. All rights reserved.</center></p><hr width="50%"/>
+                      <hr width="100%" size="20" color="#2C82BA"/>
+(NOTE: Please do not remove the Ref id) Ref id {!Case.EmailThread_On_Child__c}
+</div>

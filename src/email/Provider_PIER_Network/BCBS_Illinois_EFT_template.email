@@ -1,0 +1,23 @@
+<div style="border: thin solid #2C82BA;width:100%">
+<img src="https://hcscproviderintake.secure.force.com/resource/1489799226000/bcbsILlogo"/>
+        <hr width="100%" size="20" color=" #2C82BA"/>
+<br/>
+Dear {!IF(NOT(ISBLANK(Case.Name_Submitter__c)),Case.Name_Submitter__c, Case.Account_Name_for_Email_Templates__c)}:<br></br>
+Your request to be included in the Blue Cross and Blue Shield (BCBSIL) provider file as a non-contracting provider has been accepted. Electronic options are preferred. To get started, you must establish a vendor connection. You will need to enlist the services of a third-party electronic business vendor, such as <a href="https://www.availity.com/">Availity®</a> or your preferred vendor. If you have questions, contact us at <a href="mailto:Netops_Provider_Update@bcbsil.com">Netops_Provider_Update@bcbsil.com</a>.<br><br>
+
+We look forward to serving you! 
+<br/><br/>
+Sincerely,<br/><br/>
+BCBSIL Network Operations
+
+    <hr width="100%" size="20" color=" #2C82BA"/>
+            <p><center><b>Powered by: Salesforce<sup>TM</sup></b></center></p> <hr width="25%"/><br>      
+            <p><center>Blue Cross and Blue Shield of Illinois, a Division of Health Care Service Corporation,</center>
+            <center>a Mutual Legal Reserve Company, an Independent Licensee of the Blue Cross and Blue Shield Association.</center></p><br>
+            <p><center>&copy; 2017 Health Care Service Corporation. All rights reserved.</center></p><hr width="50%"/>
+            
+            <hr width="100%" size="20" color="#2C82BA"/>
+
+(NOTE: Please do not remove the Ref id) Ref id {!Case.EmailThread_On_Child__c}
+
+</div>

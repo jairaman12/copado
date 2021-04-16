@@ -1,0 +1,53 @@
+<aura:component controller="CaseStatusController" implements="flexipage:availableForAllPageTypes" access="global">    
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}" />
+    <aura:attribute name="message" type="String" /> 
+    <aura:attribute name="caseNumberInput" type="Integer" />
+    <aura:attribute name="caseOutput" type="CaseStatusValues[]" />
+    <aura:attribute name="outcomeFlag" type="Boolean" default="false"/>
+    <aura:attribute name="searchResultMsg" type="String" /> 
+    <aura:attribute name="Mycolumns" type="List"/>
+    <aura:if isTrue="{! !empty(v.message)}">
+        <div class="slds-box slds-theme_alert-texture slds-theme_error">        
+            <span class="slds-text-body–regular">
+                <aura:unescapedHtml value="{!v.message}"/>
+            </span>
+        </div>
+    </aura:if>    
+    <div tabindex="0" onkeypress="{!c.fetchResultsOnEnter}">
+        <lightning:layout horizontalAlign ="center" class="x-large"> 
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                <div class="slds-text-align_center">
+                    <div class="slds-text-heading_large">Case Status Check</div>
+                </div>
+                <div class="slds-align_absolute-center" style="height:5rem">
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <lightning:input aura:id="caseNumber" type="number" label="Case Number" value="{!v.caseNumberInput}"  maxlength="8"/>                      
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slds-align_absolute-center" style="height:5rem">
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <lightning:button variant="brand" aura:id="disablebuttonid" label="Get Status" onclick="{!c.fetchResults}" class="slds-button_neutral"/>
+                        </div>
+                    </div>
+                </div>
+            </lightning:layoutItem>
+        </lightning:layout>        
+        
+        <div aria-labelledby="CaseResults"> 
+            <aura:if isTrue="{!v.outcomeFlag}">
+                <lightning:datatable data="{!v.caseOutput}" keyField="id" columns="{!v.Mycolumns}" hideCheckboxColumn="true"/>                
+                <aura:set attribute="else">                  
+                    <div class="slds-text-color_inverse slds-align_absolute-center slds-box slds-theme_default" style="padding:0.5rem;background:#16325c">
+                        {!v.searchResultMsg}    
+                    </div>
+                </aura:set>
+            </aura:if>        
+        </div>	
+        <br/>
+        <c:CaseStatusNote/>
+    </div>	    
+</aura:component>

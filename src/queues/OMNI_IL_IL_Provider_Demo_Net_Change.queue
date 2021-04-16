@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>fakeemail@bcbsil.com</email>
+    <name>OMNI_IL_IL Provider Demo Net Change</name>
+    <queueMembers>
+        <users>
+            <user>alexis_smith@bcbsil.com.provider</user>
+            <user>ana_maria_mendez@bcbsil.com.provider</user>
+            <user>brittany_renninger@bcbsil.com.provider</user>
+            <user>chanel_mixon@bcbsil.com.provider</user>
+            <user>jacqueline_cappello@bcbsil.com.provider</user>
+            <user>jami_evans@bcbsil.com.provider</user>
+            <user>jose_x_rodriguez@bcbsil.com.provider</user>
+            <user>joseph_ratliff@bcbsil.com.provider</user>
+            <user>keisha_briscoe@bcbsil.com.provider</user>
+            <user>kelly_timmreck@bcbsil.com.provider</user>
+            <user>keshia_bardney@bcbsil.com.provider</user>
+            <user>latanya_ross@bcbsil.com.provider</user>
+            <user>lauren_hoppenrath@bcbsil.com.provider</user>
+            <user>laurisa_clark@bcbsil.com.provider</user>
+            <user>linda_white@bcbsil.com.provider</user>
+            <user>lizzie_lewis@bcbsil.com.provider</user>
+            <user>monique_dobbs@bcbsil.com.provider</user>
+            <user>halls@bcbsil.com.provider</user>
+            <user>sandy_gagen@bcbsil.com.provider</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>Priority_5</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>OMNI_Queue__c</sobjectType>
+    </queueSobject>
+</Queue>

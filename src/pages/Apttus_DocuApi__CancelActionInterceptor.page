@@ -1,0 +1,21 @@
+<!-- 
+    Apttus DocuSign API
+    CancelActionInterceptor
+     
+    @2013-2014 Apttus Inc. All rights reserved.
+	
+	parameters
+    ==========
+    Name			| Required | Description
+    ================|==========|======================================================================================
+    rollbackId		| Yes      | The record id of the transient object to roll back
+                    |          |
+    objectId		| Yes      | The record id of the object to go back to
+                    |          |
+    ===================================================================================================================
+    
+ -->
+<apex:page controller="Apttus_DocuApi.CancelActionController" 
+		   action="{!onLoad}" >
+
+</apex:page>

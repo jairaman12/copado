@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Network_Sharing_Rule_IL</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Network Sharing Rule - IL</label>
+        <sharedTo>
+            <group>HSCS_Illinois_Case_Group</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>CM_Corporate_Entity_Code__c</field>
+            <operation>contains</operation>
+            <value>IL1</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Network_Sharing_Rule_MT</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Network Sharing Rule - MT</label>
+        <sharedTo>
+            <group>HCSC_Montana_Case_Group</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>CM_Corporate_Entity_Code__c</field>
+            <operation>contains</operation>
+            <value>MT1</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Network_Sharing_Rule_NM</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Network Sharing Rule - NM</label>
+        <sharedTo>
+            <group>HCSC_NewMexico_case_Group</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>CM_Corporate_Entity_Code__c</field>
+            <operation>contains</operation>
+            <value>NM1</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Network_Sharing_Rule_OK</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Network Sharing Rule - OK</label>
+        <sharedTo>
+            <group>HCSC_Oklahoma_case_Group</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>CM_Corporate_Entity_Code__c</field>
+            <operation>contains</operation>
+            <value>OK1</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Network_Sharing_Rule_TX</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Network Sharing Rule - TX</label>
+        <sharedTo>
+            <group>HCSC_Texas_case_Group</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>CM_Corporate_Entity_Code__c</field>
+            <operation>contains</operation>
+            <value>TX1</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Network_Sharing_rule_IL_Rep</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Network Sharing rule - IL Rep</label>
+        <sharedTo>
+            <role>Provider_Data_Rep_IL</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>CM_Corporate_Entity_Code__c</field>
+            <operation>equals</operation>
+            <value>IL1</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Network_Sharing_rule_MT_Rep</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Network Sharing rule - MT Rep</label>
+        <sharedTo>
+            <role>Provider_Data_Rep_MT</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>CM_Corporate_Entity_Code__c</field>
+            <operation>equals</operation>
+            <value>MT1</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Network_Sharing_rule_NM_Rep</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Network Sharing rule - NM Rep</label>
+        <sharedTo>
+            <role>Provider_Data_Rep_NM</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>CM_Corporate_Entity_Code__c</field>
+            <operation>equals</operation>
+            <value>NM1</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Network_Sharing_rule_OK_Rep</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Network Sharing rule - OK Rep</label>
+        <sharedTo>
+            <role>Provider_Data_Rep_OK</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>CM_Corporate_Entity_Code__c</field>
+            <operation>equals</operation>
+            <value>OK1</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Network_Sharing_rule_TX_Rep</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Network Sharing rule - TX Rep</label>
+        <sharedTo>
+            <role>Provider_Data_Rep_TX</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>CM_Corporate_Entity_Code__c</field>
+            <operation>equals</operation>
+            <value>TX1</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

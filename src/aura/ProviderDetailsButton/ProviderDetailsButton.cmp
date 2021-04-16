@@ -1,0 +1,17 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasSObjectName,force:hasRecordId,force:lightningQuickActionWithoutHeader,force:appHostable" access="global" >
+	
+    <!-- Hide the standard lightning component popup -->
+    <aura:html tag="style">
+        .slds-modal__container {
+        	display: none;
+        }
+    </aura:html>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}" />
+    <lightning:workspaceAPI aura:id="workspace" />						<!-- Identifies where the lightning component was launched -->
+    
+    <!-- aura attributes --> 
+    <aura:attribute name="recordId" type="Id" access="public"/>
+    <aura:attribute name="sobjecttype" type="String" default="{!v.sObjectName}"/>
+    
+</aura:component>

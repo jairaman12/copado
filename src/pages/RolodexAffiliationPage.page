@@ -1,0 +1,241 @@
+<!--------------------------------------------------------------------------------------------
+Apex Class Name  :RolodexAffiliationPage
+Version          : 1.0  
+Functionality    : 
+Modification Log :
+-----------------------------------------------------------------------------
+* Developer                   Date                   Description
+* ----------------------------------------------------------------------------                 
+* Sreekanth Kalluru          06/11/2018             PPN-14680,PPN-17862 ,PPN-18686
+* Andrew Maddox              06/11/2018             PPN-18686
+* Laxman Vattam              03/20/2018             PPN-29709, PPN-29710, PPN-29855 Conversion to Lightning
+------------------------------------------------------------------------------------------------------------------>
+<apex:page controller="RolodexAffiliationController" title="New Rolodex Affiliation" tabStyle="Account" lightningStylesheets="true" > 
+    <apex:sectionHeader title="Rolodex Affiliation Edit" subtitle="New Rolodex Affiliation"/>
+    <apex:slds /> 
+    <apex:includeScript value="{!URLFOR($Resource.JQuery,'jquery-3.1.1.min.js')}"  />
+    <apex:includeScript value="{!URLFOR($Resource.jqueryModal,'jqueryModal/jquery.modal.min.js')}"  />
+    <apex:stylesheet value="{!URLFOR($Resource.jqueryModal,'jqueryModal/jquery.modal.min.css')}"/>
+    <style type="text/css">
+        
+        .required:before
+        {  
+        color: red;
+        content: '* ';
+        display: inline;
+        background-position: right top;
+        }
+        
+        .active[rel="modal"] 
+        {
+        display: block;
+        }
+        
+        .clearfix::after 
+        {
+        clear: both;
+        }
+        
+        [rel="modal"] .modal-buttons {
+        padding: 0 0 10px;
+        }
+        #rte-modalOverlay
+        {
+        background-color: #003466;
+        display: none;
+        height: 100%;
+        left: 0;
+        opacity: 0.5;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 99998;          
+        }
+        .topics-label-custom 
+        {
+        padding-top: 2px;
+        padding-right: 10px;
+        padding-bottom: 2px;
+        padding-left: 176px;
+        text-align: left;
+        font-size: 91%;
+        font-weight: bold;
+        color : #4a4a56;
+        padding-left: 13.85%;
+        }
+        
+        [rel="modal"] 
+        {
+        padding: 1.5em; 
+        max-height: calc(100% - 5em);
+        max-width: calc(100% - 5em);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+        background: #fff none repeat scroll 0 0;
+        border-radius: 10px;
+        color: #003366;
+        text-align: center;
+        text-transform: uppercase;
+        z-index: 999999;
+        
+        }           
+        
+        
+        select[id*='priority'], span#afterPriority
+        {
+        float: left;      
+        }
+        
+        span#afterPriority
+        {
+        
+        margin-top: -1em;
+        margin-left: 1em;
+        
+        }       
+    </style>
+    <script type='text/javascript'>
+    
+    
+    this.ValueStore = function()
+    {
+        this.providerId = '';
+        this.providerDisplay = '';
+        this.servicePFINId = '';
+        this.servicePFINDisplay = '';        
+    }    
+    
+    var vs = (new ValueStore());
+    
+    
+    
+    $j = jQuery.noConflict();
+    
+    $j(
+        function()
+        {
+            processValues(true);
+        }    
+    ); 
+    function processValues(setPageLevelVars)
+    {
+        if(setPageLevelVars){
+            vs.providerId = $j("span.lookupInput input[id*='providerId']").val();
+            vs.providerDisplay = $j("span.lookupInput input[id*='providerId']").prop("defaultValue");
+            vs.servicePFINId = $j("span.lookupInput input[id*='servicePFIN']").val();
+            vs.servicePFINDisplay = $j("span.lookupInput input[id*='servicePFIN']").prop("defaultValue");
+        }
+        else
+        {
+            $j("span.lookupInput input[id*='providerId']").val(vs.providerId);
+            $j("span.lookupInput input[id*='providerId']").prop("defaultValue",vs.providerDisplay);
+            $j("span.lookupInput input[id*='servicePFIN']").val(vs.servicePFINId);
+            $j("span.lookupInput input[id*='servicePFIN']").prop("defaultValue", vs.servicePFINDisplay);
+        }
+    }    
+    
+    
+    function displayRolldown(tempStr)
+    {   
+        console.log("!--" + tempStr);
+        document.getElementById('{!$Component.frm.acctOrPfin}').value = tempStr;  
+        if({!isEditPage}){
+            $j('#rte-modalOverlay').css('display','block');
+            $j('#rte-modal').addClass('active');
+        }else{
+            displayRolldownAction(); 
+        }     
+    }
+    
+    function closeModalWindow()
+    {
+        processValues(false);
+        $j('#rte-modal').removeClass('active');
+        $j('#rte-modalOverlay').css('display','none');
+    }
+    
+    function intiateSave()
+    {
+        displayRolldownAction(); 
+        $j('#rte-modalOverlay').css('display','none');
+        $j('#rte-modal').removeClass('active');
+    }
+    
+    function confirmClick(obj)
+    {
+        if(obj.checked){
+            if(confirm('Are you sure to proceed?'))
+            {
+                
+            }
+            else
+            {
+                obj.checked = false;
+                obj.disabled = true;
+            }   
+        }
+    }    
+    
+    </script>
+    <apex:form id="frm">
+        <apex:pagemessages />
+        <apex:inputHidden id="acctOrPfin" value="{!acctOrPfin}"/>
+        <apex:pageBlock >
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!saveAffiliationAction}"/>
+                <apex:commandButton value="Save & New" action="{!saveAndNewAffiliationAction}"/>
+                <apex:commandButton value="Cancel" action="{!cancelAction}"/>
+            </apex:pageBlockButtons>
+            <!-- Affiliation information block -->
+            <apex:pageBlockSection title="Information" columns="2" id="informationBlock">
+                <apex:outputField value="{!aff.CM_Affiliated_Provider_Name__c}"  />
+                <apex:inputField value="{!aff.Account__c}" id="providerId"  onchange="displayRolldown('account')">
+                    <apex:param name="isProviderChanged" assignTo="{!isProviderChanged}" value="true"/> 
+                </apex:inputField>
+                <apex:inputField value="{!aff.Roll_Down__c}" rendered="{!IF(displayRollDown==true,true,false)}" onclick="confirmClick(this);"/>
+                <apex:outputField value="{!aff.Roll_Down__c}" rendered="{!IF(displayRollDown==false,true,false)}" />
+                <apex:inputField value="{!aff.Start_Date__c}"/>
+                <apex:inputField value="{!aff.End_Date__c}"/>
+                <apex:inputField value="{!aff.Status__c}"/>
+                <apex:outputField value="{!aff.CM_Corporate_Entity_Code__c}" />
+                <apex:inputField value="{!aff.Affiliated_to_Service_PFIN__c}" id="servicePFIN" onchange="displayRolldown('pfin')">
+                    
+                </apex:inputField>                
+                <apex:pageBlockSectionItem id="emailPageBlockSectionItem" >
+                    <apex:outputLabel value="{!$ObjectType.Affiliations__c.Fields.Entity_Prov_Id__c.Label}" />
+                    <apex:outputText value="{!provId}" id="provId"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1">
+                <apex:inputField value="{!aff.Role__c}"/>
+                
+            </apex:pageBlockSection>
+            <!-- Contact information block -->
+            <apex:pageBlockSection title="Contact Info">
+                <apex:inputField value="{!aff.Phone__c}"  />
+                <apex:inputField value="{!aff.Mobile_Phone__c}"/>
+                <apex:inputField value="{!aff.Fax__c}"/>
+                <apex:inputField value="{!aff.Email__c}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <!-- Modal window code -->
+        <div id="rte-modalOverlay" onclick="closeModalWindow()"></div>
+        <div id="rte-modal" rel="modal">
+            <div class="modal-buttons clearfix">
+                <p>
+                    You are modifying an existing rolodex affiliation. Are you sure?
+                </p>
+                <button type="button" onclick="intiateSave()">OK</button>
+                <button type="button" onclick="closeModalWindow()">Cancel</button>
+            </div>
+        </div>
+        <!-- End of Model Window block-->
+        <apex:actionfunction name="displayRolldownAction" action="{!displayRolldownAction}" rerender="informationBlock">
+            
+        </apex:actionfunction>
+        <apex:actionfunction name="refreshPage" action="{!refreshPage}"  rerender="informationBlock"/>
+    </apex:form>
+</apex:page>

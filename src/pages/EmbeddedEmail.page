@@ -1,0 +1,137 @@
+<apex:page standardController="Case" extensions="Extension4EmbeddedEmail" lightningStyleSheets="true">
+    <apex:includeScript value="{!$Resource.jqueryMin}"/>
+    <link class="user" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>   
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>  
+    <apex:includeScript value="{!$Resource.js4_paginationPage}"/>
+    <apex:stylesheet value="{!$Resource.css4_paginationPage}"/>     
+    <apex:stylesheet value="{!$Resource.css4_embeddedEmail}"/>
+    <script>
+        
+     /*
+        Initialize the number of records to show in pagination.
+     */
+    var numberOfRecordsToShow = 5;        
+        
+        
+    function confirmDelete(){
+        return confirm("Are you sure?");           
+     }   
+    
+    
+    </script>
+    <body>
+        <apex:form id="CaseForm" html-novalidate="novalidate">                                      
+            <div id="affiliationsDisplayContainer" style="border-top:none;">                
+                <div id="headerWrapper">
+        
+                    <span id="haImage">
+                        <h3>
+                           &nbsp;
+                        </h3>
+                    </span>                                        
+                    <apex:outputPanel rendered="{!NOT($Permission.hideEmailLinksAndButtonFeatures)}">
+                        <apex:outputText value="{!Case.Email_Address_Submitter__c}" rendered="false" />                               
+                        <div class="fauxButton">                            
+                            <div class="showIfEmpty" id="{!Case.EmailMessages}" >
+                                <apex:commandLink action="/_ui/core/email/author/EmailAuthor?retURL=/{!Case.Id}&p24={!Case.Email_Address_Submitter__c}&p26={!fromAddress}&p5=&p4=&p3_lkid={!shortCaseId}" target="_new" value="Send an Email"/>                                                 
+                            </div>
+                            <div class="hideIfEmpty" id="{!Case.EmailMessages}" >
+                                <apex:commandLink action="/_ui/core/email/author/EmailAuthor?retURL=/{!Case.Id}&p24={!Case.Email_Address_Submitter__c}&p26={!fromAddress}&p5=&p4=&p3_lkid={!shortCaseId}" target="_new" value="Send an Email"/>                                                 
+                            </div>              
+                        </div>
+                    </apex:outputPanel>  
+                </div>
+                <div class="hideIfEmpty" id="{!Case.EmailMessages}">                    
+                    <div id="tableWrapper">                                             
+                        <table class="list">
+                            <thead>
+                                <tr>
+                                     <apex:outputPanel rendered="{!NOT($Permission.hideEmailLinksAndButtonFeatures)}">
+                                            <th>                                                
+                                                Action 
+                                            </th>       
+                                     </apex:outputPanel>                
+                                    
+                                    <th>
+                                        Status
+                                    </th> 
+                                    <th>
+                                        
+                                    </th>                                     
+                                    <th>
+                                        Subject
+                                    </th>                             
+                                    <th>
+                                        Email Address
+                                    </th>                          
+                                    <th>
+                                        Message Date    
+                                    </th>                                          
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <apex:repeat value="{!Case.EmailMessages}" var="email">
+                                     <tr>                                    
+                                         <apex:outputPanel rendered="{!NOT($Permission.hideEmailLinksAndButtonFeatures)}">                                                                                                                                                                                   
+                                            <td class="actionLinks">  
+                                             <apex:outputText rendered="false">
+                                                 {!email.ccAddress}
+                                            </apex:outputText>
+                                                <apex:commandLink action="/_ui/core/email/author/EmailAuthor?email_id={!email.id}&replyToAll=0&retURL={!Case.id}&p26={!fromAddress}&p24={!Case.Email_Address_Submitter__c}" target="_new" value="Reply" />  
+                                                <span>
+                                                    |
+                                                </span>  
+                                                <apex:commandLink action="/_ui/core/email/author/EmailAuthor?email_id={!email.id}&replyToAll=1&retURL={!Case.id}&p26={!fromAddress}&p24={!Case.Email_Address_Submitter__c}" target="_new" value="To All" />                                                                                                                          
+                                                <apex:outputPanel rendered="{!NOT($Permission.hideEmailDeleteFeatures)}">                                                                                                                                                                                   
+                                                    <span>
+                                                        |
+                                                    </span>                                                  
+                                                    <apex:commandLink action="{!URLFOR($Action.EmailMessage.Delete, email.id, [retURL=Case.id])}" target="_new" onclick="return confirmDelete();" value="Del" />                                                 
+                                                </apex:outputPanel>
+                                            </td>
+                                         </apex:outputPanel> 
+                                         <td>
+                                             <apex:outputText value="{!CASE(email.Status, '0', 'New', '1', 'Read', '2', 'Replied', '3', 'Sent', '4', 'Forwarded', '5', 'Draft', 'None')}"/>                                                                                                                                      
+                                         </td>
+                                         <td>
+                                             <apex:image value="/img/emailInbound.gif" rendered="{!email.Incoming}" alt="Inbound" title="Inbound" />
+                                             <apex:image value="/img/emailOutbound.gif" rendered="{!!email.Incoming}" alt="Outbound" title="Outbound" />                               
+                                         </td>                                         
+                                        <td>
+                                            <apex:outputlink value="/{!email.Id}" target="_new">
+                                                <apex:outputtext value="{!email.Subject}"/> 
+                                            </apex:outputlink> 
+                                            <div class="underText">
+                                                <apex:outputtext value="{!IF(LEN(email.TextBody) > 75, LEFT(email.TextBody,75) + '...', email.TextBody)}"/>                                                 
+                                            </div>
+                                            
+                                        </td>                                                                                           
+                                        <td>
+                                             <apex:outputText rendered="{!email.Incoming}">
+                                                 {!email.FromAddress}
+                                            </apex:outputText>
+                                             <apex:outputText rendered="{!!email.Incoming}" >
+                                                 {!email.ToAddress}
+                                            </apex:outputText>                                         
+                                         </td>
+                                        <td>
+                                            <apex:outputText value="{0,date,MM/dd/yyyy hh:mm z}">
+                                                <apex:param value="{!email.MessageDate}" />
+                                            </apex:outputText>                                                                                          
+                                         </td>                                         
+                                      </tr>    
+                                </apex:repeat> 
+                            </tbody>  
+                        </table>  
+                    </div>
+                </div>
+                <!-- PPN-29677: Josh McGhee (2/20/19)-->
+                <!--<div class="showIfEmpty, emptyMessage" id="{!Case.EmailMessages}[]">                       
+                   No Emails Available
+                </div>-->      
+                                
+            </div>   
+        </apex:form>
+        
+    </body>    
+</apex:page>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Public Search History Tracking</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Public Search History Tracking</value>
+    </caseValues>
+    <fields>
+        <label><!-- Case Displayed --></label>
+        <name>Case_Displayed__c</name>
+        <relationshipLabel><!-- Public Search History Tracking --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Case Status --></label>
+        <name>Case_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cred Status Date Displayed --></label>
+        <name>Cred_Status_Date_Displayed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cred Status --></label>
+        <name>Cred_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- License Number --></label>
+        <name>License_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI Number --></label>
+        <name>NPI_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider Displayed --></label>
+        <name>Provider_Displayed__c</name>
+        <relationshipLabel><!-- Public Search History Tracking --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Search Date and Time --></label>
+        <name>Search_Date_and_Time__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,5 @@
+{!Case.Last_Case_Comment_Author__c} has added a comment to Case {!Case.CaseNumber}. Please read the comment below and then click on the link to respond appropriately.
+
+Comment: {!Case.Last_Case_Comment__c}
+
+LINK: {!Case.Link}

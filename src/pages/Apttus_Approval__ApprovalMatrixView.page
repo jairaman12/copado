@@ -1,0 +1,30 @@
+<!-- 
+    Apttus Approvals Management
+    ApprovalMatrixView
+     
+    @2011-2018 Apttus Inc. All rights reserved.
+
+ -->
+<apex:page standardController="User"
+		extensions="Apttus_Approval.ApprovalMatrixViewController" 
+		action="{!doViewApprovalMatrix}"
+		lightningStylesheets="{!$User.UIThemeDisplayed == 'Theme4d' ||
+								$User.UIThemeDisplayed == 'Theme4u'}">
+		
+    <apex:form >
+    
+        <apex:pageBlock title="{!$Label.apttus_approval__viewapprovalmatrix}">
+
+            <apex:pageMessages />
+            
+            <apex:pageBlockButtons location="top">
+                <apex:outputPanel >
+                    <apex:commandButton action="{!doReturn}" value="{!$Label.apttus_approval__return}" />
+                </apex:outputPanel>
+            </apex:pageBlockButtons>
+            
+		</apex:pageBlock>
+            
+    </apex:form>
+    
+</apex:page>

@@ -1,0 +1,12 @@
+<apex:page standardController="Account" extensions="ManualOnboardingCreation" lightningStylesheets="true" >
+<apex:form >
+    <apex:pageblock >
+    <p ><b>Work In Progress</b><br/>
+    Sorry for the inconvenience. This page will be available as part of future Release.
+    </p>
+    <apex:pageblockButtons location="Bottom" >  
+        <apex:commandButton value="Cancel" action="{!cancel}" immediate="true"/>    
+    </apex:pageblockButtons>    
+    </apex:pageblock>  
+</apex:form>
+</apex:page>

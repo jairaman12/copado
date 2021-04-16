@@ -1,0 +1,4411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label><!-- Agreement New Field Set --></label>
+        <name>Apttus__AgreementNewFieldSet</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Browse Agreements Criteria Field Set --></label>
+        <name>Apttus__BrowseAgreementsCriteriaFieldSet</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Browse Agreements Result Field Set --></label>
+        <name>Apttus__BrowseAgreementsResultFieldSet</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Offline Agreement Field Set --></label>
+        <name>Apttus__OfflineAgreementFieldSet</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Review Intelligent Import Field Set --></label>
+        <name>Apttus__ReviewIntelligentImportFieldSet</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Update Fields Intelligent Import Field Set --></label>
+        <name>Apttus__UpdateFieldsIntelligentImportFieldSet</name>
+    </fieldSets>
+    <fields>
+        <help><!-- The region for which this contract is made. --></help>
+        <label><!-- Region --></label>
+        <name>APTPS_Region__c</name>
+        <picklistValues>
+            <masterLabel>Europe</masterLabel>
+            <translation><!-- Europe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North America</masterLabel>
+            <translation><!-- North America --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Indicate whether this Agreement is amended using Mass Amended functionality. --></help>
+        <label><!-- Mass Amended --></label>
+        <name>APTSMD_MassAmended__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approvals Required --></label>
+        <name>APTS_Approvals_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Type Name --></label>
+        <name>APTS_Record_Type_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Activate --></label>
+        <name>Activate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Acute Inpatient Rehab Per Diem --></label>
+        <name>Acute_Inpatient_Rehab_Per_Diem__c</name>
+    </fields>
+    <fields>
+        <label><!-- Acute Outpatient Services Dollar amount --></label>
+        <name>Acute_Outpatient_Services_Dollar_amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Insert Amended Terms into here --></help>
+        <label><!-- Amended Terms --></label>
+        <name>Amended_Terms__c</name>
+    </fields>
+    <fields>
+        <label><!-- Amendment Language --></label>
+        <name>Amendment_Language__c</name>
+    </fields>
+    <fields>
+        <label><!-- Amendment Number --></label>
+        <name>Amendment_Number__c</name>
+        <picklistValues>
+            <masterLabel>Eighteenth</masterLabel>
+            <translation><!-- Eighteenth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eighth</masterLabel>
+            <translation><!-- Eighth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eleventh</masterLabel>
+            <translation><!-- Eleventh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fifteenth</masterLabel>
+            <translation><!-- Fifteenth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fifth</masterLabel>
+            <translation><!-- Fifth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fiftieth</masterLabel>
+            <translation><!-- Fiftieth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>First</masterLabel>
+            <translation><!-- First --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fortieth</masterLabel>
+            <translation><!-- Fortieth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Forty-Eighth</masterLabel>
+            <translation><!-- Forty-Eighth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Forty-Ninth</masterLabel>
+            <translation><!-- Forty-Ninth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Forty-Seventh</masterLabel>
+            <translation><!-- Forty-Seventh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Forty-Sixth</masterLabel>
+            <translation><!-- Forty-Sixth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Forty-fifth</masterLabel>
+            <translation><!-- Forty-fifth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Forty-first</masterLabel>
+            <translation><!-- Forty-first --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Forty-fourth</masterLabel>
+            <translation><!-- Forty-fourth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Forty-second</masterLabel>
+            <translation><!-- Forty-second --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Forty-third</masterLabel>
+            <translation><!-- Forty-third --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fourteenth</masterLabel>
+            <translation><!-- Fourteenth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fourth</masterLabel>
+            <translation><!-- Fourth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nineteenth</masterLabel>
+            <translation><!-- Nineteenth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ninth</masterLabel>
+            <translation><!-- Ninth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Second</masterLabel>
+            <translation><!-- Second --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seventeenth</masterLabel>
+            <translation><!-- Seventeenth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seventh</masterLabel>
+            <translation><!-- Seventh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sixteenth</masterLabel>
+            <translation><!-- Sixteenth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sixth</masterLabel>
+            <translation><!-- Sixth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tenth</masterLabel>
+            <translation><!-- Tenth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Third</masterLabel>
+            <translation><!-- Third --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thirteenth</masterLabel>
+            <translation><!-- Thirteenth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thirtieth</masterLabel>
+            <translation><!-- Thirtieth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thirty-Eighth</masterLabel>
+            <translation><!-- Thirty-Eighth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thirty-Ninth</masterLabel>
+            <translation><!-- Thirty-Ninth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thirty-Seventh</masterLabel>
+            <translation><!-- Thirty-Seventh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thirty-Sixth</masterLabel>
+            <translation><!-- Thirty-Sixth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thirty-fifth</masterLabel>
+            <translation><!-- Thirty-fifth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thirty-first</masterLabel>
+            <translation><!-- Thirty-first --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thirty-fourth</masterLabel>
+            <translation><!-- Thirty-fourth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thirty-second</masterLabel>
+            <translation><!-- Thirty-second --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thirty-third</masterLabel>
+            <translation><!-- Thirty-third --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Twelfth</masterLabel>
+            <translation><!-- Twelfth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Twentieth</masterLabel>
+            <translation><!-- Twentieth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Twenty-Eighth</masterLabel>
+            <translation><!-- Twenty-Eighth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Twenty-Ninth</masterLabel>
+            <translation><!-- Twenty-Ninth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Twenty-Seventh</masterLabel>
+            <translation><!-- Twenty-Seventh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Twenty-Sixth</masterLabel>
+            <translation><!-- Twenty-Sixth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Twenty-fifth</masterLabel>
+            <translation><!-- Twenty-fifth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Twenty-first</masterLabel>
+            <translation><!-- Twenty-first --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Twenty-fourth</masterLabel>
+            <translation><!-- Twenty-fourth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Twenty-second</masterLabel>
+            <translation><!-- Twenty-second --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Twenty-third</masterLabel>
+            <translation><!-- Twenty-third --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Amendment Whereas Text --></label>
+        <name>Amendment_Whereas_Text__c</name>
+    </fields>
+    <fields>
+        <help><!-- The annual uplift that is agreed upon within the framework of this agreement. --></help>
+        <label><!-- Annual Uplift --></label>
+        <name>Annual_Uplift__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approval Status --></label>
+        <name>Apttus_Approval__Approval_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approval Required</masterLabel>
+            <translation><!-- Approval Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Submitted</masterLabel>
+            <translation><!-- Not Submitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Approval</masterLabel>
+            <translation><!-- Pending Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The overall approval status for line items associated with the agreement --></help>
+        <label><!-- Line Item Approval Status --></label>
+        <name>Apttus_Approval__LineItem_Approval_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approval Required</masterLabel>
+            <translation><!-- Approval Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Submitted</masterLabel>
+            <translation><!-- Not Submitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Approval</masterLabel>
+            <translation><!-- Pending Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This field denotes the overall approval status for agreement term exceptions associated with the agreement. --></help>
+        <label><!-- Term Exception Approval Status --></label>
+        <name>Apttus_Approval__Term_Exception_Approval_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Submitted</masterLabel>
+            <translation><!-- Not Submitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Approval</masterLabel>
+            <translation><!-- Pending Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Check eSignature Status --></help>
+        <label><!-- Check eSignature Status --></label>
+        <name>Apttus_CMDSign__CheckESignatureStatus__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Apttus - DocuSign envelope Id to which this agreement is associated to. --></help>
+        <label><!-- DocuSign Envelope Id --></label>
+        <name>Apttus_CMDSign__DocuSignEnvelopeId__c</name>
+        <relationshipLabel><!-- Agreements --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Recall E-Signature request --></help>
+        <label><!-- Recall E-Signature Request --></label>
+        <name>Apttus_CMDSign__RecallESignatureRequest__c</name>
+    </fields>
+    <fields>
+        <label><!-- Send For eSignature --></label>
+        <name>Apttus_CMDSign__SendForESignature__c</name>
+    </fields>
+    <fields>
+        <help><!-- Correct E-Signature document --></help>
+        <label><!-- Correct E-Signature Document --></label>
+        <name>Apttus_CMDSign__ViewESignatureDocument__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Search Field --></label>
+        <name>Apttus__Account_Search_Field__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Apttus__Account__c</name>
+        <relationshipLabel><!-- Agreements --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Activated By --></label>
+        <name>Apttus__Activated_By__c</name>
+        <relationshipLabel><!-- Agreements (Activated By) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Activated Date --></label>
+        <name>Apttus__Activated_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Agreement Category --></label>
+        <name>Apttus__Agreement_Category__c</name>
+        <picklistValues>
+            <masterLabel>Corporate</masterLabel>
+            <translation><!-- Corporate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Procurement</masterLabel>
+            <translation><!-- Procurement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales</masterLabel>
+            <translation><!-- Sales --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Agreement Number_Num (INTERNAL) --></label>
+        <name>Apttus__Agreement_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- The list of output formats allowed for the agreement. --></help>
+        <label><!-- Allowable Output Formats --></label>
+        <name>Apttus__AllowableOutputFormats__c</name>
+        <picklistValues>
+            <masterLabel>DOC</masterLabel>
+            <translation><!-- DOC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DOCX</masterLabel>
+            <translation><!-- DOCX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PDF</masterLabel>
+            <translation><!-- PDF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RTF</masterLabel>
+            <translation><!-- RTF --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Amendment Effective Date --></label>
+        <name>Apttus__Amendment_Effective_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Renewal Consent --></label>
+        <name>Apttus__Auto_Renew_Consent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Renewal Term (Months) --></label>
+        <name>Apttus__Auto_Renew_Term_Months__c</name>
+    </fields>
+    <fields>
+        <label><!-- Renewal Terms --></label>
+        <name>Apttus__Auto_Renewal_Terms__c</name>
+    </fields>
+    <fields>
+        <label><!-- Auto Renew --></label>
+        <name>Apttus__Auto_Renewal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Hours --></label>
+        <name>Apttus__Business_Hours__c</name>
+        <relationshipLabel><!-- Agreements --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Company Signed By --></label>
+        <name>Apttus__Company_Signed_By__c</name>
+        <relationshipLabel><!-- Agreements (Company Signed By) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Company Signed Date --></label>
+        <name>Apttus__Company_Signed_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company Signed Title --></label>
+        <name>Apttus__Company_Signed_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Duration (Days) --></label>
+        <name>Apttus__Contract_Duration_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Agreement End Date --></label>
+        <name>Apttus__Contract_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Agreement Number_Auto (INTERNAL) --></label>
+        <name>Apttus__Contract_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Agreement Start Date --></label>
+        <name>Apttus__Contract_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contracted Days --></label>
+        <name>Apttus__Contracted_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Apttus__Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Executed Copy Mailed Out Date --></label>
+        <name>Apttus__Executed_Copy_Mailed_Out_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Agreement Number --></label>
+        <name>Apttus__FF_Agreement_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Amend the agreement --></help>
+        <label><!-- Amend --></label>
+        <name>Apttus__FF_Amend__c</name>
+    </fields>
+    <fields>
+        <help><!-- Cancel the agreement request --></help>
+        <label><!-- Cancel Request --></label>
+        <name>Apttus__FF_Cancel_Request__c</name>
+    </fields>
+    <fields>
+        <help><!-- Activates the agreement --></help>
+        <label><!-- Activate --></label>
+        <name>Apttus__FF_Execute__c</name>
+    </fields>
+    <fields>
+        <help><!-- Expire the agreement --></help>
+        <label><!-- Expire --></label>
+        <name>Apttus__FF_Expire__c</name>
+    </fields>
+    <fields>
+        <label><!-- Generate Protected (OBSOLETE) --></label>
+        <name>Apttus__FF_Generate_Protected_Agreement__c</name>
+    </fields>
+    <fields>
+        <label><!-- Generate Supporting Document --></label>
+        <name>Apttus__FF_Generate_Supporting_Document__c</name>
+    </fields>
+    <fields>
+        <label><!-- Generate Unprotected (OBSOLETE) --></label>
+        <name>Apttus__FF_Generate_Unprotected_Agreement__c</name>
+    </fields>
+    <fields>
+        <help><!-- Regenerate the agreement --></help>
+        <label><!-- Regenerate --></label>
+        <name>Apttus__FF_Regenerate_Agreement__c</name>
+    </fields>
+    <fields>
+        <help><!-- Renew the agreement --></help>
+        <label><!-- Renew --></label>
+        <name>Apttus__FF_Renew__c</name>
+    </fields>
+    <fields>
+        <help><!-- Return the agreement to the requestor --></help>
+        <label><!-- Return To Requestor --></label>
+        <name>Apttus__FF_Return_To_Requestor__c</name>
+    </fields>
+    <fields>
+        <help><!-- Send agreement for review --></help>
+        <label><!-- Send For Review --></label>
+        <name>Apttus__FF_Send_To_Other_Party_For_Review__c</name>
+    </fields>
+    <fields>
+        <help><!-- Send the agreement for signatures --></help>
+        <label><!-- Send For Signatures --></label>
+        <name>Apttus__FF_Send_To_Other_Party_For_Signatures__c</name>
+    </fields>
+    <fields>
+        <label><!-- Send To Other Party (OBSOLETE) --></label>
+        <name>Apttus__FF_Send_To_Third_Party__c</name>
+    </fields>
+    <fields>
+        <help><!-- Submit agreement for changes --></help>
+        <label><!-- Submit For Changes --></label>
+        <name>Apttus__FF_Submit_For_Changes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Submit the agreement request --></help>
+        <label><!-- Submit Request --></label>
+        <name>Apttus__FF_Submit_Request__c</name>
+    </fields>
+    <fields>
+        <help><!-- Terminate the agreement --></help>
+        <label><!-- Terminate --></label>
+        <name>Apttus__FF_Terminate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Preview the agreement --></help>
+        <label><!-- Preview --></label>
+        <name>Apttus__FF_View_Draft_Contract__c</name>
+    </fields>
+    <fields>
+        <help><!-- Generate the agreement --></help>
+        <label><!-- Generate --></label>
+        <name>Apttus__FF_View_Final_Contract__c</name>
+    </fields>
+    <fields>
+        <label><!-- Import Offline Document --></label>
+        <name>Apttus__Import_Offline_Document__c</name>
+    </fields>
+    <fields>
+        <label><!-- Initiate Termination --></label>
+        <name>Apttus__InitiateTermination__c</name>
+    </fields>
+    <fields>
+        <label><!-- Initiation Type --></label>
+        <name>Apttus__Initiation_Type__c</name>
+        <picklistValues>
+            <masterLabel>Negotiate Contract</masterLabel>
+            <translation><!-- Negotiate Contract --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Store Executed Contract</masterLabel>
+            <translation><!-- Store Executed Contract --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Internal Renewal Notification Days --></label>
+        <name>Apttus__Internal_Renewal_Notification_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Internal Renewal Start Date --></label>
+        <name>Apttus__Internal_Renewal_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Internal Review --></label>
+        <name>Apttus__IsInternalReview__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether the agreement is locked for editing --></help>
+        <label><!-- Is Locked --></label>
+        <name>Apttus__IsLocked__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates a system initiated update. --></help>
+        <label><!-- Is System Update --></label>
+        <name>Apttus__Is_System_Update__c</name>
+    </fields>
+    <fields>
+        <label><!-- Latest Doc ID --></label>
+        <name>Apttus__LatestDocId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Non Standard Legal Language --></label>
+        <name>Apttus__Non_Standard_Legal_Language__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Party Returned Date --></label>
+        <name>Apttus__Other_Party_Returned_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Party Sent Date --></label>
+        <name>Apttus__Other_Party_Sent_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Party Signed By (Unlisted) --></label>
+        <name>Apttus__Other_Party_Signed_By_Unlisted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Party Signed By --></label>
+        <name>Apttus__Other_Party_Signed_By__c</name>
+        <relationshipLabel><!-- Agreements (Other Party Signed By) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Other Party Signed Date --></label>
+        <name>Apttus__Other_Party_Signed_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Party Signed Title --></label>
+        <name>Apttus__Other_Party_Signed_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outstanding Days --></label>
+        <name>Apttus__Outstanding_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner Expiration Notice --></label>
+        <name>Apttus__Owner_Expiration_Notice__c</name>
+        <picklistValues>
+            <masterLabel>120 Days</masterLabel>
+            <translation><!-- 120 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15 Days</masterLabel>
+            <translation><!-- 15 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>30 Days</masterLabel>
+            <translation><!-- 30 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>45 Days</masterLabel>
+            <translation><!-- 45 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>60 Days</masterLabel>
+            <translation><!-- 60 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>90 Days</masterLabel>
+            <translation><!-- 90 Days --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Parent Agreement --></label>
+        <name>Apttus__Parent_Agreement__c</name>
+        <relationshipLabel><!-- Child Agreements --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Perpetual --></label>
+        <name>Apttus__Perpetual__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Contact --></label>
+        <name>Apttus__Primary_Contact__c</name>
+        <relationshipLabel><!-- Agreements (Primary Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Related Opportunity --></label>
+        <name>Apttus__Related_Opportunity__c</name>
+        <relationshipLabel><!-- Agreements --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Remaining Contracted Days --></label>
+        <name>Apttus__Remaining_Contracted_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Renewal Notice Date --></label>
+        <name>Apttus__Renewal_Notice_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Renewal Notice Days --></label>
+        <name>Apttus__Renewal_Notice_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request Date --></label>
+        <name>Apttus__Request_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requestor --></label>
+        <name>Apttus__Requestor__c</name>
+        <relationshipLabel><!-- Agreements (Requestor) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Retention Date --></label>
+        <name>Apttus__RetentionDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Retention Policy --></label>
+        <name>Apttus__RetentionPolicyId__c</name>
+        <relationshipLabel><!-- Agreements --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Review Offline Document --></label>
+        <name>Apttus__ReviewOfflineDocument__c</name>
+    </fields>
+    <fields>
+        <label><!-- Risk Rating --></label>
+        <name>Apttus__Risk_Rating__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source --></label>
+        <name>Apttus__Source__c</name>
+        <picklistValues>
+            <masterLabel>Internal Paper</masterLabel>
+            <translation><!-- Internal Paper --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Party Paper</masterLabel>
+            <translation><!-- Other Party Paper --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Special Terms --></label>
+        <name>Apttus__Special_Terms__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Category --></label>
+        <name>Apttus__Status_Category__c</name>
+        <picklistValues>
+            <masterLabel>Amended</masterLabel>
+            <translation><!-- Amended --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expired</masterLabel>
+            <translation><!-- Expired --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Authoring</masterLabel>
+            <translation><!-- In Authoring --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Effect</masterLabel>
+            <translation><!-- In Effect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Filing</masterLabel>
+            <translation><!-- In Filing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Signatures</masterLabel>
+            <translation><!-- In Signatures --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Request</masterLabel>
+            <translation><!-- Request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminated</masterLabel>
+            <translation><!-- Terminated --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Apttus__Status__c</name>
+        <picklistValues>
+            <masterLabel>Activated</masterLabel>
+            <translation><!-- Activated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved Request</masterLabel>
+            <translation><!-- Approved Request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Author Contract</masterLabel>
+            <translation><!-- Author Contract --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Being Amended</masterLabel>
+            <translation><!-- Being Amended --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Being Renewed</masterLabel>
+            <translation><!-- Being Renewed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Being Terminated</masterLabel>
+            <translation><!-- Being Terminated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled Request</masterLabel>
+            <translation><!-- Cancelled Request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expired</masterLabel>
+            <translation><!-- Expired --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fully Signed</masterLabel>
+            <translation><!-- Fully Signed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Amendment</masterLabel>
+            <translation><!-- In Amendment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Reconciliation</masterLabel>
+            <translation><!-- In Reconciliation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Renewal</masterLabel>
+            <translation><!-- In Renewal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal Review</masterLabel>
+            <translation><!-- Internal Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal Signatures</masterLabel>
+            <translation><!-- Internal Signatures --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Language Approval</masterLabel>
+            <translation><!-- Language Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Language Approved</masterLabel>
+            <translation><!-- Language Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Party Review</masterLabel>
+            <translation><!-- Other Party Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Party Signatures</masterLabel>
+            <translation><!-- Other Party Signatures --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for Signatures</masterLabel>
+            <translation><!-- Ready for Signatures --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reconciled</masterLabel>
+            <translation><!-- Reconciled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Request</masterLabel>
+            <translation><!-- Request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Request Approval</masterLabel>
+            <translation><!-- Request Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Signature Declined</masterLabel>
+            <translation><!-- Signature Declined --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted Request</masterLabel>
+            <translation><!-- Submitted Request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Superseded</masterLabel>
+            <translation><!-- Superseded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminated</masterLabel>
+            <translation><!-- Terminated --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Submit Request Mode --></label>
+        <name>Apttus__Submit_Request_Mode__c</name>
+        <picklistValues>
+            <masterLabel>Auto</masterLabel>
+            <translation><!-- Auto --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manual</masterLabel>
+            <translation><!-- Manual --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Subtype --></label>
+        <name>Apttus__Subtype__c</name>
+        <picklistValues>
+            <masterLabel>Default</masterLabel>
+            <translation><!-- Default --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Term (Months) --></label>
+        <name>Apttus__Term_Months__c</name>
+    </fields>
+    <fields>
+        <label><!-- Termination Comments --></label>
+        <name>Apttus__TerminationComments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Termination Date --></label>
+        <name>Apttus__Termination_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Termination Notice Days --></label>
+        <name>Apttus__Termination_Notice_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Termination Notice Issue Date --></label>
+        <name>Apttus__Termination_Notice_Issue_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Agreement Value --></label>
+        <name>Apttus__Total_Contract_Value__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates if this agreement is Version aware. This flag enables versioning on all documents of this agreement record, provided document versioning is enabled in custom settings. --></help>
+        <label><!-- Version Aware --></label>
+        <name>Apttus__VersionAware__c</name>
+    </fields>
+    <fields>
+        <label><!-- Version Number --></label>
+        <name>Apttus__Version_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Version (OBSOLETE) --></label>
+        <name>Apttus__Version__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates a transient agreement that may get deleted by the user. A new agreement is in transient state until the agreement is explicitly saved by the user. --></help>
+        <label><!-- Is Transient --></label>
+        <name>Apttus__Workflow_Trigger_Created_From_Clone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Workflow Trigger Generated Agreement --></label>
+        <name>Apttus__Workflow_Trigger_Viewed_Final__c</name>
+    </fields>
+    <fields>
+        <label><!-- Arbitration City --></label>
+        <name>Arbitration_City__c</name>
+        <picklistValues>
+            <masterLabel>Abilene, TX</masterLabel>
+            <translation><!-- Abilene, TX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Albuquerque, NM</masterLabel>
+            <translation><!-- Albuquerque, NM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Amarillo, TX</masterLabel>
+            <translation><!-- Amarillo, TX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Austin, TX</masterLabel>
+            <translation><!-- Austin, TX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chicago, IL</masterLabel>
+            <translation><!-- Chicago, IL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corpus Christi, TX</masterLabel>
+            <translation><!-- Corpus Christi, TX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dallas, TX</masterLabel>
+            <translation><!-- Dallas, TX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>El Paso, TX</masterLabel>
+            <translation><!-- El Paso, TX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Helena, MT</masterLabel>
+            <translation><!-- Helena, MT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Houston, TX</masterLabel>
+            <translation><!-- Houston, TX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lubbock, TX</masterLabel>
+            <translation><!-- Lubbock, TX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Midland, TX</masterLabel>
+            <translation><!-- Midland, TX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Odessa, TX</masterLabel>
+            <translation><!-- Odessa, TX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oklahoma City, OK</masterLabel>
+            <translation><!-- Oklahoma City, OK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>San Angelo, TX</masterLabel>
+            <translation><!-- San Angelo, TX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>San Antonio, TX</masterLabel>
+            <translation><!-- San Antonio, TX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Texarkana, TX</masterLabel>
+            <translation><!-- Texarkana, TX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tulsa, OK</masterLabel>
+            <translation><!-- Tulsa, OK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waco, TX</masterLabel>
+            <translation><!-- Waco, TX --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Attachment Effective Date --></label>
+        <name>Attachment_Effective_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- BA/BP IP Hospital Services per diem --></label>
+        <name>BA_BP_IP_Hospital_Services_per_diem__c</name>
+    </fields>
+    <fields>
+        <label><!-- BA/BP Residential Treat. Srvcs per diem --></label>
+        <name>BA_BP_Residential_Treat_Srvcs_per_diem__c</name>
+    </fields>
+    <fields>
+        <label><!-- BA IP Max Reimb. Allowance Per Diem --></label>
+        <name>BA_IP_Max_Reimb_Allowance_Per_Diem__c</name>
+    </fields>
+    <fields>
+        <label><!-- BAdv Max Reimb Allowed-Resid Treat Srvcs --></label>
+        <name>BAdv_Max_Reimb_Allowed_Resid_Treat_Srvcs__c</name>
+    </fields>
+    <fields>
+        <label><!-- BAdv Untimed PerUnit OP rehab exceptn --></label>
+        <name>BAdv_Untimed_PerUnit_OP_rehab_exceptn__c</name>
+    </fields>
+    <fields>
+        <label><!-- BCBS Notices Email --></label>
+        <name>BCBS_Notices_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- BChoice Max Reimb Allow-Resid Treat Srvc --></label>
+        <name>BChoice_Max_Reimb_Allow_Resid_Treat_Srvc__c</name>
+    </fields>
+    <fields>
+        <label><!-- BComm Untimed PerUnit OP rehab exceptnv --></label>
+        <name>BComm_Untimed_PerUnit_OP_rehab_exceptnv__c</name>
+    </fields>
+    <fields>
+        <label><!-- BPref Max Reimb Allowed-Resid Treat Srvc --></label>
+        <name>BPref_Max_Reimb_Allowed_Resid_Treat_Srvc__c</name>
+    </fields>
+    <fields>
+        <label><!-- BPref Untimed PerUnit OP rehab exceptn --></label>
+        <name>BPref_Untimed_PerUnit_OP_rehab_exceptn__c</name>
+    </fields>
+    <fields>
+        <label><!-- BT Network Max Reimbursement Allowance --></label>
+        <name>BT_Network_Max_Reimbursement_Allowance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Base Rate Multiplier --></label>
+        <name>Base_Rate_Multiplier__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bi-lateral surgery percentage --></label>
+        <name>Bi_lateral_surgery_percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- BlueChoice PPO Lab Conversion Factor --></label>
+        <name>BlueChoice_PPO_Lab_Conversion_Factor__c</name>
+    </fields>
+    <fields>
+        <label><!-- BlueLincs HMO Lab Conversion Factor --></label>
+        <name>BlueLincs_HMO_Lab_Conversion_Factor__c</name>
+    </fields>
+    <fields>
+        <label><!-- BlueLincs HMO SNF Max Per Diem --></label>
+        <name>BlueLincs_HMO_SNF_Max_Per_Diem__c</name>
+    </fields>
+    <fields>
+        <label><!-- BluePref Pwr Mobility 3,4,5 % of billed --></label>
+        <name>BluePref_Pwr_Mobility_3_4_5_of_billed__c</name>
+    </fields>
+    <fields>
+        <label><!-- BluePreferred PPO Lab Conversion Factor --></label>
+        <name>BluePreferred_PPO_Lab_Conversion_Factor__c</name>
+    </fields>
+    <fields>
+        <label><!-- BlueTrad,Choice,Pref SNF Max Per Diem --></label>
+        <name>BlueTrad_Choice_Pref_SNF_Max_Per_Diem__c</name>
+    </fields>
+    <fields>
+        <label><!-- BlueAdv Power Mobility 3,4,5 % of billed --></label>
+        <name>Blue_Advantage_MO_Power_Mobility_3_4_5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Blue Advantage PPO Lab Conversion Factor --></label>
+        <name>Blue_Advantage_PPO_Lab_Conversion_Factor__c</name>
+    </fields>
+    <fields>
+        <label><!-- Blue Advantage PPO SNF Max Per Diem --></label>
+        <name>Blue_Advantage_PPO_SNF_Max_Per_Diem__c</name>
+    </fields>
+    <fields>
+        <label><!-- Blue Choice Methodology --></label>
+        <name>Blue_Choice_Methodology__c</name>
+    </fields>
+    <fields>
+        <label><!-- Blue Choice Opts Methodology --></label>
+        <name>Blue_Choice_Opts_Methodology__c</name>
+    </fields>
+    <fields>
+        <label><!-- Blue Choice Opts % Billed Chges Cvd Svcs --></label>
+        <name>Blue_Choice_Opts_of_Billed_Chges_for_C__c</name>
+    </fields>
+    <fields>
+        <label><!-- Blue Choice % of Billed Chges for Cvd Sv --></label>
+        <name>Blue_Choice_of_Billed_Chges_for_Cvd_Sv__c</name>
+    </fields>
+    <fields>
+        <label><!-- BlueComm Pwr Mobility 3,4,5 % of billed --></label>
+        <name>Blue_Community_Power_Mobility_3_4_5_perc__c</name>
+    </fields>
+    <fields>
+        <label><!-- Blue Ess. and Health Select: same rates? --></label>
+        <name>Blue_Ess_and_Health_Select_same_rates__c</name>
+        <picklistValues>
+            <masterLabel>No, Blue Ess. and Health Select have differing rates</masterLabel>
+            <translation><!-- No, Blue Ess. and Health Select have differing rates --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes, Blue Ess. and Health Select share rates</masterLabel>
+            <translation><!-- Yes, Blue Ess. and Health Select share rates --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Blue Focus Percent Discount --></label>
+        <name>Blue_Focus_Percent_Discount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Blue Options Percent Discount --></label>
+        <name>Blue_Options_Percent_Discount__c</name>
+    </fields>
+    <fields>
+        <label><!-- BluePref Pwr Mobility 3,4,5 % of billed --></label>
+        <name>Blue_Preferred_Power_Mobility_3_4_5_perc__c</name>
+    </fields>
+    <fields>
+        <label><!-- Blue Salud/Blue SCI --></label>
+        <name>Blue_Salud__c</name>
+    </fields>
+    <fields>
+        <label><!-- Blue Traditional Lab Conversion Factor --></label>
+        <name>Blue_Traditional_Lab_Conversion_Factor__c</name>
+    </fields>
+    <fields>
+        <label><!-- Broad PPO Methodology --></label>
+        <name>Broad_PPO_Methodology__c</name>
+    </fields>
+    <fields>
+        <label><!-- Broad PPO % of Billed Chges for Cvd Svcs --></label>
+        <name>Broad_PPO_of_Billed_Chges_for_Cvd_Svcs__c</name>
+    </fields>
+    <fields>
+        <label><!-- E-Signature Status --></label>
+        <name>CLM_Agr_E_Signature_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- CLM_Bypass_BlueAdvantagePpoSnfMaxPerDiem --></label>
+        <name>CLM_Bypass_BlueAdvantagePpoSnfMaxPerDiem__c</name>
+    </fields>
+    <fields>
+        <label><!-- CLM_Bypass_BlueChoicePpoLabConversionFac --></label>
+        <name>CLM_Bypass_BlueChoicePpoLabConversionFac__c</name>
+    </fields>
+    <fields>
+        <label><!-- CLM_Bypass_BlueLincsHmoLabConversionFac --></label>
+        <name>CLM_Bypass_BlueLincsHmoLabConversionFact__c</name>
+    </fields>
+    <fields>
+        <label><!-- CLM_Bypass_BlueLincsHmoSnfMaxPerDiem --></label>
+        <name>CLM_Bypass_BlueLincsHmoSnfMaxPerDiem__c</name>
+    </fields>
+    <fields>
+        <label><!-- CLM_Bypass_BluePreferredPpoLabConverFac --></label>
+        <name>CLM_Bypass_BluePreferredPpoLabConverFac__c</name>
+    </fields>
+    <fields>
+        <label><!-- CLM_Bypass_BlueTradChoicePrefSnfMaxPer --></label>
+        <name>CLM_Bypass_BlueTradChoicePrefSnfMaxPer__c</name>
+    </fields>
+    <fields>
+        <label><!-- CLM_Bypass_BlueTraditionalLabConverFac --></label>
+        <name>CLM_Bypass_BlueTraditionalLabConverFacto__c</name>
+    </fields>
+    <fields>
+        <label><!-- CLM_Bypass_DmePurchasePreAuthCapAmount --></label>
+        <name>CLM_Bypass_DmePurchasePreAuthCapAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- CLM_Bypass_DmeRentalFeePreAuthCapAmoun --></label>
+        <name>CLM_Bypass_DmeRentalFeePreAuthCapAmoun__c</name>
+    </fields>
+    <fields>
+        <label><!-- CLM_Bypass_MaHmoLesserOf%OfCovered --></label>
+        <name>CLM_Bypass_MaHmoLesserOfCovered__c</name>
+    </fields>
+    <fields>
+        <label><!-- CLM_Bypass_MaHmoLesserOf%OfMedicAllo --></label>
+        <name>CLM_Bypass_MaHmoLesserOfMedicAllo__c</name>
+    </fields>
+    <fields>
+        <label><!-- CLM_Bypass_MaPpoLesserOf%OfCovered --></label>
+        <name>CLM_Bypass_MaPpoLesserOfCovered__c</name>
+    </fields>
+    <fields>
+        <label><!-- CLM_Bypass_MaPpoLesserOf%OfMedicareAl --></label>
+        <name>CLM_Bypass_MaPpoLesserOfMedicareAl__c</name>
+    </fields>
+    <fields>
+        <label><!-- CLM_Bypass_PercentCoveredCharges --></label>
+        <name>CLM_Bypass_PercentCoveredCharges__c</name>
+    </fields>
+    <fields>
+        <label><!-- CLM_Bypass_PercentofMedicaidFeeSchedule --></label>
+        <name>CLM_Bypass_PercentofMedicaidFeeSchedule__c</name>
+    </fields>
+    <fields>
+        <label><!-- CLM_Bypass_PpoLabConversionFactor --></label>
+        <name>CLM_Bypass_PpoLabConversionFactor__c</name>
+    </fields>
+    <fields>
+        <label><!-- CLM_Bypass_RbrvsPublicationLocation --></label>
+        <name>CLM_Bypass_RbrvsPublicationLocation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Error Condition --></label>
+        <name>CLM_Error_Condition__c</name>
+    </fields>
+    <fields>
+        <label><!-- CLM Identification Number --></label>
+        <name>CLM_Identification_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- CLM Identification Type --></label>
+        <name>CLM_Identification_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- CLM Medicare Number using Prov ID --></label>
+        <name>CLM_Medicare_Number_using_Prov_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- CLM Medicare Provider Identification --></label>
+        <name>CLM_Medicare_Provider_Identification__c</name>
+        <relationshipLabel><!-- Agreements (CLM Medicare Provider Identification) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- NPI Type --></label>
+        <name>CLM_NPI_List_Type__c</name>
+        <picklistValues>
+            <masterLabel>Type 1</masterLabel>
+            <translation><!-- Type 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Type 2</masterLabel>
+            <translation><!-- Type 2 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- NPI --></label>
+        <name>CLM_NPI_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPI --></label>
+        <name>CLM_NPI__c</name>
+    </fields>
+    <fields>
+        <label><!-- Non Error Condition --></label>
+        <name>CLM_Non_Error_Condition__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Prov ID Search --></label>
+        <name>CLM_Other_Prov_ID_Search__c</name>
+    </fields>
+    <fields>
+        <label><!-- PlanSpecificPFIN --></label>
+        <name>CLM_PlanSpecificPFIN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider ID --></label>
+        <name>CLM_Provider_ID_Txt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider ID --></label>
+        <name>CLM_Provider_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter/Select Identification Number --></help>
+        <label><!-- CLM Provider Identification Info --></label>
+        <name>CLM_Provider_Iden_Info__c</name>
+        <relationshipLabel><!-- Agreements (CLM Identification Number) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Select Locations --></label>
+        <name>CLM_Select_Locations__c</name>
+    </fields>
+    <fields>
+        <label><!-- Standard or Non Standard Base Language --></label>
+        <name>CLM_Standard_or_Non_Standard_Base_Lan__c</name>
+        <picklistValues>
+            <masterLabel>Non-Standard</masterLabel>
+            <translation><!-- Non-Standard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard</masterLabel>
+            <translation><!-- Standard --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Tax ID --></label>
+        <name>CLM_Tax_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- CLM_Tx_City_Check --></label>
+        <name>CLM_Tx_City_Check__c</name>
+    </fields>
+    <fields>
+        <label><!-- Carve Out in Lesser Of --></label>
+        <name>Carve_Out_in_Lesser_Of__c</name>
+        <picklistValues>
+            <masterLabel>are</masterLabel>
+            <translation><!-- are --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>are not</masterLabel>
+            <translation><!-- are not --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Charge Master Max Increase percent --></label>
+        <name>Charge_Master_Max_Increase_percent__c</name>
+        <picklistValues>
+            <masterLabel>eight percent (8%)</masterLabel>
+            <translation><!-- eight percent (8%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>five percent (5%)</masterLabel>
+            <translation><!-- five percent (5%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>four percent (4%)</masterLabel>
+            <translation><!-- four percent (4%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>nine percent (9%)</masterLabel>
+            <translation><!-- nine percent (9%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>one percent (1%)</masterLabel>
+            <translation><!-- one percent (1%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>seven percent (7%)</masterLabel>
+            <translation><!-- seven percent (7%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>six percent (6%)</masterLabel>
+            <translation><!-- six percent (6%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ten percent (10%)</masterLabel>
+            <translation><!-- ten percent (10%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>three percent (3%)</masterLabel>
+            <translation><!-- three percent (3%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>two percent (2%)</masterLabel>
+            <translation><!-- two percent (2%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>zero percent (0%)</masterLabel>
+            <translation><!-- zero percent (0%) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Charge Master Reminder Date --></label>
+        <name>Charge_Master_Reminder_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Closed Plan Percent Discount --></label>
+        <name>Closed_Plan_Percent_Discount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Complete Delivery Rate --></label>
+        <name>Complete_Delivery_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- DME Purchase pre-auth cap amount --></label>
+        <name>DME_Purchase_pre_auth_cap_amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- DME Rental Fee pre-auth cap amount --></label>
+        <name>DME_Rental_Fee_pre_auth_cap_amount__c</name>
+        <picklistValues>
+            <masterLabel>four thousand dollars ($4,000.00)</masterLabel>
+            <translation><!-- four thousand dollars ($4,000.00) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- DRG Grouper Type --></label>
+        <name>DRG_Grouper_Type__c</name>
+        <picklistValues>
+            <masterLabel>APR</masterLabel>
+            <translation><!-- APR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MS</masterLabel>
+            <translation><!-- MS --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- DRG Grouper Version --></label>
+        <name>DRG_Grouper_Version__c</name>
+        <picklistValues>
+            <masterLabel>26</masterLabel>
+            <translation><!-- 26 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>27</masterLabel>
+            <translation><!-- 27 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>28</masterLabel>
+            <translation><!-- 28 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>29</masterLabel>
+            <translation><!-- 29 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>30</masterLabel>
+            <translation><!-- 30 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>31</masterLabel>
+            <translation><!-- 31 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>32</masterLabel>
+            <translation><!-- 32 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>33</masterLabel>
+            <translation><!-- 33 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>34</masterLabel>
+            <translation><!-- 34 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>35</masterLabel>
+            <translation><!-- 35 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>36</masterLabel>
+            <translation><!-- 36 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Date only of createdDate --></label>
+        <name>Date_only_of_createdDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivery Preference --></label>
+        <name>Delivery_Preference__c</name>
+        <picklistValues>
+            <masterLabel>Electronic</masterLabel>
+            <translation><!-- Electronic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paper</masterLabel>
+            <translation><!-- Paper --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Determination of Allowed Amnts(Dollars) --></label>
+        <name>Determination_of_Allowed_Amnts_Dollars__c</name>
+    </fields>
+    <fields>
+        <label><!-- Determination of Allowed Amnts(Percent) --></label>
+        <name>Determination_of_Allowed_Amnts_Percent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Determination of Allowed Amnts(%) --></label>
+        <name>Determination_of_Allowed_Amounts__c</name>
+    </fields>
+    <fields>
+        <label><!-- Does DRG cap apply? --></label>
+        <name>Does_DRG_cap_apply__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Dollar of increase per year --></label>
+        <name>Dollar_of_increase_per_year__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dual Eligible Attachment Effective Date --></label>
+        <name>Dual_Eligible_Attachment_Effective_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- ER same Comp Method High/Low --></label>
+        <name>ER_same_Comp_Method_High_Low__c</name>
+        <picklistValues>
+            <masterLabel>highest</masterLabel>
+            <translation><!-- highest --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>lowest</masterLabel>
+            <translation><!-- lowest --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Email Subject text --></label>
+        <name>Email_Subject_text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Excluded Services Per Treatment Amount --></label>
+        <name>Excluded_Services_Per_Treatment_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fee Schedule Date --></label>
+        <name>Fee_Schedule_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Left Footer --></label>
+        <name>Footer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Group 13 Multiplier --></label>
+        <name>Group_13_Multiplier__c</name>
+    </fields>
+    <fields>
+        <label><!-- HHRF Duration End Date --></label>
+        <name>HHRF_Duration_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- HHRF Effective Date --></label>
+        <name>HHRF_Effective_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- &quot;zero percent (0%)&quot; --></help>
+        <label><!-- HMO 1st Charge Schedule Increase Cap % --></label>
+        <name>HMO_1st_Charge_Schedule_Increase_Cap__c</name>
+    </fields>
+    <fields>
+        <label><!-- HMO 2nd Charge Schedule Increase Cap % --></label>
+        <name>HMO_2nd_Charge_Schedule_Increase_Cap__c</name>
+    </fields>
+    <fields>
+        <label><!-- HMO 3rd Charge Schedule Increase Cap % --></label>
+        <name>HMO_3rd_Charge_Schedule_Increase_Cap__c</name>
+    </fields>
+    <fields>
+        <label><!-- HMO Attachment Effective Date --></label>
+        <name>HMO_Attachment_Effective_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- HMO Methodology --></label>
+        <name>HMO_Methodology__c</name>
+    </fields>
+    <fields>
+        <label><!-- HMO % of Billed Chges for Cvd Svcs --></label>
+        <name>HMO_of_Billed_Chges_for_Cvd_Svcs__c</name>
+    </fields>
+    <fields>
+        <label><!-- HealthLink Percent Discount --></label>
+        <name>HealthLink_Percent_Discount__c</name>
+    </fields>
+    <fields>
+        <label><!-- ICR --></label>
+        <name>ICR__c</name>
+    </fields>
+    <fields>
+        <label><!-- IP Max Reimbursement Allowance  Per Diem --></label>
+        <name>IP_Max_Reimbursement_Allowance_Per_Diem__c</name>
+    </fields>
+    <fields>
+        <label><!-- Implant Prosthetic per rev code maximum --></label>
+        <name>Implant_Prosthetic_per_rev_code_maximum__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inflator Review Date --></label>
+        <name>Inflator_Review_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Initial Dual Eligible Attach term mnths --></label>
+        <name>Initial_Dual_Eligible_Attach_term_mnths__c</name>
+        <picklistValues>
+            <masterLabel>eight (8) months</masterLabel>
+            <translation><!-- eight (8) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>eleven (11) months</masterLabel>
+            <translation><!-- eleven (11) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>five (5) months</masterLabel>
+            <translation><!-- five (5) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>four (4) months</masterLabel>
+            <translation><!-- four (4) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>nine (9) months</masterLabel>
+            <translation><!-- nine (9) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>one (1) month</masterLabel>
+            <translation><!-- one (1) month --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>seven (7) months</masterLabel>
+            <translation><!-- seven (7) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>six (6) months</masterLabel>
+            <translation><!-- six (6) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ten (10) months</masterLabel>
+            <translation><!-- ten (10) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>three (3) months</masterLabel>
+            <translation><!-- three (3) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>two (2) months</masterLabel>
+            <translation><!-- two (2) months --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Initial Dual Eligible Attach term yrs --></label>
+        <name>Initial_Dual_Eligible_Attach_term_yrs__c</name>
+        <picklistValues>
+            <masterLabel>one (1) year</masterLabel>
+            <translation><!-- one (1) year --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>three (3) years</masterLabel>
+            <translation><!-- three (3) years --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>two (2) years</masterLabel>
+            <translation><!-- two (2) years --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Initial Dual Eligible Attach term months --></label>
+        <name>Initial_Dual_Eligible_Attachment_term_mo__c</name>
+        <picklistValues>
+            <masterLabel>eight (8) months</masterLabel>
+            <translation><!-- eight (8) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>eleven (11) months</masterLabel>
+            <translation><!-- eleven (11) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>five (5) months</masterLabel>
+            <translation><!-- five (5) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>four (4) months</masterLabel>
+            <translation><!-- four (4) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>nine (9) months</masterLabel>
+            <translation><!-- nine (9) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>one (1) month</masterLabel>
+            <translation><!-- one (1) month --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>seven (7) months</masterLabel>
+            <translation><!-- seven (7) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>six (6) months</masterLabel>
+            <translation><!-- six (6) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ten (10) months</masterLabel>
+            <translation><!-- ten (10) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>three (3) months</masterLabel>
+            <translation><!-- three (3) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>two (2) months</masterLabel>
+            <translation><!-- two (2) months --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Initial Dual Eligible Attachment term ye --></label>
+        <name>Initial_Dual_Eligible_Attachment_term_ye__c</name>
+    </fields>
+    <fields>
+        <label><!-- Initial HMO Attachment Term months --></label>
+        <name>Initial_HMO_Attachment_Term_months__c</name>
+        <picklistValues>
+            <masterLabel>eight (8) months</masterLabel>
+            <translation><!-- eight (8) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>eleven (11) months</masterLabel>
+            <translation><!-- eleven (11) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>five (5) months</masterLabel>
+            <translation><!-- five (5) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>four (4) months</masterLabel>
+            <translation><!-- four (4) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>nine (9) months</masterLabel>
+            <translation><!-- nine (9) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>one (1) month</masterLabel>
+            <translation><!-- one (1) month --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>seven (7) months</masterLabel>
+            <translation><!-- seven (7) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>six (6) months</masterLabel>
+            <translation><!-- six (6) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ten (10) months</masterLabel>
+            <translation><!-- ten (10) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>three (3) months</masterLabel>
+            <translation><!-- three (3) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>two (2) months</masterLabel>
+            <translation><!-- two (2) months --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Initial HMO Attachment Term years --></label>
+        <name>Initial_HMO_Attachment_Term_years__c</name>
+        <picklistValues>
+            <masterLabel>one (1) year</masterLabel>
+            <translation><!-- one (1) year --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>three (3) years</masterLabel>
+            <translation><!-- three (3) years --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>two (2) years</masterLabel>
+            <translation><!-- two (2) years --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Initial MA Attachment Term months --></label>
+        <name>Initial_MA_Attachment_Term_months__c</name>
+        <picklistValues>
+            <masterLabel>eight (8) months</masterLabel>
+            <translation><!-- eight (8) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>eleven (11) months</masterLabel>
+            <translation><!-- eleven (11) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>five (5) months</masterLabel>
+            <translation><!-- five (5) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>four (4) months</masterLabel>
+            <translation><!-- four (4) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>nine (9) months</masterLabel>
+            <translation><!-- nine (9) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>one (1) month</masterLabel>
+            <translation><!-- one (1) month --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>seven (7) months</masterLabel>
+            <translation><!-- seven (7) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>six (6) months</masterLabel>
+            <translation><!-- six (6) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ten (10) months</masterLabel>
+            <translation><!-- ten (10) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>three (3) months</masterLabel>
+            <translation><!-- three (3) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>two (2) months</masterLabel>
+            <translation><!-- two (2) months --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Initial MA Attachment Term years --></label>
+        <name>Initial_MA_Attachment_Term_years__c</name>
+        <picklistValues>
+            <masterLabel>one (1) year</masterLabel>
+            <translation><!-- one (1) year --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>three (3) years</masterLabel>
+            <translation><!-- three (3) years --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>two (2) years</masterLabel>
+            <translation><!-- two (2) years --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Initial Medicaid Attachment Term months --></label>
+        <name>Initial_Medicaid_Attachment_Term_months__c</name>
+        <picklistValues>
+            <masterLabel>eight (8) months</masterLabel>
+            <translation><!-- eight (8) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>eleven (11) months</masterLabel>
+            <translation><!-- eleven (11) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>five (5) months</masterLabel>
+            <translation><!-- five (5) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>four (4) months</masterLabel>
+            <translation><!-- four (4) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>nine (9) months</masterLabel>
+            <translation><!-- nine (9) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>one (1) month</masterLabel>
+            <translation><!-- one (1) month --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>seven (7) months</masterLabel>
+            <translation><!-- seven (7) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>six (6) months</masterLabel>
+            <translation><!-- six (6) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ten (10) months</masterLabel>
+            <translation><!-- ten (10) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>three (3) months</masterLabel>
+            <translation><!-- three (3) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>two (2) months</masterLabel>
+            <translation><!-- two (2) months --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Initial Medicaid Attachment Term years --></label>
+        <name>Initial_Medicaid_Attachment_Term_years__c</name>
+        <picklistValues>
+            <masterLabel>one (1) year</masterLabel>
+            <translation><!-- one (1) year --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>three (3) years</masterLabel>
+            <translation><!-- three (3) years --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>two (2) years</masterLabel>
+            <translation><!-- two (2) years --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Initial MedicareSelect Attach Term mnths --></label>
+        <name>Initial_MedicareSelect_Attach_Term_mnths__c</name>
+        <picklistValues>
+            <masterLabel>eight (8) months</masterLabel>
+            <translation><!-- eight (8) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>eleven (11) months</masterLabel>
+            <translation><!-- eleven (11) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>five (5) months</masterLabel>
+            <translation><!-- five (5) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>four (4) months</masterLabel>
+            <translation><!-- four (4) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>nine (9) months</masterLabel>
+            <translation><!-- nine (9) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>one (1) month</masterLabel>
+            <translation><!-- one (1) month --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>seven (7) months</masterLabel>
+            <translation><!-- seven (7) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>six (6) months</masterLabel>
+            <translation><!-- six (6) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ten (10) months</masterLabel>
+            <translation><!-- ten (10) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>three (3) months</masterLabel>
+            <translation><!-- three (3) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>two (2) months</masterLabel>
+            <translation><!-- two (2) months --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Initial MedicareSelect Attach Term yrs --></label>
+        <name>Initial_MedicareSelect_Attach_Term_yrs__c</name>
+        <picklistValues>
+            <masterLabel>one (1) year</masterLabel>
+            <translation><!-- one (1) year --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>three (3) years</masterLabel>
+            <translation><!-- three (3) years --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>two (2) years</masterLabel>
+            <translation><!-- two (2) years --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Initial Medicare Select Attach Term Mth --></label>
+        <name>Initial_Medicare_Select_Attach_Term_Mth__c</name>
+        <picklistValues>
+            <masterLabel>eight (8) months</masterLabel>
+            <translation><!-- eight (8) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>eleven (11) months</masterLabel>
+            <translation><!-- eleven (11) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>five (5) months</masterLabel>
+            <translation><!-- five (5) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>four (4) months</masterLabel>
+            <translation><!-- four (4) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>nine (9) months</masterLabel>
+            <translation><!-- nine (9) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>one (1) month</masterLabel>
+            <translation><!-- one (1) month --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>seven (7) months</masterLabel>
+            <translation><!-- seven (7) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>six (6) months</masterLabel>
+            <translation><!-- six (6) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ten (10) months</masterLabel>
+            <translation><!-- ten (10) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>three (3) months</masterLabel>
+            <translation><!-- three (3) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>two (2) months</masterLabel>
+            <translation><!-- two (2) months --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Initial Medicare Select Attach Term Year --></label>
+        <name>Initial_Medicare_Select_Attachment_Term__c</name>
+        <picklistValues>
+            <masterLabel>one (1) year</masterLabel>
+            <translation><!-- one (1) year --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>three (3) years</masterLabel>
+            <translation><!-- three (3) years --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>two (2) years</masterLabel>
+            <translation><!-- two (2) years --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Initial PPO Attachment Term months --></label>
+        <name>Initial_PPO_Attachment_Term_months__c</name>
+        <picklistValues>
+            <masterLabel>eight (8) months</masterLabel>
+            <translation><!-- eight (8) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>eleven (11) months</masterLabel>
+            <translation><!-- eleven (11) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>five (5) months</masterLabel>
+            <translation><!-- five (5) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>four (4) months</masterLabel>
+            <translation><!-- four (4) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>nine (9) months</masterLabel>
+            <translation><!-- nine (9) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>one (1) month</masterLabel>
+            <translation><!-- one (1) month --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>seven (7) months</masterLabel>
+            <translation><!-- seven (7) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>six (6) months</masterLabel>
+            <translation><!-- six (6) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ten (10) months</masterLabel>
+            <translation><!-- ten (10) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>three (3) months</masterLabel>
+            <translation><!-- three (3) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>two (2) months</masterLabel>
+            <translation><!-- two (2) months --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Initial PPO Attachment Term years --></label>
+        <name>Initial_PPO_Attachment_Term_years__c</name>
+        <picklistValues>
+            <masterLabel>one (1) year</masterLabel>
+            <translation><!-- one (1) year --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>three (3) years</masterLabel>
+            <translation><!-- three (3) years --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>two (2) years</masterLabel>
+            <translation><!-- two (2) years --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Initial Plan Attachment Term Months --></label>
+        <name>Initial_Plan_Attachment_Term_Months__c</name>
+        <picklistValues>
+            <masterLabel>eight (8) months</masterLabel>
+            <translation><!-- eight (8) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>eleven (11) months</masterLabel>
+            <translation><!-- eleven (11) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>five (5) months</masterLabel>
+            <translation><!-- five (5) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>four (4) months</masterLabel>
+            <translation><!-- four (4) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>nine (9) months</masterLabel>
+            <translation><!-- nine (9) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>one (1) month</masterLabel>
+            <translation><!-- one (1) month --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>seven (7) months</masterLabel>
+            <translation><!-- seven (7) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>six (6) months</masterLabel>
+            <translation><!-- six (6) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ten (10) months</masterLabel>
+            <translation><!-- ten (10) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>three (3) months</masterLabel>
+            <translation><!-- three (3) months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>two (2) months</masterLabel>
+            <translation><!-- two (2) months --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Initial Plan Attachment Term Years --></label>
+        <name>Initial_Plan_Attachment_Term_Years__c</name>
+        <picklistValues>
+            <masterLabel>one (1) year</masterLabel>
+            <translation><!-- one (1) year --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>three (3) years</masterLabel>
+            <translation><!-- three (3) years --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>two (2) years</masterLabel>
+            <translation><!-- two (2) years --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Initially, this is set up to be = Agreement Start Date + Initial Term Years + Initial Term Months --></help>
+        <label><!-- Initial Term Date --></label>
+        <name>Initial_Term_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Initial Term Months --></label>
+        <name>Initial_Term_Months__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10</masterLabel>
+            <translation><!-- 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11</masterLabel>
+            <translation><!-- 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6</masterLabel>
+            <translation><!-- 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7</masterLabel>
+            <translation><!-- 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8</masterLabel>
+            <translation><!-- 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9</masterLabel>
+            <translation><!-- 9 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Initial Term --></label>
+        <name>Initial_Term__c</name>
+    </fields>
+    <fields>
+        <label><!-- Initial Term years --></label>
+        <name>Initial_Term_years__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Inpatient Outcome Bonus End Date --></label>
+        <name>Inpatient_Outcome_Bonus_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inpatient Outcome Bonus Start Date --></label>
+        <name>Inpatient_Outcome_Bonus_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inpatient Outcome Bonus payment --></label>
+        <name>Inpatient_Outcome_Bonus_payment__c</name>
+        <picklistValues>
+            <masterLabel>eight percent (8%)</masterLabel>
+            <translation><!-- eight percent (8%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>eighteen percent (18%)</masterLabel>
+            <translation><!-- eighteen percent (18%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>eleven percent (11%)</masterLabel>
+            <translation><!-- eleven percent (11%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>fifteen percent (15%)</masterLabel>
+            <translation><!-- fifteen percent (15%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>five percent (5%)</masterLabel>
+            <translation><!-- five percent (5%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>four percent (4%)</masterLabel>
+            <translation><!-- four percent (4%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>fourteen percent (14%)</masterLabel>
+            <translation><!-- fourteen percent (14%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>nine percent (9%)</masterLabel>
+            <translation><!-- nine percent (9%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>nineteen percent (19%)</masterLabel>
+            <translation><!-- nineteen percent (19%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>one percent (1%)</masterLabel>
+            <translation><!-- one percent (1%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>seven percent (7%)</masterLabel>
+            <translation><!-- seven percent (7%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>seventeen percent (17%)</masterLabel>
+            <translation><!-- seventeen percent (17%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>six percent (6%)</masterLabel>
+            <translation><!-- six percent (6%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>sixteen percent (16%)</masterLabel>
+            <translation><!-- sixteen percent (16%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ten percent (10%)</masterLabel>
+            <translation><!-- ten percent (10%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>thirteen percent (13%)</masterLabel>
+            <translation><!-- thirteen percent (13%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>thirty percent (30%)</masterLabel>
+            <translation><!-- thirty percent (30%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>three percent (3%)</masterLabel>
+            <translation><!-- three percent (3%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>twelve percent (12%)</masterLabel>
+            <translation><!-- twelve percent (12%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>twenty percent (20%)</masterLabel>
+            <translation><!-- twenty percent (20%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>twenty-eight percent (28%)</masterLabel>
+            <translation><!-- twenty-eight percent (28%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>twenty-five percent (25%)</masterLabel>
+            <translation><!-- twenty-five percent (25%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>twenty-four percent (24%)</masterLabel>
+            <translation><!-- twenty-four percent (24%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>twenty-nine percent (29%)</masterLabel>
+            <translation><!-- twenty-nine percent (29%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>twenty-one percent (21%)</masterLabel>
+            <translation><!-- twenty-one percent (21%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>twenty-seven percent (27%)</masterLabel>
+            <translation><!-- twenty-seven percent (27%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>twenty-six percent (26%)</masterLabel>
+            <translation><!-- twenty-six percent (26%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>twenty-three percent (23%)</masterLabel>
+            <translation><!-- twenty-three percent (23%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>twenty-two percent (22%)</masterLabel>
+            <translation><!-- twenty-two percent (22%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>two percent (2%)</masterLabel>
+            <translation><!-- two percent (2%) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Is Carve Out Applicable? (Inpatient) --></label>
+        <name>Is_Carve_Out_Applicable_Inpatient__c</name>
+        <picklistValues>
+            <masterLabel>no</masterLabel>
+            <translation><!-- no --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>yes</masterLabel>
+            <translation><!-- yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Is Carve Out Applicable? (Outpatient) --></label>
+        <name>Is_Carve_Out_Applicable_Outpatient__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Is Carve Out Applicable? --></label>
+        <name>Is_Carve_Out_Applicable__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Is stoploss applicable? --></label>
+        <name>Is_stoploss_applicable__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Legacy Document --></label>
+        <name>Legacy_Document__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legacy Tax ID --></label>
+        <name>Legacy_Tax_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legal Hold Case Numbers --></label>
+        <name>Legal_Hold_Case_Numbers__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legal Hold --></label>
+        <name>Legal_Hold__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lesser of % of Medicare allowed amount --></label>
+        <name>Lesser_of_of_Medicare_allowed_amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Level III LTAC Max Per diem --></label>
+        <name>Level_III_LTAC_Max_Per_diem__c</name>
+    </fields>
+    <fields>
+        <label><!-- Level II LTAC Max Per diem --></label>
+        <name>Level_II_LTAC_Max_Per_diem__c</name>
+    </fields>
+    <fields>
+        <label><!-- Level I LTAC Max Per diem --></label>
+        <name>Level_I_LTAC_Max_Per_diem__c</name>
+    </fields>
+    <fields>
+        <label><!-- MA Attachment Effective Date --></label>
+        <name>MA_Attachment_Effective_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- MA HMO lesser of % of Covered --></label>
+        <name>MA_HMO_lesser_of_of_Covered__c</name>
+    </fields>
+    <fields>
+        <label><!-- MA HMO lesser of % of Medicare allowed --></label>
+        <name>MA_HMO_lesser_of_of_Medicare_allowed__c</name>
+    </fields>
+    <fields>
+        <label><!-- MA PPO lesser of % of Covered --></label>
+        <name>MA_PPO_lesser_of_of_Covered__c</name>
+    </fields>
+    <fields>
+        <label><!-- MA PPO lesser of % of Medicare allowed --></label>
+        <name>MA_PPO_lesser_of_of_Medicare_allowed__c</name>
+    </fields>
+    <fields>
+        <label><!-- MT Yr 1 Comp Schedule - End date --></label>
+        <name>MT_Yr_1_Comp_Schedule_End_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- MT Yr 1 Comp schedule - Start date --></label>
+        <name>MT_Yr_1_Comp_schedule_Start_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- MT Yr 2 Comp Schedule - End Date --></label>
+        <name>MT_Yr_2_Comp_Schedule_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- MT Yr 2 Comp Schedule - Start Date --></label>
+        <name>MT_Yr_2_Comp_Schedule_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- MT Yr 3 Comp Schedule - End Date --></label>
+        <name>MT_Yr_3_Comp_Schedule_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- MT Yr 3 Comp Schedule - Start Date --></label>
+        <name>MT_Yr_3_Comp_Schedule_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mass Amend --></label>
+        <name>Mass_Amend__c</name>
+    </fields>
+    <fields>
+        <help><!-- Determines whether this contract is created through the Mass Contract Creation Process --></help>
+        <label><!-- Mass Contract Creation Process --></label>
+        <name>Mass_Contract_Creation_Process__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processed</masterLabel>
+            <translation><!-- Processed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Mediation City --></label>
+        <name>Mediation_City__c</name>
+        <picklistValues>
+            <masterLabel>Abilene, TX</masterLabel>
+            <translation><!-- Abilene, TX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Albuquerque, NM</masterLabel>
+            <translation><!-- Albuquerque, NM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Amarillo, TX</masterLabel>
+            <translation><!-- Amarillo, TX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Austin, TX</masterLabel>
+            <translation><!-- Austin, TX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chicago, IL</masterLabel>
+            <translation><!-- Chicago, IL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corpus Christi, TX</masterLabel>
+            <translation><!-- Corpus Christi, TX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dallas, TX</masterLabel>
+            <translation><!-- Dallas, TX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>El Paso, TX</masterLabel>
+            <translation><!-- El Paso, TX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Helena, MT</masterLabel>
+            <translation><!-- Helena, MT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Houston, TX</masterLabel>
+            <translation><!-- Houston, TX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lubbock, TX</masterLabel>
+            <translation><!-- Lubbock, TX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Midland, TX</masterLabel>
+            <translation><!-- Midland, TX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Odessa, TX</masterLabel>
+            <translation><!-- Odessa, TX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oklahoma City, OK</masterLabel>
+            <translation><!-- Oklahoma City, OK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>San Angelo, TX</masterLabel>
+            <translation><!-- San Angelo, TX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>San Antonio, TX</masterLabel>
+            <translation><!-- San Antonio, TX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Texarkana, TX</masterLabel>
+            <translation><!-- Texarkana, TX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tulsa, OK</masterLabel>
+            <translation><!-- Tulsa, OK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waco, TX</masterLabel>
+            <translation><!-- Waco, TX --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Medicaid Attachment Effective Date --></label>
+        <name>Medicaid_Attachment_Effective_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Medicaid Base Rate Multiplier --></label>
+        <name>Medicaid_Base_Rate_Multiplier__c</name>
+    </fields>
+    <fields>
+        <label><!-- Medicaid Managed Care Year --></label>
+        <name>Medicaid_Managed_Care_Year__c</name>
+        <picklistValues>
+            <masterLabel>2014</masterLabel>
+            <translation><!-- 2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2018</masterLabel>
+            <translation><!-- 2018 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2019</masterLabel>
+            <translation><!-- 2019 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2020</masterLabel>
+            <translation><!-- 2020 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Medicaid Pwr Mobility 3,4,5 % of billed --></label>
+        <name>Medicaid_Pwr_Mobility_3_4_5_of_billed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Medicaid continuation and waiver date --></label>
+        <name>Medicaid_continuation_and_waiver_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Medical Group Name --></label>
+        <name>Medical_Group_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- MedicareSelect Attach Effective Date --></label>
+        <name>MedicareSelect_Attach_Effective_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Medicare Select Attach Effective Date --></label>
+        <name>Medicare_Select_Attachment_Effective_Dat__c</name>
+    </fields>
+    <fields>
+        <label><!-- Medicd Untimed PerUnit OP rehab exceptn --></label>
+        <name>Medicd_Untimed_PerUnit_OP_rehab_exceptn__c</name>
+    </fields>
+    <fields>
+        <label><!-- Montana Fee Schedule --></label>
+        <name>Montana_Fee_Schedule__c</name>
+    </fields>
+    <fields>
+        <label><!-- Multiple Surgery percentage --></label>
+        <name>Multiple_Surgery_percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- My Approvals --></label>
+        <name>My_Approvals__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Mexico Date of Last Increase --></label>
+        <name>New_Mexico_Date_of_Last_Increase__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Provider? --></label>
+        <name>New_Provider__c</name>
+        <picklistValues>
+            <masterLabel>no</masterLabel>
+            <translation><!-- no --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>yes</masterLabel>
+            <translation><!-- yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Non-Grouped Multiplier --></label>
+        <name>Non_Grouped_Multiplier__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notices Email --></label>
+        <name>Notices_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Operational readiness approval required? --></label>
+        <name>Operational_readiness_approval_required__c</name>
+        <picklistValues>
+            <masterLabel>no</masterLabel>
+            <translation><!-- no --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>yes</masterLabel>
+            <translation><!-- yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Optional Monthly Notification Limit: --></label>
+        <name>Optional_Monthly_Notification_Limit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner Expiration Notice --></label>
+        <name>Owner_Expiration_Notice__c</name>
+    </fields>
+    <fields>
+        <label><!-- PFIN --></label>
+        <name>PFIN__c</name>
+    </fields>
+    <fields>
+        <label><!-- PMPM Contract Messaging/Maintenance --></label>
+        <name>PMPM_Contract_Messaging_Maintenance__c</name>
+    </fields>
+    <fields>
+        <label><!-- PMPM Provider Relations/Education --></label>
+        <name>PMPM_Provider_Relations_Education__c</name>
+    </fields>
+    <fields>
+        <label><!-- PPO 1st Charge Schedule Increase Cap % --></label>
+        <name>PPO_1st_Charge_Schedule_Increase_Cap__c</name>
+    </fields>
+    <fields>
+        <label><!-- PPO 2nd Charge Schedule Increase Cap % --></label>
+        <name>PPO_2nd_Charge_Schedule_Increase_Cap__c</name>
+    </fields>
+    <fields>
+        <label><!-- PPO 3rd Charge Schedule Increase Cap % --></label>
+        <name>PPO_3rd_Charge_Schedule_Increase_Cap__c</name>
+    </fields>
+    <fields>
+        <label><!-- PPO Attachment Effective Date --></label>
+        <name>PPO_Attachment_Effective_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- PPO,HMO,POS,PAR Pwr Mobility % of billed --></label>
+        <name>PPO_HMO_POS_PAR_Pwr_Mobility_of_billed__c</name>
+    </fields>
+    <fields>
+        <label><!-- PPO PAR Untimed PerUnit OP rehab exceptn --></label>
+        <name>PPO_PAR_Untimed_PerUnit_OP_rehab_exceptn__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Corporation --></label>
+        <name>Parent_Corporation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partial Labor Rate --></label>
+        <name>Partial_Labor_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payee Address (Look up) --></label>
+        <name>Payee_Address_Look_up__c</name>
+        <relationshipLabel><!-- Agreements (Service &amp; Payee Location Address) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Payee PFIN Number --></label>
+        <name>Payee_PFIN_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- The payment terms of this contract. --></help>
+        <label><!-- Payment Terms --></label>
+        <name>Payment_Terms__c</name>
+        <picklistValues>
+            <masterLabel>15</masterLabel>
+            <translation><!-- 15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>30</masterLabel>
+            <translation><!-- 30 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>45</masterLabel>
+            <translation><!-- 45 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>60</masterLabel>
+            <translation><!-- 60 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>90</masterLabel>
+            <translation><!-- 90 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Net 30 Days</masterLabel>
+            <translation><!-- Net 30 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Net 45 Days</masterLabel>
+            <translation><!-- Net 45 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other / Net 60 Days</masterLabel>
+            <translation><!-- Other / Net 60 Days --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Percent of Covered Charges --></label>
+        <name>Percent_of_Covered_Charges__c</name>
+    </fields>
+    <fields>
+        <label><!-- Percent of increase per year --></label>
+        <name>Percent_of_increase_per_year__c</name>
+    </fields>
+    <fields>
+        <label><!-- Percent of outcome bonus payment --></label>
+        <name>Percent_of_outcome_bonus_payment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plan 1st Charge Schedule Increase Cap % --></label>
+        <name>Plan_1st_Charge_Schedule_Increase_Cap__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plan 2nd Charge Schedule Increase Cap % --></label>
+        <name>Plan_2nd_Charge_Schedule_Increase_Cap__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plan 3rd Charge Schedule Increase Cap % --></label>
+        <name>Plan_3rd_Charge_Schedule_Increase_Cap__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plan Atch Methodology --></label>
+        <name>Plan_Atch_Methodology__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plan Atch % of Billed Chges for Cvd Svcs --></label>
+        <name>Plan_Atch_of_Billed_Chges_for_Cvd_Svcs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plan Attachment Effective Date --></label>
+        <name>Plan_Attachment_Effective_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plan --></label>
+        <name>Plan__c</name>
+        <picklistValues>
+            <masterLabel>Illinois</masterLabel>
+            <translation><!-- Illinois --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Montana</masterLabel>
+            <translation><!-- Montana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Mexico</masterLabel>
+            <translation><!-- New Mexico --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oklahoma</masterLabel>
+            <translation><!-- Oklahoma --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Texas</masterLabel>
+            <translation><!-- Texas --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Point of Service Percent Discount --></label>
+        <name>Point_of_Service_Percent_Discount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Processing Payment Percentage --></label>
+        <name>Processing_Payment_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Professional Service Specialty --></label>
+        <name>Professional_Service_Specialty__c</name>
+        <picklistValues>
+            <masterLabel>Anesthesiologist Assistant, Audiologist, LADC, LCSW &amp; LPC</masterLabel>
+            <translation><!-- Anesthesiologist Assistant, Audiologist, LADC, LCSW &amp; LPC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Certified Registered Nurse Anesthetist (CRNA)</masterLabel>
+            <translation><!-- Certified Registered Nurse Anesthetist (CRNA) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chiropractor</masterLabel>
+            <translation><!-- Chiropractor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dietician</masterLabel>
+            <translation><!-- Dietician --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nurse Practitioner, Physician Assistant &amp; Psychologist</masterLabel>
+            <translation><!-- Nurse Practitioner, Physician Assistant &amp; Psychologist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ocularists</masterLabel>
+            <translation><!-- Ocularists --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opthamologists</masterLabel>
+            <translation><!-- Opthamologists --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Optometrist</masterLabel>
+            <translation><!-- Optometrist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Physical/Occupational Therapist</masterLabel>
+            <translation><!-- Physical/Occupational Therapist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Speech Therapist</masterLabel>
+            <translation><!-- Speech Therapist --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Provider Credentialed? --></label>
+        <name>Provider_Credentialed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider (Look Up) Info --></label>
+        <name>Provider_Look_Up_Info__c</name>
+        <relationshipLabel><!-- Agreements (Provider (Look Up) Info) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Provider Name --></label>
+        <name>Provider_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider Network Name HMO --></label>
+        <name>Provider_Network_Name_HMO__c</name>
+        <picklistValues>
+            <masterLabel>TX Blue Advantage HMO Provider Network</masterLabel>
+            <translation><!-- TX Blue Advantage HMO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX Blue Choice PPO Provider Network</masterLabel>
+            <translation><!-- TX Blue Choice PPO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX Blue Cross Medicare Advantage HMO Provider Network</masterLabel>
+            <translation><!-- TX Blue Cross Medicare Advantage HMO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX Blue Cross Medicare Advantage PPO Provider Network</masterLabel>
+            <translation><!-- TX Blue Cross Medicare Advantage PPO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX Blue Essentials HMO Provider Network</masterLabel>
+            <translation><!-- TX Blue Essentials HMO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX Blue Premier HMO Provider Network</masterLabel>
+            <translation><!-- TX Blue Premier HMO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX CHIP Provider Network</masterLabel>
+            <translation><!-- TX CHIP Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX STAR Kids Provider Network</masterLabel>
+            <translation><!-- TX STAR Kids Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX STAR Medicaid Provider Network</masterLabel>
+            <translation><!-- TX STAR Medicaid Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX STAR Plus Provider Network</masterLabel>
+            <translation><!-- TX STAR Plus Provider Network --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Provider Network Name Medicaid --></label>
+        <name>Provider_Network_Name_Medicaid__c</name>
+        <picklistValues>
+            <masterLabel>TX Blue Advantage HMO Provider Network</masterLabel>
+            <translation><!-- TX Blue Advantage HMO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX Blue Choice PPO Provider Network</masterLabel>
+            <translation><!-- TX Blue Choice PPO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX Blue Cross Medicare Advantage HMO Provider Network&quot;\</masterLabel>
+            <translation><!-- TX Blue Cross Medicare Advantage HMO Provider Network&quot;\ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX Blue Cross Medicare Advantage PPO Provider Network</masterLabel>
+            <translation><!-- TX Blue Cross Medicare Advantage PPO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX Blue Essentials HMO Provider Network</masterLabel>
+            <translation><!-- TX Blue Essentials HMO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX Blue Premier HMO Provider Network</masterLabel>
+            <translation><!-- TX Blue Premier HMO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX CHIP Provider Network</masterLabel>
+            <translation><!-- TX CHIP Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX STAR Kids Provider Network</masterLabel>
+            <translation><!-- TX STAR Kids Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX STAR Medicaid Provider Network</masterLabel>
+            <translation><!-- TX STAR Medicaid Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX STAR Plus Provider Network</masterLabel>
+            <translation><!-- TX STAR Plus Provider Network --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Provider Network Name PPO --></label>
+        <name>Provider_Network_Name_PPO__c</name>
+        <picklistValues>
+            <masterLabel>TX Blue Advantage HMO Provider Network</masterLabel>
+            <translation><!-- TX Blue Advantage HMO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX Blue Choice PPO Provider Network</masterLabel>
+            <translation><!-- TX Blue Choice PPO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX Blue Cross Medicare Advantage HMO Provider Network</masterLabel>
+            <translation><!-- TX Blue Cross Medicare Advantage HMO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX Blue Cross Medicare Advantage PPO Provider Network</masterLabel>
+            <translation><!-- TX Blue Cross Medicare Advantage PPO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX Blue Essentials HMO Provider Network</masterLabel>
+            <translation><!-- TX Blue Essentials HMO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX Blue Premier HMO Provider Network</masterLabel>
+            <translation><!-- TX Blue Premier HMO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX CHIP Provider Network</masterLabel>
+            <translation><!-- TX CHIP Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX STAR Kids Provider Network</masterLabel>
+            <translation><!-- TX STAR Kids Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX STAR Medicaid Provider Network</masterLabel>
+            <translation><!-- TX STAR Medicaid Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX STAR Plus Provider Network</masterLabel>
+            <translation><!-- TX STAR Plus Provider Network --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Provider Networks --></label>
+        <name>Provider_Networks__c</name>
+        <picklistValues>
+            <masterLabel>Blue High Performance Network Provider Network</masterLabel>
+            <translation><!-- Blue High Performance Network Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IL Blue Advantage HMO Provider Network</masterLabel>
+            <translation><!-- IL Blue Advantage HMO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IL Blue Choice Preferred PPO Provider Network</masterLabel>
+            <translation><!-- IL Blue Choice Preferred PPO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IL Blue Choice Select PPO Provider Networks</masterLabel>
+            <translation><!-- IL Blue Choice Select PPO Provider Networks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IL Blue FocusCare HMO Provider Network</masterLabel>
+            <translation><!-- IL Blue FocusCare HMO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IL Blue Precision HMO Provider Network</masterLabel>
+            <translation><!-- IL Blue Precision HMO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IL BlueCare Direct HMO Provider Network</masterLabel>
+            <translation><!-- IL BlueCare Direct HMO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IL Broad PPO Provider Network</masterLabel>
+            <translation><!-- IL Broad PPO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IL HMO of Illinois Provider Network</masterLabel>
+            <translation><!-- IL HMO of Illinois Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IL MMAI Provider Network</masterLabel>
+            <translation><!-- IL MMAI Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IL Medicaid Provider Networks</masterLabel>
+            <translation><!-- IL Medicaid Provider Networks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IL Medicare Advantage HMO Provider Network</masterLabel>
+            <translation><!-- IL Medicare Advantage HMO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IL Medicare Advantage PPO Provider Network</masterLabel>
+            <translation><!-- IL Medicare Advantage PPO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MT Blue Focus Provider Network</masterLabel>
+            <translation><!-- MT Blue Focus Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MT Blue Options Provider Network</masterLabel>
+            <translation><!-- MT Blue Options Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MT Closed Plan Provider Network</masterLabel>
+            <translation><!-- MT Closed Plan Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MT HealthLink Provider Network</masterLabel>
+            <translation><!-- MT HealthLink Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MT Medicare Advantage HMO Provider Network</masterLabel>
+            <translation><!-- MT Medicare Advantage HMO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MT Medicare Advantage PPO Provider Network</masterLabel>
+            <translation><!-- MT Medicare Advantage PPO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MT Point of Service Provider Network</masterLabel>
+            <translation><!-- MT Point of Service Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MT Traditional Provider Network</masterLabel>
+            <translation><!-- MT Traditional Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MyBlue Health HMO Provider Network</masterLabel>
+            <translation><!-- MyBlue Health HMO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NM Blue Advantage HMO Provider Network</masterLabel>
+            <translation><!-- NM Blue Advantage HMO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NM Blue Community HMO Provider Network</masterLabel>
+            <translation><!-- NM Blue Community HMO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NM Blue Preferred PPO Provider Network</masterLabel>
+            <translation><!-- NM Blue Preferred PPO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NM HMO Provider Network</masterLabel>
+            <translation><!-- NM HMO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NM Medicaid Provider Network</masterLabel>
+            <translation><!-- NM Medicaid Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NM Medicare Advantage HMO Provider Network</masterLabel>
+            <translation><!-- NM Medicare Advantage HMO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NM Medicare Advantage PPO Provider Network</masterLabel>
+            <translation><!-- NM Medicare Advantage PPO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NM PAR Provider Network</masterLabel>
+            <translation><!-- NM PAR Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NM POS Provider Network</masterLabel>
+            <translation><!-- NM POS Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NM PPO Provider Network</masterLabel>
+            <translation><!-- NM PPO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OK BCBS Medicare Advantage HMO Provider network</masterLabel>
+            <translation><!-- OK BCBS Medicare Advantage HMO Provider network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OK BCBS Medicare Advantage PPO Provider network</masterLabel>
+            <translation><!-- OK BCBS Medicare Advantage PPO Provider network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OK Blue Advantage PPO Provider Network</masterLabel>
+            <translation><!-- OK Blue Advantage PPO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OK Blue Choice PPO Provider Network</masterLabel>
+            <translation><!-- OK Blue Choice PPO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OK Blue Plan65 Select Provider Network</masterLabel>
+            <translation><!-- OK Blue Plan65 Select Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OK Blue Preferred PPO Provider Network</masterLabel>
+            <translation><!-- OK Blue Preferred PPO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OK BlueLincs HMO Provider Network</masterLabel>
+            <translation><!-- OK BlueLincs HMO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OK BlueTraditional Provider Network</masterLabel>
+            <translation><!-- OK BlueTraditional Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX Blue Advantage HMO Provider Network</masterLabel>
+            <translation><!-- TX Blue Advantage HMO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX Blue Choice PPO Provider Network</masterLabel>
+            <translation><!-- TX Blue Choice PPO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX Blue Cross Medicare Advantage HMO Provider Network</masterLabel>
+            <translation><!-- TX Blue Cross Medicare Advantage HMO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX Blue Cross Medicare Advantage PPO Provider Network</masterLabel>
+            <translation><!-- TX Blue Cross Medicare Advantage PPO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX Blue Essentials HMO Provider Network</masterLabel>
+            <translation><!-- TX Blue Essentials HMO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX Blue Premier HMO Provider Network</masterLabel>
+            <translation><!-- TX Blue Premier HMO Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX CHIP Provider Network</masterLabel>
+            <translation><!-- TX CHIP Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX MEDICARE MEDICAID PLAN PROVIDER NETWORK</masterLabel>
+            <translation><!-- TX MEDICARE MEDICAID PLAN PROVIDER NETWORK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX STAR Kids Provider Network</masterLabel>
+            <translation><!-- TX STAR Kids Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX STAR Medicaid Provider Network</masterLabel>
+            <translation><!-- TX STAR Medicaid Provider Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX STAR Plus Provider Network</masterLabel>
+            <translation><!-- TX STAR Plus Provider Network --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Provider Notice City --></label>
+        <name>Provider_Notice_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider Notice Email Address --></label>
+        <name>Provider_Notice_Email_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider Notice First Name --></label>
+        <name>Provider_Notice_First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider Notice Last Name --></label>
+        <name>Provider_Notice_Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider Notice Mailing Address --></label>
+        <name>Provider_Notice_Mailing_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider Notice State --></label>
+        <name>Provider_Notice_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider Notice Zip --></label>
+        <name>Provider_Notice_Zip__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider Relations Area --></label>
+        <name>Provider_Relations_Area__c</name>
+        <picklistValues>
+            <masterLabel>Austin</masterLabel>
+            <translation><!-- Austin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CRPS-South Texas</masterLabel>
+            <translation><!-- CRPS-South Texas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>East-DFW</masterLabel>
+            <translation><!-- East-DFW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>El Paso</masterLabel>
+            <translation><!-- El Paso --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Houston</masterLabel>
+            <translation><!-- Houston --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lubbock</masterLabel>
+            <translation><!-- Lubbock --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Midland</masterLabel>
+            <translation><!-- Midland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North-DFW</masterLabel>
+            <translation><!-- North-DFW --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Provider Service Type --></label>
+        <name>Provider_Service_Type__c</name>
+        <picklistValues>
+            <masterLabel>ASC</masterLabel>
+            <translation><!-- ASC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Acquired Brain Injury</masterLabel>
+            <translation><!-- Acquired Brain Injury --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Air Ambulance</masterLabel>
+            <translation><!-- Air Ambulance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ambulance</masterLabel>
+            <translation><!-- Ambulance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ancillary Professional</masterLabel>
+            <translation><!-- Ancillary Professional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Anesthesia</masterLabel>
+            <translation><!-- Anesthesia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Anesthesia - CRNA</masterLabel>
+            <translation><!-- Anesthesia - CRNA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Anesthesia - Physician</masterLabel>
+            <translation><!-- Anesthesia - Physician --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Anesthesia- Assistant</masterLabel>
+            <translation><!-- Anesthesia- Assistant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Audiologist, LADC, LCSW, LPC</masterLabel>
+            <translation><!-- Audiologist, LADC, LCSW, LPC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Autism Agency</masterLabel>
+            <translation><!-- Autism Agency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Behavioral Health</masterLabel>
+            <translation><!-- Behavioral Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Birthing Center</masterLabel>
+            <translation><!-- Birthing Center --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Burns</masterLabel>
+            <translation><!-- Burns --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CRNA</masterLabel>
+            <translation><!-- CRNA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cardiac Cath Lab</masterLabel>
+            <translation><!-- Cardiac Cath Lab --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chemical Dependency</masterLabel>
+            <translation><!-- Chemical Dependency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chiropractor</masterLabel>
+            <translation><!-- Chiropractor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DME</masterLabel>
+            <translation><!-- DME --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DME w/ Power Mobility</masterLabel>
+            <translation><!-- DME w/ Power Mobility --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DME w/o Power Mobility</masterLabel>
+            <translation><!-- DME w/o Power Mobility --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dialysis</masterLabel>
+            <translation><!-- Dialysis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dietician</masterLabel>
+            <translation><!-- Dietician --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Facility -Acute Care</masterLabel>
+            <translation><!-- Facility -Acute Care --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Facility-Behavioral Health</masterLabel>
+            <translation><!-- Facility-Behavioral Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Facility-LTAC</masterLabel>
+            <translation><!-- Facility-LTAC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Facility-Rehab</masterLabel>
+            <translation><!-- Facility-Rehab --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Free Standing ER</masterLabel>
+            <translation><!-- Free Standing ER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health Screening Vendor</masterLabel>
+            <translation><!-- Health Screening Vendor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home Dialysis</masterLabel>
+            <translation><!-- Home Dialysis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home Health</masterLabel>
+            <translation><!-- Home Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home Health and Hospice</masterLabel>
+            <translation><!-- Home Health and Hospice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home Infusion</masterLabel>
+            <translation><!-- Home Infusion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hospice</masterLabel>
+            <translation><!-- Hospice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lab</masterLabel>
+            <translation><!-- Lab --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lab and Imaging</masterLabel>
+            <translation><!-- Lab and Imaging --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MG-Anesthesia</masterLabel>
+            <translation><!-- MG-Anesthesia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MG-Behavioral</masterLabel>
+            <translation><!-- MG-Behavioral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MG-Chiropractic</masterLabel>
+            <translation><!-- MG-Chiropractic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MG-PCP</masterLabel>
+            <translation><!-- MG-PCP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medical/Surgical</masterLabel>
+            <translation><!-- Medical/Surgical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NP PA Psychologist</masterLabel>
+            <translation><!-- NP PA Psychologist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Neonatal Level I</masterLabel>
+            <translation><!-- Neonatal Level I --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Neonatal Level II</masterLabel>
+            <translation><!-- Neonatal Level II --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Neonatal Level III</masterLabel>
+            <translation><!-- Neonatal Level III --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Neonatal Level IV</masterLabel>
+            <translation><!-- Neonatal Level IV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OP - Behaviroal health</masterLabel>
+            <translation><!-- OP - Behaviroal health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OP - Cardiac Cath Lab PTCA and Outpatient Surgical</masterLabel>
+            <translation><!-- OP - Cardiac Cath Lab PTCA and Outpatient Surgical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OP - Chemical Dependency</masterLabel>
+            <translation><!-- OP - Chemical Dependency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OP - Diagnostic Services</masterLabel>
+            <translation><!-- OP - Diagnostic Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OP - Dialysis</masterLabel>
+            <translation><!-- OP - Dialysis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OP - Emergency Room</masterLabel>
+            <translation><!-- OP - Emergency Room --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OP - Hyperbaric Oxygen Therapy</masterLabel>
+            <translation><!-- OP - Hyperbaric Oxygen Therapy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OP - Observation</masterLabel>
+            <translation><!-- OP - Observation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OP - Other</masterLabel>
+            <translation><!-- OP - Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OP - Treatment Room</masterLabel>
+            <translation><!-- OP - Treatment Room --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ocularist</masterLabel>
+            <translation><!-- Ocularist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opthamologist / Optometrists</masterLabel>
+            <translation><!-- Opthamologist / Optometrists --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Physical Rehabilitation</masterLabel>
+            <translation><!-- Physical Rehabilitation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Physical/Occupational Therapist</masterLabel>
+            <translation><!-- Physical/Occupational Therapist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Physician</masterLabel>
+            <translation><!-- Physician --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prof-Anesthesia</masterLabel>
+            <translation><!-- Prof-Anesthesia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prof-Behavioral</masterLabel>
+            <translation><!-- Prof-Behavioral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prof-Chiropractic</masterLabel>
+            <translation><!-- Prof-Chiropractic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prof-HCP</masterLabel>
+            <translation><!-- Prof-HCP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prof-PCP</masterLabel>
+            <translation><!-- Prof-PCP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prof-Physician</masterLabel>
+            <translation><!-- Prof-Physician --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Psych</masterLabel>
+            <translation><!-- Psych --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RTC</masterLabel>
+            <translation><!-- RTC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SNF</masterLabel>
+            <translation><!-- SNF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sleep Facility</masterLabel>
+            <translation><!-- Sleep Facility --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Speech Therapist</masterLabel>
+            <translation><!-- Speech Therapist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transplants</masterLabel>
+            <translation><!-- Transplants --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trauma</masterLabel>
+            <translation><!-- Trauma --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Provider Tax ID --></label>
+        <name>Provider_Tax_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider Tax Identification --></label>
+        <name>Provider_Tax_Identification__c</name>
+        <relationshipLabel><!-- Agreements --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Provider Tax Type --></label>
+        <name>Provider_Tax_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider Type --></label>
+        <name>Provider_Type__c</name>
+        <picklistValues>
+            <masterLabel>TBD</masterLabel>
+            <translation><!-- TBD --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- RBRVS Publication Location --></label>
+        <name>RBRVS_Publication_Location__c</name>
+        <picklistValues>
+            <masterLabel>Federal Register Volume 80 No. 220 (dated November 16, 2015)</masterLabel>
+            <translation><!-- Federal Register Volume 80 No. 220 (dated November 16, 2015) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Rate Adjustment Escalators? --></label>
+        <name>Rate_Adjustment_Escalators__c</name>
+        <picklistValues>
+            <masterLabel>no</masterLabel>
+            <translation><!-- no --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>yes</masterLabel>
+            <translation><!-- yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Rating Area --></label>
+        <name>Rating_Area__c</name>
+        <picklistValues>
+            <masterLabel>Rating Area 1</masterLabel>
+            <translation><!-- Rating Area 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rating Area 3</masterLabel>
+            <translation><!-- Rating Area 3 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reimb. is greater than 5% of standard? --></label>
+        <name>Reimb_is_greater_than_5_of_standard__c</name>
+        <picklistValues>
+            <masterLabel>no</masterLabel>
+            <translation><!-- no --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>yes</masterLabel>
+            <translation><!-- yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reimbursement approval required? --></label>
+        <name>Reimbursement_approval_required__c</name>
+        <picklistValues>
+            <masterLabel>no</masterLabel>
+            <translation><!-- no --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>yes</masterLabel>
+            <translation><!-- yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Right Footer --></label>
+        <name>Right_Footer__c</name>
+    </fields>
+    <fields>
+        <help><!-- If you select this option, this could potentially decrease your deal value, based on the percent uptime entered. --></help>
+        <label><!-- SLA --></label>
+        <name>SLA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Selected --></label>
+        <name>Selected__c</name>
+    </fields>
+    <fields>
+        <label><!-- Send for Signatures --></label>
+        <name>Send_for_Signature__c</name>
+    </fields>
+    <fields>
+        <label><!-- Send for eSignatures --></label>
+        <name>Send_for_eSignatures__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sequestration  --></label>
+        <name>Sequestration__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Service Address - Lookup --></label>
+        <name>Service_Address_Lookup__c</name>
+        <relationshipLabel><!-- Agreements --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Service PFIN Number --></label>
+        <name>Service_PFIN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Single Outpatient Rehab per unit --></label>
+        <name>Single_Outpatient_Rehab_per_unit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stoploss Reimbursement Rate --></label>
+        <name>Stoploss_Reimbursement_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stoploss Threshold --></label>
+        <name>Stoploss_Threshold__c</name>
+    </fields>
+    <fields>
+        <label><!-- Support Exhibits --></label>
+        <name>Support_Exhibits__c</name>
+        <picklistValues>
+            <masterLabel>Basic</masterLabel>
+            <translation><!-- Basic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Premier</masterLabel>
+            <translation><!-- Premier --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Termination Without Cause Notice --></label>
+        <name>Termination_Without_Cause_Notice__c</name>
+        <picklistValues>
+            <masterLabel>ninety (90) calendar days</masterLabel>
+            <translation><!-- ninety (90) calendar days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>one hundred eighty (180) calendar days</masterLabel>
+            <translation><!-- one hundred eighty (180) calendar days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>sixty (60) calendar days</masterLabel>
+            <translation><!-- sixty (60) calendar days --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Time only of CreatedDate --></label>
+        <name>Time_only_of_CreatedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Traditional Percent Discount --></label>
+        <name>Traditional_Percent_Discount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transition Period Field --></label>
+        <name>Transition_Period_Field__c</name>
+        <picklistValues>
+            <masterLabel>ninety (90) days</masterLabel>
+            <translation><!-- ninety (90) days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>one hundred twenty (120) days</masterLabel>
+            <translation><!-- one hundred twenty (120) days --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Untimed PerUnit single OP rehab exceptn --></label>
+        <name>Untimed_PerUnit_single_OP_rehab_exceptn__c</name>
+    </fields>
+    <fields>
+        <label><!-- Untimed per unit single outpatient rehab --></label>
+        <name>Untimed_per_unit_single_outpatient_rehab__c</name>
+    </fields>
+    <fields>
+        <label><!-- Value-Based Care Review Date --></label>
+        <name>Value_Based_Care_Review_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- [% Value] of the Medicare allowed amount --></label>
+        <name>Value_of_the_Medicare_allowed_amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Was Market Analysis Done? --></label>
+        <name>Was_Market_Analysis_Done__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes, higher rates</masterLabel>
+            <translation><!-- Yes, higher rates --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes, lower rates</masterLabel>
+            <translation><!-- Yes, lower rates --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Yr 1 BL/BA Network IP End Date --></label>
+        <name>Yr_1_BL_BA_Network_IP_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 1 BL/BA Network IP Max Reimb. Allowed --></label>
+        <name>Yr_1_BL_BA_Network_IP_Max_Reimb_Allowed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 1 BL/BA Network IP Start Date --></label>
+        <name>Yr_1_BL_BA_Network_IP_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 1 BL/BA Network OP End Date --></label>
+        <name>Yr_1_BL_BA_Network_OP_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 1 BL/BA Network OP Max Reimb. Allowed --></label>
+        <name>Yr_1_BL_BA_Network_OP_Max_Reimb_Allowed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 1 BL/BA Network OP Start Date --></label>
+        <name>Yr_1_BL_BA_Network_OP_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 1 BP/BC Network IP End Date --></label>
+        <name>Yr_1_BP_BC_Network_IP_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 1 BP/BC Network IP Max Reimb. Allowed --></label>
+        <name>Yr_1_BP_BC_Network_IP_Max_Reimb_Allowed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 1 BP/BC Network IP Start Date --></label>
+        <name>Yr_1_BP_BC_Network_IP_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 1 BP/BC Network OP End Date --></label>
+        <name>Yr_1_BP_BC_Network_OP_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 1 BP/BC Network OP Max Reimb. Allowed --></label>
+        <name>Yr_1_BP_BC_Network_OP_Max_Reimb_Allowed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 1 BP/BC Network OP Start Date --></label>
+        <name>Yr_1_BP_BC_Network_OP_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 1 Max Reimb. Allowance End Date OP --></label>
+        <name>Yr_1_Max_Reimb_Allowance_End_Date_OP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 1 Max Reimb. Allowance IP End Date --></label>
+        <name>Yr_1_Max_Reimb_Allowance_IP_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 1 Max Reimb. Allowance IP Start Date --></label>
+        <name>Yr_1_Max_Reimb_Allowance_IP_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 1 Max Reimb. Allowance IP --></label>
+        <name>Yr_1_Max_Reimb_Allowance_IP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 1 Max Reimb. Allowance  OP --></label>
+        <name>Yr_1_Max_Reimb_Allowance_OP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 1 Max Reimb. Allowance Start Date OP --></label>
+        <name>Yr_1_Max_Reimb_Allowance_Start_Date_OP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 2 BL/BA Network IP End Date --></label>
+        <name>Yr_2_BL_BA_Network_IP_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 2 BL/BA Network IP Max Reimb. Allowed --></label>
+        <name>Yr_2_BL_BA_Network_IP_Max_Reimb_Allowed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 2 BL/BA Network IP Start Date --></label>
+        <name>Yr_2_BL_BA_Network_IP_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 2 BL/BA Network OP End Date --></label>
+        <name>Yr_2_BL_BA_Network_OP_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 2 BL/BA Network OP Max Reimb. Allowed --></label>
+        <name>Yr_2_BL_BA_Network_OP_Max_Reimb_Allowed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 2 BL/BA Network OP Start Date --></label>
+        <name>Yr_2_BL_BA_Network_OP_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 2 BP/BC Network IP End Date --></label>
+        <name>Yr_2_BP_BC_Network_IP_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 2 BP/BC Network IP Max Reimb. Allowed --></label>
+        <name>Yr_2_BP_BC_Network_IP_Max_Reimb_Allowed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 2 BP/BC Network IP Start Date --></label>
+        <name>Yr_2_BP_BC_Network_IP_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 2 BP/BC Network OP End Date --></label>
+        <name>Yr_2_BP_BC_Network_OP_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 2 BP/BC Network OP Max Reimb. Allowed --></label>
+        <name>Yr_2_BP_BC_Network_OP_Max_Reimb_Allowed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 2 BP/BC Network OP Start Date --></label>
+        <name>Yr_2_BP_BC_Network_OP_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 2 Max Reimb. Allowance End Date OP --></label>
+        <name>Yr_2_Max_Reimb_Allowance_End_Date_OP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 2 Max Reimb. Allowance IP End Date --></label>
+        <name>Yr_2_Max_Reimb_Allowance_IP_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 2 Max Reimb. Allowance IP Start Date --></label>
+        <name>Yr_2_Max_Reimb_Allowance_IP_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 2 Max Reimb. Allowance IP --></label>
+        <name>Yr_2_Max_Reimb_Allowance_IP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 2 Max Reimb. Allowance  OP --></label>
+        <name>Yr_2_Max_Reimb_Allowance_OP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 2 Max Reimb. Allowance Start Date OP --></label>
+        <name>Yr_2_Max_Reimb_Allowance_Start_Date_OP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 3 BL/BA Network IP End Date --></label>
+        <name>Yr_3_BL_BA_Network_IP_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 3 BL/BA Network IP Max Reimb. Allowed --></label>
+        <name>Yr_3_BL_BA_Network_IP_Max_Reimb_Allowed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 3 BL/BA Network IP Start Date --></label>
+        <name>Yr_3_BL_BA_Network_IP_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 3 BL/BA Network OP End Date --></label>
+        <name>Yr_3_BL_BA_Network_OP_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 3 BL/BA Network OP Max Reimb. Allowed --></label>
+        <name>Yr_3_BL_BA_Network_OP_Max_Reimb_Allowed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 3 BL/BA Network OP Start Date --></label>
+        <name>Yr_3_BL_BA_Network_OP_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 3 BP/BC Network IP End Date --></label>
+        <name>Yr_3_BP_BC_Network_IP_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 3 BP/BC Network IP Max Reimb. Allowed --></label>
+        <name>Yr_3_BP_BC_Network_IP_Max_Reimb_Allowed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 3 BP/BC Network IP Start Date --></label>
+        <name>Yr_3_BP_BC_Network_IP_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 3 BP/BC Network OP End Date --></label>
+        <name>Yr_3_BP_BC_Network_OP_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 3 BP/BC Network OP Max Reimb. Allowed --></label>
+        <name>Yr_3_BP_BC_Network_OP_Max_Reimb_Allowed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 3 BP/BC Network OP Start Date --></label>
+        <name>Yr_3_BP_BC_Network_OP_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 3 Max Reimb. Allowance End Date OP --></label>
+        <name>Yr_3_Max_Reimb_Allowance_End_Date_OP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 3 Max Reimb. Allowance IP End Date --></label>
+        <name>Yr_3_Max_Reimb_Allowance_IP_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 3 Max Reimb. Allowance IP Start Date --></label>
+        <name>Yr_3_Max_Reimb_Allowance_IP_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 3 Max Reimb. Allowance IP --></label>
+        <name>Yr_3_Max_Reimb_Allowance_IP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 3 Max Reimb. Allowance  OP --></label>
+        <name>Yr_3_Max_Reimb_Allowance_OP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yr 3 Max Reimb. Allowance Start Date OP --></label>
+        <name>Yr_3_Max_Reimb_Allowance_Start_Date_OP__c</name>
+    </fields>
+    <fields>
+        <label><!-- % of Medicaid fee schedule --></label>
+        <name>of_Medicaid_fee_schedule__c</name>
+    </fields>
+    <fields>
+        <label><!-- % of the Medicare allowed amount --></label>
+        <name>of_the_Medicare_allowed_amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- % off Allowable Fee Schedule --></label>
+        <name>off_Allowable_Fee_Schedule__c</name>
+    </fields>
+    <recordTypes>
+        <label><!-- ASC --></label>
+        <name>ASC</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Facility --></label>
+        <name>Facility</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Mass Amendment --></label>
+        <name>Mass_Amendment</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Medical Group --></label>
+        <name>Medical_Group</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Non-ASC Ancillary --></label>
+        <name>Non_ASC_Ancillary</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Professional --></label>
+        <name>Professional</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- Please enter the Agreement End Date or mark the Agreement as Perpetual prior to executing the agreement. --></errorMessage>
+        <name>Apttus__End_Date_Check</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Cannot enter both Perpetual and Term.  Please enter only one of the values --></errorMessage>
+        <name>Apttus__Term_Validation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Cannot enter both Perpetual and End Date.  Please enter only one of the values --></errorMessage>
+        <name>Apttus__Term_Validation_2</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Cannot enter both Term and End Date.  Please enter only one of the values --></errorMessage>
+        <name>Apttus__Term_Validation_3</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter a 10 digit number --></errorMessage>
+        <name>CLM_NPI_Rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- For the Provider Service Type and Provider Networks selected this field cannot be edited --></errorMessage>
+        <name>CLM_Ok_Anc_Dme_DmePurchasePreAuthCapAmt</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- For the Provider Service Type and Provider Networks selected this field cannot be edited --></errorMessage>
+        <name>CLM_Ok_Anc_Dme_DmeRentalFeePreAuthCapAmt</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- For the Provider Service Type and Provider Networks selected this field cannot be edited --></errorMessage>
+        <name>CLM_Ok_Anc_Lab_BlueAdvPpoLabConvFac</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- For the Provider Service Type and Provider Networks selected this field cannot be edited --></errorMessage>
+        <name>CLM_Ok_Anc_Lab_BlueChoicePpoLabFac</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- For the Provider Service Type and Provider Networks selected this field cannot be edited --></errorMessage>
+        <name>CLM_Ok_Anc_Lab_BluePreferredPpoLabFac</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- For the Provider Service Type and Provider Networks selected this field cannot be edited --></errorMessage>
+        <name>CLM_Ok_Anc_Lab_BlueTraditionalLabConvert</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- For the Provider Service Type and Provider Networks selected this field cannot be edited --></errorMessage>
+        <name>CLM_Ok_Anc_Lab_BluelincsHmoLabConvertion</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- For the Provider Service Type and Provider Networks selected this field cannot be edited --></errorMessage>
+        <name>CLM_Ok_Anc_Lab_MaHmoLesserOfCovered</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- For the Provider Service Type and Provider Networks selected this field cannot be edited --></errorMessage>
+        <name>CLM_Ok_Anc_Lab_MaHmoLesserOfMedicareAllo</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- For the Provider Service Type and Provider Networks selected this field cannot be edited --></errorMessage>
+        <name>CLM_Ok_Anc_Lab_MaPpoLesserOfCovered</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- For the Provider Service Type and Provider Networks selected this field cannot be edited --></errorMessage>
+        <name>CLM_Ok_Anc_Lab_MaPpoLesserOfMedicareAllo</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- For the Provider Service Type and Provider Networks selected this field cannot be edited --></errorMessage>
+        <name>CLM_Ok_Anc_Lab_RbrvsPublicationLocation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- For the Provider Service Type and Provider Networks selected this field cannot be edited --></errorMessage>
+        <name>CLM_Ok_Anc_PercentOfTheMedicAllowedAmt</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- For the Provider Service Type and Provider Networks selected this field cannot be edited --></errorMessage>
+        <name>CLM_Ok_Anc_Snf_BlueAdvgPpoSnfMaxPerDiem</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- For the Provider Service Type and Provider Networks selected this field cannot be edited --></errorMessage>
+        <name>CLM_Ok_Anc_Snf_BlueLincsHmoSnfMaxPerDiem</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- For the Provider Service Type and Provider Networks selected this field cannot be edited --></errorMessage>
+        <name>CLM_Ok_Anc_Snf_BlueTradChoPrefSnfMaxPer</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Percent of Covered Charges cannot be blank --></errorMessage>
+        <name>CLM_PercentOfCoveredCharges_Field</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The value for &apos;% of Medicaid fee schedule&apos; is defaulted to 100% for the selected network(s) --></errorMessage>
+        <name>CLM_PercentOfMedicaidFeeSchedule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Error : Please go to accounts tab, to generate a new agreement --></errorMessage>
+        <name>CLM_RolodexAccountSelection</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter a 9 digit number --></errorMessage>
+        <name>CLM_TaxID_rule</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Amend --></label>
+        <name>Apttus__Amend</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Amend_Dev --></label>
+        <name>Apttus__Amend_Dev</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- CancelRequest --></label>
+        <name>Apttus__CancelRequest</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- CreateImportOffline --></label>
+        <name>Apttus__CreateImportOffline</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- EmailAgreementDocuments --></label>
+        <name>Apttus__EmailAgreementDocuments</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Execute --></label>
+        <name>Apttus__Execute</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Expire --></label>
+        <name>Apttus__Expire</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GenerateProtectedAgreement --></label>
+        <name>Apttus__GenerateProtectedAgreement</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GenerateSupportingDocument --></label>
+        <name>Apttus__GenerateSupportingDocument</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GenerateUnprotectedAgreement --></label>
+        <name>Apttus__GenerateUnprotectedAgreement</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- NewAgreementFromOpportunity --></label>
+        <name>Apttus__NewAgreementFromOpportunity</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- NewOfflineAgreementFromOpportunity --></label>
+        <name>Apttus__NewOfflineAgreementFromOpportunity</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Child_Agreement --></label>
+        <name>Apttus__New_Child_Agreement</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- RegenerateAgreement --></label>
+        <name>Apttus__RegenerateAgreement</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Renew --></label>
+        <name>Apttus__Renew</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- ReturnToRequestor --></label>
+        <name>Apttus__ReturnToRequestor</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SendAnEmail --></label>
+        <name>Apttus__SendAnEmail</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SendToOtherPartyForReview --></label>
+        <name>Apttus__SendToOtherPartyForReview</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SendToOtherPartyForSignatures --></label>
+        <name>Apttus__SendToOtherPartyForSignatures</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SendToThirdParty --></label>
+        <name>Apttus__SendToThirdParty</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SubmitForChanges --></label>
+        <name>Apttus__SubmitForChanges</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SubmitRequest --></label>
+        <name>Apttus__SubmitRequest</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Terminate --></label>
+        <name>Apttus__Terminate</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- ViewAgreementHierarchy --></label>
+        <name>Apttus__ViewAgreementHierarchy</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- ViewAgreementHierarchy2 --></label>
+        <name>Apttus__ViewAgreementHierarchy2</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- ViewAgreementHierarchyforAccount --></label>
+        <name>Apttus__ViewAgreementHierarchyforAccount</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- ViewAgreementHierarchyforAccount2 --></label>
+        <name>Apttus__ViewAgreementHierarchyforAccount2</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- ViewDraftAgreement --></label>
+        <name>Apttus__ViewDraftAgreement</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- ViewFinalAgreement --></label>
+        <name>Apttus__ViewFinalAgreement</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- ViewPicklistMap --></label>
+        <name>Apttus__ViewPicklistMap</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- My_Approvals --></label>
+        <name>My_Approvals</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Preview_Submit_Approvals --></label>
+        <name>Preview_Submit_Approvals</name>
+    </webLinks>
+</CustomObjectTranslation>

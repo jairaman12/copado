@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>fakeemail@bcbsil.com</email>
+    <name>OMNI_OK_Database Work</name>
+    <queueMembers>
+        <users>
+            <user>ashley_x_jones@bcbsok.com.provider</user>
+            <user>cindy_haas@hcsc.net.provider</user>
+            <user>david_whitetree@bcbsok.com.provider</user>
+            <user>keith_m_chambers@bcbsok.com.provider</user>
+            <user>kellye_faulkner@hcsc.net.provider</user>
+            <user>mechelle_davison@bcbsok.com.provider</user>
+            <user>patti_burnette@hcsc.net.provider</user>
+            <user>wendy_vang@bcbsok.com.provider</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>Priority_8</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>OMNI_Queue__c</sobjectType>
+    </queueSobject>
+</Queue>

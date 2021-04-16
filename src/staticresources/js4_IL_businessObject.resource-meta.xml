@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StaticResource xmlns="http://soap.sforce.com/2006/04/metadata">
+    <cacheControl>Public</cacheControl>
+    <contentType>application/javascript</contentType>
+    <description>This is the javascript which controls IL specific javascript.....at the moment, it is going to be used for all states until we can integrate the whole business object model for all states.</description>
+</StaticResource>

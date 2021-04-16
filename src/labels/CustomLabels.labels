@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>APTS_Amendment_Template</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Amendment Template</shortDescription>
+        <value>Amendment Template</value>
+    </labels>
+    <labels>
+        <fullName>APTS_Mass_Amend_Agreement</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mass Amend Agreement Account</shortDescription>
+        <value>Mass Amend Agreement</value>
+    </labels>
+    <labels>
+        <fullName>AttAdd</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AttAdd</shortDescription>
+        <value>Attachments can not be added to a closed case.</value>
+    </labels>
+    <labels>
+        <fullName>AttDelete</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AttDelete</shortDescription>
+        <value>Attachments can not be deleted.</value>
+    </labels>
+    <labels>
+        <fullName>AttUpdate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AttUpdate</shortDescription>
+        <value>Attachments can not be updated when case is closed.</value>
+    </labels>
+    <labels>
+        <fullName>Benefit_Status_Check</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Benefit Status Check</shortDescription>
+        <value>Please enter Benefits Comments.</value>
+    </labels>
+    <labels>
+        <fullName>BillingNPICharErrMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BillingNPICharErrMsg</shortDescription>
+        <value>Invalid NPI - only numeric characters are allowed</value>
+    </labels>
+    <labels>
+        <fullName>BillingNPIErrMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BillingNPIErrMsg</shortDescription>
+        <value>Invalid NPI - Must be 10 digits</value>
+    </labels>
+    <labels>
+        <fullName>CLM_Owner_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CLM Owner Error</shortDescription>
+        <value>Cannot select this user as owner</value>
+    </labels>
+    <labels>
+        <fullName>CLM_Plan_IL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CLM_Plan_IL</shortDescription>
+        <value>IL1</value>
+    </labels>
+    <labels>
+        <fullName>CLM_Plan_MT</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CLM_Plan_MT</shortDescription>
+        <value>MT1</value>
+    </labels>
+    <labels>
+        <fullName>CLM_Plan_NM</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CLM_Plan_NM</shortDescription>
+        <value>NM1</value>
+    </labels>
+    <labels>
+        <fullName>CLM_Plan_OK</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CLM_Plan_OK</shortDescription>
+        <value>OK1</value>
+    </labels>
+    <labels>
+        <fullName>CLM_Plan_TX</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CLM_Plan_TX</shortDescription>
+        <value>TX1</value>
+    </labels>
+    <labels>
+        <fullName>CaseLock</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CaseLock</shortDescription>
+        <value>Closed case cannot be edited.</value>
+    </labels>
+    <labels>
+        <fullName>CaseOwner</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CaseOwner</shortDescription>
+        <value>You are not authorized to Change Case Owner.</value>
+    </labels>
+    <labels>
+        <fullName>CaseQueueText</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CaseQueueText</shortDescription>
+        <value>Cases cannot be assigned to other plan queues.</value>
+    </labels>
+    <labels>
+        <fullName>CaseStatusCheck</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CaseStatusCheck</shortDescription>
+        <value>Please enter Case Status Comments.</value>
+    </labels>
+    <labels>
+        <fullName>Claim_Status_Check</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Claims Status Check</shortDescription>
+        <value>Please enter Claims Comments.</value>
+    </labels>
+    <labels>
+        <fullName>Claims_Project</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Claims Project</shortDescription>
+        <value>Please enter Claims Project Comments.</value>
+    </labels>
+    <labels>
+        <fullName>CommentAdd</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CommentAdd</shortDescription>
+        <value>Comments can not be added to a closed case.</value>
+    </labels>
+    <labels>
+        <fullName>CommentDel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CommentDel</shortDescription>
+        <value>Comments can not be deleted when case is closed.</value>
+    </labels>
+    <labels>
+        <fullName>CommentUpdate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CommentUpdate</shortDescription>
+        <value>Comments can not be modified when case is closed.</value>
+    </labels>
+    <labels>
+        <fullName>Comp_Status_Check</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Comp Status Check</shortDescription>
+        <value>Please enter Complaints Comments.</value>
+    </labels>
+    <labels>
+        <fullName>Contract_Status_Check</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contract Status Check</shortDescription>
+        <value>Please enter Contracting Comments.</value>
+    </labels>
+    <labels>
+        <fullName>Contracting_Case_Closed_Satus_Validation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contracting_Case_Closed_Satus_Validation</shortDescription>
+        <value>Closed Case cannot be Routed to Contracting Area.</value>
+    </labels>
+    <labels>
+        <fullName>Contracting_Case_Prod_Verification_Qeueue</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contracting_Case_Prod_Verification_Qeueue</shortDescription>
+        <value>Cases Set to Prod verification can not be edited.</value>
+    </labels>
+    <labels>
+        <fullName>Contracting_Case_Queue_Validation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contracting_Case_Queue_Validation</shortDescription>
+        <value>Case is already in contracting queue.</value>
+    </labels>
+    <labels>
+        <fullName>Contracting_Case_User_Validation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contracting_Case_User_Validation</shortDescription>
+        <value>You are not authorized to Routed to Contracting Area.</value>
+    </labels>
+    <labels>
+        <fullName>CorpReq</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CorpReq</shortDescription>
+        <value>Corporate received date is required field.</value>
+    </labels>
+    <labels>
+        <fullName>CorpVal</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CorpVal</shortDescription>
+        <value>Please select only current or past date</value>
+    </labels>
+    <labels>
+        <fullName>Cred_Status_Check</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cred Status Check</shortDescription>
+        <value>Please enter Credentialing Comments.</value>
+    </labels>
+    <labels>
+        <fullName>DataEntryString</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DataEntryString</shortDescription>
+        <value>Case is already in Data Entry.</value>
+    </labels>
+    <labels>
+        <fullName>DataEntry_Closed_Case</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DataEntry_Closed_Case</shortDescription>
+        <value>Closed Case cannot be Route to Data Entry</value>
+    </labels>
+    <labels>
+        <fullName>DeathFileEmailResult</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DeathFileEmailResult</shortDescription>
+        <value>tomy_josepb@bcbstx.com;Thuyen_ho@bcbstx.com;Ellen_Westmoreland@bcbstx.com;radhika_nedunuri@bcbstx.com;Mike_Smith@bcbstx.com;Hector_m_Flores@bcbstx.com;Svetlana_Alson@bcbstx.com;Julie_Moseley@bcbstx.com</value>
+    </labels>
+    <labels>
+        <fullName>EFT</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EFT</shortDescription>
+        <value>Please enter EFT Comments.</value>
+    </labels>
+    <labels>
+        <fullName>Ecom_Status_Check</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Ecom Status Check</shortDescription>
+        <value>Please enter Ecommerce Comments.</value>
+    </labels>
+    <labels>
+        <fullName>EmailErr</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EmailErr</shortDescription>
+        <value>Email Can not be deleted.</value>
+    </labels>
+    <labels>
+        <fullName>EmailValErrMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EmailValErrMsg</shortDescription>
+        <value>Please enter a valid Email Address.</value>
+    </labels>
+    <labels>
+        <fullName>EscalateValidationString</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EscalateValidationString</shortDescription>
+        <value>Case is already escalated.</value>
+    </labels>
+    <labels>
+        <fullName>Escalated_Case_Closed_Satus_Validation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Escalated_Case_Closed_Satus_Validation</shortDescription>
+        <value>Closed Case cannot be Escalated.</value>
+    </labels>
+    <labels>
+        <fullName>Escalated_Case_User_Validation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Escalated_Case_User_Validation</shortDescription>
+        <value>You are not authorized to Escalate.</value>
+    </labels>
+    <labels>
+        <fullName>External_Comment_Reject</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>External Comment Reject</shortDescription>
+        <value>Please enter a Rejection Comment.</value>
+    </labels>
+    <labels>
+        <fullName>FaxValErrMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FaxValErrMsg</shortDescription>
+        <value>Invalid Fax number or format.</value>
+    </labels>
+    <labels>
+        <fullName>Fee_schedule</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Fee schedule</shortDescription>
+        <value>Please enter Fee Schedule Comments.</value>
+    </labels>
+    <labels>
+        <fullName>FieldEdit</fullName>
+        <categories>Except Account Name, Case Entity, Case owner, Priority, Status,Number of PFINs and External comments are editable. Remaining fields are not editable.</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EditFeildsError</shortDescription>
+        <value>Only the following fields are editable: Case Owner, Priority, Status,PFIN,PROV ID,PFIN Number(s) and External comments</value>
+    </labels>
+    <labels>
+        <fullName>FieldEditCRM</fullName>
+        <categories>Except Account Name, Case Entity, Case owner, Priority, Status,CRM Case Number, Number of PFINs and External comments are editable. Remaining fields are not editable.</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EditFeildsError</shortDescription>
+        <value>Only the following fields are editable: Case Owner, Priority, Status,PFIN,PROV ID,CRM Case Number, PFIN Number(s) and External comments</value>
+    </labels>
+    <labels>
+        <fullName>FileBlockedProfiles</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FileBlockedProfiles</shortDescription>
+        <value>Enterprise Profile</value>
+    </labels>
+    <labels>
+        <fullName>IndNPIErrMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>IndNPIErrMsg</shortDescription>
+        <value>Please enter a valid 10 digit Individual&apos;s Type 1 NPI.</value>
+    </labels>
+    <labels>
+        <fullName>InitialErrMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>InitialErrMsg</shortDescription>
+        <value>Please Enter 2 Alpha Characters.</value>
+    </labels>
+    <labels>
+        <fullName>Network_Status_Check</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Network Status Check</shortDescription>
+        <value>Please enter Network Status Comments.</value>
+    </labels>
+    <labels>
+        <fullName>OMNI_Batch_Status_Email</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OMNI Batch Status Email</shortDescription>
+        <value>ProviderIntakeDev@bcbstx.com</value>
+    </labels>
+    <labels>
+        <fullName>OwnerErrorText</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OwnerErrorText</shortDescription>
+        <value>Cases cannot be assigned to users from other plans.</value>
+    </labels>
+    <labels>
+        <fullName>PEDIFieldErrorMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PEDIFieldErrorMsg</shortDescription>
+        <value>Only the following fields are editable: Case Owner, Priority, Status, PFIN numbers and External comments..</value>
+    </labels>
+    <labels>
+        <fullName>PFEmailNotification</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PFEmailNotification</shortDescription>
+        <value>CorporateCycleTimeDays@hcsc.net</value>
+    </labels>
+    <labels>
+        <fullName>Paper_Pay_Status_Check</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Paper Pay Status Check</shortDescription>
+        <value>Please enter Paper Payment Comments.</value>
+    </labels>
+    <labels>
+        <fullName>PendingVal</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PendingVal</shortDescription>
+        <value>Please change the status value of the child cases to Pending.</value>
+    </labels>
+    <labels>
+        <fullName>PhoneValErrMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PhoneValErrMsg</shortDescription>
+        <value>Invalid Phone number or format.</value>
+    </labels>
+    <labels>
+        <fullName>PlanIdValidationError</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PlanIdValidationError</shortDescription>
+        <value>You cannot choose another Plan ID – You must choose your state’s Plan ID.</value>
+    </labels>
+    <labels>
+        <fullName>PncUserCaseCloseValidationText</fullName>
+        <categories>Prior closing the case assign case on to your name.</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PncUserCaseCloseValidationText</shortDescription>
+        <value>Assign case to your name prior to closing the case.</value>
+    </labels>
+    <labels>
+        <fullName>Pre_Authorization_Status_Check</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Pre-Authorization Status Check</shortDescription>
+        <value>Please enter Pre-Authorization Comments.</value>
+    </labels>
+    <labels>
+        <fullName>Pre_Determination_Status_Check</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Pre-Determination Status Check</shortDescription>
+        <value>Please enter Pre-Determination Comments.</value>
+    </labels>
+    <labels>
+        <fullName>PriorityVal</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PriorityVal</shortDescription>
+        <value>Please change the priority of the work items tied to this case.</value>
+    </labels>
+    <labels>
+        <fullName>ProdAttAdd</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ProdAttAdd</shortDescription>
+        <value>Attachments can not be added once a case is set to Prod Verification.</value>
+    </labels>
+    <labels>
+        <fullName>ProdAttDel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ProdAttDel</shortDescription>
+        <value>Attachments can not be deleted.</value>
+    </labels>
+    <labels>
+        <fullName>ProdAttUpd</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ProdAttUpd</shortDescription>
+        <value>Attachments can not be updated once a case is set to Prod Verification.</value>
+    </labels>
+    <labels>
+        <fullName>ProdCaseUpd</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ProdCaseUpd</shortDescription>
+        <value>Cases set to Prod Verification can not be edited.</value>
+    </labels>
+    <labels>
+        <fullName>ProdComAdd</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ProdComAdd</shortDescription>
+        <value>Comments can not be added once a case is set to Prod Verification.</value>
+    </labels>
+    <labels>
+        <fullName>ProdComDel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ProdComDel</shortDescription>
+        <value>Comments can not be deleted once case is set to Prod Verificatoin.</value>
+    </labels>
+    <labels>
+        <fullName>ProdComUpd</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ProdComUpd</shortDescription>
+        <value>Comments can not be modified once case is set to Prod Verification.</value>
+    </labels>
+    <labels>
+        <fullName>Provider_Roster_Report</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Provider Roster Report</shortDescription>
+        <value>Please enter Provider Roster Report Comments.</value>
+    </labels>
+    <labels>
+        <fullName>ReportResultToEmail</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReportResultToEmail</shortDescription>
+        <value>bradley_montella@bcbsil.com;jesse_barrera@bcbsil.com;younkinm@bcbsil.com;donald_parzynski@bcbsil.com;diana_marczuk@bcbsil.com;charu_patel@bcbsil.com;Adam_James@bcbsil.com;Masiyaleti_Milambo@bcbsil.com;Hani_Ramahi@bcbsil.com;Marcelo_Tijerina@bcbsil.com;christopher_fairchild@bcbsok.com</value>
+    </labels>
+    <labels>
+        <fullName>Retro_Requests</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Retro Requests</shortDescription>
+        <value>Please enter Retro Requests Comments.</value>
+    </labels>
+    <labels>
+        <fullName>Retroactive_Claim_Status_Check</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Retroactive Claim Status Check</shortDescription>
+        <value>Please enter Retroactive Claim Comments.</value>
+    </labels>
+    <labels>
+        <fullName>RosterEmailResult</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RosterEmailResult</shortDescription>
+        <value>Venkataprasanth_Vakalapudi@bcbstx.com;Poorna_Kashibhotla@bcbsil.com;Srinath_Sundar@bcbsil.com;
+dan_hernandez_ortiz@bcbsil.com;daniel_hanrahan@bcbsil.com;Jacqueline_fernandez@bcbsil.com;melinda_waggoner@bcbsnm.com;mia_lovejoy@bcbsil.com</value>
+    </labels>
+    <labels>
+        <fullName>StatusCancelVal</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StatusCancelVal</shortDescription>
+        <value>Parent Case cannot be Cancelled because one or more work items has one of the following statuses -New/In Progress/Escalated/Routed to contracting area/Pending. Please update the work item status(es) before attempting to Close the Parent case.</value>
+    </labels>
+    <labels>
+        <fullName>StatusVal</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StatusVal</shortDescription>
+        <value>Parent Case cannot be Closed because one or more work items has one of the following statuses -New/In Progress/Escalated/Routed to contracting area/Pending. Please update the work item status(es) before attempting to Close the Parent case.</value>
+    </labels>
+    <labels>
+        <fullName>Status_Failed_Error_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Status_Failed_Error_Message</shortDescription>
+        <value>The following cases have failed to change status:</value>
+    </labels>
+    <labels>
+        <fullName>SupAndPncUserCaseCloseValidationText</fullName>
+        <categories>Assign case to your name prior to closing the case</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SupAndPncUserCaseCloseValidationText</shortDescription>
+        <value>Assign case to your name prior to closing the case</value>
+    </labels>
+    <labels>
+        <fullName>TaxIdCharErrMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TaxIdCharErrMsg</shortDescription>
+        <value>Invalid TAX ID - only numeric characters are allowed</value>
+    </labels>
+    <labels>
+        <fullName>TaxIdErrMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TaxIdErrMsg</shortDescription>
+        <value>Invalid TAX ID - Must be 9 digits</value>
+    </labels>
+    <labels>
+        <fullName>doNotRunCaseTrigger</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>doNotRunCaseTrigger</shortDescription>
+        <value>true</value>
+    </labels>
+</CustomLabels>

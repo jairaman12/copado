@@ -1,0 +1,10 @@
+Dear {!Lead.Name},  
+
+Thank you for your interest in {!Organization.Name}.  We will be contacting you shortly.    
+
+Sincerely,  The Team at {!Organization.Name}
+
+
+
+
+(For Internal Purpose only : ref: {!Case.Thread_Id})

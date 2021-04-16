@@ -1,0 +1,8 @@
+Hello,
+<br/><br/>
+Please enter the mandatory details under the Provider Details section in the credentialing case <a href="{!Case.Link}" >{!Case.CaseNumber} <a/> to complete the case creation process.
+Without provider details, this case will not go through credentialing for further processing.
+
+<br/><br/>
+Thanks,<br/>
+Salesforce ITG

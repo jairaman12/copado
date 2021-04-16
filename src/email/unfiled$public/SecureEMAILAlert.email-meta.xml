@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BCBS_Generic_Letterhead</letterhead>
+    <name>SecureEMAILAlert</name>
+    <style>freeForm</style>
+    <subject>IMPORTANT PLEASE READ: SENDING PHI/SPI VIA EMAILS IN SALESFORCE</subject>
+    <textOnly>It has come to our attention that emails sent externally from Salesforce using the “Send Email” or “Reply” button are not being encrypted when sent.
+
+
+
+Staring immediately, all outbound emails containing PHI or SPI must be encrypted by including “Secure” in the subject line (see example below).
+
+This finding is being reported to the Regulatory &amp; Compliance office.
+
+
+
+In the meantime, we are in the process of pulling a report to identify all previous emails containing PHI/SPI that were sent externally without the proper encryption.
+
+
+
+
+
+
+
+If you have any questions, please feel free to contact me.
+
+
+
+Jennifer Gilliam
+
+
+Enterprise Network Integration &amp; Delivery
+
+(: 972-766-7907| *:Jennifer_gilliam@bcbstx.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

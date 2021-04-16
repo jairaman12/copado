@@ -1,0 +1,7 @@
+<apex:page standardController="Apttus_Approval__Backup_Approver__c" extensions="Apttus_Approval.BackupApproverController"
+            showHeader="false"
+            sidebar="false" showChat="false">
+    <apex:outputpanel >
+        <apex:outputText value="{!DelegateNames}"/>
+    </apex:outputpanel>
+</apex:page>

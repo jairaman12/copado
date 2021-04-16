@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>fakeemail@bcbsil.com</email>
+    <name>OMNI_IL_IL Gov Professional Contract</name>
+    <queueMembers>
+        <users>
+            <user>blanca_rodriquez@bcbsil.com.provider</user>
+            <user>christopher_m_loving@bcbsil.com.provider</user>
+            <user>denise_macon@bcbsil.com.provider</user>
+            <user>ju-ton_loving@bcbsil.com.provider</user>
+            <user>karen_henry@bcbsil.com.provider</user>
+            <user>kaylan_howard@bcbsil.com.provider</user>
+            <user>shakira_emmons@bcbsil.com.provider</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>Priority_4</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>OMNI_Queue__c</sobjectType>
+    </queueSobject>
+</Queue>

@@ -1,0 +1,7 @@
+Dear {!SFHealthTechIssueLog__c.CreatedBy},   
+
+This SF Health Tech Issue Log has been closed.
+
+Thank you,   
+{!User.Name} 
+{!Organization.Name}

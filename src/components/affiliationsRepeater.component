@@ -1,0 +1,55 @@
+<apex:component >
+    <apex:attribute name="relation" description="A Hospital Affiliation to iterate over"
+                    type="Affiliations__c[]" required="true"/>
+    <apex:attribute name="account" description="Associated Account"
+                    type="Account" required="true"/>                                 
+                        <apex:repeat value="{!relation}" var="affiliation">       
+                            <tr>
+                                <td class="actionLinks">  
+                                    <apex:commandLink action="{!URLFOR($Action.Affiliations__c.Edit, affiliation.id, [retURL=account.id])}" target="_new" value="Edit" rendered="{!IF(affiliation.CM_Affiliated_Provider_Name__r.RecordType.Name=='Rolodex',true,false)}"/> 
+                                  <!--  <span rendered="{!$Profile.Name=='System Administrator'}"  >
+                                        |
+                                    </span>  -->  
+                                     <apex:outputtext rendered="{!($Profile.Name=='System Administrator')&&(IF(affiliation.CM_Affiliated_Provider_Name__r.RecordType.Name=='Rolodex',true,false))}"  >
+                                        |
+                                    </apex:outputtext>   
+                                    
+                                    
+                                    <apex:commandLink action="{!URLFOR($Action.Affiliations__c.Delete, affiliation.id, [retURL=account.id])}" target="_new" value="Del" onclick="return confirmDelete();" rendered="{!$Profile.Name=='System Administrator'}" />       
+                                </td>
+                                <td>
+                                    <apex:outputlink value="/{!affiliation.Id}" target="_new">
+                                        <apex:outputtext value="{!affiliation.Name}"/> 
+                                    </apex:outputlink>                        
+                                </td>
+                                <td>
+                                    {!affiliation.Account__r.name}
+                                </td>                                
+                                <td>
+                                    {!affiliation.CM_Affiliated_Provider_Name__r.name}
+                                </td>
+                                <td>
+                                   {!affiliation.Role__c}
+                                </td>                                                             
+                                <td>
+                                    <apex:outputText value="{0,date,MM/dd/yyyy}">
+                                        <apex:param value="{!affiliation.Start_Date__c}" /> 
+                                    </apex:outputText>                                    
+                                </td>
+                                <td>
+                                    <apex:outputText value="{0,date,MM/dd/yyyy}">
+                                        <apex:param value="{!affiliation.End_Date__c}" /> 
+                                    </apex:outputText>                                                                                                         
+                                </td>
+                                <td>
+                                    {!affiliation.CM_Billing_PFIN__c}
+                                </td>   
+                                <td>
+                                    {!affiliation.Type__c}
+                                </td>     
+                                <td>
+                                    {!affiliation.CM_Affiliation_Code_Description__c}
+                                </td>                                 
+                           </tr>    
+                        </apex:repeat>   
+</apex:component>

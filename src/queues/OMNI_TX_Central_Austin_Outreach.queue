@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>fakemeail@bcbsil.com</email>
+    <name>OMNI_TX_Central-Austin_Outreach</name>
+    <queueMembers>
+        <roles>
+            <role>Texas_PNC</role>
+            <role>Texas_Supervisor</role>
+        </roles>
+    </queueMembers>
+    <queueRoutingConfig>Priority_5</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

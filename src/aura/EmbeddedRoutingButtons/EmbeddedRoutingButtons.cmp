@@ -1,0 +1,43 @@
+<!--
+/**
+* Lightning component to display "Escalate," "Route to Contracting," and "Route to Data Entry" buttons.
+* <p /><p />
+* @author Josh McGhee
+*/
+-->
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasSObjectName,force:hasRecordId"
+                controller="RoutingButtonsController">
+	
+    <!--Scripts-->
+    <lightning:workspaceAPI aura:id="workspace" />
+    
+    <!--Attributes-->
+    <aura:attribute name="recordId" type="Id" access="public"/>
+    <aura:attribute name="sobjecttype" type="String" default="{!v.sObjectName}"/>
+    <aura:attribute name="escalatable" type="Boolean" default="false"/>
+    <aura:attribute name="canRouteToDataEntry" type="Boolean" default="false"/>
+    <aura:attribute name="canRouteToContracting" type="Boolean" default="false"/>
+    
+    <!--Handlers-->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <!-- This div holds the "Escalate," "Route to Contracting Area," and "Route to Data Entry" buttons, and centers them-->
+    <div class="slds-button-group slds-align_absolute-center" role="group">
+        <aura:if isTrue="{!v.escalatable}">
+        	<button class="slds-button slds-button_neutral" title="Escalate" onclick="{!c.validateUserToEscalate}">
+                Escalate
+            </button>
+        </aura:if>
+        <aura:if isTrue="{!v.canRouteToContracting}">
+        	<button class="slds-button slds-button_neutral" title="Route To Contracting Area" onclick="{!c.routeToContractingArea}">
+                Route To Contracting Area
+            </button>
+        </aura:if>
+        <aura:if isTrue="{!v.canRouteToDataEntry}">
+        	<button class="slds-button slds-button_neutral" title="Route To Data Entry" onclick="{!c.routeToDataEntry}">
+                Route To Data Entry
+            </button>
+        </aura:if>
+    </div>
+    
+</aura:component>
